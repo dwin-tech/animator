@@ -5,7 +5,7 @@ import three from '../../assets/frame_6/three.png'
 import four from '../../assets/frame_6/four.png'
 import five from '../../assets/frame_6/five.png'
 import './index.css';
-import { handContainer ,fiveContainer} from "."
+import { handContainer, fiveContainer } from "."
 
 
 
@@ -16,35 +16,23 @@ import { handContainer ,fiveContainer} from "."
 export function Frame_6() {
     return (
         <div>
-            <div className="frameFour">
+            <div className="frameSix">
                 <img className="one"
                     src={one} alt={"one"} />
-               <motion.img
+                <motion.img
                     variants={handContainer}
                     initial="hidden"
                     whileInView="show"
                     viewport={{ amount: 0.2 }}
                     className="two" src={two} alt={"two"} />
-                {/* <motion.img
-                    // variants={handContainer}
-                    // initial="hidden"
-                    // whileInView="show"
-                    // viewport={{ amount: 0.2 }}
-                    className="three" src={three} alt={"three"} />  */}
 
-            <motion.img
-                // variants={handContainer}
-                // initial="hidden"
-                // whileInView="show"
-                // viewport={{ amount: 0.2 }}
-                className="three" src={four} alt={"four"} />
-                 <motion.img
-                variants={fiveContainer}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ amount: 0.2 }}
-                className="five" src={five} alt={"five"} />
-        </div>
+                <motion.img
+                    variants={fiveContainer}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ amount: 0.2 }}
+                    className="five" src={five} alt={"five"} />
+            </div>
         </div>
     )
 }

@@ -16,14 +16,8 @@ function App() {
       <Frame_3 />
       <Frame_4 />
       <Frame_5 />
-      {/*   <Frame_6 /> */}
-
-
-      {/* <Header /> */}
-
-
-
-
+     <Frame_6 /> 
+       <Header />
     </div>
   );
 }

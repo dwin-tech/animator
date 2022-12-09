@@ -1,6 +1,6 @@
-.parent {
+.frameSix {
     padding-top: 1%;
-    max-width:70%;
+    max-width:600px;
     margin: auto;
     position: relative;
   }
@@ -12,18 +12,18 @@
   }
   .two{
     position: absolute;
-    width: 14%;
-    bottom: 10%;
-    right: 20%;
+    width: 17%;
+    bottom: 11%;
+    right: 36%;
     transform-origin: bottom left;
   transform-style: preserve-3D;
   }
 
   .three{
     position:absolute;
-    width: 35%;
-    bottom: 0;
-    right: 0;
+    width: 40%;
+    bottom: 1%;
+    right: 15%;
   }
 
   .five{
