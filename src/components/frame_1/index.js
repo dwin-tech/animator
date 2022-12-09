@@ -14,7 +14,7 @@ export const boxOne = {
         y: 0,
     },
     show: {
-        y: -20,
+        y: -3,
         transition: {
             duration: 1,
             delay: 0.1,
@@ -30,7 +30,7 @@ export const twoBox = {
         y: 20,
     },
     show: {
-        y: -58,
+        y: -33,
         transition: {
             duration: 0.8,
             delay: 0.2,
@@ -45,7 +45,7 @@ export const threeBox = {
         y: 20,
     },
     show: {
-        y: -48,
+        y: -23,
         transition: {
             duration: 1,
             delay: 0.3,
