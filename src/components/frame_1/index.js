@@ -63,8 +63,8 @@ export const birdsContainer = {
         y: 0,
     },
     show: {
-        y: -500,
-        x:-510,
+        y: -220,
+        x:-220,
         transition: {
             duration: 3,
             delay: 0.1,

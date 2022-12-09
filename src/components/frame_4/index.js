@@ -8,15 +8,15 @@ const transition = {
 
 
 
-export const containero = {
+export const container = {
     hidden: {
         x: 0,
 
     },
     show: {
-        x: -565,
-        y:62,
-        // scale:0.8,
+        x: -138,
+        y:30,
+        scale:0.9,
         
         transition :
             {
@@ -33,8 +33,8 @@ export const listsContainer = {
 
     },
     show: {
-        x: -300,
-        y:190,
+        x: -100,
+        y:50,
         
         transition :
             {
@@ -44,4 +44,26 @@ export const listsContainer = {
                 ease: "linear",
             }
         }
+}
+
+
+
+export const messContainer = {
+    hidden: {
+        scale: 1,
+        x: 0
+    },
+    show: {
+        scale: 2,
+        x: -15,
+        y:-9,
+        transition:
+        {
+            duration:1,
+            delay: 1,
+            forwards: 1,
+            ease: "linear",
+        }
+
+    },
 }

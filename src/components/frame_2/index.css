@@ -1,10 +1,8 @@
-.parent{
+.frameTwo{
   padding-top: 1%;
-
-    max-width: 70%;
-    margin: auto;
-    position: relative;
-    /* background-color: red; */
+  max-width: 600px;
+  margin: auto;
+  position: relative;
 }
 
 .street{

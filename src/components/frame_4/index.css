@@ -1,29 +1,29 @@
-.parent{
+.frameFour{
   padding-top: 1%;
 
-  max-width: 70%;
+  max-width: 600px;
     margin: auto;
     position: relative;
+    overflow: hidden;
 } 
-.corridor{
-  width: 100%;
-position: relative;
-overflow: hidden;
- 
-} 
+
 .room{
   width: 100%;  
+  position: relative;
+  overflow: hidden;
 } 
  
  
 
   .runningGuy{
+    left: 68%;
     position: absolute;
-    bottom: 7%;
-    right: -5%;
-    width: 36%;
-    z-index: 1;
-}
+    bottom: 13%;
+  
+    width: 39%;
+  z-index: 1;
+  }
+
 
 .lists{
   position: absolute;
@@ -31,6 +31,14 @@ overflow: hidden;
     right: -1%;
     width: 26%;
     z-index: 1;
+}
+
+.mess{
+  position: absolute;
+  bottom: 65%;
+  right: 10%;
+  width: 13%;
+  z-index: 1;
 }
 
 

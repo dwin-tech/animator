@@ -13,7 +13,7 @@ import { handContainer } from '.';
 export function Frame_5() {
     return (
         <div>
-            <div className="girlsRoom">
+            <div className="framerFive">
                 <img className="girls"
                     src={girls} alt={"girls"} />
                 <motion.img

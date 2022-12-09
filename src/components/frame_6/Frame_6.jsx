@@ -16,7 +16,7 @@ import { handContainer ,fiveContainer} from "."
 export function Frame_6() {
     return (
         <div>
-            <div className="parent">
+            <div className="frameFour">
                 <img className="one"
                     src={one} alt={"one"} />
                <motion.img

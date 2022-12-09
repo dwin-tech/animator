@@ -14,13 +14,10 @@ import { useWindowWidth } from "@react-hook/window-size";
 
 
 export function Frame_1() {
-    const width = useWindowWidth();
-
     return (
-        <div className="containerOne">
-            <div className="city"  >
+        <div >
+            <div className="frameOne"  >
 
-                
                 <motion.img variants={twoBox}
                     initial="hidden"
                     // animate="show"

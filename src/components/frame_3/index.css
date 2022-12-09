@@ -1,7 +1,7 @@
-.parent{
+.frameThree{
   padding-top: 1%;
 
-  max-width: 70%;
+  max-width: 600px;
     margin: auto;
     position: relative;
 } 
@@ -45,9 +45,9 @@ position: relative;
  }
 
  .message{
-  bottom: 50%;
-  right: 1%;
-  position: absolute;
-  z-index: 4;
-  width: 42%;
+  bottom: 66%;
+    right: 18%;
+    position: absolute;
+    z-index: 4;
+    width: 10%;
  }   

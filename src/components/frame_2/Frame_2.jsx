@@ -13,11 +13,11 @@ import { carBlueContainer, carGreenContainer, carYellowContainer } from '.';
 
 export function Frame_2() {
     return (
-        <div>
-            <div className="parent">
-                <img className="street"
-                    src={street} alt={"street"} />
-                <motion.img className="green"
+        <div >
+            <div className="frameTwo">
+          <img className="street"
+                    src={street} alt={"street"} /> 
+             <motion.img className="green"
                     variants={carGreenContainer}
                     initial="hidden"
                     whileInView="show" 
@@ -34,7 +34,7 @@ export function Frame_2() {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ amount: 0.2 }}
-                    src={blue} alt={"blue"} />
+                    src={blue} alt={"blue"} />  
             </div>
         </div>
     )

@@ -7,27 +7,24 @@ import { useWindowWidth } from "@react-hook/window-size"
 
 
 import './index.css';
-import { containero,listsContainer } from '.'
+import { container, listsContainer, messContainer } from '.'
 
 
 export function Frame_4() {
-
-    const width = useWindowWidth();
-    console.log('====================================');
-    console.log(width);
-    console.log('====================================');
     return (
-        <div className="parent">
-            <div className="corridor">
+        <div >
+            <div className="frameFour">
                 <img className="room"
                     src={bigRoom} alt={"bigRoom"} />
                 <motion.img
                     className="runningGuy"
-                    variants={containero}
+                    variants={container}
                     initial="hidden"
                     whileInView="show"
                     viewport={{ amount: 0.2 }}
-                    src={runing} alt={"runing"} />
+                    src={runing} alt={"runing"}
+
+                />
                 <motion.img
 
                     variants={listsContainer}
@@ -36,7 +33,15 @@ export function Frame_4() {
                     viewport={{ amount: 0.2 }}
 
                     className="lists" src={lists} alt={"lists"} />
-                {/*<img className="mess" src={mess} alt={"mess"} /> */}
+                <motion.img
+                
+                variants={messContainer}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ amount: 0.2 }}
+                
+                
+                className="mess" src={mess} alt={"mess"} />
 
             </div>
         </div>
