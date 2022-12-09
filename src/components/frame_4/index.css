@@ -1,0 +1,36 @@
+.parent{
+  padding-top: 1%;
+
+  max-width: 70%;
+    margin: auto;
+    position: relative;
+} 
+.corridor{
+  width: 100%;
+position: relative;
+overflow: hidden;
+ 
+} 
+.room{
+  width: 100%;  
+} 
+ 
+ 
+
+  .runningGuy{
+    position: absolute;
+    bottom: 7%;
+    right: -5%;
+    width: 36%;
+    z-index: 1;
+}
+
+.lists{
+  position: absolute;
+    bottom: 10%;
+    right: -1%;
+    width: 26%;
+    z-index: 1;
+}
+
+

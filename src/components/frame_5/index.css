@@ -1,0 +1,38 @@
+
+  .girlsRoom {
+    padding-top: 1%;
+    max-width:70%;
+    margin: auto;
+    position: relative;
+  }
+  
+  
+  .girls{
+  width: 100%;
+ }
+
+.hand{
+  position: absolute;
+    top: 7%;
+    right: 38%;
+    width: 9.5%;
+    z-index: 2;
+    transform-origin: bottom right;
+  transform-style: preserve-3D;
+}
+
+
+  
+
+.eyes{
+  position: absolute;
+  bottom: 53.5%;
+  right: 12.5%;
+  width: 12%;
+  /* z-index: 1; */
+  /* opacity: 0.7; */
+}
+
+
+   
+  
