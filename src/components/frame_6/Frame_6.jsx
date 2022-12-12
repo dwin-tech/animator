@@ -6,6 +6,7 @@ import four from '../../assets/frame_6/four.png'
 import five from '../../assets/frame_6/five.png'
 import './index.css';
 import { handContainer ,fiveContainer} from "."
+import { BlackWindow } from "../frame_1/blackWindow/BlackWindows"
 
 
 
@@ -17,6 +18,8 @@ export function Frame_6() {
     return (
         <div>
             <div className="frameSix">
+            {/* <BlackWindow/> */}
+
                 <img className="one"
                     src={one} alt={"one"} />
                <motion.img

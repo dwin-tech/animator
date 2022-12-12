@@ -1,0 +1,30 @@
+.frameNine {
+    padding-top: 1%;
+    max-width:600px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+
+  .man{
+    width: 100%;
+    position: relative;
+  }
+
+
+  .manEyes{
+    position: absolute;
+    bottom: 44%;
+    left: 36%;
+    width: 41%;
+  }
+
+
+  .smallShine{
+    position: absolute;
+    bottom: 12%;
+    left: 58%;
+    width: 39%;
+    z-index: 4;
+  }

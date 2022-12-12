@@ -2,7 +2,7 @@ import { motion } from "framer-motion"
 
 
 import './index.css';
-import {  boxOne, threeBox, twoBox, birdsContainer} from ".";
+import { boxOne, threeBox, twoBox, birdsContainer, birdsContainerSmall } from ".";
 
 import one from '../../assets/frame_1/one.png'
 import two from '../../assets/frame_1/two.png'
@@ -14,6 +14,10 @@ import { useWindowWidth } from "@react-hook/window-size";
 
 
 export function Frame_1() {
+    const width = useWindowWidth();
+    console.log('====================================',width);
+    console.log(width / 100 * 70);
+    console.log('====================================');
     return (
         <div >
             <div className="frameOne"  >
@@ -37,13 +41,13 @@ export function Frame_1() {
                     className="img"
                     viewport={{ amount: 0.2 }}
                     src={one} alt={"one"} />
-                    <motion.img variants={birdsContainer}
+                <motion.img variants={birdsContainerSmall(width)}
                     initial="birds"
                     // animate="show"
-                    whileInView="show" 
+                    whileInView="show"
                     className="birds" src={birds} alt={"birds"}
                     viewport={{ amount: 0.2 }}
-                     />
+                />
 
                 {/* <img   className="img" src={one} alt={"one"}/> */}
             </div>

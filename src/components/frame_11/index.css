@@ -1,0 +1,39 @@
+.framerEleven {
+    padding-top: 1%;
+    max-width:600px;
+    margin: auto;
+    position: relative;
+  }
+
+
+  .blueWall{
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+
+  .boyImg{
+    position: absolute;
+    bottom: 0%;
+    left: 20%;
+    width: 63%;
+    z-index: 2;
+  }
+
+  .girlImg{
+    position: absolute;
+    bottom: 0%;
+    left: 16%;
+    width: 100%;
+    z-index: 1;
+  }
+
+
+  .messageImg{
+    position: absolute;
+    bottom: 85%;
+    left: 71%;
+    width: 5%;
+    z-index: 3;
+  }

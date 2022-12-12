@@ -8,12 +8,15 @@ import { motion } from "framer-motion"
 
 import './index.css';
 import { handContainer } from '.';
+import { BlackWindow } from '../frame_1/blackWindow/BlackWindows';
 
 
 export function Frame_5() {
     return (
         <div>
             <div className="framerFive">
+            {/* <BlackWindow/> */}
+
                 <img className="girls"
                     src={girls} alt={"girls"} />
                 <motion.img

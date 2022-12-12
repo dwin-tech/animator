@@ -8,12 +8,15 @@ import { useWindowWidth } from "@react-hook/window-size"
 
 import './index.css';
 import { container, listsContainer, messContainer } from '.'
+import { BlackWindow } from '../frame_1/blackWindow/BlackWindows'
 
 
 export function Frame_4() {
     return (
         <div >
             <div className="frameFour">
+            {/* <BlackWindow/> */}
+
                 <img className="room"
                     src={bigRoom} alt={"bigRoom"} />
                 <motion.img
