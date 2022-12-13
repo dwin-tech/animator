@@ -41,7 +41,7 @@ export const messageContainer={
     show: {
         scale: 10,
         y:-30,
-        x: -230,
+        x: -176,
         transition:
         {
             duration: 0.1,

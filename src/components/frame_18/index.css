@@ -1,0 +1,46 @@
+.framerEighteen {
+    padding-top: 1%;
+    max-width:600px;
+    margin: auto;
+    position: relative;
+  }
+
+ 
+  .doors{
+    width: 100%;
+    position: relative;
+    z-index:1;
+  }
+
+
+ .whiteDog{
+    position: absolute;
+    bottom: 4%;
+    left: 52%;
+    width: 57%;
+    z-index: 3;
+  }
+
+  .yellowDog{
+    position: absolute;
+    bottom: 10%;
+    right: 62%;
+    width: 41%;
+    z-index: 2;
+  }
+
+  .horizontal{
+    position: absolute;
+    bottom: 25%;
+    right: 17%;
+    width: 2%;
+    z-index: 4;
+  }
+.vertical{
+    position: absolute;
+    bottom: 84%;
+    left: 47%;
+    width: 2%;
+    z-index: 5;
+}
+  

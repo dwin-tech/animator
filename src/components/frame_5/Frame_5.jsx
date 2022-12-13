@@ -8,7 +8,7 @@ import { motion } from "framer-motion"
 
 import './index.css';
 import { handContainer } from '.';
-import { BlackWindow } from '../frame_1/blackWindow/BlackWindows';
+import { BlackWindow } from '../blackWindow/BlackWindows';
 
 
 export function Frame_5() {

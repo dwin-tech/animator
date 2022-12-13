@@ -35,7 +35,7 @@ export const messageCont = {
         scale: 1,
     },
     show: {
-        scale: 8,
+        scale: 11,
         transition:
         {
             duration:2,

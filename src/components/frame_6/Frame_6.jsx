@@ -6,7 +6,7 @@ import four from '../../assets/frame_6/four.png'
 import five from '../../assets/frame_6/five.png'
 import './index.css';
 import { handContainer ,fiveContainer} from "."
-import { BlackWindow } from "../frame_1/blackWindow/BlackWindows"
+import { BlackWindow } from "../blackWindow/BlackWindows"
 
 
 

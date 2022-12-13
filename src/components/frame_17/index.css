@@ -1,0 +1,51 @@
+.framerSeventeen {
+    padding-top: 1%;
+    max-width:600px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .nightBackground{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  .streetTwo{
+    width: 100%;
+    position: relative;
+    z-index:3;
+  }
+
+
+ .stars{
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  width: 100%;
+  z-index: 2;
+  opacity: 0;
+  }
+
+  .backTwo{
+    position: absolute;
+  bottom: 0%;
+  right: 0%;
+  width: 100%;
+  z-index: 1;
+  }
+
+  .streetWindows{
+    position: absolute;
+    right: 0;
+    width: 100%;
+    z-index: 4;
+  }
+.carLight{
+  position: absolute;
+  bottom: 7%;
+  left: 31%;
+  width: 14%;
+  z-index: 5;
+}
+  

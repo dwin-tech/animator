@@ -8,7 +8,7 @@ import time from '../../assets/frame_8/time.png'
 import twoPerson from '../../assets/frame_8/twoPerson.png'
 
 
-import { BlackWindow } from "../frame_1/blackWindow/BlackWindows";
+import { BlackWindow } from "../blackWindow/BlackWindows";
 import { twoPersonContainer } from ".";
 
 

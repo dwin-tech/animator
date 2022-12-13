@@ -1,0 +1,30 @@
+.thirteen {
+    padding-top: 1%;
+    max-width:600px;
+    margin: auto;
+    position: relative;
+  }
+
+
+  .upsetGuy{
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+
+  .upsetGuyShine{
+    position: absolute;
+    bottom: 3%;
+    left: 41%;
+    width: 57%;
+    z-index: 1;
+  }
+
+  .timeMessage{
+    position: absolute;
+    bottom: 97%;
+    left:16%;
+    width: 1%;
+    z-index: 2;
+}

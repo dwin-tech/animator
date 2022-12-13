@@ -8,7 +8,7 @@ import { useWindowWidth } from "@react-hook/window-size"
 
 import './index.css';
 import { container, listsContainer, messContainer } from '.'
-import { BlackWindow } from '../frame_1/blackWindow/BlackWindows'
+import { BlackWindow } from '../blackWindow/BlackWindows'
 
 
 export function Frame_4() {

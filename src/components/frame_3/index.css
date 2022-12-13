@@ -45,8 +45,8 @@ position: relative;
  }
 
  .message{
-  bottom: 66%;
-    right: 18%;
+  bottom: 84%;
+    right: 23%;
     position: absolute;
     z-index: 4;
     width: 10%;

@@ -54,7 +54,7 @@ export const messContainer = {
         x: 0
     },
     show: {
-        scale: 2,
+        scale: 3,
         x: -15,
         y:-9,
         transition:

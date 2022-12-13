@@ -15,14 +15,13 @@ export const carGreenContainer = {
 
     },
     show: {
-        y: 20,
+        y: 8,
         x: 5,
-        scale: 1.1,
+        scale: 1.4,
         transition
 
     }
 }
-
 
 export const carYellowContainer = {
     hidden: {
@@ -47,7 +46,7 @@ export const carBlueContainer = {
     show: {
         scale: 1.1,
 
-        y: 20,
+        y: 17,
         x: 35,
 
         transition

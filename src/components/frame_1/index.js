@@ -102,8 +102,8 @@ export const birdsContainerSmall = (width) => {
             y: 0,
         },
         show: {
-            y: -(width / 100 * 13),
-            x: -(width / 100 * 13),
+            y: -(width / 100 * 10),
+            x: -(width / 100 * 10),
             transition: {
                 duration: 3,
                 delay: 0.1,

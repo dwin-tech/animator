@@ -1,0 +1,38 @@
+.framerTwelve {
+    padding-top: 1%;
+    max-width:600px;
+    margin: auto;
+    position: relative;
+  }
+
+
+  .phoneBoy{
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+
+ .phoneBoyShine{
+    position: absolute;
+    bottom: 14%;
+    left: 0%;
+    width: 32%;
+    z-index: 1;
+  }
+
+  .phoneBoyMessage{
+    position: absolute;
+    bottom: 88%;
+    left: 76%;
+    width: 4%;
+    z-index: 4;
+  }
+
+  .brows{
+    position: absolute;
+    bottom: 61%;
+    left: 32%;
+    width: 24%;
+    z-index: 2;
+  }

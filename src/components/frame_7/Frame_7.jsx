@@ -14,7 +14,7 @@ import message from '../../assets/frame_7/message.png'
 
 import './index.css';
 import { eyesContainer, fingerContainer, messageContainer } from "."
-import { BlackWindow } from "../frame_1/blackWindow/BlackWindows"
+import { BlackWindow } from "../blackWindow/BlackWindows"
 
 
 

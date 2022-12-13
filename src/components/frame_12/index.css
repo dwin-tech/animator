@@ -1,0 +1,38 @@
+.framerTwelve {
+    padding-top: 1%;
+    max-width:600px;
+    margin: auto;
+    position: relative;
+  }
+
+
+  .sadBoy{
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+
+  .evilGirl{
+    position: absolute;
+    bottom: 0%;
+    left: 46%;
+    width: 40%;
+    z-index: 2;
+  }
+.backCompShine{
+    position: absolute;
+    bottom: 23%;
+    left: 39%;
+    width: 30%;
+    z-index: 1;
+
+}
+
+.checkMessage{
+    position: absolute;
+    top: 16%;
+    left: 49%;
+    width: 4%;
+    z-index: 1;
+}

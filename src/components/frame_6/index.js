@@ -17,13 +17,12 @@ export const handContainer = {
 export const fiveContainer = {
     hidden: {
         scale: 1,
-        x: 0
 
 
     },
     show: {
-        scale: 30,
-        x: 145,
+        scale: 32,
+        
         transition:
         {
             duration: 0.1,

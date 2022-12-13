@@ -48,8 +48,6 @@ export function Frame_1() {
                     className="birds" src={birds} alt={"birds"}
                     viewport={{ amount: 0.2 }}
                 />
-
-                {/* <img   className="img" src={one} alt={"one"}/> */}
             </div>
         </div>
     )
