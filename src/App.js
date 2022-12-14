@@ -18,10 +18,15 @@ import { Frame_15 } from './components/frame_15/Frame_15';
 import { Frame_16 } from './components/frame_16/Frame_16';
 import { Frame_17 } from './components/frame_17/Frame_17';
 import { Frame_18 } from './components/frame_18/frame_18';
+import './App.css';
+import { useEffect, useState } from 'react';
+
+
 
 function App() {
+
   return (
-    <div className="App" style={{ backgroundColor: "black" }}>
+    <div className="App" id ="App" style={{backgroundColor: "black"}}>
       <Header />
       <Frame_1 />
       <Frame_2 />

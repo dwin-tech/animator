@@ -15,7 +15,8 @@ import message from '../../assets/frame_7/message.png'
 import './index.css';
 import { eyesContainer, fingerContainer, messageContainer } from "."
 import { BlackWindow } from "../blackWindow/BlackWindows"
-
+import { useWindowHeight } from "@react-hook/window-size";
+import { useEffect, useRef, useState } from "react";
 
 
 
@@ -23,8 +24,28 @@ import { BlackWindow } from "../blackWindow/BlackWindows"
 
 
 export function Frame_7() {
+    const animItem = useRef();
+    const [vis, setVis] = useState(false)
+    const height = useWindowHeight()
+
+    function animOnScroll(el, height) {
+        const position = window.pageYOffset
+        const offsetTop = el?.current?.offsetTop
+        const animItemHeight = el?.current?.offsetHeight;
+        if (position + (height / 2) > offsetTop + (animItemHeight / 2) ) {
+
+            setVis(true)
+
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener("scroll", () => animOnScroll(animItem, height));
+        return () =>
+            window.removeEventListener("scroll", () => animOnScroll(animItem, height));
+    }, []);
     return (
-        <div>
+        <div ref={animItem}>
             <div className="frameSeven">
             {/* <BlackWindow/> */}
 
@@ -40,8 +61,8 @@ export function Frame_7() {
                 <motion.img
                     variants={fingerContainer}
                     initial="hidden"
-                    whileInView="show"
-                    viewport={{ amount: 0.2 }}
+                    animate={vis ? "show" : "hidden"}
+
                     className="finger"
                     src={finger} alt={"finger"} />
 
@@ -50,14 +71,13 @@ export function Frame_7() {
 
                 <motion.img
                     className="girlsShine"
-                    animate={{
+                    animate={vis ? {
                         opacity: [0.5, 0.9, 0.5],
                         transition:
                         {
-                            repeat: "Infinity", duration: 0.8, ease: "linear",
+                            repeat: "Infinity", duration: 1, ease: "linear",
                         }
-                    }}
-                    viewport={{ amount: 0.2 }}
+                    } : { opacity: 1 }}
                     src={shine} alt={"shine"} />
                 <img className="blondeEyes"
                     src={blondeEyes} alt={"blondeEyes"} />
@@ -66,14 +86,14 @@ export function Frame_7() {
 
                     variants={eyesContainer}
                     initial="hidden"
-                    whileInView="show"
-                    viewport={{ amount: 0.2 }}
+                    animate={vis ? "show" : "hidden"}
+
                     src={brunetEyes} alt={"brunetEyes"} />
                 <motion.img 
                  variants={messageContainer}
                  initial="hidden"
-                 whileInView="show"
-                 viewport={{ amount: 0.2 }}
+                 animate={vis ? "show" : "hidden"}
+
                 
                 className="girlsMessage"
                     src={message} alt={"message"} />

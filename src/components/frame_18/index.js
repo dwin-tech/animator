@@ -43,7 +43,7 @@ export const messageContent = {
         scale: 1,
     },
     show: {
-        scale: 22,
+        scale: 25,
         transition:
         {
             duration:1.5,

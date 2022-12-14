@@ -9,12 +9,34 @@ import message from '../../assets/frame_11/message.png'
 
 import './index.css';
 import { boyContainer, girlContainer, messageCont } from "."
-
+import { useWindowHeight } from "@react-hook/window-size";
+import { useEffect, useRef, useState } from "react";
 
 
 export function Frame_11() {
+
+    const animItem = useRef();
+    const [vis, setVis] = useState(false)
+    const height = useWindowHeight()
+
+    function animOnScroll(el, height) {
+        const position = window.pageYOffset
+        const offsetTop = el?.current?.offsetTop
+        const animItemHeight = el?.current?.offsetHeight;
+        if (position + (height / 2) > offsetTop + (animItemHeight / 2) ) {
+
+            setVis(true)
+
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener("scroll", () => animOnScroll(animItem, height));
+        return () =>
+            window.removeEventListener("scroll", () => animOnScroll(animItem, height));
+    }, []);
     return (
-        <div>
+        <div ref={animItem}>
             <div className="framerEleven">
 
                 <img className="blueWall"

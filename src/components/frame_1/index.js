@@ -46,6 +46,7 @@ export const threeBox = {
     },
     show: {
         y: -23,
+       
         transition: {
             duration: 1,
             delay: 0.3,
@@ -57,23 +58,19 @@ export const threeBox = {
 }
 
 
-// export const birdsContainer = {
-//     hidden: {
-//         x: 0,
-//         y: 0,
-//     },
-//     show: {
-//         y: -220,
-//         x: -220,
-//         transition: {
-//             duration: 3,
-//             delay: 0.1,
-//             forwards: 1,
-//             ease: "linear",
-//         }
-
-//     }
-// }
+export const centerScreenAnimationVariant = {
+    initial:{
+          x:"50%",
+          y:"50%"
+          
+      },
+    animate:{
+      x:"0%",
+      y:"0%",
+      translateX: "-50%",
+      translateY: "-50%",
+    }  
+  }
 
 export const birdsContainerSmall = (width) => {
     if (width < 600) {

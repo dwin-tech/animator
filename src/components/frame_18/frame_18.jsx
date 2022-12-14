@@ -1,6 +1,8 @@
 
 
 import { motion } from "framer-motion"
+import { useEffect, useState } from "react"
+import { useRef } from "react"
 import { messageContent, secondMessageContent, whiteDogContainer, yellowDogContainer } from "."
 import doors from '../../assets/frame_18/doors.png'
 import horizontal from '../../assets/frame_18/horizontal.png'
@@ -17,8 +19,12 @@ import './index.css';
 
 
 export function Frame_18() {
+    const boxRef = useRef();
+ 
     return (
-        <div>
+        <div
+        ref={boxRef}
+        >
             <div className="framerEighteen">
 
                 <img className="doors"

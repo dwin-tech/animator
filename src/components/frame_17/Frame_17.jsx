@@ -1,7 +1,11 @@
 
 
+
+import { useWindowHeight } from "@react-hook/window-size"
 import { motion } from "framer-motion"
-import { carContainer,  nightContainer, onLight, starShow } from "."
+import { useEffect, useState } from "react"
+import { useRef } from "react"
+import animOnScroll, { carContainer, nightContainer, onLight, starShow } from "."
 import back from '../../assets/frame_17/back.png'
 import carLight from '../../assets/frame_17/carLight.png'
 import stars from '../../assets/frame_17/stars.png'
@@ -16,9 +20,52 @@ import './index.css';
 
 
 export function Frame_17() {
+    const animItem = useRef();
+    const [scrollPosition, setScrollPosition] = useState(0);
+
+    const height = useWindowHeight()
+
+
+
+    function animOnScroll(el, height) {
+        const position = window.pageYOffset
+        const offsetTop = el?.current?.offsetTop
+        // console.log("🚀 ~ file: Frame_17.jsx:33 ~ animOnScroll ~ offsetTop", offsetTop)
+        const animItemHeight = el?.current?.offsetHeight;
+        // if (position + (height / 2) == offsetTop + (animItemHeight / 2)) {
+
+        //     console.log('====================================');
+        //     console.log("hasar");
+        //     console.log('====================================');
+
+        // } else {
+        //     console.log('====================================');
+        //     console.log("asasasas");
+        //     console.log('====================================');
+
+        // }
+    }
+
+    useEffect(() => {
+        window.addEventListener("scroll", () => animOnScroll(animItem, height));
+        return () =>
+            window.removeEventListener("scroll", () => animOnScroll(animItem, height));
+    }, []);
+
+
+
+
+
+
+
+
     return (
-        <div>
-            <div className="framerSeventeen">
+        <div
+            ref={animItem}
+        >
+            <div
+
+                className="framerSeventeen">
                 <div className="nightBackground">
 
                     <img className="streetTwo"
@@ -44,10 +91,10 @@ export function Frame_17() {
                         whileInView="show"
                         src={streetWindows} alt={"streetWindows"} />
                     <motion.img className="carLight"
-                    variants={carContainer}
-                    initial="hidden"
-                    // animate="show"
-                    whileInView="show"
+                        variants={carContainer}
+                        initial="hidden"
+                        // animate="show"
+                        whileInView="show"
                         src={carLight} alt={"carLight"} />
                 </div>
 
