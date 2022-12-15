@@ -1,15 +1,16 @@
 .frameThree{
-  padding-top: 1%;
-
   max-width: 600px;
     margin: auto;
     position: relative;
+   
 } 
  
  
  .computerRoom{
   width: 100%;
 position: relative;
+transform: translate3d(0, 0, 0);
+-webkit-transform: translate3d(0, 0, 0);
  
 } 
 .room{
@@ -45,9 +46,16 @@ position: relative;
  }
 
  .message{
+  
   bottom: 84%;
     right: 23%;
     position: absolute;
     z-index: 4;
     width: 10%;
+    filter: none; 
+-webkit-filter: blur(0px); 
+-moz-filter: blur(0px); 
+-ms-filter: blur(0px);
+filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='0');
+
  }   

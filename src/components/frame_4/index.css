@@ -1,5 +1,4 @@
 .frameFour{
-  padding-top: 1%;
 
   max-width: 600px;
     margin: auto;
@@ -40,6 +39,12 @@
   right: 10%;
   width: 13%;
   z-index: 1;
+  filter: none; 
+-webkit-filter: blur(0px); 
+-moz-filter: blur(0px); 
+-ms-filter: blur(0px);
+filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='0');
+
 }
 
 
