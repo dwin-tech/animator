@@ -22,7 +22,7 @@ export function Frame_6() {
     const animItem = useRef();
     const visible = usePageCenter(animItem)
     return (
-        <section ref={animItem} style={{ paddingTop: "3%", scrollSnapAlign: "center" }}>
+        <section ref={animItem} style={{ marginTop: "3%", scrollSnapAlign: "center" }}>
             <motion.div className="frameSix"
                 variants={blackContainer}
                 initial="hidden"

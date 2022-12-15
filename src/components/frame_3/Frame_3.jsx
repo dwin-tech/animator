@@ -19,7 +19,7 @@ export function Frame_3() {
     const visible = usePageCenter(animItem)
 
     return (
-        <section ref={animItem}  style={{ paddingTop: "15%",scrollSnapAlign: "center" }}>
+        <section ref={animItem}  style={{ marginTop: "15%",scrollSnapAlign: "center" }}>
             <motion.div className="frameThree"
                 variants={blackContainer}
                 initial="hidden"

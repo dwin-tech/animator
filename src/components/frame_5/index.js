@@ -7,7 +7,8 @@ const transition = {
 
 export const handContainer = {
     hidden: {
-       rotate:0
+       rotate:0,
+       
 
     },
     show: {

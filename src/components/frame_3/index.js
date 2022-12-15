@@ -4,7 +4,7 @@ export const container = {
         x: 0,
         transition:
         {
-            duration: 1,
+            duration: 0.5,
             delay: 0.1,
             forwards: 1,
             ease: "linear",
@@ -28,7 +28,7 @@ export const messageContainer = {
         x: 0,
         transition:
         {
-            duration: 1,
+            duration: 0.5,
             delay: 0.1,
             forwards: 1,
             ease: "linear",

@@ -18,7 +18,7 @@ export function Frame_2() {
     const animItem = useRef();
     const visible = usePageCenter(animItem)
     return (
-        <section ref={animItem}  style={{ paddingTop: "5%",scrollSnapAlign: "center" }}>
+        <section ref={animItem}  style={{ marginTop: "3%",scrollSnapAlign: "center" }}>
             <motion.div className="frameTwo" 
              variants={blackContainer}
              initial="hidden"
