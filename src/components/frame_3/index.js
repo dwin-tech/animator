@@ -2,6 +2,13 @@
 export const container = {
     hidden: {
         x: 0,
+        transition:
+        {
+            duration: 1,
+            delay: 0.1,
+            forwards: 1,
+            ease: "linear",
+        }
 
     },
     show: {
@@ -18,7 +25,14 @@ export const container = {
 export const messageContainer = {
     hidden: {
         scale: 1,
-        x: 0
+        x: 0,
+        transition:
+        {
+            duration: 1,
+            delay: 0.1,
+            forwards: 1,
+            ease: "linear",
+        }
     },
     show: {
         scale: 5,

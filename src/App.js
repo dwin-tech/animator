@@ -26,31 +26,33 @@ import { useEffect, useState } from 'react';
 function App() {
 
   return (
-    <div className="App" id ="App" style={{backgroundColor: "black"}}>
-      <Header />
+    <article className="App" id="App" style={{
+      height: "100vh",
+      overflowY: "scroll",
+      scrollSnapType: "y mandatory", backgroundColor: "black"
+    }}>
+     <Header /> 
       <Frame_1 />
       <Frame_2 />
-      <Frame_3 />
-      <Frame_4 />
-      <Frame_5 />
+     <Frame_3 />
+  <Frame_4 /> 
+       <Frame_5 />
       <Frame_6 />
       <Frame_7 />
       <Frame_8 />
       <Frame_9 />
-      <Frame_10/>
-      <Frame_11/>
-      <Frame_12/> 
-      <Frame_13/>
-      <Frame_14/>
-      <Frame_15/>
-      <Frame_16/>
-      <Frame_17/>
-      <Frame_18/>
-      
+      <Frame_10 />
+      <Frame_11 />
+      <Frame_12 />
+      <Frame_13 />
+      <Frame_14 />
+      <Frame_15 />
+      <Frame_16 />
+      <Frame_17 />
+      <Frame_18 /> */}
 
 
-      <Header />
-    </div>
+    </article>
   );
 }
 

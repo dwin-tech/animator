@@ -12,12 +12,18 @@ const transition = {
 export const boxOne = {
     hidden: {
         y: 0,
+        transition: {
+            duration: 1,
+            delay: 1.1,
+            forwards: 1,
+            ease: "linear",
+        }
     },
     show: {
         y: -3,
         transition: {
             duration: 1,
-            delay: 0.1,
+            delay: 1.1,
             forwards: 1,
             ease: "linear",
         }
@@ -28,12 +34,18 @@ export const boxOne = {
 export const twoBox = {
     hidden: {
         y: 20,
+        transition: {
+            duration: 0.8,
+            delay: 1.2,
+            forwards: 1,
+            ease: "linear",
+        }
     },
     show: {
         y: -33,
         transition: {
             duration: 0.8,
-            delay: 0.2,
+            delay: 1.2,
             forwards: 1,
             ease: "linear",
         }
@@ -43,13 +55,20 @@ export const twoBox = {
 export const threeBox = {
     hidden: {
         y: 20,
+        transition: {
+            duration: 1,
+            delay: 1.3,
+            forwards: 1,
+            ease: "linear",
+        }
+
     },
     show: {
         y: -23,
        
         transition: {
             duration: 1,
-            delay: 0.3,
+            delay: 1.3,
             forwards: 1,
             ease: "linear",
         }
@@ -78,13 +97,19 @@ export const birdsContainerSmall = (width) => {
             hidden: {
                 x: 0,
                 y: 0,
+                transition: {
+                    duration: 3,
+                    delay: 1.1,
+                    forwards: 1,
+                    ease: "linear",
+                }
             },
             show: {
                 y: -(width / 2),
                 x: -(width / 2),
                 transition: {
                     duration: 3,
-                    delay: 0.1,
+                    delay: 1.1,
                     forwards: 1,
                     ease: "linear",
                 }
@@ -97,13 +122,19 @@ export const birdsContainerSmall = (width) => {
         hidden: {
             x: 0,
             y: 0,
+            transition: {
+                duration: 3,
+                delay: 1.1,
+                forwards: 1,
+                ease: "linear",
+            }
         },
         show: {
             y: -(width / 100 * 10),
             x: -(width / 100 * 10),
             transition: {
                 duration: 3,
-                delay: 0.1,
+                delay: 1.1,
                 forwards: 1,
                 ease: "linear",
             }

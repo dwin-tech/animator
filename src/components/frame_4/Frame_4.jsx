@@ -12,40 +12,21 @@ import mess from '../../assets/frame_4/mess.png'
 import './index.css';
 import { container, listsContainer, messContainer } from '.'
 import { BlackWindow } from '../blackWindow/BlackWindows'
+import { usePageCenter } from "../usePageCenter";
+import { blackContainer } from "../blackWindow";
 
 
 export function Frame_4() {
-
     const animItem = useRef();
-    const [vis, setVis] = useState(false)
-    const height = useWindowHeight()
-
-    function animOnScroll(el, height) {
-        const position = window.pageYOffset
-        const offsetTop = el?.current?.offsetTop
-        const animItemHeight = el?.current?.offsetHeight;
-        if (position + (height / 2) > offsetTop + (animItemHeight / 2) ) {
-
-            setVis(true)
-
-        }
-    }
-
-    useEffect(() => {
-        window.addEventListener("scroll", () => animOnScroll(animItem, height));
-        return () =>
-            window.removeEventListener("scroll", () => animOnScroll(animItem, height));
-    }, []);
-
-
-
-
-
+    const visible = usePageCenter(animItem)
 
     return (
-        <div ref={animItem}>
-            <div className="frameFour">
-            {/* <BlackWindow/> */}
+        <section ref={animItem} style={{ paddingTop: "15%", scrollSnapAlign: "center" }}>
+            <motion.div className="frameFour"
+
+                variants={blackContainer}
+                initial="hidden"
+                whileInView={visible ? "show" : "hidden"}>
 
                 <img className="room"
                     src={bigRoom} alt={"bigRoom"} />
@@ -53,8 +34,7 @@ export function Frame_4() {
                     className="runningGuy"
                     variants={container}
                     initial="hidden"
-                    animate={vis ? "show" : "hidden"}
-
+                    whileInView={visible ? "show" : "hidden"}
                     src={runing} alt={"runing"}
 
                 />
@@ -62,20 +42,18 @@ export function Frame_4() {
 
                     variants={listsContainer}
                     initial="hidden"
-                    animate={vis ? "show" : "hidden"}
-
+                    whileInView={visible ? "show" : "hidden"}
                     className="lists" src={lists} alt={"lists"} />
                 <motion.img
-                
-                variants={messContainer}
-                initial="hidden"
-                animate={vis ? "show" : "hidden"}
 
-                
-                
-                className="mess" src={mess} alt={"mess"} />
+                    variants={messContainer}
+                    initial="hidden"
+                    whileInView={visible ? "show" : "hidden"}
 
-            </div>
-        </div>
+
+                    className="mess" src={mess} alt={"mess"} />
+
+            </motion.div>
+        </section>
     )
 }

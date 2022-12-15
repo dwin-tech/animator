@@ -1,10 +1,17 @@
 export const blackContainer = {
     hidden: {
-        opacity: 1,
+        opacity: 0.2,
+        transition:
+        {
+            duration: 3,
+            delay: 0,
+            forwards: 1,
+            ease: "linear",
+        }
 
     },
     show: {
-        opacity: 0,
+        opacity: 1,
         // y: -4,
         transition:
         {
@@ -13,5 +20,5 @@ export const blackContainer = {
             forwards: 1,
             ease: "linear",
         }
-    }
+    },
 }

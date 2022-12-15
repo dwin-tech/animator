@@ -8,8 +8,10 @@ import one from '../../assets/frame_1/one.png'
 import two from '../../assets/frame_1/two.png'
 import three from '../../assets/frame_1/three.png'
 import birds from '../../assets/frame_1/birds.png'
-import { useWindowHeight, useWindowWidth } from "@react-hook/window-size";
-import { useEffect, useRef, useState } from "react";
+import { useWindowWidth } from "@react-hook/window-size";
+import { useRef } from "react";
+import { usePageCenter } from "../usePageCenter";
+import { blackContainer } from "../blackWindow";
 
 
 
@@ -17,63 +19,38 @@ import { useEffect, useRef, useState } from "react";
 export function Frame_1() {
     const width = useWindowWidth();
     const animItem = useRef();
-    const [vis, setVis] = useState(false)
-    const height = useWindowHeight()
-
-    function animOnScroll(el, height) {
-        const position = window.pageYOffset
-        const offsetTop = el?.current?.offsetTop
-        const animItemHeight = el?.current?.offsetHeight;
-        if (position + (height / 2) > offsetTop + (animItemHeight / 2) ) {
-
-            setVis(true)
-
-        }
-    }
-
-    useEffect(() => {
-        window.addEventListener("scroll", () => animOnScroll(animItem, height));
-        return () =>
-            window.removeEventListener("scroll", () => animOnScroll(animItem, height));
-    }, []);
-
-
-
-
-
-
+    const visible = usePageCenter(animItem)
     return (
-        <div ref={animItem}>
-            <div className="frameOne"    >
+        <section style={{ paddingTop: "3%" ,scrollSnapAlign: "center"}}>
+            <div ref={animItem}>
+                <motion.div className="frameOne"
+                    variants={blackContainer}
+                    initial="hidden"
+                    whileInView={visible ? "show" : "hidden"}
+                >
+                    <motion.img variants={twoBox}
+                        initial="hidden"
+                        whileInView={visible ? "show" : "hidden"}
+                        className="img2" src={two} alt={"two"}
+                    />
+                    <motion.img className="img3" variants={threeBox}
+                        initial="hidden"
+                        animate={visible ? "show" : "hidden"}
+                        src={three} alt={"three"}
+                    />
+                    <motion.img variants={boxOne}
+                        initial="hidden"
+                        whileInView={visible ? "show" : "hidden"}
+                        className="img"
 
-                <motion.img variants={twoBox}
-                    initial="hidden"
-                    animate={vis ? "show" : "hidden"}
-                    className="img2" src={two} alt={"two"}
-                    viewport={{ amount: 0.2 }} />
-                <motion.img className="img3" variants={threeBox}
-                    initial="hidden"
-                    animate={vis ? "show" : "hidden"}
-                    src={three} alt={"three"}
-                    viewport={{ amount: 0.2 }} />
-                <motion.img variants={boxOne}
-                    initial="hidden"
-                    animate={vis ? "show" : "hidden"}
-                    className="img"
-                    viewport={{ amount: 0.2 }}
-                    src={one} alt={"one"} />
-                <motion.img variants={birdsContainerSmall(width)}
-                    initial="hidden"
-                    animate={vis ? "show" : "hidden"}
-                    className="birds" src={birds} alt={"birds"}
-                    viewport={{ amount: 0.2 }}
-                />
-
-
+                        src={one} alt={"one"} />
+                    <motion.img variants={birdsContainerSmall(width)}
+                        initial="hidden"
+                        whileInView={visible ? "show" : "hidden"}
+                        className="birds" src={birds} alt={"birds"}
+                    />
+                </motion.div>
             </div>
-
-
-
-        </div>
+        </section>
     )
 }

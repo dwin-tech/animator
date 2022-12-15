@@ -17,6 +17,8 @@ import { eyesContainer, fingerContainer, messageContainer } from "."
 import { BlackWindow } from "../blackWindow/BlackWindows"
 import { useWindowHeight } from "@react-hook/window-size";
 import { useEffect, useRef, useState } from "react";
+import { blackContainer } from "../blackWindow"
+import { usePageCenter } from "../usePageCenter"
 
 
 
@@ -25,29 +27,13 @@ import { useEffect, useRef, useState } from "react";
 
 export function Frame_7() {
     const animItem = useRef();
-    const [vis, setVis] = useState(false)
-    const height = useWindowHeight()
-
-    function animOnScroll(el, height) {
-        const position = window.pageYOffset
-        const offsetTop = el?.current?.offsetTop
-        const animItemHeight = el?.current?.offsetHeight;
-        if (position + (height / 2) > offsetTop + (animItemHeight / 2) ) {
-
-            setVis(true)
-
-        }
-    }
-
-    useEffect(() => {
-        window.addEventListener("scroll", () => animOnScroll(animItem, height));
-        return () =>
-            window.removeEventListener("scroll", () => animOnScroll(animItem, height));
-    }, []);
+    const visible = usePageCenter(animItem)
     return (
-        <div ref={animItem}>
-            <div className="frameSeven">
-            {/* <BlackWindow/> */}
+        <section ref={animItem} style={{ paddingTop: "3%", scrollSnapAlign: "center" }}>
+            <motion.div className="frameSeven"
+                variants={blackContainer}
+                initial="hidden"
+                whileInView={visible ? "show" : "hidden"}            >
 
                 <img className="back"
                     src={back} alt={"back"} />
@@ -61,17 +47,15 @@ export function Frame_7() {
                 <motion.img
                     variants={fingerContainer}
                     initial="hidden"
-                    animate={vis ? "show" : "hidden"}
+                    whileInView={visible ? "show" : "hidden"}
 
                     className="finger"
                     src={finger} alt={"finger"} />
 
-                {/* <img className="shine"
-                    src={shine} alt={"shine"} /> */}
 
                 <motion.img
                     className="girlsShine"
-                    animate={vis ? {
+                    animate={visible ? {
                         opacity: [0.5, 0.9, 0.5],
                         transition:
                         {
@@ -86,18 +70,18 @@ export function Frame_7() {
 
                     variants={eyesContainer}
                     initial="hidden"
-                    animate={vis ? "show" : "hidden"}
+                    whileInView={visible ? "show" : "hidden"}
 
                     src={brunetEyes} alt={"brunetEyes"} />
-                <motion.img 
-                 variants={messageContainer}
-                 initial="hidden"
-                 animate={vis ? "show" : "hidden"}
+                <motion.img
+                    variants={messageContainer}
+                    initial="hidden"
+                    whileInView={visible ? "show" : "hidden"}
 
-                
-                className="girlsMessage"
+
+                    className="girlsMessage"
                     src={message} alt={"message"} />
-            </div>
-        </div>
+            </motion.div>
+        </section>
     )
 }

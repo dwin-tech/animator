@@ -10,6 +10,9 @@ import twoPerson from '../../assets/frame_8/twoPerson.png'
 
 import { BlackWindow } from "../blackWindow/BlackWindows";
 import { twoPersonContainer } from ".";
+import { usePageCenter } from "../usePageCenter";
+import { blackContainer } from "../blackWindow";
+import { useRef } from "react";
 
 
 
@@ -19,37 +22,43 @@ import { twoPersonContainer } from ".";
 
 
 export function Frame_8() {
+
+    const animItem = useRef();
+    const visible = usePageCenter(animItem)
     return (
-        <div>
-            <div className="frameEight">
-                {/* <BlackWindow /> */}
+        <section ref={animItem}  style={{ paddingTop: "3%",scrollSnapAlign: "center" }}>
+            <motion.div className="frameEight"
+            
+            variants={blackContainer}
+            initial="hidden"
+            whileInView={visible ? "show" : "hidden"}          
+            >
                 <img className="employee"
                     src={employee} alt={"employee"} />
                 <img className="window"
                     src={window} alt={"window"} />
                 <motion.img className="computerShine"
-                    animate={{
+                    animate={visible?{
                         opacity: [0.5, 0.7, 0.5],
                         transition:
                         {
                             repeat: "Infinity", duration: 0.8, ease: "linear",
                         }
-                    }}
+                    }:{opacity:1}}
                     viewport={{ amount: 0.2 }}
                     src={computerShine} alt={"computerShine"} />
                 <motion.img className="twoPerson"
 
                     variants={twoPersonContainer}
                     initial="hidden"
-                    // animate="show"
-                    whileInView="show"
+                    whileInView={visible ? "show" : "hidden"}
 
 
                     src={twoPerson} alt={"twoPerson"} />
                 <img className="time"
                     src={time} alt={"twoPetimerson"} />
 
-            </div>
-        </div>
+            </motion.div>
+        </section>
     )
 }

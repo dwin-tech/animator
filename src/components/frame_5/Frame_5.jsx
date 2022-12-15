@@ -13,46 +13,30 @@ import { motion } from "framer-motion"
 import './index.css';
 import { handContainer } from '.';
 import { BlackWindow } from '../blackWindow/BlackWindows';
+import { usePageCenter } from "../usePageCenter";
+import { blackContainer } from "../blackWindow";
 
 
 export function Frame_5() {
     const animItem = useRef();
-    const [vis, setVis] = useState(false)
-    const height = useWindowHeight()
-
-    function animOnScroll(el, height) {
-        const position = window.pageYOffset
-        const offsetTop = el?.current?.offsetTop
-        const animItemHeight = el?.current?.offsetHeight;
-        if (position + (height / 2) > offsetTop + (animItemHeight / 2)) {
-
-            setVis(true)
-
-        }
-    }
-
-    useEffect(() => {
-        window.addEventListener("scroll", () => animOnScroll(animItem, height));
-        return () =>
-            window.removeEventListener("scroll", () => animOnScroll(animItem, height));
-    }, []);
-
+    const visible = usePageCenter(animItem)
     return (
-        <div ref={animItem}>
-            <div className="framerFive">
-                {/* <BlackWindow/> */}
-
+        <section ref={animItem} style={{ paddingTop: "15%", scrollSnapAlign: "center" }}>
+            <motion.div className="framerFive"
+                variants={blackContainer}
+                initial="hidden"
+                whileInView={visible ? "show" : "hidden"}>
                 <img className="girls"
                     src={girls} alt={"girls"} />
                 <motion.img
                     variants={handContainer}
                     initial="hidden"
-                    animate={vis ? "show" : "hidden"}
+                    whileInView={visible ? "show" : "hidden"}
 
                     className="hand" src={hand} alt={"hand"} />
 
                 <motion.img className="eyes"
-                    animate={vis ? {
+                    animate={visible ? {
                         opacity: [0.7, 0.9, 0.7],
                         transition:
                         {
@@ -61,7 +45,7 @@ export function Frame_5() {
                     } : { opacity: 1 }}
                     src={eyes} alt={"eyes"} />
 
-            </div>
-        </div>
+            </motion.div>
+        </section>
     )
 }

@@ -1,36 +1,30 @@
 import { useWindowHeight } from "@react-hook/window-size";
 import { useEffect, useRef, useState } from "react";
 
-export function usePageCenter(animItem) {
+export const usePageCenter = (animItem) => {
+    const [visible, setVisible] = useState(false)
     const height = useWindowHeight()
-console.log('====================================');
-console.log(height);
-console.log('====================================');
-    const [vis, setVis] = useState(false)
-
-
-    console.log(vis)
-    useEffect(() => {
-        window.addEventListener("scroll", () => animOnScroll(animItem, height));
-        return () =>
-            window.removeEventListener("scroll", () => animOnScroll(animItem, height));
-    }, []);
-
-
-    function animOnScroll(height) {
-        const position = window.pageYOffset
+    function animOnScroll() {
+        const position = window.pageYOffset || document.getElementById('App').scrollTop;
+        console.log("🚀 ~ file: usePageCenter.js:9 ~ animOnScroll ~ position", position)
         const offsetTop = animItem?.current?.offsetTop
+        console.log("🚀 ~ foffsetTop", offsetTop)
         const animItemHeight = animItem?.current?.offsetHeight;
-        if (position + (height / 2) > offsetTop + (animItemHeight / 2)) {
-            setVis(true)
+        const start = position + (height / 2)
+        const end = offsetTop + (animItemHeight / 2)
+        if (start >= end-30 && start <= end + 150) {
+            setVisible(true)
         }
         else {
-            setVis(false)
+            setVisible(false)
         }
     }
-    return vis
+    useEffect(() => {
+        window.addEventListener("scroll", () => animOnScroll(animItem, height), true);
+        return () =>
+            window.removeEventListener("scroll", () => animOnScroll(animItem, height));
+    }, [animItem, height]);
 
-
-
+    return visible
 
 }

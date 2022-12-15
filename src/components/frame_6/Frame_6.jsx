@@ -5,11 +5,13 @@ import three from '../../assets/frame_6/three.png'
 import four from '../../assets/frame_6/four.png'
 import five from '../../assets/frame_6/five.png'
 import './index.css';
-import { handContainer ,fiveContainer} from "."
+import { handContainer, fiveContainer } from "."
 import { BlackWindow } from "../blackWindow/BlackWindows"
 
 import { useWindowHeight } from "@react-hook/window-size";
 import { useEffect, useRef, useState } from "react";
+import { usePageCenter } from "../usePageCenter"
+import { blackContainer } from "../blackWindow"
 
 
 
@@ -17,62 +19,34 @@ import { useEffect, useRef, useState } from "react";
 
 export function Frame_6() {
 
-
     const animItem = useRef();
-    const [vis, setVis] = useState(false)
-    const height = useWindowHeight()
-
-    function animOnScroll(el, height) {
-        const position = window.pageYOffset
-        const offsetTop = el?.current?.offsetTop
-        const animItemHeight = el?.current?.offsetHeight;
-        if (position + (height / 2) > offsetTop + (animItemHeight / 2) ) {
-
-            setVis(true)
-
-        }
-    }
-
-    useEffect(() => {
-        window.addEventListener("scroll", () => animOnScroll(animItem, height));
-        return () =>
-            window.removeEventListener("scroll", () => animOnScroll(animItem, height));
-    }, []);
-
-
+    const visible = usePageCenter(animItem)
     return (
-        <div  ref={animItem}>
-            <div className="frameSix">
-            {/* <BlackWindow/> */}
-
+        <section ref={animItem} style={{ paddingTop: "3%", scrollSnapAlign: "center" }}>
+            <motion.div className="frameSix"
+                variants={blackContainer}
+                initial="hidden"
+                whileInView={visible ? "show" : "hidden"}   >
                 <img className="one"
                     src={one} alt={"one"} />
-               <motion.img
+                <motion.img
                     variants={handContainer}
                     initial="hidden"
-                    animate={vis ? "show" : "hidden"}
+                    whileInView={visible ? "show" : "hidden"}
 
                     className="two" src={two} alt={"two"} />
-                {/* <motion.img
-                    // variants={handContainer}
-                    // initial="hidden"
-                    // whileInView="show"
-                    // viewport={{ amount: 0.2 }}
-                    className="three" src={three} alt={"three"} />  */}
 
-            <motion.img
-                // variants={handContainer}
-                // initial="hidden"
-                // whileInView="show"
-                // viewport={{ amount: 0.2 }}
-                className="three" src={four} alt={"four"} />
-                 <motion.img
-                variants={fiveContainer}
-                initial="hidden"
-                animate={vis ? "show" : "hidden"}
 
-                className="five" src={five} alt={"five"} />
-        </div>
-        </div>
+                <motion.img
+
+                    className="three" src={four} alt={"four"} />
+                <motion.img
+                    variants={fiveContainer}
+                    initial="hidden"
+                    whileInView={visible ? "show" : "hidden"}
+
+                    className="five" src={five} alt={"five"} />
+            </motion.div>
+        </section>
     )
 }
