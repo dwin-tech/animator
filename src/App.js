@@ -29,16 +29,16 @@ function App() {
     <article className="App" id="App" style={{
       height: "100vh",
       overflowY: "scroll",
-      overflowX:"hidden",
+      overflowX: "hidden",
       scrollSnapType: "y mandatory", backgroundColor: "black",
       scrollPadding: "40px"
     }}>
-     <Header /> 
+      <Header />
       <Frame_1 />
       <Frame_2 />
-     <Frame_3 />
-  <Frame_4 /> 
-       <Frame_5 />
+      <Frame_3 />
+      <Frame_4 />
+      <Frame_5 />
       <Frame_6 />
       <Frame_7 />
       <Frame_8 />
@@ -51,7 +51,8 @@ function App() {
       <Frame_15 />
       <Frame_16 />
       <Frame_17 />
-      <Frame_18 /> 
+      <Frame_18 />
+      <Header />
 
 
     </article>

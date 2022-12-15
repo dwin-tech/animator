@@ -32,12 +32,12 @@ export function Frame_3() {
                         className="boy"
                         variants={container}
                         initial="hidden"
-                        whileInView={visible ? "show" : "hidden"}
+                        animate={visible ? "show" : "hidden"}
                         src={boy} alt={"boy"} />
                     <motion.div className="shine"
                         variants={container}
                         initial="hidden"
-                        whileInView={visible ? "show" : "hidden"}
+                        animate={visible ? "show" : "hidden"}
                     >
                         <motion.img
                             className="shineImg"

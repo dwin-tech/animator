@@ -7,7 +7,7 @@ import blue from '../../assets/frame_2/blue.png'
 import yellow from '../../assets/frame_2/yellow.png'
 import green from '../../assets/frame_2/green.png'
 import './index.css';
-import { carBlueContainer, carGreenContainer, carYellowContainer } from '.';
+import { carBlueCont,  carGreenContainer, carYellowContainer } from '.';
 import { usePageCenter } from "../usePageCenter";
 import { blackContainer } from "../blackWindow";
 
@@ -18,28 +18,33 @@ export function Frame_2() {
     const animItem = useRef();
     const visible = usePageCenter(animItem)
     return (
-        <section ref={animItem}  style={{ marginTop: "3%",scrollSnapAlign: "center" }}>
-            <motion.div className="frameTwo" 
-             variants={blackContainer}
-             initial="hidden"
-             whileInView={visible ? "show" : "hidden"}  >
-          <img className="street"
-                    src={street} alt={"street"} /> 
-             <motion.img className="green"
+        <section ref={animItem} style={{ marginTop: "10%", scrollSnapAlign: "center" }}>
+            <motion.div className="frameTwo"
+                variants={blackContainer}
+                initial="hidden"
+                animate={visible ? "show" : "hidden"}  >
+                <img className="street"
+                    src={street} alt={"street"} />
+                <motion.img className="green"
                     variants={carGreenContainer}
                     initial="hidden"
-                    whileInView={visible ? "show" : "hidden"}
-                     src={green} alt={"green"} />
+                    exit="exit"
+                    animate={visible ? "show" :  "hidden"}
+                    src={green} alt={"green"} />i
                 <motion.img className="yellow"
                     variants={carYellowContainer}
                     initial="hidden"
-                    whileInView={visible ? "show" : "hidden"}
+                    exit="exit"
+
+                    animate={visible ? "show" : "hidden"}
                     src={yellow} alt={"yellow"} />
                 <motion.img className="blue"
-                    variants={carBlueContainer}
+                    variants={carBlueCont}
                     initial="hidden"
-                    whileInView={visible ? "show" : "hidden"}
-                    src={blue} alt={"blue"} />  
+                    exit="exit"
+
+                    animate={visible ? "show" : "hidden"}
+                    src={blue} alt={"blue"} />
             </motion.div>
         </section>
     )

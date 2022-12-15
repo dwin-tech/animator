@@ -6,7 +6,7 @@ export const fingerContainer = {
     show: {
         rotate: "-30deg",
         transition: {
-            repeat: Infinity,
+            repeat: 3,
             duration: 0.7,
             // ease: "linear",
         }
@@ -24,7 +24,7 @@ export const eyesContainer = {
         x: 3,
         // y: -4,
         transition: {
-            repeat: Infinity,
+            repeat: 3,
             duration: 2,
             // ease: "linear",
         }
@@ -39,7 +39,7 @@ export const messageContainer={
 
     },
     show: {
-        scale: 10,
+        scale: 12,
         y:-30,
         x: -176,
         transition:

@@ -12,12 +12,7 @@ const transition = {
 export const boxOne = {
     hidden: {
         y: 0,
-        transition: {
-            duration: 1,
-            delay: 1.1,
-            forwards: 1,
-            ease: "linear",
-        }
+        
     },
     show: {
         y: -3,
@@ -28,18 +23,16 @@ export const boxOne = {
             ease: "linear",
         }
 
+    },
+    exit:{
+        y: -3,
     }
 }
 
 export const twoBox = {
     hidden: {
         y: 20,
-        transition: {
-            duration: 0.8,
-            delay: 1.2,
-            forwards: 1,
-            ease: "linear",
-        }
+        
     },
     show: {
         y: -33,
@@ -50,6 +43,9 @@ export const twoBox = {
             ease: "linear",
         }
 
+    },
+    exit:{
+        y: -33,
     }
 }
 export const threeBox = {
@@ -72,7 +68,9 @@ export const threeBox = {
             forwards: 1,
             ease: "linear",
         }
-
+    },
+    exit:{
+        y: -23,
     }
 }
 
@@ -97,12 +95,6 @@ export const birdsContainerSmall = (width) => {
             hidden: {
                 x: 0,
                 y: 0,
-                transition: {
-                    duration: 3,
-                    delay: 1.1,
-                    forwards: 1,
-                    ease: "linear",
-                }
             },
             show: {
                 y: -(width / 2),
@@ -113,7 +105,10 @@ export const birdsContainerSmall = (width) => {
                     forwards: 1,
                     ease: "linear",
                 }
-
+            },
+            exit:{
+                y: -(width / 2),
+                x: -(width / 2),
             }
         }
     }
@@ -122,12 +117,6 @@ export const birdsContainerSmall = (width) => {
         hidden: {
             x: 0,
             y: 0,
-            transition: {
-                duration: 3,
-                delay: 1.1,
-                forwards: 1,
-                ease: "linear",
-            }
         },
         show: {
             y: -(width / 100 * 10),
@@ -139,6 +128,10 @@ export const birdsContainerSmall = (width) => {
                 ease: "linear",
             }
 
+        },
+        exit:{
+            y: -(width / 100 * 10),
+            x: -(width / 100 * 10),
         }
     }
 }

@@ -3,11 +3,11 @@ export const blackContainer = {
         opacity: 0.2,
         transition:
         {
-            duration: 3,
+            duration: 1,
             delay: 0,
             forwards: 1,
             ease: "linear",
-        }
+        },
 
     },
     show: {

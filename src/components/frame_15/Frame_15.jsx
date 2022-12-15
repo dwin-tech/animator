@@ -9,37 +9,44 @@ import message from '../../assets/frame_15/message.png'
 
 import './index.css';
 import { messageContent } from ".";
+import { blackContainer } from "../blackWindow";
+import { useRef } from "react";
+import { usePageCenter } from "../usePageCenter";
 
 
 
 
 export function Frame_15() {
+   
+    const animItem = useRef();
+    const visible = usePageCenter(animItem)
     return (
-        <div>
-            <div className="framerFifteen">
+        <section ref={animItem} style={{ marginTop: "10%", scrollSnapAlign: "center" }}>
+            <motion.div className="framerFifteen"
+                variants={blackContainer}
+                initial="hidden"
+                whileInView={visible ? "show" : "hidden"}   >
 
                 <img className="slipBoy"
                     src={boy} alt={"boy"} />
                 <motion.img className="slipBoyShine"
-                    animate={{
+                    animate={visible?{
                         opacity: [0.5, 1, 0.5],
                         transition:
                         {
                             repeat: "Infinity", duration: 1, ease: "linear",
                         }
-                    }}
-                    viewport={{ amount: 0.2 }}
+                    }:{opacity:1}}
                     src={shine} alt={"shine"} />
                 <motion.img className="slipBoyMessage"
 
                     variants={messageContent}
                     initial="hidden"
-                    // animate="show"
-                    whileInView="show"
+                    whileInView={visible ? "show" : "hidden"}
                     src={message} alt={"message"} />
 
 
-            </div>
-        </div>
+            </motion.div>
+        </section>
     )
 }

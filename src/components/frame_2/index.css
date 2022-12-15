@@ -12,26 +12,27 @@
 
 
 .blue{
-  bottom: 3%;
-  right: 13%;
+  bottom: 8%;
+  right: 18%;
   position: absolute;
   z-index: 4;
-  width: 28%;
+  width: 27%;
    
   }
  
   .yellow{
-   width: 14%;
-   bottom: 4%;
-   left: 39%;
-   position: absolute;
-   z-index: 1;
+    width: 14%;
+    bottom: 8%;
+    left: 42%;
+    position: absolute;
+    z-index: 1;
   } 
  
   .green{
-    width: 7%;
-    bottom: 7%;
+    width: 8%;
+    bottom: 13%;
     left: 30%;
     position: absolute;
     z-index: 1;
+
   } 

@@ -6,7 +6,7 @@ export const twoPersonContainer = {
             show: {
                 x: 423,
                 transition: {
-                    repeat: Infinity,
+                    repeat: 1,
 
                     duration: 3,
                     ease: "linear",

@@ -12,31 +12,18 @@ import { evilGirlContainer, messageCont } from "."
 
 import { useWindowHeight } from "@react-hook/window-size";
 import { useEffect, useRef, useState } from "react";
+import { usePageCenter } from "../usePageCenter"
+import { blackContainer } from "../blackWindow"
 
 export function Frame_12() {
     const animItem = useRef();
-    const [vis, setVis] = useState(false)
-    const height = useWindowHeight()
-
-    function animOnScroll(el, height) {
-        const position = window.pageYOffset
-        const offsetTop = el?.current?.offsetTop
-        const animItemHeight = el?.current?.offsetHeight;
-        if (position + (height / 2) > offsetTop + (animItemHeight / 2) ) {
-
-            setVis(true)
-
-        }
-    }
-
-    useEffect(() => {
-        window.addEventListener("scroll", () => animOnScroll(animItem, height));
-        return () =>
-            window.removeEventListener("scroll", () => animOnScroll(animItem, height));
-    }, []);
+    const visible = usePageCenter(animItem)
     return (
-        <div ref={animItem}>
-            <div className="framerTwelve">
+        <section ref={animItem} style={{ marginTop: "10%", scrollSnapAlign: "center" }}>
+            <motion.div className="framerTwelve"
+                variants={blackContainer}
+                initial="hidden"
+                whileInView={visible ? "show" : "hidden"}   >
 
                 <img className="sadBoy"
                     src={boy} alt={"boy"} />
@@ -44,30 +31,26 @@ export function Frame_12() {
 
                     variants={evilGirlContainer}
                     initial="hidden"
-                    // animate="show"
-                    whileInView="show"
-                    viewport={{ amount: 0.2 }}
+                    whileInView={visible ? "show" : "hidden"} 
                     src={girl} alt={"girl"} />
 
                 <motion.img className="backCompShine"
-                animate={{
+                animate={visible?{
                     opacity: [0.6, 0.9, 0.6],
                     transition:
                     {
                         repeat: "Infinity", duration: 1, ease: "linear",
                     }
-                }}
-                viewport={{ amount: 0.2 }}
+                }:{opacity:1}}
                     src={shine} alt={"shine"} />
 
                 <motion.img className="checkMessage"
                   variants={messageCont}
                   initial="hidden"
-                  // animate="show"
-                  whileInView="show"
+                  whileInView={visible ? "show" : "hidden"} 
                     src={message} alt={"message"} />
 
-            </div>
-        </div>
+            </motion.div>
+        </section>
     )
 }

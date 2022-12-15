@@ -1,10 +1,13 @@
 
 
 import { motion } from "framer-motion"
+import { useRef } from "react";
 import { messageCont } from ".";
 import boy from '../../assets/frame_13/boy.png'
 import shine from '../../assets/frame_13/shine.png'
 import timeMessage from '../../assets/frame_13/timeMessage.png'
+import { blackContainer } from "../blackWindow";
+import { usePageCenter } from "../usePageCenter";
 
 
 import './index.css';
@@ -12,31 +15,34 @@ import './index.css';
 
 
 export function Frame_13() {
+    const animItem = useRef();
+    const visible = usePageCenter(animItem)
     return (
-        <div>
-            <div className="thirteen">
+        <section ref={animItem} style={{ marginTop: "10%", scrollSnapAlign: "center" }}>
+            <motion.div className="thirteen"
+                variants={blackContainer}
+                initial="hidden"
+                whileInView={visible ? "show" : "hidden"}   >
 
                 <img className="upsetGuy"
                     src={boy} alt={"boy"} />
                 <motion.img className="upsetGuyShine"
-                    animate={{
+                    animate={visible ? {
                         opacity: [0.5, 1, 0.5],
                         transition:
                         {
                             repeat: "Infinity", duration: 1, ease: "linear",
                         }
-                    }}
-                    viewport={{ amount: 0.2 }}
+                    } : { opacity: 1 }}
 
                     src={shine} alt={"shine"} />
                 <motion.img className="timeMessage"
 
                     variants={messageCont}
                     initial="hidden"
-                    // animate="show"
-                    whileInView="show"
+                    whileInView={visible ? "show" : "hidden"}
                     src={timeMessage} alt={"timeMessage"} />
-            </div>
-        </div>
+            </motion.div>
+        </section>
     )
 }

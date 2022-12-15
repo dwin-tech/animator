@@ -1,6 +1,13 @@
 export const girlContainer={
     hidden: {
         x: 0,
+        transition:
+        {
+            duration:2,
+            delay: 0.1,
+            forwards: 1,
+            ease: "linear",
+        }
     },
     show: {
        x:-100,
@@ -17,6 +24,13 @@ export const girlContainer={
 export const boyContainer={
     hidden: {
         x: 0,
+        transition:
+        {
+            duration:2,
+            delay: 0.1,
+            forwards: 1,
+            ease: "linear",
+        }
     },
     show: {
        x:100,

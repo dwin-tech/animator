@@ -11,34 +11,20 @@ import './index.css';
 import { boyContainer, girlContainer, messageCont } from "."
 import { useWindowHeight } from "@react-hook/window-size";
 import { useEffect, useRef, useState } from "react";
+import { usePageCenter } from "../usePageCenter"
+import { blackContainer } from "../blackWindow"
 
 
 export function Frame_11() {
 
     const animItem = useRef();
-    const [vis, setVis] = useState(false)
-    const height = useWindowHeight()
-
-    function animOnScroll(el, height) {
-        const position = window.pageYOffset
-        const offsetTop = el?.current?.offsetTop
-        const animItemHeight = el?.current?.offsetHeight;
-        if (position + (height / 2) > offsetTop + (animItemHeight / 2) ) {
-
-            setVis(true)
-
-        }
-    }
-
-    useEffect(() => {
-        window.addEventListener("scroll", () => animOnScroll(animItem, height));
-        return () =>
-            window.removeEventListener("scroll", () => animOnScroll(animItem, height));
-    }, []);
+    const visible = usePageCenter(animItem)
     return (
-        <div ref={animItem}>
-            <div className="framerEleven">
-
+        <section ref={animItem} style={{ marginTop: "10%", scrollSnapAlign: "center" }}>
+            <motion.div className="framerEleven"
+                variants={blackContainer}
+                initial="hidden"
+                whileInView={visible ? "show" : "hidden"}   >
                 <img className="blueWall"
                     src={wall} alt={"wall"} />
 
@@ -46,29 +32,23 @@ export function Frame_11() {
                 <motion.img className="boyImg"
                     variants={boyContainer}
                     initial="hidden"
-                    // animate="show"
-                    whileInView="show"
-                    viewport={{ amount: 0.2 }}
+                    animate={visible ? "show" : "hidden"} 
+
                     src={boy} alt={"boy"} />
 
 
 
-                <motion.img className="girlImg"
-                    variants={girlContainer}
-                    initial="hidden"
-                    // animate="show"
-                    whileInView="show"
-                    viewport={{ amount: 0.2 }}
+                <img className="girlImg"
+                    
                     src={girl} alt={"girl"} />
 
 
                 <motion.img className="messageImg"
                     variants={messageCont}
                     initial="hidden"
-                    // animate="show"
-                    whileInView="show"
+                    whileInView={visible ? "show" : "hidden"} 
                     src={message} alt={"message"} />
-            </div>
-        </div>
+            </motion.div>
+        </section>
     )
 }

@@ -26,11 +26,11 @@ export function Frame_1() {
                 <motion.div className="frameOne"
                     variants={blackContainer}
                     initial="hidden"
-                    whileInView={visible ? "show" : "hidden"}
+                    animate={visible ? "show" : "hidden"}
                 >
                     <motion.img variants={twoBox}
                         initial="hidden"
-                        whileInView={visible ? "show" : "hidden"}
+                        animate={visible ? "show" : "hidden"}
                         className="img2" src={two} alt={"two"}
                     />
                     <motion.img className="img3" variants={threeBox}
@@ -40,13 +40,13 @@ export function Frame_1() {
                     />
                     <motion.img variants={boxOne}
                         initial="hidden"
-                        whileInView={visible ? "show" : "hidden"}
+                        animate={visible ? "show" : "hidden"}
                         className="img"
 
                         src={one} alt={"one"} />
                     <motion.img variants={birdsContainerSmall(width)}
                         initial="hidden"
-                        whileInView={visible ? "show" : "hidden"}
+                        animate={visible ? "show" : "hidden"}
                         className="birds" src={birds} alt={"birds"}
                     />
                 </motion.div>

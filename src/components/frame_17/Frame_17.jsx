@@ -11,6 +11,8 @@ import carLight from '../../assets/frame_17/carLight.png'
 import stars from '../../assets/frame_17/stars.png'
 import street from '../../assets/frame_17/street.png'
 import streetWindows from '../../assets/frame_17/streetWindows.png'
+import { blackContainer } from "../blackWindow"
+import { usePageCenter } from "../usePageCenter"
 
 
 
@@ -21,51 +23,13 @@ import './index.css';
 
 export function Frame_17() {
     const animItem = useRef();
-    const [scrollPosition, setScrollPosition] = useState(0);
-
-    const height = useWindowHeight()
-
-
-
-    function animOnScroll(el, height) {
-        const position = window.pageYOffset
-        const offsetTop = el?.current?.offsetTop
-        // console.log("🚀 ~ file: Frame_17.jsx:33 ~ animOnScroll ~ offsetTop", offsetTop)
-        const animItemHeight = el?.current?.offsetHeight;
-        // if (position + (height / 2) == offsetTop + (animItemHeight / 2)) {
-
-        //     console.log('====================================');
-        //     console.log("hasar");
-        //     console.log('====================================');
-
-        // } else {
-        //     console.log('====================================');
-        //     console.log("asasasas");
-        //     console.log('====================================');
-
-        // }
-    }
-
-    useEffect(() => {
-        window.addEventListener("scroll", () => animOnScroll(animItem, height));
-        return () =>
-            window.removeEventListener("scroll", () => animOnScroll(animItem, height));
-    }, []);
-
-
-
-
-
-
-
-
+    const visible = usePageCenter(animItem)
     return (
-        <div
-            ref={animItem}
-        >
-            <div
-
-                className="framerSeventeen">
+        <section ref={animItem} style={{ marginTop: "10%", scrollSnapAlign: "center" }}>
+            <motion.div className="framerSeventeen"
+                variants={blackContainer}
+                initial="hidden"
+                whileInView={visible ? "show" : "hidden"}   >
                 <div className="nightBackground">
 
                     <img className="streetTwo"
@@ -74,34 +38,30 @@ export function Frame_17() {
 
                         variants={starShow}
                         initial="hidden"
-                        // animate="show"
-                        whileInView="show"
+                        whileInView={visible ? "show" : "hidden"}
 
                         src={stars} alt={"stars"} />
                     <motion.img className="backTwo"
                         variants={nightContainer}
                         initial="hidden"
-                        // animate="show"
-                        whileInView="show"
+                        whileInView={visible ? "show" : "hidden"}
                         src={back} alt={"back"} />
                     <motion.img className="streetWindows"
                         variants={onLight}
                         initial="hidden"
-                        // animate="show"
-                        whileInView="show"
+                        whileInView={visible ? "show" : "hidden"}
                         src={streetWindows} alt={"streetWindows"} />
                     <motion.img className="carLight"
                         variants={carContainer}
                         initial="hidden"
-                        // animate="show"
-                        whileInView="show"
+                        whileInView={visible ? "show" : "hidden"}
                         src={carLight} alt={"carLight"} />
                 </div>
 
 
 
 
-            </div>
-        </div>
+            </motion.div>
+        </section>
     )
 }

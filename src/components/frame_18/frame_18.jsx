@@ -9,6 +9,8 @@ import horizontal from '../../assets/frame_18/horizontal.png'
 import vertical from '../../assets/frame_18/vertical.png'
 import whiteDog from '../../assets/frame_18/whiteDog.png'
 import yellowDog from '../../assets/frame_18/yellowDog.png'
+import { blackContainer } from "../blackWindow"
+import { usePageCenter } from "../usePageCenter"
 
 
 
@@ -19,13 +21,14 @@ import './index.css';
 
 
 export function Frame_18() {
-    const boxRef = useRef();
- 
+    const animItem = useRef();
+    const visible = usePageCenter(animItem)
     return (
-        <div
-        ref={boxRef}
-        >
-            <div className="framerEighteen">
+        <section ref={animItem} style={{ marginTop: "10%", scrollSnapAlign: "center" }}>
+            <motion.div className="framerEighteen"
+                variants={blackContainer}
+                initial="hidden"
+                whileInView={visible ? "show" : "hidden"}   >
 
                 <img className="doors"
                     src={doors} alt={"doors"} />
@@ -33,32 +36,26 @@ export function Frame_18() {
                 <motion.img className="whiteDog"
                     variants={whiteDogContainer}
                     initial="hidden"
-                    // animate="show"
-                    whileInView="show"
+                    whileInView={visible ? "show" : "hidden"} 
                     src={whiteDog} alt={"whiteDog"} />
                 <motion.img className="yellowDog"
                     variants={yellowDogContainer}
                     initial="hidden"
-                    // animate="show"
-                    whileInView="show"
+                    whileInView={visible ? "show" : "hidden"} 
                     src={yellowDog} alt={"yellowDog"} />
                 <motion.img className="horizontal"
 
                     variants={messageContent}
                     initial="hidden"
-                    // animate="show"
-                    whileInView="show"
+                    whileInView={visible ? "show" : "hidden"} 
                     src={horizontal} alt={"horizontal"} />
 
                 <motion.img className="vertical"
                     variants={secondMessageContent}
                     initial="hidden"
-                    // animate="show"
-                    whileInView="show"
+                    whileInView={visible ? "show" : "hidden"} 
                     src={vertical} alt={"vertical"} />
-
-
-            </div>
-        </div>
+            </motion.div>
+        </section>
     )
 }

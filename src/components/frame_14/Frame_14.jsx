@@ -10,34 +10,41 @@ import brows from '../../assets/frame_14/brows.png'
 
 import './index.css';
 import { browsContainer ,messageContent} from "."
+import { useRef } from "react"
+import { usePageCenter } from "../usePageCenter"
+import { blackContainer } from "../blackWindow"
 
 
 
 
 export function Frame_14() {
+
+    const animItem = useRef();
+    const visible = usePageCenter(animItem)
     return (
-        <div>
-            <div className="framerTwelve">
+        <section ref={animItem} style={{ marginTop: "10%", scrollSnapAlign: "center" }}>
+            <motion.div className="framerTwelve"
+                variants={blackContainer}
+                initial="hidden"
+                whileInView={visible ? "show" : "hidden"}   >
 
                 <img className="phoneBoy"
                     src={boy} alt={"boy"} />
                 <motion.img className="phoneBoyShine"
-                    animate={{
+                    animate={visible?{
                         opacity: [0.5, 1, 0.5],
                         transition:
                         {
                             repeat: "Infinity", duration: 1, ease: "linear",
                         }
-                    }}
-                    viewport={{ amount: 0.2 }}
+                    }:{opacity:1}}
 
                     src={shine} alt={"shine"} />
                 <motion.img className="phoneBoyMessage"
 
                     variants={messageContent}
                     initial="hidden"
-                    // animate="show"
-                    whileInView="show"
+                    whileInView={visible ? "show" : "hidden"}
                     src={message} alt={"message"} />
                 <motion.img className="brows"
                 variants={browsContainer}
@@ -46,7 +53,7 @@ export function Frame_14() {
                 whileInView="show"
                     src={brows} alt={"brows"} />
 
-            </div>
-        </div>
+            </motion.div>
+        </section>
     )
 }

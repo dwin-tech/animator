@@ -6,7 +6,7 @@ export const handContainer = {
     show: {
         rotate: "-30deg",
         transition: {
-            repeat: Infinity,
+            repeat: 3,
             duration: 1,
             ease: "linear",
         }
@@ -26,7 +26,7 @@ export const fiveContainer = {
         transition:
         {
             duration: 0.1,
-            delay: 1,
+            delay: 2,
             forwards: 1,
             ease: "linear",
         }
