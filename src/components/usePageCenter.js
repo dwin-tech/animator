@@ -12,7 +12,7 @@ export const usePageCenter = (animItem) => {
         const animItemHeight = animItem?.current?.offsetHeight;
         const start = position + (height / 2)
         const end = offsetTop + (animItemHeight / 2)
-        if (start >= end-30 && start <= end + 200) {
+        if (start >= end-30 && start <= end + 300) {
             setVisible(true)
         }
         else {
