@@ -3,7 +3,7 @@ export const messageCont = {
         scale: 1,
     },
     show: {
-        scale: 11,
+        width:"40%",
         transition:
         {
             duration:2,

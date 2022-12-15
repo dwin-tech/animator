@@ -36,8 +36,8 @@ export const messageContainer = {
         }
     },
     show: {
-        scale: 5,
-        x: -16,
+        width: "50%",
+        x: 70,
         transition:
         {
             duration:2,

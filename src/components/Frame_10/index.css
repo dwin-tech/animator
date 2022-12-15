@@ -2,7 +2,6 @@
     max-width:600px;
     margin: auto;
     position: relative;
-    overflow: hidden;
   }
 
 
@@ -42,8 +41,8 @@
 
   .twoPersonsMessage{
     position: absolute;
-    bottom: 78%;
-    left: 77%;
+    bottom: 71%;
+    left: 56%;
     width: 3%;
     z-index: 4;
   }

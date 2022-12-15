@@ -47,15 +47,11 @@ transform: translate3d(0, 0, 0);
 
  .message{
   
-  bottom: 84%;
+  bottom: 55%;
     right: 23%;
     position: absolute;
     z-index: 4;
     width: 10%;
-    filter: none; 
--webkit-filter: blur(0px); 
--moz-filter: blur(0px); 
--ms-filter: blur(0px);
-filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='0');
+
 
  }   

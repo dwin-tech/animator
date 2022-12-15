@@ -57,7 +57,7 @@
 
   .blondeEyes{
     position: absolute;
-    bottom: 66%;
+    bottom: 68%;
     right: 58%;
     width: 15%;
     z-index: 3;
@@ -66,8 +66,8 @@
 
   .brunetEyes{
     position: absolute;
-    top: 23%;
-    right: 12%;
+    top: 22%;
+    right: 13%;
     width: 32%;
     z-index: 3;
   }
@@ -76,7 +76,7 @@
   .girlsMessage{
     position: absolute;
     top: 112%;
-    right: 0;
+    left:76%;
     width: 3%;
     z-index: 4;
   }

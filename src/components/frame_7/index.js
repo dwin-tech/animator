@@ -39,7 +39,7 @@ export const messageContainer={
 
     },
     show: {
-        scale: 12,
+        width: "40%",
         y:-30,
         x: -176,
         transition:
