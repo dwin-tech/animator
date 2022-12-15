@@ -21,8 +21,8 @@ export const fiveContainer = {
 
     },
     show: {
-        scale: 32,
-        
+        // scale: 32,
+        width:"30%",
         transition:
         {
             duration: 0.1,
