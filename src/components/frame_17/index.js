@@ -65,8 +65,8 @@ export const carContainer = {
         scale: 4.1,
         transition:
         {
-            duration: 0.9,
-            delay: 0.5,
+            duration: 1.5,
+            delay: 1,
             forwards: 1,
             ease: "linear",
         }

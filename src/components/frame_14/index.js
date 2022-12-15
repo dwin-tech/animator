@@ -7,7 +7,7 @@ export const messageContent = {
         transition:
         {
             duration:1,
-            delay: 2,
+            delay: 1,
             forwards: 1,
             ease: "linear",
         }

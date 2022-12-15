@@ -23,8 +23,8 @@
   .personTwo{
     position: absolute;
     bottom: 0%;
-    left: -10%;
-    width: 45%;
+    right: 55%;
+    width: 55%;
     z-index: 1;
   }
 

@@ -22,7 +22,7 @@
 
   .timeMessage{
     position: absolute;
-    bottom: 97%;
+    bottom: 1%;
     left:0;
     width: 1%;
     z-index: 2;

@@ -22,7 +22,7 @@ export const fiveContainer = {
     },
     show: {
         // scale: 32,
-        width:"30%",
+        width:"35%",
         transition:
         {
             duration: 0.1,

@@ -26,7 +26,7 @@ export const boyContainer={
         x: 0,
         transition:
         {
-            duration:2,
+            duration:0.5,
             delay: 0.1,
             forwards: 1,
             ease: "linear",

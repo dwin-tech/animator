@@ -88,53 +88,71 @@ export const centerScreenAnimationVariant = {
       translateY: "-50%",
     }  
   }
-
-export const birdsContainerSmall = (width) => {
-    if (width < 600) {
-        return {
-            hidden: {
-                x: 0,
-                y: 0,
-            },
-            show: {
-                y: -(width / 2),
-                x: -(width / 2),
-                transition: {
-                    duration: 3,
-                    delay: 1.1,
-                    forwards: 1,
-                    ease: "linear",
-                }
-            },
-            exit:{
-                y: -(width / 2),
-                x: -(width / 2),
-            }
+export const aaaaa ={
+    hidden: {
+        x: 0,
+        y: 0,
+    },
+    show: {
+        y:-500,
+        x:-500,
+        transition: {
+            duration: 3,
+            delay: 1.1,
+            forwards: 1,
+            ease: "linear",
         }
-    }
+    },}
+  
+// }
+// }
+// }
+// export const birdsContainerSmall = (width) => {
+//     if (width < 600) {
+//         return {
+//             hidden: {
+//                 x: 0,
+//                 y: 0,
+//             },
+//             show: {
+//                 y: -(width / 2),
+//                 x: -(width / 2),
+//                 transition: {
+//                     duration: 3,
+//                     delay: 1.1,
+//                     forwards: 1,
+//                     ease: "linear",
+//                 }
+//             },
+//             exit:{
+//                 y: -(width / 2),
+//                 x: -(width / 2),
+//             }
+//         }
+//     }
 
-    return {
-        hidden: {
-            x: 0,
-            y: 0,
-        },
-        show: {
-            y: -(width / 100 * 10),
-            x: -(width / 100 * 10),
-            transition: {
-                duration: 3,
-                delay: 1.1,
-                forwards: 1,
-                ease: "linear",
-            }
+//     return {
+//         hidden: {
+//             x: 0,
+//             y: 0,
+//         },
+//         show: {
+//             y: -(width / 100 * 10),
+//             x: -(width / 100 * 10),
+//             transition: {
+//                 duration: 3,
+//                 delay: 1.1,
+//                 forwards: 1,
+//                 ease: "linear",
+//             }
 
-        },
-        exit:{
-            y: -(width / 100 * 10),
-            x: -(width / 100 * 10),
-        }
-    }
-}
+//         },
+//         exit:{
+//             y: -(width / 100 * 10),
+//             x: -(width / 100 * 10),
+//         }
+//     }
+// }
 
 
 
