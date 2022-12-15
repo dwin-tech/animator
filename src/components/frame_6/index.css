@@ -30,4 +30,8 @@
     width: 1%;
     bottom: 97%;
     right: 31%;
+    -webkit-filter: blur(0px); 
+-moz-filter: blur(0px); 
+-ms-filter: blur(0px);
+filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='0');
   }
