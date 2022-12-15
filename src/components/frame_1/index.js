@@ -94,10 +94,10 @@ export const aaaaa ={
         y: 0,
     },
     show: {
-        y:-500,
-        x:-500,
+        y:-700,
+        x:-700,
         transition: {
-            duration: 3,
+            duration: 8,
             delay: 1.1,
             forwards: 1,
             ease: "linear",

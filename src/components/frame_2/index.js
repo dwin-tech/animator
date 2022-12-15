@@ -1,6 +1,6 @@
 const transition = {
-    duration: 2,
-    delay: 1,
+    duration: 1.5,
+    delay: 0.1,
     forwards: 1,
     ease: "linear",
 }
@@ -15,7 +15,7 @@ export const carGreenContainer = {
 
     },
     show: {
-        y: 20,
+        y: 10,
         x: 5,
         scale: 1.4,
         transition
@@ -31,7 +31,7 @@ export const carYellowContainer = {
 
     },
     show: {
-        y: 100,
+        y: 10,
         x: 2,
         scale: 1.1,
         transition
@@ -45,7 +45,7 @@ export const carBlueCont = {
         x: 0,
     },
     show: {
-        y: 170,
+        y: 20,
         x: 24,
         transition
     },

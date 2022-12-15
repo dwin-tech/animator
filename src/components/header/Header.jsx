@@ -9,7 +9,7 @@ export function Header() {
 
 
     return (
-        <section className='header' style={{ marginTop: "10%",scrollSnapAlign: "center" }}>
+        <section className='header' style={{ scrollSnapAlign: "center" }}>
            
            
 
