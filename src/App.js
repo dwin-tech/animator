@@ -32,7 +32,6 @@ function App() {
       overflowX: "hidden",
       scrollSnapType: "y mandatory", backgroundColor: "black",
       scrollPadding: "40px",
-      
     }}>
       <Header />
       <Frame_1 />

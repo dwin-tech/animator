@@ -31,15 +31,15 @@
 
   .horizontal{
     position: absolute;
-    bottom: 25%;
-    right: 17%;
+    bottom: 14%;
+    left: 54%;
     width: 2%;
     z-index: 4;
   }
 .vertical{
     position: absolute;
-    bottom: 84%;
-    left: 47%;
+    bottom: 50%;
+    left: 26%;
     width: 2%;
     z-index: 5;
 }

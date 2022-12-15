@@ -43,11 +43,11 @@ export const messageContent = {
         scale: 1,
     },
     show: {
-        scale: 25,
+        width: "50%",
         transition:
         {
             duration:1.5,
-            delay: 1.5,
+            delay: 2.5,
             forwards: 1,
             ease: "linear",
         }
@@ -60,7 +60,7 @@ export const secondMessageContent = {
         scale: 1,
     },
     show: {
-        scale: 17,
+        width: "50%",
         transition:
         {
             duration:1.5,
