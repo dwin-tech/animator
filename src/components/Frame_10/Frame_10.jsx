@@ -11,32 +11,21 @@ import './index.css';
 import { messageCont, personTwoContainer } from "."
 import { useWindowHeight } from "@react-hook/window-size";
 import { useEffect, useRef, useState } from "react";
+import { usePageCenter } from "../usePageCenter"
+import { blackContainer } from "../blackWindow"
 
 
 export function Frame_10() {
     const animItem = useRef();
-    const [vis, setVis] = useState(false)
-    const height = useWindowHeight()
-
-    function animOnScroll(el, height) {
-        const position = window.pageYOffset
-        const offsetTop = el?.current?.offsetTop
-        const animItemHeight = el?.current?.offsetHeight;
-        if (position + (height / 2) > offsetTop + (animItemHeight / 2) ) {
-
-            setVis(true)
-
-        }
-    }
-
-    useEffect(() => {
-        window.addEventListener("scroll", () => animOnScroll(animItem, height));
-        return () =>
-            window.removeEventListener("scroll", () => animOnScroll(animItem, height));
-    }, []);
+    const visible = usePageCenter(animItem)
     return (
-        <div ref={animItem}>
-            <div className="framerTen">
+        <section ref={animItem} style={{ paddingTop: "3%", scrollSnapAlign: "center" }}>
+            <motion.div className="framerTen"
+             variants={blackContainer}
+             initial="hidden"
+             whileInView={visible ? "show" : "hidden"}
+
+            >
                 <img className="wall"
                     src={wall} alt={"wall"} />
                 <img className="personOne"
@@ -44,13 +33,12 @@ export function Frame_10() {
                 <motion.img className="personTwo"
                     variants={personTwoContainer}
                     initial="hidden"
-                    animate={vis ? "show" : "hidden"}
-
+                    whileInView={visible ? "show" : "hidden"}
                     viewport={{ amount: 0.2 }}
 
                     src={personTwo} alt={"personTwo"} />
                 <motion.img className="twoPersonsShine"
-                    animate={vis ? {
+                    animate={visible ? {
                         opacity: [0.6, 0.9, 0.6],
                         transition:
                         {
@@ -63,11 +51,10 @@ export function Frame_10() {
                 <motion.img className="twoPersonsMessage"
                     variants={messageCont}
                     initial="hidden"
-                    animate={vis ? "show" : "hidden"}
-
+                    whileInView={visible ? "show" : "hidden"}
                     src={twoPersonsMessage} alt={"twoPersonsMessage"} />
 
-            </div>
-        </div>
+            </motion.div>
+        </section>
     )
 }
