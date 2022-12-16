@@ -21,7 +21,7 @@ export function Frame_5() {
     const animItem = useRef();
     const visible = usePageCenter(animItem)
     return (
-        <section ref={animItem} style={{ marginTop: "20%", scrollSnapAlign: "center" }}>
+        <section ref={animItem} style={{ marginTop: "10%", scrollSnapAlign: "center" }}>
             <motion.div className="framerFive"
                 variants={blackContainer}
                 initial="hidden"
