@@ -1,6 +1,4 @@
 import { motion } from "framer-motion"
-import { useRef } from "react";
-import { usePageCenter } from "../usePageCenter";
 import './index.css';
 
 
@@ -35,10 +33,9 @@ const letter = {
     }
 }
 export function Footer() {
-    const animItem = useRef();
-    const visible = usePageCenter(animItem)
+    
     return (
-        <section ref={animItem} className='footer' style={{ marginTop: "10%", scrollSnapAlign: "center" }}>
+        <section className='footer' style={{ marginTop: "10%", scrollSnapAlign: "center" }}>
             <div className="footerDiv">
                 <motion.h1 className="titleTwo" style={{ color: "white" }}
                     // variants={sentence}
@@ -47,13 +44,13 @@ export function Footer() {
                 >
                     {line.split("").map((char, index) => {
                         return (
-                            <motion.span key={char + "-" + index} animate={visible?{
+                            <motion.span key={char + "-" + index} animate={{
                                 opacity: [0.5, 1, 0.5],
                                 transition:
                                 {
                                     repeat: "Infinity", duration: 0.8, ease: "linear",
                                 }
-                            }:{opacity:0}}>{char}</motion.span>
+                            }}>{char}</motion.span>
                         )
                     })}
                 </motion.h1>

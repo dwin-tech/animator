@@ -9,7 +9,7 @@ export const twoPersonContainer = {
                 transition: {
                     repeat: 0,
 
-                    duration: 3,
+                    duration: 1.5,
                     ease: "linear",
                 }
         
