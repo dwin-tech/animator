@@ -12,56 +12,59 @@ export const container = {
     hidden: {
         left: "68%",
         top: "-15%",
-        width:"39%"
+        width: "39%"
 
     },
     show: {
         left: "30%",
         top: "5%",
-        width:"35%",
-        
-        transition :
-            {
-                duration: 0.8,
-                delay: 0.1,
-                forwards: 1,
-                ease: "linear",
-            }
+        width: "35%",
+
+        transition:
+        {
+            duration: 0.8,
+            delay: 0.1,
+            forwards: 1,
+            ease: "linear",
         }
+    }
 }
 export const listsContainer = {
     hidden: {
-        x: 0,
+        bottom: "10%",
+        right: "-1%",
+        width: "26%"
 
     },
     show: {
-        x: -100,
-        y:50,
-        
-        transition :
-            {
-                duration: 1,
-                delay: 0.1,
-                forwards: 1,
-                ease: "linear",
-            }
+        bottom: "-31%",
+        right: "18%",
+        width: "26%",
+        transition:
+        {
+            duration: 1,
+            delay: 0.1,
+            forwards: 1,
+            ease: "linear",
         }
+    }
 }
 
 
 
 export const messContainer = {
     hidden: {
-        scale: 1,
-        x: 0
+        bottom: "77%",
+        right: 0,
+        width: "13%"
     },
     show: {
-        width:"40%",
-        x: 5,
-        y:13,
+        width: "40%",
+        bottom: "61%",
+        right: 0,
         transition:
         {
-            duration:0.5,
+            duration: 0.5,
             delay: 0.2,
             forwards: 1,
             ease: "linear",

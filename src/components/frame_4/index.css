@@ -15,27 +15,20 @@
 
   .runningGuy{
     position: absolute;
-    /* left: 68%;
-    bottom: 13%;
-   */
-    /* width: 39%; */
   z-index: 1;
   }
 
 
 .lists{
   position: absolute;
-    bottom: 10%;
-    right: -1%;
-    width: 26%;
     z-index: 1;
 }
 
 .mess{
   position: absolute;
-  bottom: 77%;
+  /* bottom: 77%;
   right: 0;
-  width: 13%;
+  width: 13%; */
   z-index: 1;
   
 
