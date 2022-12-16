@@ -41,11 +41,27 @@
     width: 100%;
     z-index: 4;
   }
-.carLight{
+/* .carLight{
   position: absolute;
   bottom: 7%;
   left: 31%;
   width: 14%;
   z-index: 5;
-}
-  
+} */
+.carLight{
+  bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: 4;
+    width: 100%;
+   
+  }
+
+  .carLightDiv{
+    /* bottom: 8%;
+    right: 58%; */
+    position: absolute;
+    z-index: 5;
+    width: 13%;
+     
+    }

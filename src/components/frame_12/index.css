@@ -14,9 +14,6 @@
 
   .evilGirl{
     position: absolute;
-    bottom: 0%;
-    left: 46%;
-    width: 40%;
     z-index: 2;
   }
 .backCompShine{
@@ -30,8 +27,5 @@
 
 .checkMessage{
     position: absolute;
-    top: 16%;
-    left: 49%;
-    width: 4%;
     z-index: 1;
 }

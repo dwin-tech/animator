@@ -6,8 +6,9 @@ export const handContainer = {
     show: {
         rotate: "-30deg",
         transition: {
+
             repeat: 3,
-            duration: 1,
+            duration: 0.7,
             ease: "linear",
         }
     },
@@ -17,7 +18,9 @@ export const handContainer = {
 export const fiveContainer = {
     hidden: {
         scale: 1,
-
+        bottom: "61%",
+        right: "7%",
+    
 
     },
     show: {
@@ -26,7 +29,7 @@ export const fiveContainer = {
         transition:
         {
             duration: 0.1,
-            delay: 2,
+            delay: 1,
             forwards: 1,
             ease: "linear",
         }

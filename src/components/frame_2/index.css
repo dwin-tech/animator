@@ -12,18 +12,35 @@
 
 
 .blue{
-  bottom: 8%;
-  right: 18%;
-  position: absolute;
-  z-index: 4;
-  width: 27%;
+  bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: 4;
+    width: 100%;
    
   }
+
+  .blueCarDiv{
+    bottom: 8%;
+    right: 18%;
+    position: absolute;
+    z-index: 4;
+    width: 27%;
+     
+    }
  
   .yellow{
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+  } 
+
+  .yellowCarDiv{
     width: 14%;
-    bottom: 8%;
-    left: 42%;
+    bottom: 10%;
+    left: 38%;
     position: absolute;
     z-index: 1;
   } 

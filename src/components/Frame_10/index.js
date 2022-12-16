@@ -1,13 +1,17 @@
 export const messageCont = {
     hidden: {
-        scale: 1,
+        bottom: "71%",
+        left: "100%",
+        width: "1%",
     },
     show: {
-        width:"40%",
+        width: "44%",
+        bottom: "76%",
+        left: "58%",
         transition:
         {
-            duration:2,
-            delay: 2,
+            duration: 0.5,
+            delay: 0.5,
             forwards: 1,
             ease: "linear",
         }
@@ -15,15 +19,15 @@ export const messageCont = {
     },
 }
 
-export const personTwoContainer={
+export const personTwoContainer = {
     hidden: {
         x: 0,
     },
     show: {
-       x:39,
+        x: 39,
         transition:
         {
-            duration:2,
+            duration: 1,
             delay: 0.1,
             forwards: 1,
             ease: "linear",

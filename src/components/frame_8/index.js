@@ -1,12 +1,13 @@
 export const twoPersonContainer = {
     hidden: {
-                x: 0,
-                y: 0,
+        bottom: "45%",
+        left: "-31%",
+        width: "31%",
             },
             show: {
-                x: 423,
+                left: "40%",
                 transition: {
-                    repeat: 1,
+                    repeat: 0,
 
                     duration: 3,
                     ease: "linear",

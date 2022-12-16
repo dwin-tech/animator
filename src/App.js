@@ -20,6 +20,7 @@ import { Frame_17 } from './components/frame_17/Frame_17';
 import { Frame_18 } from './components/frame_18/frame_18';
 import './App.css';
 import { useEffect, useState } from 'react';
+import { Footer } from './components/footer/Fotter';
 
 
 
@@ -34,13 +35,13 @@ function App() {
       scrollPadding: "40px",
     }}>
       <Header />
-      <Frame_1 />
+     <Frame_1 />
       <Frame_2 />
       <Frame_3 />
       <Frame_4 />
       <Frame_5 />
       <Frame_6 />
-      <Frame_7 />
+      <Frame_7 /> 
       <Frame_8 />
       <Frame_9 />
       <Frame_10 />
@@ -52,7 +53,7 @@ function App() {
       <Frame_16 />
       <Frame_17 />
       <Frame_18 />
-      <Header />
+      <Footer />
 
 
     </article>

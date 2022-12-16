@@ -31,8 +31,5 @@
 
   .messageImg{
     position: absolute;
-    bottom: 71%;
-    left: 53%;
-    width: 5%;
     z-index: 5;
   }

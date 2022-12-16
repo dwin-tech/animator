@@ -10,17 +10,18 @@ const transition = {
 
 export const container = {
     hidden: {
-        x: 0,
+        left: "68%",
+        bottom:0,
 
     },
     show: {
-        x: -138,
-        y:30,
+        left: "30%",
+        top: "-5%",
         scale:0.9,
         
         transition :
             {
-                duration: 2,
+                duration: 1.5,
                 delay: 0.1,
                 forwards: 1,
                 ease: "linear",
@@ -38,7 +39,7 @@ export const listsContainer = {
         
         transition :
             {
-                duration: 2,
+                duration: 1.5,
                 delay: 0.1,
                 forwards: 1,
                 ease: "linear",
@@ -59,8 +60,8 @@ export const messContainer = {
         y:13,
         transition:
         {
-            duration:1,
-            delay: 1,
+            duration:0.5,
+            delay: 0.7,
             forwards: 1,
             ease: "linear",
         }

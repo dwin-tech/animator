@@ -24,7 +24,7 @@
     position: absolute;
     bottom: 0%;
     right: 55%;
-    width: 55%;
+    width: 56%;
     z-index: 1;
   }
 
@@ -41,8 +41,8 @@
 
   .twoPersonsMessage{
     position: absolute;
-    bottom: 71%;
+    /* bottom: 71%;
     left: 56%;
-    width: 3%;
+    width: 3%; */
     z-index: 4;
   }

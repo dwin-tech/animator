@@ -1,6 +1,5 @@
 
   .framerFive {
-    padding-top: 1%;
     max-width:600px;
     margin: auto;
     position: relative;
@@ -13,7 +12,7 @@
 
 .hand{
   position: absolute;
-    top: 7%;
+    bottom : 78%;
     right: 38%;
     width: 9.5%;
     z-index: 2;
@@ -26,7 +25,7 @@
 
 .eyes{
   position: absolute;
-  bottom: 54%;
+  bottom: 55%;
   right: 13%;
   width: 11%;
   /* z-index: 1; */

@@ -1,13 +1,15 @@
 export const messageContent = {
     hidden: {
-        scale: 1,
+        bottom:" 90%",
+        left: "62%",
+        width: "1%"
     },
     show: {
         width:"30%",
         transition:
         {
-            duration:1,
-            delay: 1,
+            duration:0.5,
+            delay: 0.5,
             forwards: 1,
             ease: "linear",
         }
@@ -24,7 +26,7 @@ export const browsContainer={
         transition:
         {
             duration:2,
-            delay: 0.1,
+            delay: 1,
             forwards: 1,
             ease: "linear",
         }

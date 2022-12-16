@@ -37,6 +37,7 @@ export function Frame_12() {
                 <motion.img className="backCompShine"
                 animate={visible?{
                     opacity: [0.6, 0.9, 0.6],
+                    
                     transition:
                     {
                         repeat: "Infinity", duration: 1, ease: "linear",

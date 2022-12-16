@@ -21,14 +21,14 @@
   .three{
     position:absolute;
     width: 40%;
-    bottom: 1%;
+    bottom: 0;
     right: 15%;
   }
 
   .five{
     position: absolute;
     width: 1%;
-    bottom: 61%;
-    right: 7%;
+    /* bottom: 61%;
+    right: 7%; */
 
   }

@@ -1,15 +1,15 @@
-export const  yellowDogContainer={
+export const yellowDogContainer = {
     hidden: {
         x: 0,
-        y:0,
+        y: 0,
     },
     show: {
-        y:-5,
+        y: -5,
         x: 80,
         transition:
         {
-            duration:1,
-            delay: 1,
+            duration: 0.9,
+            delay: 0.4,
             forwards: 1,
             ease: "linear",
         }
@@ -18,18 +18,18 @@ export const  yellowDogContainer={
 }
 
 
-export const  whiteDogContainer={
+export const whiteDogContainer = {
     hidden: {
         x: 0,
-        y:0,
+        y: 0,
     },
     show: {
-        y:17,
+        y: 17,
         x: -71,
         transition:
         {
-            duration:1,
-            delay: 1,
+            duration: 0.9,
+            delay: 0.4,
             forwards: 1,
             ease: "linear",
         }
@@ -40,14 +40,17 @@ export const  whiteDogContainer={
 
 export const messageContent = {
     hidden: {
-        scale: 1,
+        bottom: "10%",
+        left: "50%",
+        width: "1%",
+        
     },
     show: {
         width: "50%",
         transition:
         {
-            duration:1.5,
-            delay: 2.5,
+            duration: 0.5,
+            delay: 1,
             forwards: 1,
             ease: "linear",
         }
@@ -57,14 +60,17 @@ export const messageContent = {
 
 export const secondMessageContent = {
     hidden: {
-        scale: 1,
+        bottom: "50%",
+        left: "30%",
+
+        width: "1%",
     },
     show: {
         width: "50%",
         transition:
         {
-            duration:1.5,
-            delay: 1.5,
+            duration: 0.5,
+            delay: 0.5,
             forwards: 1,
             ease: "linear",
         }

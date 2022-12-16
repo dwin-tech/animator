@@ -36,7 +36,7 @@
 .mess{
   position: absolute;
   bottom: 77%;
-  right: 10%;
+  right: 0;
   width: 13%;
   z-index: 1;
   

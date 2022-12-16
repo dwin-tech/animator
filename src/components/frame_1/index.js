@@ -11,6 +11,7 @@ const transition = {
 
 export const boxOne = {
     hidden: {
+        
         y: 0,
         
     },
@@ -74,21 +75,7 @@ export const threeBox = {
     }
 }
 
-
-export const centerScreenAnimationVariant = {
-    initial:{
-          x:"50%",
-          y:"50%"
-          
-      },
-    animate:{
-      x:"0%",
-      y:"0%",
-      translateX: "-50%",
-      translateY: "-50%",
-    }  
-  }
-export const aaaaa ={
+export const birdsContainer ={
     hidden: {
         x: 0,
         y: 0,
@@ -97,62 +84,14 @@ export const aaaaa ={
         y:-700,
         x:-700,
         transition: {
-            duration: 8,
+            duration: 2,
             delay: 1.1,
             forwards: 1,
             ease: "linear",
         }
-    },}
-  
-// }
-// }
-// }
-// export const birdsContainerSmall = (width) => {
-//     if (width < 600) {
-//         return {
-//             hidden: {
-//                 x: 0,
-//                 y: 0,
-//             },
-//             show: {
-//                 y: -(width / 2),
-//                 x: -(width / 2),
-//                 transition: {
-//                     duration: 3,
-//                     delay: 1.1,
-//                     forwards: 1,
-//                     ease: "linear",
-//                 }
-//             },
-//             exit:{
-//                 y: -(width / 2),
-//                 x: -(width / 2),
-//             }
-//         }
-//     }
-
-//     return {
-//         hidden: {
-//             x: 0,
-//             y: 0,
-//         },
-//         show: {
-//             y: -(width / 100 * 10),
-//             x: -(width / 100 * 10),
-//             transition: {
-//                 duration: 3,
-//                 delay: 1.1,
-//                 forwards: 1,
-//                 ease: "linear",
-//             }
-
-//         },
-//         exit:{
-//             y: -(width / 100 * 10),
-//             x: -(width / 100 * 10),
-//         }
-//     }
-// }
+    },
+}
+ 
 
 
 

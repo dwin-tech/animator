@@ -22,9 +22,9 @@
   }
 .slipBoyTwoMessage{
   position: absolute;
-  bottom:80%;
+  /* bottom:80%;
   left: 10%;
-  width: 4%;
+  width: 4%; */
   z-index: 2;
 }
   

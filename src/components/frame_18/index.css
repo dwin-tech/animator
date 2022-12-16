@@ -31,9 +31,9 @@
 
   .horizontal{
     position: absolute;
-    bottom: 14%;
+    /* bottom: 14%;
     left: 54%;
-    width: 2%;
+    width: 2%; */
     z-index: 4;
   }
 .vertical{

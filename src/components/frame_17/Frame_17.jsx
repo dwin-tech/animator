@@ -51,11 +51,25 @@ export function Frame_17() {
                         initial="hidden"
                         whileInView={visible ? "show" : "hidden"}
                         src={streetWindows} alt={"streetWindows"} />
-                    <motion.img className="carLight"
+                    <motion.div
+                        className="carLightDiv"
                         variants={carContainer}
                         initial="hidden"
-                        whileInView={visible ? "show" : "hidden"}
-                        src={carLight} alt={"carLight"} />
+                        exit="exit"
+                        animate={visible ? "show" : "hidden"}
+                    >
+                        <motion.img
+                            className="carLight"
+                            animate={visible ? {
+                                opacity: 0,
+                                transition:
+                                {
+                                    delay: 2,
+                                    duration: 1.7, ease: "linear",
+                                }
+                            } : { opacity: 1 }}
+                            src={carLight} alt={"carLight"} />
+                    </motion.div>
                 </div>
 
 

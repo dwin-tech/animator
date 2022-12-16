@@ -1,12 +1,15 @@
 export const messageCont = {
     hidden: {
-        scale: 1,
+        width: "1%",
+        bottom: "1%",
+        left: 0,
+        width: "1%",
     },
     show: {
-        width:"30%",
+        width: "30%",
         transition:
         {
-            duration:2,
+            duration: 0.5,
             delay: 0.1,
             forwards: 1,
             ease: "linear",

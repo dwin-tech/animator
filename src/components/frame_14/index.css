@@ -22,15 +22,15 @@
 
   .phoneBoyMessage{
     position: absolute;
-    bottom: 90%;
+    /* bottom: 90%;
     left: 62%;
-    width: 4%;
+    width: 4%; */
     z-index: 4;
   }
 
   .brows{
     position: absolute;
-    bottom: 61%;
+    bottom: 62%;
     left: 32%;
     width: 24%;
     z-index: 2;

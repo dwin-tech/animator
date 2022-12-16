@@ -1,12 +1,14 @@
-export const evilGirlContainer={
+export const evilGirlContainer = {
     hidden: {
-        x: 0,
+        bottom: 0,
+        left: "46%",
+        width: "40%",
     },
     show: {
-       x:100,
+        left: "66%",
         transition:
         {
-            duration:2,
+            duration: 1,
             delay: 0.1,
             forwards: 1,
             ease: "linear",
@@ -17,14 +19,18 @@ export const evilGirlContainer={
 
 export const messageCont = {
     hidden: {
-        scale: 1,
+        top: "16%",
+        left: "49%",
+        width: "4%",
     },
     show: {
-        width:"30%",
+        top: "16%",
+        left: "40%",
+        width: "30%",
         transition:
         {
-            duration:2,
-            delay: 1,
+            duration: 0.5,
+            delay: 0.5,
             forwards: 1,
             ease: "linear",
         }

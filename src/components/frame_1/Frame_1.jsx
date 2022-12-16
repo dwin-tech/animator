@@ -2,7 +2,7 @@ import { AnimatePresence, motion, useScroll } from "framer-motion";
 
 
 import './index.css';
-import { boxOne, threeBox, twoBox, birdsContainer, birdsContainerSmall, aaaaa } from ".";
+import { boxOne, threeBox, twoBox, birdsContainer } from ".";
 
 import one from '../../assets/frame_1/one.png'
 import two from '../../assets/frame_1/two.png'
@@ -44,7 +44,7 @@ export function Frame_1() {
                         className="img"
 
                         src={one} alt={"one"} />
-                    <motion.img variants={aaaaa}
+                    <motion.img variants={birdsContainer}
                         initial="hidden"
                         animate={visible ? "show" : "hidden"}
                         className="birds" src={birds} alt={"birds"}

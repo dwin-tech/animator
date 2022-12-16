@@ -24,23 +24,18 @@ export const container = {
 }
 export const messageContainer = {
     hidden: {
-        scale: 1,
-        x: 0,
+        width: "1%",
+        bottom: "55%",
+        right: "23%"
         
-        transition:
-        {
-            duration: 0.5,
-            delay: 0.1,
-            forwards: 1,
-            ease: "linear",
-        }
     },
     show: {
-        width: "50%",
-        x: 70,
+        width: "55%",
+        bottom: "56%",
+        right: "0%",
         transition:
         {
-            duration:2,
+            duration:1,
             delay: 0.1,
             forwards: 1,
             ease: "linear",

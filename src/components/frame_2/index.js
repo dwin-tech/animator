@@ -15,8 +15,8 @@ export const carGreenContainer = {
 
     },
     show: {
-        y: 10,
-        x: 5,
+        y: 25,
+        x: 8,
         scale: 1.4,
         transition
 
@@ -31,8 +31,8 @@ export const carYellowContainer = {
 
     },
     show: {
-        y: 10,
-        x: 2,
+        y: 83,
+        x: 25,
         scale: 1.1,
         transition
     },
@@ -45,8 +45,8 @@ export const carBlueCont = {
         x: 0,
     },
     show: {
-        y: 20,
-        x: 24,
+        y: 120,
+        x: 80,
         transition
     },
  

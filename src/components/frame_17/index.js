@@ -55,17 +55,19 @@ export const nightContainer = {
 
 export const carContainer = {
     hidden: {
-        x: 0,
-        y: 0,
-        scale: 1
+        bottom: "8%",
+        right: "55%",
+        width: "14%"
+
     },
     show: {
-        y: 40,
-        x: 72,
-        scale: 4.1,
+        bottom: "-38%",
+        right: "10%",
+        width: "80%",
+   
         transition:
         {
-            duration: 1.5,
+            duration: 2.2,
             delay: 1,
             forwards: 1,
             ease: "linear",
