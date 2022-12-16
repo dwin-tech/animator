@@ -15,11 +15,11 @@
  
 
   .runningGuy{
-    left: 68%;
     position: absolute;
+    /* left: 68%;
     bottom: 13%;
-  
-    width: 39%;
+   */
+    /* width: 39%; */
   z-index: 1;
   }
 
