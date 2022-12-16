@@ -1,11 +1,13 @@
 import { motion } from "framer-motion"
+import { useRef } from "react";
+import { usePageCenter } from "../usePageCenter";
 
 
 import './header.css';
 
 const sentence = {
     hidden: {
-        opacity: 1,
+        opacity: 0,
 
     },
     visible: {
@@ -32,14 +34,15 @@ const letter = {
 export function Header() {
 
 
-
+    const animItem = useRef();
+    const visible = usePageCenter(animItem)
     return (
-        <section className='header' style={{ marginTop: "5%", scrollSnapAlign: "center" }}>
+        <section ref={animItem} className='header' style={{ marginTop: "5%", scrollSnapAlign: "center" }}>
             <div className="headerDiv">
                 <motion.h1 className="titleOne" style={{ color: "white" }}
                     variants={sentence}
                     initial="hidden"
-                    whileInView="visible"
+                whileInView={visible ? "visible" : "hidden"}
                 >
                     {line.split("").map((char, index) => {
                         return (
