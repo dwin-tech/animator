@@ -1,5 +1,4 @@
 .frameFour{
-
   max-width: 600px;
     margin: auto;
     position: relative;
@@ -16,12 +15,12 @@
  
 
   .runningGuy{
-    left: 68%;
+    /* left: 68%; */
     position: absolute;
-    bottom: 13%;
+    /* bottom: 13%;
   
-    width: 39%;
-  z-index: 1;
+    width: 39%; */
+  z-index: 2;
   }
 
 
