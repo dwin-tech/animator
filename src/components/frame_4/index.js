@@ -22,7 +22,7 @@ export const container = {
         
         transition :
             {
-                duration: 1,
+                duration: 0.8,
                 delay: 0.1,
                 forwards: 1,
                 ease: "linear",
@@ -40,7 +40,7 @@ export const listsContainer = {
         
         transition :
             {
-                duration: 1.5,
+                duration: 1,
                 delay: 0.1,
                 forwards: 1,
                 ease: "linear",
@@ -62,7 +62,7 @@ export const messContainer = {
         transition:
         {
             duration:0.5,
-            delay: 0.7,
+            delay: 0.2,
             forwards: 1,
             ease: "linear",
         }
