@@ -11,12 +11,13 @@ const transition = {
 export const container = {
     hidden: {
         left: "68%",
-        top: "-23%",
-        width:"39%"
+        bottom:0,
+
     },
     show: {
         left: "30%",
-        top: "3%",
+        top: "-5%",
+        scale:0.9,
         
         transition :
             {
