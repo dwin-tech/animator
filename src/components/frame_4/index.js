@@ -22,7 +22,7 @@ export const container = {
         
         transition :
             {
-                duration: 1.5,
+                duration: 1,
                 delay: 0.1,
                 forwards: 1,
                 ease: "linear",
