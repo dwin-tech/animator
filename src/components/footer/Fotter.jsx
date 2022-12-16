@@ -35,7 +35,7 @@ const letter = {
 export function Footer() {
     
     return (
-        <section className='footer' style={{ marginTop: "10%", scrollSnapAlign: "center" }}>
+        <section className='footer' style={{ marginTop: "15%", scrollSnapAlign: "center" }}>
             <div className="footerDiv">
                 <motion.h1 className="titleTwo" style={{ color: "white" }}
                     // variants={sentence}
