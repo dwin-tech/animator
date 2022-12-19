@@ -42,7 +42,7 @@ export const messageContainer={
     },
     show: {
         // width: "45%",
-        width: ["1%", "63%", "53%", "55%"],
+        width: ["1%", "10%", "63%", "55%"],
         top: ["37%", "90%", "90%", "90%"],
         right: ["23%", "23%", "23%", "23%"],
         transition:
