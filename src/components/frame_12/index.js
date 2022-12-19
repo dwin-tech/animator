@@ -19,21 +19,26 @@ export const evilGirlContainer = {
 
 export const messageCont = {
     hidden: {
+        // scale: 1,
+
         top: "16%",
         left: "49%",
-        width: "4%",
+        width: "1%",
     },
     show: {
         top: "16%",
-        left: "40%",
-        width: "30%",
+        left: ["35%","35%","40%"],
+        // left: "40%",
+
+        width: ["1%", "40%","35%"],
+        // scale:[53,43,12,8],
         transition:
         {
-            duration: 0.5,
-            delay: 0.5,
+            duration: 1,
+            delay: 0.1,
             forwards: 1,
-            ease: "linear",
+            ease:[0.1,0,0,0]
         }
-
     },
+    
 }

@@ -34,7 +34,7 @@ export function Frame_12() {
                     whileInView={visible ? "show" : "hidden"} 
                     src={girl} alt={"girl"} />
 
-                <motion.img className="backCompShine"
+                {/* <motion.img className="backCompShine"
                 animate={visible?{
                     opacity: [0.6, 0.9, 0.6],
                     
@@ -43,11 +43,12 @@ export function Frame_12() {
                         repeat: "Infinity", duration: 1, ease: "linear",
                     }
                 }:{opacity:1}}
-                    src={shine} alt={"shine"} />
+                    src={shine} alt={"shine"} /> */}
 
                 <motion.img className="checkMessage"
                   variants={messageCont}
                   initial="hidden"
+                  exit="exit"
                   whileInView={visible ? "show" : "hidden"} 
                     src={message} alt={"message"} />
 

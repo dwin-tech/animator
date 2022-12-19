@@ -29,11 +29,12 @@ export function Frame_7() {
     const animItem = useRef();
     const visible = usePageCenter(animItem)
     return (
-        <section ref={animItem} style={{ marginTop: "10%", scrollSnapAlign: "center" }}>
+        <section ref={animItem} style={{ marginTop: "10%", scrollSnapAlign: "center",position: "relative" }}>
+
             <motion.div className="frameSeven"
                 variants={blackContainer}
                 initial="hidden"
-                whileInView={visible ? "show" : "hidden"}            >
+                whileInView={visible ? "show" : "hidden"}>
 
                 <img className="back"
                     src={back} alt={"back"} />

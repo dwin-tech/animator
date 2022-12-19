@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import scrollIcon from '../../assets/scroll/scrollIcon.png'
 
 
 import './header.css';
@@ -23,16 +24,28 @@ const sentence = {
 const line = "Episode 1. Our Days.."
 
 const letter = {
-    hidden: { opacity: 0,  },
+    hidden: { opacity: 0, },
     visible: {
         opacity: 1,
         Y: 0
     }
 }
+
+
+const scrollIConContainer = {
+    hidden: { opacity: 0},
+    visible: {
+        opacity: 1,
+        transition:
+        {
+            delay: 1.8,  duration: 1, ease: "linear",
+        }
+    }
+}
+
+
+
 export function Header() {
-
-
-
     return (
         <section className='header' style={{ marginTop: "5%", scrollSnapAlign: "center" }}>
             <div className="headerDiv">
@@ -47,6 +60,31 @@ export function Header() {
                         )
                     })}
                 </motion.h1>
+
+                {/* <motion.img
+                    className="scrollIcon"
+                    variants={scrollIConContainer}
+                    initial="hidden"
+                    whileInView="visible"
+
+                    src={scrollIcon} alt={"scrollIcon"}
+                /> */}
+
+                <motion.div class="wrapper"
+                
+                variants={scrollIConContainer}
+                initial="hidden"
+                whileInView="visible"
+                
+                
+                >
+                    <div class="scroll">
+                        <span>Scroll</span>
+                        <div class="mouse-icon">
+                            <div class="mouse-icon_wheel"></div>
+                        </div>
+                    </div>
+                </motion.div>
 
 
 

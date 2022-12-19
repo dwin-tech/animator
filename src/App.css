@@ -1,2 +1,21 @@
 
-
+body{
+    height: 100vh;
+    overflow: hidden;
+}
+#App{
+    height: "100vh";
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+    background-color: black;
+    scroll-padding: "80px";
+    scroll-behavior: auto;
+    position: relative;
+    /* overflowY: scroll,
+    overflowX: hidden,
+    scrollSnapType: y mandatory", backgroundColor: "black",
+    scrollPadding: "80px",
+    scrollBehavior: "smooth",
+    position: "relative", */
+}
