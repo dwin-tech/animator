@@ -23,6 +23,9 @@ export function Frame_14() {
     const visible = usePageCenter(animItem)
     return (
         <section ref={animItem} style={{ marginTop: "10%", scrollSnapAlign: "center" }}>
+
+
+            
             <motion.div className="framerTwelve"
                 variants={blackContainer}
                 initial="hidden"
@@ -35,7 +38,7 @@ export function Frame_14() {
                         opacity: [0.5, 1, 0.5],
                         transition:
                         {
-                            repeat: "Infinity", duration: 1, ease: "linear",
+                            delay:1,repeat: "Infinity", duration: 1, ease: "linear",
                         }
                     }:{opacity:1}}
 

@@ -40,7 +40,7 @@ export function Frame_5() {
                         opacity: [0.7, 0.9, 0.7],
                         transition:
                         {
-                            repeat: "Infinity", duration: 1, ease: "linear",
+                            delay: 0.5, repeat: "Infinity", duration: 1, ease: "linear",
                         }
                     } : { opacity: 1 }}
                     src={eyes} alt={"eyes"} />

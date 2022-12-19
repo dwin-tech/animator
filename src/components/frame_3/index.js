@@ -31,26 +31,23 @@ export const container = {
         hidden: {
             width: "1%",
             bottom: "55%",
-            right: "23%"
+            right: "23%",
+            opacity:0,
             
         },
         show: {
-            // width: "55%",
             bottom: "56%",
-            // right: "0%",
             right: ["0%","0%","0%","0%"],
-
             bottom: "56%",
-
-            width: ["1%", "70%","55%"],
-            // scale:[53,43,12,8],
+            width: ["10%", "63%","53%","55%"],
+            opacity:[0.4,0.9,1,1],
             transition:
             {
-                duration: 1.5,
-                delay: 0.5,
+                duration: 0.8,
+                delay: 0.6,
                 forwards: 1,
                 // ease:[0.86,0.3,0.4,0.530]
-                ease:"backOut"
+                ease:"linear"
             }
         },
     }
