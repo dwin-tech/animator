@@ -77,9 +77,9 @@
 
   .girlsMessage{
     position: absolute;
-    top: 100%;
-    left:70%;
-    width: 3%;
+    top: 66%;
+    right:0;
+    width: 1%;
     z-index: 4;
   }
 

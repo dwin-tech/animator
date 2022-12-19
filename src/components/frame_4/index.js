@@ -52,20 +52,44 @@ export const listsContainer = {
 
 
 
+// export const messContainer = {
+//     hidden: {
+//         bottom: "77%",
+//         right: 0,
+//         width: "13%"
+//     },
+//     show: {
+//         width: "40%",
+//         bottom: "61%",
+//         right: 0,
+//         transition:
+//         {
+//             duration: 0.5,
+//             delay: 0.2,
+//             forwards: 1,
+//             ease: "linear",
+//         }
+
+//     },
+// }
+
 export const messContainer = {
     hidden: {
-        bottom: "77%",
-        right: 0,
-        width: "13%"
+        bottom: "81%",
+        right: "53%",
+        width: "1%"
+
     },
     show: {
-        width: "40%",
-        bottom: "61%",
-        right: 0,
+        width: ["10%", "63%","33%","40%"],
+        // bottom: "61%",
+        bottom:["71%","61%","61%","61%"],
+        right: ["23%","0%","0%","0%"],
+
         transition:
         {
-            duration: 0.5,
-            delay: 0.2,
+            duration: 0.4,
+            delay: 0.5,
             forwards: 1,
             ease: "linear",
         }

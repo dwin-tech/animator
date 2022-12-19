@@ -47,10 +47,11 @@ position: relative;
  .message{
 /*   
   bottom: 55%;
-    right: 23%; */
+    right: 23%;
+    width: 10%; */
     position: absolute;
-    z-index: 4;
-    width: 10%;
+    z-index: 5;
+    /* width: 10%; */
 
 
  }   

@@ -33,15 +33,18 @@ export const eyesContainer = {
 
 export const messageContainer={
     hidden: {
-        scale: 1,
-        x: 0
-
+        // scale: 1,
+        // x: 0
+        bottom: "37%",
+        right:"23%",
+        width: "1%",
 
     },
     show: {
-        width: "45%",
-        y:-30,
-        x: -176,
+        // width: "45%",
+        width: ["1%", "63%", "53%", "55%"],
+        top: ["37%", "90%", "90%", "90%"],
+        right: ["23%", "23%", "23%", "23%"],
         transition:
         {
             duration: 0.1,

@@ -12,23 +12,62 @@ export const handContainer = {
             ease: "linear",
         }
     },
-    exit: { rotate: 0 ,ease: "linear",}
+    exit: { rotate: 0, ease: "linear", }
+}
+
+// export const fiveContainer = {
+//     hidden: {
+//         scale: 1,
+//         bottom: "61%",
+//         right: "7%",
+
+
+//     },
+//     show: {
+//         // scale: 32,
+//         width:"35%",
+//         transition:
+//         {
+//             duration: 0.1,
+//             delay: 1,
+//             forwards: 1,
+//             ease: "linear",
+//         }
+
+//     },
+// }
+export const blackContainerFrame6 = {
+    hidden: {
+        opacity: 0.2,
+
+    },
+    show: {
+        opacity: 1,
+        // y: -4,
+        transition:
+        {
+            duration: 3,
+            delay: 0,
+            forwards: 1,
+            ease: "linear",
+        }
+    }
 }
 
 export const fiveContainer = {
     hidden: {
-        scale: 1,
-        bottom: "61%",
-        right: "7%",
-    
+        bottom: "32%",
+        right: "68%",
+        width: "1%"
 
     },
     show: {
-        // scale: 32,
-        width:"35%",
+        width: ["1%", "10%", "53%", "35%"],
+        bottom: ["32%", "51%", "55%", "61%"],
+        right: ["68%", "17%", "7%", "7%"],
         transition:
         {
-            duration: 0.1,
+            duration: 0.3,
             delay: 1,
             forwards: 1,
             ease: "linear",

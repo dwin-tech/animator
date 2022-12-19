@@ -5,7 +5,7 @@ import three from '../../assets/frame_6/three.png'
 import four from '../../assets/frame_6/four.png'
 import five from '../../assets/frame_6/five.png'
 import './index.css';
-import { handContainer, fiveContainer } from "."
+import { handContainer, fiveContainer, blackContainerFrame6 } from "."
 import { BlackWindow } from "../blackWindow/BlackWindows"
 
 import { useWindowHeight } from "@react-hook/window-size";
@@ -24,7 +24,7 @@ export function Frame_6() {
     return (
         <section ref={animItem} style={{ marginTop: "10%", scrollSnapAlign: "center" }}>
             <motion.div className="frameSix"
-                variants={blackContainer}
+                variants={blackContainerFrame6}
                 initial="hidden"
                 whileInView={visible ? "show" : "hidden"}   >
                 <img className="one"
