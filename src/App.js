@@ -31,19 +31,21 @@ function App() {
       height: "100vh",
       overflowY: "scroll",
       overflowX: "hidden",
-      scrollSnapType: "both mandatory", backgroundColor: "black",
+      scrollSnapType: "mandatory",
+      scrollSnapType: "y mandatory", backgroundColor: "black",
       scrollPadding: "10px",
       scrollBehavior: "smooth",
       position: "relative",
+      scrollSnapStop: "always"
     }}>
       <Header />
-     <Frame_1 />
+      <Frame_1 />
       <Frame_2 />
       <Frame_3 />
       <Frame_4 />
       <Frame_5 />
       <Frame_6 />
-      <Frame_7 /> 
+      <Frame_7 />
       <Frame_8 />
       <Frame_9 />
       <Frame_10 />

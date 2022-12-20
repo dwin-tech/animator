@@ -24,7 +24,7 @@ export function Frame_5() {
         <section ref={animItem} style={{ marginTop: "25%", scrollSnapAlign: "center" }}>
             <div className="framerFive">
 
-                <motion.div className="xxxx"
+                <motion.div className="framerFiveBlackWindow"
                     variants={blackContainer}
                     initial="hidden"
                     whileInView={visible ? "show" : "hidden"}>

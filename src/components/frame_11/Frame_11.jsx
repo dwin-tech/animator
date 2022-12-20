@@ -21,34 +21,40 @@ export function Frame_11() {
     const visible = usePageCenter(animItem)
     return (
         <section ref={animItem} style={{ marginTop: "15%", scrollSnapAlign: "center" }}>
-            <motion.div className="framerEleven"
-                variants={blackContainer}
-                initial="hidden"
-                whileInView={visible ? "show" : "hidden"}   >
-                <img className="blueWall"
-                    src={wall} alt={"wall"} />
 
 
-                <motion.img className="boyImg"
-                    variants={boyContainer}
+
+            <div className="framerEleven">
+
+                <motion.div className="framerElevenBlackWindow"
+                    variants={blackContainer}
                     initial="hidden"
-                    animate={visible ? "show" : "hidden"} 
-
-                    src={boy} alt={"boy"} />
-
-
-
-                <img className="girlImg"
-                    
-                    src={girl} alt={"girl"} />
+                    whileInView={visible ? "show" : "hidden"}>
+                    <img className="blueWall"
+                        src={wall} alt={"wall"} />
 
 
-                <motion.img className="messageImg"
-                    variants={messageCont}
-                    initial="hidden"
-                    whileInView={visible ? "show" : "hidden"} 
-                    src={message} alt={"message"} />
-            </motion.div>
+                    <motion.img className="boyImg"
+                        variants={boyContainer}
+                        initial="hidden"
+                        animate={visible ? "show" : "hidden"}
+
+                        src={boy} alt={"boy"} />
+
+
+
+                    <img className="girlImg"
+
+                        src={girl} alt={"girl"} />
+
+
+                    <motion.img className="messageImg"
+                        variants={messageCont}
+                        initial="hidden"
+                        whileInView={visible ? "show" : "hidden"}
+                        src={message} alt={"message"} />
+                </motion.div>
+            </div>
         </section>
     )
 }
