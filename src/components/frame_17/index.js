@@ -39,8 +39,8 @@ export const nightContainer = {
         y: 0,
     },
     show: {
-        y: -40,
-        x: -156,
+        y: -70,
+        x: -160,
         transition:
         {
             duration: 2,
