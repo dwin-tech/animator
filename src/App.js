@@ -21,12 +21,14 @@ import { Frame_18 } from './components/frame_18/frame_18';
 import './App.css';
 import { useEffect, useState } from 'react';
 import { Footer } from './components/footer/Fotter';
+import ScrollBar from './components/scrollBar';
 
 
 
 function App() {
 
   return (
+    <div>
     <article className="App" id="App" style={{
       height: "100vh",
       overflowY: "scroll",
@@ -58,9 +60,10 @@ function App() {
       <Frame_17 />
       <Frame_18 />
       <Footer />
-      {/* <ScrollBar/> */}
 
+{/* <ScrollBar/> */}
     </article>
+    </div>
   );
 }
 

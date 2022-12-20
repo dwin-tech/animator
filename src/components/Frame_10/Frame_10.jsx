@@ -26,6 +26,8 @@ export function Frame_10() {
              whileInView={visible ? "show" : "hidden"}
 
             >
+
+
                 <img className="wall"
                     src={wall} alt={"wall"} />
                 <img className="personOne"
@@ -37,6 +39,7 @@ export function Frame_10() {
                     viewport={{ amount: 0.2 }}
 
                     src={personTwo} alt={"personTwo"} />
+
                 <motion.img className="twoPersonsShine"
                     animate={visible ? {
                         opacity: [0.6, 0.9, 0.6],
