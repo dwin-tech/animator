@@ -14,7 +14,7 @@ export const messageContent = {
         transition:
         {
             duration:0.2,
-            delay: 0.5,
+            delay: 0.1,
             forwards: 1,
             ease: "linear",
         }

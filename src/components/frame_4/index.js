@@ -52,7 +52,7 @@ export const listsContainer = {
 
 export const messContainer = {
     hidden: {
-        bottom: "91%",
+        bottom: "51%",
         right: "59%",
         width: "0%",
         opacity:0.5,
@@ -67,7 +67,7 @@ export const messContainer = {
         transition:
         {
             duration: 0.2,
-            delay: 0.5,
+            delay: 0.7,
             forwards: 1,
             ease: "linear",
         }
