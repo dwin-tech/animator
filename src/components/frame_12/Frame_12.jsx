@@ -8,7 +8,7 @@ import message from '../../assets/frame_12/message.png'
 
 
 import './index.css';
-import { evilGirlContainer, messageCont } from "."
+import { evilGirlContainer, evilGirlMessageCont, messageCont } from "."
 
 import { useWindowHeight } from "@react-hook/window-size";
 import { useEffect, useRef, useState } from "react";
@@ -34,7 +34,7 @@ export function Frame_12() {
                     whileInView={visible ? "show" : "hidden"} 
                     src={girl} alt={"girl"} />
 
-                {/* <motion.img className="backCompShine"
+               <motion.img className="backCompShine"
                 animate={visible?{
                     opacity: [0.6, 0.9, 0.6],
                     
@@ -43,10 +43,10 @@ export function Frame_12() {
                         repeat: "Infinity", duration: 1, ease: "linear",
                     }
                 }:{opacity:1}}
-                    src={shine} alt={"shine"} /> */}
+                    src={shine} alt={"shine"} /> 
 
                 <motion.img className="checkMessage"
-                  variants={messageCont}
+                  variants={evilGirlMessageCont}
                   initial="hidden"
                   exit="exit"
                   whileInView={visible ? "show" : "hidden"} 

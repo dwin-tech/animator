@@ -16,10 +16,9 @@ export const container = {
 
     },
     show: {
-        left: "30%",
-        top: "5%",
-        width: "35%",
-
+        left: "13%",
+        top: "14%",
+        width: "33%",
         transition:
         {
             duration: 0.8,
@@ -51,44 +50,23 @@ export const listsContainer = {
 }
 
 
-
-// export const messContainer = {
-//     hidden: {
-//         bottom: "77%",
-//         right: 0,
-//         width: "13%"
-//     },
-//     show: {
-//         width: "40%",
-//         bottom: "61%",
-//         right: 0,
-//         transition:
-//         {
-//             duration: 0.5,
-//             delay: 0.2,
-//             forwards: 1,
-//             ease: "linear",
-//         }
-
-//     },
-// }
-
 export const messContainer = {
     hidden: {
-        bottom: "81%",
-        right: "43%",
-        width: "1%"
+        bottom: "91%",
+        right: "59%",
+        width: "0%",
+        opacity:0.5,
 
     },
     show: {
-        width: ["10%", "53%","33%","40%"],
-        // bottom: "61%",
-        bottom:["71%","61%","61%","61%"],
-        right: ["23%","0%","0%","0%"],
+        bottom: "61%",
+        right: "0%",
+        width: "40%",
+        opacity:1,
 
         transition:
         {
-            duration: 0.4,
+            duration: 0.2,
             delay: 0.5,
             forwards: 1,
             ease: "linear",

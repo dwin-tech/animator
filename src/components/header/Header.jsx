@@ -70,7 +70,7 @@ export function Header() {
                     src={scrollIcon} alt={"scrollIcon"}
                 /> */}
 
-                <motion.div class="wrapper"
+                {/* <motion.div class="wrapper"
                 
                 variants={scrollIConContainer}
                 initial="hidden"
@@ -84,7 +84,7 @@ export function Header() {
                             <div class="mouse-icon_wheel"></div>
                         </div>
                     </div>
-                </motion.div>
+                </motion.div> */}
 
 
 

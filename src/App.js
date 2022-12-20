@@ -58,7 +58,7 @@ function App() {
       <Frame_17 />
       <Frame_18 />
       <Footer />
-
+      {/* <ScrollBar/> */}
 
     </article>
   );

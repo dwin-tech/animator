@@ -17,28 +17,30 @@ export const evilGirlContainer = {
 }
 
 
-export const messageCont = {
+export const evilGirlMessageCont = {
     hidden: {
         // scale: 1,
 
         top: "24%",
-        left: "58%",
-        width: "1%",
+        left: "74%",
+        width: "0%",
+        opacity:0.7,
     },
     show: {
-        top: ["16%","16%","16%","16%"],
-        // left: "40%",
-        left: ["58%","50%","40%","40%"],
+        top: "0%",
+        left: "21%",
 
-        width: ["1%","10%", "45%","35%"],
-        // scale:[53,43,12,8],
+        width: "45%",
+        opacity:1,
+        
         transition:
         {
-            duration: 0.5,
-            delay: 0.1,
+            duration: 0.2,
+            delay: 0.5,
             forwards: 1,
-            ease:[0.1,0,0,0]
+            ease:"linear"
         }
     },
     
 }
+

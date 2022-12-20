@@ -57,18 +57,23 @@ export const blackContainerFrame6 = {
 export const fiveContainer = {
     hidden: {
         bottom: "32%",
-        right: "68%",
-        width: "1%"
-
+        right: "55%",
+        width: "0%",
+opacity: 0.5,
     },
     show: {
-        width: ["1%", "10%", "53%", "35%"],
-        bottom: ["32%", "51%", "55%", "61%"],
-        right: ["68%", "17%", "7%", "7%"],
+        // width: ["1%", "10%", "53%", "35%"],
+        // bottom: ["32%", "51%", "55%", "61%"],
+        // right: ["68%", "17%", "7%", "7%"],
+        bottom: "61%",
+        right: "7%",
+        width: "35%",
+        opacity: 1,
+
         transition:
         {
-            duration: 0.3,
-            delay: 1,
+            duration: 0.2,
+            delay: 0.7,
             forwards: 1,
             ease: "linear",
         }

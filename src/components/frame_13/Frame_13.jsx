@@ -36,12 +36,8 @@ export function Frame_13() {
                     } : { opacity: 1 }}
 
                     src={shine} alt={"shine"} />
-                <motion.img className="timeMessage"
 
-                    variants={messageCont}
-                    initial="hidden"
-                    whileInView={visible ? "show" : "hidden"}
-                    src={timeMessage} alt={"timeMessage"} />
+                <img className="timeMessage" src={timeMessage} alt={"timeMessage"} />
             </motion.div>
         </section>
     )

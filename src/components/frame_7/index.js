@@ -35,19 +35,21 @@ export const messageContainer={
     hidden: {
         // scale: 1,
         // x: 0
-        bottom: "37%",
+        top: "80%",
         right:"23%",
-        width: "1%",
+        width: "0%",
+        // opacity:0.5,
 
     },
     show: {
-        // width: "45%",
-        width: ["1%", "10%", "63%", "55%"],
-        top: ["37%", "90%", "90%", "90%"],
-        right: ["23%", "23%", "23%", "23%"],
+        width: "55%",
+        // width: ["1%", "10%", "63%", "55%"],
+        top:"90%",
+        right: "23%",
+        // opacity:1,
         transition:
         {
-            duration: 0.1,
+            duration: 0.2,
             delay: 1,
             forwards: 1,
             ease: "linear",
