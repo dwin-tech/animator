@@ -29,7 +29,7 @@ export function Frame_7() {
     const animItem = useRef();
     const visible = usePageCenter(animItem)
     return (
-        <section ref={animItem} style={{ marginTop: "10%", scrollSnapAlign: "center",position: "relative" }}>
+        <section ref={animItem} style={{ marginTop: "15%", scrollSnapAlign: "center",position: "relative" }}>
 
             <motion.div className="frameSeven"
                 variants={blackContainer}

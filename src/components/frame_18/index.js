@@ -40,13 +40,17 @@ export const whiteDogContainer = {
 
 export const messageContent = {
     hidden: {
-        bottom: "10%",
-        left: "50%",
+        bottom: "23%",
+        left: "39%",
+
         width: "1%",
-        
     },
     show: {
         width: "50%",
+        width: ["1%", "10%","63%","50%"],
+        // bottom: "76%",
+        bottom: ["23%","11%","11%","11%"],
+        left:  ["39%","45%","45%","45%"],
         transition:
         {
             duration: 0.5,
@@ -60,13 +64,17 @@ export const messageContent = {
 
 export const secondMessageContent = {
     hidden: {
-        bottom: "50%",
-        left: "30%",
+        bottom: "32%",
+        left: "32%",
 
         width: "1%",
     },
     show: {
         width: "50%",
+        width: ["1%", "10%","63%","50%"],
+        // bottom: "76%",
+        bottom: ["32%","51%","51%","51%"],
+        left:  ["32%","28%","28%","28%"],
         transition:
         {
             duration: 0.5,

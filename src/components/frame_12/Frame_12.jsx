@@ -19,7 +19,7 @@ export function Frame_12() {
     const animItem = useRef();
     const visible = usePageCenter(animItem)
     return (
-        <section ref={animItem} style={{ marginTop: "10%", scrollSnapAlign: "center" }}>
+        <section ref={animItem} style={{ marginTop: "15%", scrollSnapAlign: "center" }}>
             <motion.div className="framerTwelve"
                 variants={blackContainer}
                 initial="hidden"

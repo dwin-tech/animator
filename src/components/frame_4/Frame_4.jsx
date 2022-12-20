@@ -22,38 +22,40 @@ export function Frame_4() {
 
     return (
         <section ref={animItem} style={{ marginTop: "25%", scrollSnapAlign: "center" }}>
-            <motion.div className="frameFour"
+            <div className="frameFour">
 
-                variants={blackContainer}
-                initial="hidden"
-                whileInView={visible ? "show" : "hidden"}>
-
-                <img className="room"
-                    src={bigRoom} alt={"bigRoom"} />
-                <motion.img
-                    className="runningGuy"
-                    variants={container}
+                <motion.div className="frameFourBlackWindow"
+                    variants={blackContainer}
                     initial="hidden"
-                    whileInView={visible ? "show" : "hidden"}
-                    src={runing} alt={"runing"}
+                    whileInView={visible ? "show" : "hidden"}>
 
-                />
-                <motion.img
+                    <img className="room"
+                        src={bigRoom} alt={"bigRoom"} />
+                    <motion.img
+                        className="runningGuy"
+                        variants={container}
+                        initial="hidden"
+                        whileInView={visible ? "show" : "hidden"}
+                        src={runing} alt={"runing"}
 
-                    variants={listsContainer}
-                    initial="hidden"
-                    whileInView={visible ? "show" : "hidden"}
-                    className="lists" src={lists} alt={"lists"} />
-                <motion.img
+                    />
+                    <motion.img
 
-                    variants={messContainer}
-                    initial="hidden"
-                    whileInView={visible ? "show" : "hidden"}
+                        variants={listsContainer}
+                        initial="hidden"
+                        whileInView={visible ? "show" : "hidden"}
+                        className="lists" src={lists} alt={"lists"} />
+                    <motion.img
+
+                        variants={messContainer}
+                        initial="hidden"
+                        whileInView={visible ? "show" : "hidden"}
 
 
-                    className="mess" src={mess} alt={"mess"} />
+                        className="mess" src={mess} alt={"mess"} />
 
-            </motion.div>
+                </motion.div>
+            </div>
         </section>
     )
 }

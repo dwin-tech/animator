@@ -1,11 +1,14 @@
 export const messageContent = {
     hidden: {
-        bottom:" 90%",
-        left: "62%",
+        bottom:"49%",
+        left: "47%",
         width: "1%"
     },
     show: {
-        width:"30%",
+        // width:"30%",
+        width: ["1%", "10%","43%","30%"],
+        bottom: ["49%","70%","79%","79%"],
+        left: ["47%","60%","64%","64%"],
         transition:
         {
             duration:0.5,

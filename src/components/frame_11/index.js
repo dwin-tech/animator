@@ -46,14 +46,16 @@ export const boyContainer={
 
 export const messageCont = {
     hidden: {
-        bottom: "71%",
-        left: "100%",
+        bottom: "22%",
+        left: "38%",
         width: "1%",
     },
     show: {
-        width: "44%",
-        bottom: "76%",
-        left: "58%",
+        // width: "44%",
+        width: ["1%", "10%","53%","44%"],
+        bottom: ["28%","76%","76%","76%"],
+        // bottom: "76%",
+        left: ["38%","48%","58%","58%"],
         transition:
         {
             duration: 0.5,

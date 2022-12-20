@@ -76,7 +76,7 @@ export const listsContainer = {
 export const messContainer = {
     hidden: {
         bottom: "81%",
-        right: "53%",
+        right: "43%",
         width: "1%"
 
     },

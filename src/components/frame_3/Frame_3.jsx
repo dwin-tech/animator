@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 
-import {  useRef } from "react";
+import { useRef } from "react";
 import './index.css';
 import boy from '../../assets/frame_3/boy.png'
 import room from '../../assets/frame_3/room.png'
@@ -19,46 +19,48 @@ export function Frame_3() {
     const visible = usePageCenter(animItem)
 
     return (
-        <section ref={animItem}  style={{ marginTop: "15%",scrollSnapAlign: "center" }}>
-            <motion.div className="frameThree"
-                variants={blackContainer}
-                initial="hidden"
-                whileInView={visible ? "show" : "hidden"}
-            >
-                <div className="computerRoom">
-                    <img className="room"
-                        src={room} alt={"room"} />
-                    <motion.img
-                        className="boy"
-                        variants={container}
-                        initial="hidden"
-                        animate={visible ? "show" : "hidden"}
-                        src={boy} alt={"boy"} />
-                    <motion.div className="shine"
-                        variants={container}
-                        initial="hidden"
-                        animate={visible ? "show" : "hidden"}
-                    >
+        <section ref={animItem} style={{ marginTop: "15%", scrollSnapAlign: "center" }}>
+            <div className="frameThree">
+
+                <motion.div className="frameThreeBlackWindow"
+                    variants={blackContainer}
+                    initial="hidden"
+                    whileInView={visible ? "show" : "hidden"}>
+                    <div className="computerRoom">
+                        <img className="room"
+                            src={room} alt={"room"} />
                         <motion.img
-                            className="shineImg"
+                            className="boy"
+                            variants={container}
+                            initial="hidden"
+                            animate={visible ? "show" : "hidden"}
+                            src={boy} alt={"boy"} />
+                        <motion.div className="shine"
+                            variants={container}
+                            initial="hidden"
+                            animate={visible ? "show" : "hidden"}
+                        >
+                            <motion.img
+                                className="shineImg"
 
-                            animate={visible ? {
-                                opacity: [0.5, 0.7, 0.5],
-                                transition:
-                                {
-                                    repeat: "Infinity", duration: 1, ease: "linear",
-                                }
-                            } : { opacity: 1 }}
-                            src={shine} alt={"shine"} />
+                                animate={visible ? {
+                                    opacity: [0.5, 0.7, 0.5],
+                                    transition:
+                                    {
+                                        repeat: "Infinity", duration: 1, ease: "linear",
+                                    }
+                                } : { opacity: 1 }}
+                                src={shine} alt={"shine"} />
 
-                    </motion.div>
-                    <motion.img
-                        variants={messageContainer}
-                        initial="hidden"
-                        whileInView={visible ? "show" : "hidden"}
-                        className="message" src={message} alt={"message"} />
+                        </motion.div>
+                        <motion.img
+                            variants={messageContainer}
+                            initial="hidden"
+                            whileInView={visible ? "show" : "hidden"}
+                            className="message" src={message} alt={"message"} />
+                    </div>
+                </motion.div>
                 </div>
-            </motion.div>
         </section >
 
     )

@@ -22,14 +22,14 @@ export function Frame_14() {
     const animItem = useRef();
     const visible = usePageCenter(animItem)
     return (
-        <section ref={animItem} style={{ marginTop: "10%", scrollSnapAlign: "center" }}>
+        <section ref={animItem} style={{ marginTop: "15%", scrollSnapAlign: "center" }}>
 
 
-            
-            <motion.div className="framerTwelve"
-                variants={blackContainer}
-                initial="hidden"
-                whileInView={visible ? "show" : "hidden"}   >
+            <div className="fourteen">
+            <motion.div className="xxxx"
+                    variants={blackContainer}
+                    initial="hidden"
+                    whileInView={visible ? "show" : "hidden"}>
 
                 <img className="phoneBoy"
                     src={boy} alt={"boy"} />
@@ -57,6 +57,7 @@ export function Frame_14() {
                     src={brows} alt={"brows"} />
 
             </motion.div>
+            </div>
         </section>
     )
 }

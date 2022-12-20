@@ -1,16 +1,17 @@
 export const messageCont = {
     hidden: {
-        bottom: "71%",
-        left: "100%",
+        bottom: "28%",
+        left: "64%",
         width: "1%",
     },
     show: {
-        width: "44%",
-        bottom: "76%",
+        width: ["1%", "10%","63%","44%"],
+        // bottom: "76%",
+        bottom: ["28%","76%","76%","76%"],
         left: "58%",
         transition:
         {
-            duration: 0.5,
+            duration: 0.4,
             delay: 0.5,
             forwards: 1,
             ease: "linear",

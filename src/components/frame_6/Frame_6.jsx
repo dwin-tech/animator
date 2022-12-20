@@ -22,31 +22,34 @@ export function Frame_6() {
     const animItem = useRef();
     const visible = usePageCenter(animItem)
     return (
-        <section ref={animItem} style={{ marginTop: "10%", scrollSnapAlign: "center" }}>
-            <motion.div className="frameSix"
-                variants={blackContainerFrame6}
-                initial="hidden"
-                whileInView={visible ? "show" : "hidden"}   >
-                <img className="one"
-                    src={one} alt={"one"} />
-                <motion.img
-                    variants={handContainer}
+        <section ref={animItem} style={{ marginTop: "15%", scrollSnapAlign: "center" }}>
+            <div className="frameSix" >
+
+                <motion.div className="xxxx"
+                    variants={blackContainer}
                     initial="hidden"
-                    whileInView={visible ? "show" : "hidden"}
+                    whileInView={visible ? "show" : "hidden"}>
+                    <img className="one"
+                        src={one} alt={"one"} />
+                    <motion.img
+                        variants={handContainer}
+                        initial="hidden"
+                        whileInView={visible ? "show" : "hidden"}
 
-                    className="two" src={two} alt={"two"} />
+                        className="two" src={two} alt={"two"} />
 
 
-                <motion.img
+                    <motion.img
 
-                    className="three" src={four} alt={"four"} />
-                <motion.img
-                    variants={fiveContainer}
-                    initial="hidden"
-                    whileInView={visible ? "show" : "hidden"}
+                        className="three" src={four} alt={"four"} />
+                    <motion.img
+                        variants={fiveContainer}
+                        initial="hidden"
+                        whileInView={visible ? "show" : "hidden"}
 
-                    className="five" src={five} alt={"five"} />
-            </motion.div>
+                        className="five" src={five} alt={"five"} />
+                </motion.div>
+                </div>
         </section>
     )
 }

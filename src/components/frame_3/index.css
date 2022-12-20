@@ -34,7 +34,16 @@ position: relative;
    z-index: 3;
    width: 100%;
  } 
-
+ .frameThreeBlackWindow{
+  position:relative;
+  background-color: black;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+}
+ 
  .shineImg{
   top:0;
   right: 0;
