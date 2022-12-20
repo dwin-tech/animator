@@ -37,10 +37,13 @@ export const nightContainer = {
     hidden: {
         x: 0,
         y: 0,
+        scale:1
+
     },
     show: {
         y: -70,
         x: -160,
+        scale:4.5,
         transition:
         {
             duration: 2,
