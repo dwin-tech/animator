@@ -60,7 +60,7 @@ export const messContainer = {
     },
     show: {
         bottom: "61%",
-        right: "0%",
+        right: "22%",
         width: "40%",
         opacity:1,
 
