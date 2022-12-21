@@ -1,0 +1,85 @@
+
+.frameSeven {
+    max-width:600px;
+    margin: auto;
+    position: relative;
+    /* overflow: hidden; */
+  }
+
+
+  .back{
+    width: 100%;
+    position: relative;
+  }
+
+
+  .blonde{
+    position:absolute;
+    bottom: 0%;
+    left: 0;
+    width: 49%;
+  }
+
+
+  .brunet{
+    position:absolute;
+    bottom: 0%;
+    right:  0;
+    width: 58%;
+    z-index: 4;
+  }
+
+  .phone{
+    position: absolute;
+    bottom: 0%;
+    right: 29%;
+    width: 40%;
+    z-index: 2;
+  }
+
+
+
+  .finger{
+    position: absolute;
+    bottom: 14%;
+    right: 31%;
+    width: 17%;
+    transform-origin: bottom right;
+  transform-style: preserve-3D;
+  }
+
+
+  .girlsShine{
+    position: absolute;
+    top: 47%;
+    right: 38%;
+    width: 30%;
+    z-index: 3;
+  }
+
+  .blondeEyes{
+    position: absolute;
+    bottom: 68%;
+    right: 58%;
+    width: 15%;
+    z-index: 3;
+  }
+
+
+  .brunetEyes{
+    position: absolute;
+    top: 22%;
+    right: 13%;
+    width: 32%;
+    z-index: 3;
+  }
+
+
+  .girlsMessage{
+    position: absolute;
+    /* top: 66%;
+    right:0;
+    width: 1%; */
+    z-index: 4;
+  }
+
