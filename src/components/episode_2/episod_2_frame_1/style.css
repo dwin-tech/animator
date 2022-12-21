@@ -1,0 +1,54 @@
+.episode_2_Frame_1{
+    max-width:600px;
+    margin: auto;
+    position: relative;
+    background-color: aquamarine;
+}
+
+.episode_2_Frame_1_threePeople{
+    width: 100%;
+  position: relative;
+  z-index: 5;
+}  
+
+
+.episode_2_Frame_1_room{
+    width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+}
+
+.episode_2_Frame_1_window{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 4;
+}
+.episode_2_Frame_1_shine{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    z-index: 5;
+    width: 100%;
+}
+
+.episode_2_Frame_1_onePerson{
+    position: absolute;
+    /* top: 0%;
+    left: 0%;
+    width: 100%; */
+    z-index: 3;
+}
+
+.episode_2_Frame_1_BlackWindow{
+    position:relative;
+    background-color: black;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 7;
+  }

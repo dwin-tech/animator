@@ -44,7 +44,7 @@ const scrollIConContainer = {
 
 
 
-export function Header() {
+export function Episode_1_Header() {
     return (
         <section className='header' style={{ marginTop: "5%", scrollSnapAlign: "center" }}>
             <div className="headerDiv">

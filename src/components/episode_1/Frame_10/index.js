@@ -6,14 +6,8 @@ export const messageCont = {
         opacity:0.5
     },
     show: {
-        // width: ["1%", "10%","63%","44%"],
-        // // bottom: "76%",
-        // bottom: ["28%","76%","76%","76%"],
-        // left: "58%",
-
         width:"44%",
         bottom: "76%",
-        // bottom: ["28%","76%","76%","76%"],
         left: "58%",
         opacity:1,
 
