@@ -28,11 +28,11 @@ export const windowShineContainer = {
         top: "0%",
         left: "-30%",
         width: "100%",
+        
     },
     show: {
         top: "0%",
         left: "100%",
-
         transition:
         {
             duration: 0.9,
@@ -45,21 +45,17 @@ export const windowShineContainer = {
 }
 
 export const handContainer = {
-    hidden: {
-       rotate:0,
-       
 
-    },
+
     show: {
-        rotate :"40deg",
+        rotate: ["10deg", "0deg", "10deg"],
         transition: {
 
 
-            repeat: Infinity, duration: 0.7
+            repeat: 2, duration: 0.7
         }
-        
-    },
-    exit: { rotate: 0 }
+
+    }
 }
 
 export const messageOneContainer = {
@@ -78,7 +74,30 @@ export const messageOneContainer = {
         transition:
         {
             duration: 0.2,
-            delay: 0.2,
+            delay: 0.6,
+            forwards: 1,
+            ease: "linear",
+        }
+
+    },
+}
+export const messageTwoContainer = {
+    hidden: {
+        top: "40%",
+        left: "63%",
+        width: "0%",
+        opacity: 0.5,
+    },
+    show: {
+        top: "0%",
+        left: "0%",
+        width: "100%",
+        opacity: 1,
+
+        transition:
+        {
+            duration: 0.2,
+            delay: 1,
             forwards: 1,
             ease: "linear",
         }

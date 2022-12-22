@@ -21,7 +21,7 @@ import './style.css';
 import { useRef } from "react";
 import { usePageCenter } from "../../usePageCenter"
 import { blackContainer } from "../episode_2_frame_1"
-import { handContainer, messageOneContainer, windowShineContainer } from "."
+import { handContainer, messageOneContainer, messageTwoContainer, windowShineContainer } from "."
 
 
 
@@ -31,7 +31,7 @@ export function Episode_2_Frame_2() {
     const visible = usePageCenter(animItem)
 
     return (
-        <section ref={animItem} style={{ marginTop: "15%", scrollSnapAlign: "center" }}>
+        <section ref={animItem} style={{ marginTop: "15%", scrollSnapAlign: "center"}}>
             <div className="episode_2_Frame_2">
                 <motion.div className="episode_2_Frame_2_BlackWindow"
                     variants={blackContainer}
@@ -53,10 +53,10 @@ export function Episode_2_Frame_2() {
                         src={threePersons} alt={"threePersons"} />
                     <motion.img className="episode_2_Frame_2_hand"
                         src={hand} alt={"hand"} 
-                        // variants={handContainer}
-                        // initial="hidden"
-                        // animate={visible ? "show" : "hidden"
-                        // }
+                        variants={handContainer}
+                        initial="hidden"
+                        animate={visible ? "show" : "hidden"
+                        }
                         />
 
                     <motion.img className="episode_2_Frame_2_message_1"
@@ -65,7 +65,10 @@ export function Episode_2_Frame_2() {
                      animate={visible ? "show" : "hidden"}
                         src={message1} alt={"message1"} />
 
-                    <img className="episode_2_Frame_2_message_2"
+                    <motion.img className="episode_2_Frame_2_message_2"
+                    variants={messageTwoContainer}
+                    initial="hidden"
+                    animate={visible ? "show" : "hidden"}
                         src={message2} alt={"message2"} />
                     {/* <motion.img className="episode_2_Frame_1_shine"
                     animate={ {

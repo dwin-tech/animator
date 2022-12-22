@@ -1,8 +1,9 @@
 .episode_2_Frame_2{
-    max-width:600px;
+max-width: 600px;
     margin: auto;
     position: relative;
-    overflow: hidden;
+  height: 100%;
+overflow: hidden;
 }
 .episode_2_Frame_2_BlackWindow{
   position:relative;
@@ -30,9 +31,6 @@
 
 .episode_2_Frame_2_windowShine{
   position: absolute;
-  /* width: 100%;
-    top: 0;
-    right: 0; */
     z-index: 2;
 }
 .episode_2_Frame_2_threePersons{
@@ -44,10 +42,10 @@
 }
 .episode_2_Frame_2_hand{
   position: absolute;
-  top: 0%;
-  left: 0%;
+  top: 29%;
+  left: 28%;
+  width: 9%;
   z-index: 5;
-  width: 100%;
   transform-origin: bottom left;
   transform-style: preserve-3D;
 }
@@ -60,8 +58,6 @@
 }
 .episode_2_Frame_2_message_2{
   position: absolute;
-  top: 0%;
-  left: 0%;
   z-index: 5;
   width: 100%;
 }

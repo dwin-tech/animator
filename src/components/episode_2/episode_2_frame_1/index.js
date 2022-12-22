@@ -10,7 +10,7 @@ export const boyWithComputerContainer = {
         transition:
         {
             duration: 1.5,
-            delay: 0.1,
+            delay: 0.5,
             forwards: 1,
             ease: "linear",
         }
@@ -55,8 +55,8 @@ export const personEyesContainer = {
 
         transition:
         {
-            duration: 0.5,
-            delay: 0.2,
+            duration: 0.7,
+            delay: 0.5,
             forwards: 1,
             ease: "linear",
         }
@@ -80,7 +80,7 @@ export const messageOneContainer = {
         transition:
         {
             duration: 0.2,
-            delay: 0.2,
+            delay: 0.5,
             forwards: 1,
             ease: "linear",
         }
@@ -104,7 +104,7 @@ export const messageTwoContainer = {
         transition:
         {
             duration: 0.2,
-            delay: 0.5,
+            delay: 0.7,
             forwards: 1,
             ease: "linear",
         }
@@ -129,7 +129,7 @@ export const messageThreeContainer = {
         transition:
         {
             duration: 0.2,
-            delay: 0.6,
+            delay: 0.9,
             forwards: 1,
             ease: "linear",
         }
