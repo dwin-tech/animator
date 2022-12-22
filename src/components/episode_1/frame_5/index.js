@@ -6,21 +6,16 @@ const transition = {
 }
 
 export const handContainer = {
-    hidden: {
-       rotate:0,
-       
-
-    },
+  
     show: {
-        rotate :"-10deg",
+        rotate :["0deg","-10deg","0deg"],
         transition: {
 
 
-            repeat: Infinity, duration: 0.7
+            repeat: Infinity, duration: 1
         }
         
     },
-    exit: { rotate: 0 }
 }
 
 
