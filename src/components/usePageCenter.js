@@ -1,11 +1,12 @@
 import { useWindowHeight } from "@react-hook/window-size";
 import { useEffect, useRef, useState } from "react";
 
-export const usePageCenter = (animItem) => {
+export const usePageCenter = (animItem ) => {
+
     const [visible, setVisible] = useState(false)
     const height = useWindowHeight()
     function animOnScroll() {
-        const position = window.pageYOffset || document.getElementById('App').scrollTop;
+        const position = window.pageYOffset || document.getElementsByClassName('episode')[0].scrollTop;
         const offsetTop = animItem?.current?.offsetTop || 50
         const animItemHeight = animItem?.current?.offsetHeight;
         const start = position + (height / 2)

@@ -3,6 +3,6 @@ body{
     height: 100vh;
     overflow: hidden;
 }
-.App::-webkit-scrollbar {
+.episode::-webkit-scrollbar {
     display: none;
 }

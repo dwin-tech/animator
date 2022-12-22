@@ -18,13 +18,12 @@ import { Frame_7 } from "./episode_1/frame_7/Frame_7";
 import { Frame_8 } from "./episode_1/frame_8/Frame_8";
 import { Frame_9 } from "./episode_1/Frame_9/Frame_9";
 import { Episode_1_Header } from "./episode_1/header/Episode_1_Header";
-import { Episode_2_Frame_1 } from "./episode_2/episod_2_frame_1/episod_2_frame_1";
 
 export function Episode_1() {
 
     return (
         <div>
-            <article className="App" id="App" style={{
+            <article className="episode" id="episode_1" style={{
                 height: "100vh",
                 overflowY: "scroll",
                 overflowX: "hidden",

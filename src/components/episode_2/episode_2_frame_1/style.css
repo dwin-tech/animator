@@ -2,7 +2,6 @@
     max-width:600px;
     margin: auto;
     position: relative;
-    background-color: aquamarine;
 }
 
 .episode_2_Frame_1_threePeople{
@@ -37,9 +36,6 @@
 
 .episode_2_Frame_1_onePerson{
     position: absolute;
-    /* top: 0%;
-    left: 0%;
-    width: 100%; */
     z-index: 3;
 }
 
@@ -52,3 +48,17 @@
     height: 100%;
     z-index: 7;
   }
+
+  .episode_2_Frame_1_message{
+    position: absolute;
+    z-index: 5;
+  }
+
+  .episode_2_Frame_1_eyes{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    z-index: 5;
+  }
+
