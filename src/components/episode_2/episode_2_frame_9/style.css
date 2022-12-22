@@ -1,0 +1,57 @@
+.dogsContainer {
+    max-width:800px;
+    margin: auto;
+    position: relative;
+}
+
+.backgroundPhoto{
+  width:100%;
+  margin: auto;
+  position: relative;
+}
+
+.guysAndDogs {
+  bottom: 0;
+  height: 100%;
+    position: absolute;
+    left: 0%;
+    width: 100%;
+    z-index: 2;
+}
+.leftJaw{
+  height: 100%;
+    position: absolute;
+    left: 0%;
+    width: 100%;
+    z-index: 1;
+    top: -0.1%;
+    transform-origin: bottom right;
+    transform-style: preserve-3D;
+    
+}
+
+.rightJaw{
+  height: 100%;
+    left: 1%;
+    width: 100%;
+    top:0.5%;
+    position: absolute;
+    z-index: 1;
+    transform-origin: bottom left;
+  transform-style: preserve-3D;
+}
+
+.dogsMessages1{
+    position: absolute;
+    left: 0%;
+    top:10%;
+    width:100%;
+    z-index: 5;
+}
+
+.dogsMessages2{
+  position: absolute;
+  /* left: 0%;
+  width: 100%; */
+  z-index: 5;
+}

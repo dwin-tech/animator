@@ -1,0 +1,29 @@
+.guysAndHandShake {
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.guysInOffice {
+    width:100%;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.handWithRing {
+    top: 24%;
+    left: 62%;
+    width: 38%;
+    position: absolute;
+    z-index: 2;
+}
+
+.handMessage {
+    position: absolute;
+    left: 0%;
+    top:10%;
+    width:50%;
+    z-index: 2;
+}
