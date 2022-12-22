@@ -1,41 +1,18 @@
 export const handContainer = {
-    hidden: {
-        rotate: 0
-
-    },
+  
     show: {
-        rotate: "-30deg",
+        // rotate: "-30deg",
+        rotate :["0deg","-30deg","0deg"],
+
         transition: {
 
             repeat: 3,
             duration: 0.7,
             ease: "linear",
         }
-    },
-    exit: { rotate: 0, ease: "linear", }
+    }
 }
 
-// export const fiveContainer = {
-//     hidden: {
-//         scale: 1,
-//         bottom: "61%",
-//         right: "7%",
-
-
-//     },
-//     show: {
-//         // scale: 32,
-//         width:"35%",
-//         transition:
-//         {
-//             duration: 0.1,
-//             delay: 1,
-//             forwards: 1,
-//             ease: "linear",
-//         }
-
-//     },
-// }
 export const blackContainerFrame6 = {
     hidden: {
         opacity: 0.2,
@@ -62,9 +39,6 @@ export const fiveContainer = {
 opacity: 0.5,
     },
     show: {
-        // width: ["1%", "10%", "53%", "35%"],
-        // bottom: ["32%", "51%", "55%", "61%"],
-        // right: ["68%", "17%", "7%", "7%"],
         bottom: "61%",
         right: "7%",
         width: "35%",

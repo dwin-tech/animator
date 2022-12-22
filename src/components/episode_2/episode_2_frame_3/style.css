@@ -1,11 +1,11 @@
-.episode_2_Frame_2{
+.episode_2_Frame_3{
 max-width: 800px;
     margin: auto;
     position: relative;
   height: 100%;
 overflow: hidden;
 }
-.episode_2_Frame_2_BlackWindow{
+.episode_2_Frame_3_BlackWindow{
   position:relative;
   background-color: black;
   top: 0;
@@ -14,42 +14,49 @@ overflow: hidden;
   height: 100%;
   z-index: 7;
 }
- .episode_2_Frame_2_back{
+ .episode_2_Frame_3_back{
     width: 100%;
   position: relative;
-  z-index: 1;
 }  
 
 
- .episode_2_Frame_2_window{
-    width: 100%;
+ .episode_2_Frame_3_board{
+    /* width: 50%; */
   position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 3;
+  /* top: 20%;
+  right: 0; */
+  z-index: 1;
 }
 
-.episode_2_Frame_2_windowShine{
+
+.episode_2_Frame_3_guy{
   position: absolute;
-    z-index: 2;
+  top: 22%;
+  left: 1%;
+  z-index: 1;
+  width: 50%;
 }
-.episode_2_Frame_2_threePersons{
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    z-index: 4;
-    width: 100%;
-}
-.episode_2_Frame_2_hand{
+
+.episode_2_Frame_3_hand2{
   position: absolute;
-  top: 29%;
-  left: 28%;
-  width: 9%;
-  z-index: 5;
-  transform-origin: bottom left;
+  top: 50%;
+  left: 37%;
+  width: 20%;
+  z-index: 1;
+  transform-origin: top left;
   transform-style: preserve-3D;
 }
-.episode_2_Frame_2_message_1{
+
+.episode_2_Frame_3_hand{
+  position: absolute;
+  top: 29%;
+  left: 37%;
+  width: 19%;
+  z-index: 1;
+  transform-origin: bottom right;
+  transform-style: preserve-3D;
+}
+.episode_2_Frame_3_message{
     position: absolute;
     z-index: 5;
     /* top: 0%;

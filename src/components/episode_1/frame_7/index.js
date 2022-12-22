@@ -1,17 +1,14 @@
 export const fingerContainer = {
-    hidden: {
-        rotate: 0
 
-    },
     show: {
-        rotate: "-30deg",
+        rotate: ["0deg", "-30deg", "0deg"],
+
         transition: {
             repeat: 3,
             duration: 0.7,
             // ease: "linear",
         }
-    },
-    exit: { rotate: 0, ease: "linear", }
+    }
 }
 
 
@@ -31,12 +28,12 @@ export const eyesContainer = {
     }
 }
 
-export const messageContainer={
+export const messageContainer = {
     hidden: {
         // scale: 1,
         // x: 0
         top: "80%",
-        right:"23%",
+        right: "23%",
         width: "0%",
         // opacity:0.5,
 
@@ -44,7 +41,7 @@ export const messageContainer={
     show: {
         width: "55%",
         // width: ["1%", "10%", "63%", "55%"],
-        top:"90%",
+        top: "90%",
         right: "23%",
         // opacity:1,
         transition:
