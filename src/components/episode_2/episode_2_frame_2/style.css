@@ -62,4 +62,12 @@ overflow: hidden;
   width: 100%;
 }
 
+.episode_2_Frame_2_shine{
+  position: absolute;
+    top: 17%;
+    left: 11%;
+    z-index: 4;
+    width: 72%;
+}
+
 

@@ -1,10 +1,12 @@
 .episode_2_Frame_4{
-max-width: 800px;
+    max-width: 800px;
     margin: auto;
     position: relative;
-  height: 100%;
-overflow: hidden;
+    overflow: hidden;
+    height: 600px;
 }
+
+
 .episode_2_Frame_4_BlackWindow{
   position:relative;
   background-color: black;
@@ -14,59 +16,42 @@ overflow: hidden;
   height: 100%;
   z-index: 7;
 }
- .episode_2_Frame_3_back{
+
+ .episode_2_Frame_4_window{
     width: 100%;
-  position: relative;
+    top:0;
+    left: 0;
+    z-index: 2;
+  position: absolute;
 }  
 
 
- .episode_2_Frame_3_board{
-    /* width: 50%; */
-  position: absolute;
-  /* top: 20%;
-  right: 0; */
-  z-index: 1;
-}
-
-
-.episode_2_Frame_3_guy{
-  position: absolute;
-  top: 22%;
-  left: 1%;
-  z-index: 1;
-  width: 50%;
-}
-
-.episode_2_Frame_3_hand2{
-  position: absolute;
-  top: 50%;
-  left: 37%;
-  width: 20%;
-  z-index: 1;
-  transform-origin: top left;
-  transform-style: preserve-3D;
-}
-
-.episode_2_Frame_3_hand{
-  position: absolute;
-  top: 29%;
-  left: 37%;
-  width: 19%;
-  z-index: 1;
-  transform-origin: bottom right;
-  transform-style: preserve-3D;
-}
-.episode_2_Frame_3_message{
-    position: absolute;
-    z-index: 5;
-    /* top: 0%;
-    left: 0%; */
-    /* width: 100%; */
-}
-.episode_2_Frame_2_message_2{
-  position: absolute;
-  z-index: 5;
+ .episode_2_Frame_4_threePersons{
   width: 100%;
+  bottom:0%;
+  left: 0%;
+  z-index: 3;
+  position: absolute;
 }
 
 
+.episode_2_Frame_4_windowShine{
+  position: absolute;
+  /* top: 0%;
+  left: -64%;
+  width: 85%; */
+  z-index: 2;
+}
+
+.episode_2_Frame_4_compShine{
+  position: absolute;
+    top: 69%;
+    left: 23%;
+    z-index: 3;
+    width: 15%;
+}
+
+.episode_2_Frame_4_message{
+  position: absolute;
+    z-index: 3;
+}

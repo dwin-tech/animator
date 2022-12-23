@@ -21,7 +21,7 @@ export function Frame_4() {
     const visible = usePageCenter(animItem)
 
     return (
-        <section ref={animItem} style={{ marginTop: "25%", scrollSnapAlign: "center" }}>
+        <section ref={animItem} style={{ marginTop: "15%", scrollSnapAlign: "center" }}>
             <div className="frameFour">
 
                 <motion.div className="frameFourBlackWindow"
