@@ -1,0 +1,35 @@
+.trio{
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.blackBackground {
+    overflow: hidden;
+    width:100%;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.nerd {
+    width: 60%;
+    left: 0%;
+    top: 10%;
+    position: absolute;
+    z-index: 2;
+}
+
+.curl {
+    position: absolute;
+    z-index: 2;
+}
+
+.blondeGuy {
+    width: 60%;
+    left: 0%;
+    top: 10%;
+    position: absolute;
+    z-index: 2;
+}
