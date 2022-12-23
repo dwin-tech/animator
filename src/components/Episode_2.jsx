@@ -26,7 +26,6 @@ export function Episode_2() {
                 <Episode_2_Frame_2/>
                 <Episode_2_Frame_3/>
                 <Episode_2_Frame_4/>
-                
                 <Footer />
             </article>
         </div>

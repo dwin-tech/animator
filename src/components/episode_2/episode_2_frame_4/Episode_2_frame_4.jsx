@@ -29,45 +29,45 @@ export function Episode_2_Frame_4() {
     return (
         <section ref={animItem} style={{ marginTop: "15%", scrollSnapAlign: "center" }}>
             <div className="episode_2_Frame_4">
-                <motion.div className="episode_2_Frame_4_BlackWindow"
-                // variants={blackContainer}
-                // initial="hidden"
-                // animate={visible ? "show" : "hidden"}
+            <motion.div className="episode_2_Frame_4_BlackWindow"
+                    variants={blackContainer}
+                    initial="hidden"
+                    animate={visible ? "show" : "hidden"}
                 >
-
-                    <img className="episode_2_Frame_4_window"
-                        src={window} alt={"window"} />
-
-                    <img className="episode_2_Frame_4_threePersons"
-                        src={threePersons} alt={"threePersons"} />
+                <img className="episode_2_Frame_4_threePersons"
+                    src={threePersons} alt={"threePersons"} />
+                <img className="episode_2_Frame_4_window"
+                    src={window} alt={"window"} />
 
 
-                    <motion.img className="episode_2_Frame_4_windowShine"
-                        src={windowShine} alt={"windowShine"}
-                        variants={windowShineContainer}
-                        initial="hidden"
-                        animate={visible ? "show" : "hidden"}
-                    />
 
-                    <motion.img className="episode_2_Frame_4_compShine"
-                    animate={ visible?{
+
+                <motion.img className="episode_2_Frame_4_windowShine"
+                    src={windowShine} alt={"windowShine"}
+                    variants={windowShineContainer}
+                    initial="hidden"
+                    animate={visible ? "show" : "hidden"}
+                />
+
+                <motion.img className="episode_2_Frame_4_compShine"
+                    animate={visible ? {
                         opacity: [0.5, 0.9, 0.5],
                         transition:
                         {
                             repeat: "Infinity", duration: 0.8, ease: "linear",
                         }
-                    }:{opacity:1} }
+                    } : { opacity: 1 }}
                     viewport={{ amount: 0.2 }}
-                        src={compShine} alt={"compShine"} />
+                    src={compShine} alt={"compShine"} />
 
-                    <motion.img className="episode_2_Frame_4_message"
-                        src={message} alt={"message"}
-                        
-                        variants={messageContainer}
-                        initial="hidden"
-                        animate={visible ? "show" : "hidden"}
-                        
-                        />
+                <motion.img className="episode_2_Frame_4_message"
+                    src={message} alt={"message"}
+
+                    variants={messageContainer}
+                    initial="hidden"
+                    animate={visible ? "show" : "hidden"}
+
+                />
                 </motion.div>
             </div>
         </section>
