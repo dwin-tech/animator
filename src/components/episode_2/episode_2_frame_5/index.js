@@ -11,8 +11,8 @@ export const welcomeNerg = {
     left: "0%",
     opacity: 1,
     transition: {
-      delay: 0.5,
-      duration: 0.9,
+      delay: 0.2,
+      duration: 0.5,
       forwards: 1,
       ease: "linear",
     },
@@ -32,8 +32,8 @@ export const welcomeCurl = {
     left: "-0.5%",
     opacity: 1,
     transition: {
-      delay: 1.5,
-      duration: 0.9,
+      delay: 0.7,
+      duration: 0.5,
       forwards: 1,
       ease: "linear",
     },
@@ -53,8 +53,8 @@ export const welcomeBlonde = {
     left: "34%",
     // opacity: 1,
     transition: {
-      delay: 2.5,
-      duration: 0.9,
+      delay: 1.2,
+      duration: 0.5,
       forwards: 1,
       ease: "linear",
     },
