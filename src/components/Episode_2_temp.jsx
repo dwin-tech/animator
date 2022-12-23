@@ -1,4 +1,6 @@
 import { Footer } from "./episode_1/footer/Fotter";
+import { Episode_2_Frame_6 } from "./episode_2/episode_2_frame_6/Episode_2_frame_6";
+import { Episode_2_Frame_7 } from "./episode_2/episode_2_frame_7/Episode_2_frame_7";
 import { Episode_2_Frame_8 } from "./episode_2/episode_2_frame_8/Episode_2_frame_8";
 import { Episode_2_Frame_9 } from "./episode_2/episode_2_frame_9/Episode_2_frame_9";
 
@@ -20,6 +22,8 @@ export function Episode_2_temp() {
                 scrollSnapStop: "always"
             }}>
                 <Episode_2_Header/>
+                <Episode_2_Frame_6/>
+                <Episode_2_Frame_7/>
                 <Episode_2_Frame_8/>
                 <Episode_2_Frame_9/>
                 <Footer />

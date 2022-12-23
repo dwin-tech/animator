@@ -1,0 +1,49 @@
+.opportunityForUs {
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+}
+
+.onlyOffice{
+    width:100%;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.guysSittingInOffice{
+    left: 0%;
+    width:100%;
+    margin: auto;
+    position: absolute;
+    z-index: 2;
+}
+
+.mouth {
+    height: 3%;
+    position: absolute;
+    left: 43.2%;
+    width: 3.5%;
+    z-index: 3;
+    top: 57.4%;
+    transform-origin: bottom right;
+    transform-style: preserve-3D;
+}
+
+.handOfCurl {
+    left: 57%;
+    width:12%;
+    top: 55%;
+    /* margin: auto; */
+    position: absolute;
+    z-index: 3;
+    transform-origin:  bottom left;
+}
+
+.messageOfCurl {
+    position: absolute;
+    left: 14%;
+    top:2%;
+    width:39%;
+    z-index: 3;
+}
