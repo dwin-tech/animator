@@ -10,15 +10,14 @@ const transition = {
 
 export const container = {
     hidden: {
-        left: "68%",
+        left: "64%",
         top: "-15%",
-        width: "39%"
-
+        width: "67%"
     },
     show: {
-        left: "13%",
-        top: "14%",
-        width: "33%",
+        left: "10%",
+        top: "22%",
+        width: "45%",
         transition:
         {
             duration: 0.8,
@@ -30,14 +29,14 @@ export const container = {
 }
 export const listsContainer = {
     hidden: {
-        bottom: "10%",
-        right: "-1%",
+        bottom: "20%",
+        right: "-2%",
         width: "26%"
 
     },
     show: {
-        bottom: "-31%",
-        right: "18%",
+        bottom: "-20%",
+        right: "48%",
         width: "26%",
         transition:
         {
@@ -52,22 +51,22 @@ export const listsContainer = {
 
 export const messContainer = {
     hidden: {
-        bottom: "51%",
-        right: "59%",
+        bottom: "62%",
+        right: "62%",
         width: "0%",
         opacity:0.5,
 
     },
     show: {
-        bottom: "61%",
-        right: "22%",
-        width: "40%",
+        bottom: "75%",
+        right: "13%",
+        width: "46%",
         opacity:1,
 
         transition:
         {
             duration: 0.2,
-            delay: 0.5,
+            delay: 0.6,
             forwards: 1,
             ease: "linear",
         }

@@ -23,22 +23,22 @@ export const blackContainer = {
     },
 }
 
-export const boardContainer = {
+export const windowShineContainer = {
     hidden: {
-        top: "100%",
-        left: "-50%",
-        width: "62%",
+        top: "0%",
+        left: "-64%",
+        width: "85%",
 
     },
     show: {
-        top: "10%",
-        left: "35%",
-        width: "62%",
+        top: "0%",
+        left: "100%",
+        width: "85%",
 
         transition:
         {
-            duration: 0.5,
-            delay: 0.6,
+            duration: 0.9,
+            delay: 0.2,
             forwards: 1,
             ease: "linear",
         }
@@ -46,31 +46,16 @@ export const boardContainer = {
     },
 }
 
-export const handContainer = {
-
-
-    show: {
-        rotate: ["40deg", "20deg", "40deg"],
-        transition: {
-
-            delay: 0.5,
-            repeat: 1, duration: 2
-        }
-
-    }
-}
-
-
 export const messageContainer = {
     hidden: {
-        top: "48%",
-        left: "29%",
+        top: "66%",
+        left: "21%",
         width: "0%",
         opacity: 0.5,
     },
     show: {
-        top: "60%",
-        left: "42%",
+        top: "6%",
+        left: "9%",
         width: "40%",
         opacity: 1,
 

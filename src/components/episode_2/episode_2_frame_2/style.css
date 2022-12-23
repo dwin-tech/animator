@@ -2,7 +2,6 @@
 max-width: 800px;
     margin: auto;
     position: relative;
-  height: 100%;
 overflow: hidden;
 }
 .episode_2_Frame_2_BlackWindow{
@@ -59,7 +58,14 @@ overflow: hidden;
 .episode_2_Frame_2_message_2{
   position: absolute;
   z-index: 5;
-  width: 100%;
+}
+
+.episode_2_Frame_2_shine{
+  position: absolute;
+    top: 17%;
+    left: 11%;
+    z-index: 4;
+    width: 72%;
 }
 
 
