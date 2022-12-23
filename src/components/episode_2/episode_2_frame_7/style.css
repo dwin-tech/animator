@@ -20,12 +20,12 @@
 }
 
 .mouth {
-    height: 2%;
+    height: 3%;
     position: absolute;
-    left: 43.7%;
-    width: 3%;
+    left: 43.5%;
+    width: 3.5%;
     z-index: 3;
-    top: 57.9%;
+    top: 57.4%;
     transform-origin: bottom right;
     transform-style: preserve-3D;
 }

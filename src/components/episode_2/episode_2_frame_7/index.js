@@ -1,9 +1,9 @@
 export const speaking = {
   hidden: {
-    rotate: "-10deg",
+    rotate: "-5deg",
   },
   show: {
-    rotate: "0deg",
+    rotate: "2deg",
     transition: {
       delay: 0.5,
       repeat: 3,
