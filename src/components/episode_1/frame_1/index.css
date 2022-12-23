@@ -5,6 +5,7 @@
     margin: auto;
     position: relative;
     overflow: hidden;
+    padding-bottom: 5%;
   }
 .img{
    width: 100%;
