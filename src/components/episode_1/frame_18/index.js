@@ -61,7 +61,7 @@ export const secondMessageContent = {
     opacity: 0.5,
   },
   show: {
-    width: "50%",
+    width: "45%",
     bottom: "51%",
     left: "28%",
     opacity: 1,
