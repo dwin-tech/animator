@@ -1,4 +1,6 @@
 .framerTen {
+  padding-top: 10%;
+  overflow: hidden;
     max-width:600px;
     margin: auto;
     position: relative;

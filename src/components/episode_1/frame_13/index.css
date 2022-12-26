@@ -1,6 +1,7 @@
 .thirteen {
     max-width:600px;
     margin: auto;
+    overflow: hidden;
     position: relative;
   }
 

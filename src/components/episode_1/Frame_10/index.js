@@ -7,7 +7,7 @@ export const messageCont = {
     },
     show: {
         width:"44%",
-        bottom: "76%",
+        top: "0%",
         left: "58%",
         opacity:1,
 

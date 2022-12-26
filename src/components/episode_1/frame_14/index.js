@@ -8,7 +8,7 @@ export const messageContent = {
     },
     show: {
         width:"30%",
-        bottom:"79%",
+        top:"0%",
         left:"64%",
         opacity:1,
         transition:
