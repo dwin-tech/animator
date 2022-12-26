@@ -1,37 +1,38 @@
 .fourteen {
-    max-width:600px;
-    margin: auto;
-    position: relative;
-  }
+  padding-top: 10%;
+  max-width: 600px;
+  margin: auto;
+  position: relative;
+}
 
 
-  .phoneBoy{
-    width: 100%;
-    position: relative;
-    z-index: 1;
-  }
+.phoneBoy {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
 
 
- .phoneBoyShine{
-    position: absolute;
-    bottom: 14%;
-    left: 0%;
-    width: 32%;
-    z-index: 1;
-  }
+.phoneBoyShine {
+  position: absolute;
+  bottom: 14%;
+  left: 0%;
+  width: 32%;
+  z-index: 1;
+}
 
-  .phoneBoyMessage{
-    position: absolute;
-    /* bottom: 90%;
+.phoneBoyMessage {
+  position: absolute;
+  /* bottom: 90%;
     left: 62%;
     width: 4%; */
-    z-index: 4;
-  }
+  z-index: 4;
+}
 
-  .brows{
-    position: absolute;
-    bottom: 62%;
-    left: 32%;
-    width: 24%;
-    z-index: 2;
-  }
+.brows {
+  position: absolute;
+  bottom: 62%;
+  left: 32%;
+  width: 24%;
+  z-index: 2;
+}
