@@ -14,7 +14,7 @@ import { blackContainer } from "../../episode_1/blackWindow"
 import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
 import { useRef } from "react"
-import { message } from "."
+import { curlHandContainer, eyesOneContainer, eyesTwoContainer, fingerContainer, message } from "."
 
 import './style.css';
 
@@ -41,12 +41,12 @@ export function Episode_3_Frame_8(){
                     whileInView={visible ? "show" : "hidden"} 
                     src={nerdMouth} alt={"nerdMouth"} />
                 <motion.img className="curlEyes"
-                    // variants={}
+                    variants={eyesOneContainer}
                     initial="hidden"
                     whileInView={visible ? "show" : "hidden"} 
                     src={curlEyes} alt={"curlEyes"} />
                 <motion.img className="greenEyes"
-                    // variants={}
+                    variants={eyesTwoContainer}
                     initial="hidden"
                     whileInView={visible ? "show" : "hidden"} 
                     src={blondeEyes} alt={"blondeEyes"}/>
@@ -56,12 +56,12 @@ export function Episode_3_Frame_8(){
                     whileInView={visible ? "show" : "hidden"} 
                     src={blondeHand} alt={"blondeHand"}/>
                 <motion.img className="curlHand"
-                    // variants={}
+                    variants={curlHandContainer}
                     initial="hidden"
                     whileInView={visible ? "show" : "hidden"} 
                     src={curlHand} alt={"curlHand"} /> 
                 <motion.img className="nerdFinger"
-                    // variants={}
+                    variants={fingerContainer}
                     initial="hidden"
                     whileInView={visible ? "show" : "hidden"} 
                     src={nerdFinger} alt={"nerdFinger"} />

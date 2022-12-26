@@ -32,7 +32,7 @@ export const dogsMessages2 = {
     left: "41%",
     opacity: 1,
     transition: {
-      delay: 0.4,
+      delay: 0.6,
       duration: 0.2,
       forwards: 1,
       ease: "linear",
