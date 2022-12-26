@@ -19,25 +19,7 @@
   z-index: 3;
 }
 
-.episode_2_Frame_1_window{
-    width: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 4;
-}
-.episode_2_Frame_1_shine{
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    z-index: 5;
-    width: 100%;
-}
 
-.episode_2_Frame_1_onePerson{
-    position: absolute;
-    z-index: 3;
-}
 
 .episode_2_Frame_10_BlackWindow{
     position:relative;
@@ -55,11 +37,5 @@
     z-index: 5;
   }
 
-  .episode_2_Frame_1_eyes{
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    width: 100%;
-    z-index: 5;
-  }
+
 
