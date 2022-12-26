@@ -1,0 +1,73 @@
+.outLoud {
+    max-width:800px;
+    margin: auto;
+    position: relative;
+}
+
+.mainPhoto{
+    width:80%;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.nerdEyes {
+    top: 35%;
+    left: 60%;
+    width: 9%;
+    position: absolute;
+    z-index: 0;
+}
+
+.nerdMouth {
+    top: 41%;
+    left: 61%;
+    width: 7%;
+    position: absolute;
+    z-index: 2;
+}
+
+.curlEyes {
+    top: 32%;
+    left: 14%;
+    width: 10%;
+    position: absolute;
+    z-index: 0;
+}
+
+.greenEyes {
+    top: 60%;
+    left: 76%;
+    width: 13%;
+    position: absolute;
+    z-index: 0;
+}
+
+.blondeHand {
+    top: 60%;
+    left: 69.5%;
+    width: 17%;
+    position: absolute;
+    z-index: 2;
+}
+
+.curlHand {
+    top: 34%;
+    left: 9%;
+    width: 15%;
+    position: absolute;
+    z-index: 2;
+}
+
+.nerdFinger{
+    top: 24.5%;
+    left: 55%;
+    width: 7%;
+    position: absolute;
+    z-index: 2;
+}
+
+.nerdMessage{
+    position: absolute;
+    z-index: 2;
+}
