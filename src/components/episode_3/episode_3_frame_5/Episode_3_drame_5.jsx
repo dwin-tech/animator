@@ -1,0 +1,59 @@
+
+
+import { motion } from "framer-motion"
+import back from '../../../assets/episode_3/frame_5/back.png'
+import hand from '../../../assets/episode_3/frame_5/hand.png'
+import message from '../../../assets/episode_3/frame_5/message.png'
+import girlHand from '../../../assets/episode_3/frame_5/girlHand.png'
+
+
+
+
+
+
+
+
+
+import './style.css';
+
+import { useRef } from "react";
+import { usePageCenter } from "../../usePageCenter";
+import { blackContainer, messageContainer } from "."
+
+
+export function Episode_3_Frame_5() {
+
+    const animItem = useRef();
+    const visible = usePageCenter(animItem)
+
+    return (
+        <section ref={animItem} style={{ marginTop: "15%", scrollSnapAlign: "center" }}>
+            <div className="episode_3_Frame_5">
+                <motion.div className="episode_3_Frame_5_BlackWindow"
+                    variants={blackContainer}
+                    initial="hidden"
+                    animate={visible ? "show" : "hidden"}
+                >
+                    <img className="episode_3_Frame_5_back"
+                        src={back} alt={"back"} />
+                    <img className="episode_3_Frame_5_hand"
+                        src={hand} alt={"hand"} />
+                    <img className="episode_3_Frame_5_message"
+                        src={message} alt={"message"} />
+               <img className="episode_3_Frame_5_girlHand"
+                        src={girlHand} alt={"girlHand"} />  
+                    {/* <motion.img className="episode_3_Frame_3_message"
+                        src={message} alt={"message"}
+                        variants={messageContainer}
+                        initial="hidden"
+                        animate={visible ? "show" : "hidden"} /> */}
+
+
+
+
+
+                </motion.div>
+            </div>
+        </section>
+    )
+}
