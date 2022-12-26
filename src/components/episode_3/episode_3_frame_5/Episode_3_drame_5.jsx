@@ -18,7 +18,7 @@ import './style.css';
 
 import { useRef } from "react";
 import { usePageCenter } from "../../usePageCenter";
-import { blackContainer, messageContainer } from "."
+import { blackContainer, handContainer, messageContainer } from "."
 
 
 export function Episode_3_Frame_5() {
@@ -36,12 +36,16 @@ export function Episode_3_Frame_5() {
                 >
                     <img className="episode_3_Frame_5_back"
                         src={back} alt={"back"} />
-                    <img className="episode_3_Frame_5_hand"
+
+                    <motion.img className="episode_3_Frame_5_hand"
+                        variants={handContainer}
+                        initial="hidden"
+                        animate={visible ? "show" : "hidden"}
                         src={hand} alt={"hand"} />
                     <img className="episode_3_Frame_5_message"
                         src={message} alt={"message"} />
-               <img className="episode_3_Frame_5_girlHand"
-                        src={girlHand} alt={"girlHand"} />  
+                    <img className="episode_3_Frame_5_girlHand"
+                        src={girlHand} alt={"girlHand"} />
                     {/* <motion.img className="episode_3_Frame_3_message"
                         src={message} alt={"message"}
                         variants={messageContainer}
