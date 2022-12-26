@@ -27,8 +27,6 @@ export function Episode_3() {
                 scrollSnapStop: "always"
             }}>
                 <Episode_3_Header />
-                <Episode_3_Frame_8/>
-                <Episode_3_Frame_9/>
                 <Episode_3_Frame_1/>
                 <Episode_3_Frame_2/>
                 <Episode_3_Frame_3/>
@@ -36,6 +34,8 @@ export function Episode_3() {
                 <Episode_3_Frame_5/>
                 <Episode_3_Frame_6/>
                 <Episode_3_Frame_7/>
+                <Episode_3_Frame_8/>
+                <Episode_3_Frame_9/>
                 <Footer />
             </article>
         </div>
