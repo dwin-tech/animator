@@ -39,12 +39,10 @@ export function Episode_3_Frame_9(){
                     src={brownDogTongue} alt={"brownDogTonguebrownDogTongue"} />
                 <motion.img className="whiteDogEyes"
 
-                    // variants={}
                     initial="hidden"
                     whileInView={visible ? "show" : "hidden"} 
                     src={whiteDogEyes} alt={"whiteDogEyes"} />
                 <motion.img className="brownDogEyes"
-                    // variants={}
                     initial="hidden"
                     whileInView={visible ? "show" : "hidden"} 
                     src={brownDogEyes} alt={"vertical"}/>

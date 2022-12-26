@@ -19,7 +19,7 @@ import './style.css';
 
 import { useRef } from "react";
 import { usePageCenter } from "../../usePageCenter";
-import { blackContainer, messageContainer } from "."
+import { blackContainer, eyesContainer, messageContainer, mouthContainer } from "."
 
 
 export function Episode_3_Frame_6() {
@@ -37,17 +37,23 @@ export function Episode_3_Frame_6() {
                 >
                     <img className="episode_3_Frame_6_back"
                         src={back} alt={"back"} />
-                  
+
                     <img className="episode_3_Frame_6_message"
-                        src={message} alt={"message"} /> 
+                        src={message} alt={"message"} />
 
 
-                    <img className="episode_3_Frame_6_eyes"
-                        src={eyes} alt={"eyes"} /> 
+                    <motion.img className="episode_3_Frame_6_eyes"
+                        variants={eyesContainer}
+                        initial="hidden"
+                        whileInView={visible ? "show" : "hidden"}
+                        src={eyes} alt={"eyes"} />
 
-<img className="episode_3_Frame_6_mouth"
-                        src={mouth} alt={"mouth"} /> 
-              
+                    <motion.img className="episode_3_Frame_6_mouth"
+                        variants={mouthContainer}
+                        initial="hidden"
+                        whileInView={visible ? "show" : "hidden"}
+                        src={mouth} alt={"mouth"} />
+
                     {/* <motion.img className="episode_3_Frame_3_message"
                         src={message} alt={"message"}
                         variants={messageContainer}
