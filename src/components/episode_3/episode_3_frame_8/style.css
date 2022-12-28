@@ -52,8 +52,7 @@
     width: 15%;
     position: absolute;
     z-index: 2;
-    transform-origin: bottom right;
-    transform-style: preserve-3D;
+ 
 }
 
 .nerdFinger{

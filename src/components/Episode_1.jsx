@@ -32,7 +32,7 @@ export function Episode_1() {
                 scrollPadding: "10px",
                 scrollBehavior: "smooth",
                 position: "relative",
-                scrollSnapStop: "always"
+                scrollSnapStop: "always",
             }}>
                 <Episode_1_Header />
                 <Frame_1 />

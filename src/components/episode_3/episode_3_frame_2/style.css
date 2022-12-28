@@ -1,53 +1,59 @@
-.episode_3_Frame_2{
-    max-width: 800px;
-    margin: auto;
-    position: relative;
-    overflow: hidden;
-    }
-    .episode_3_Frame_2_BlackWindow{
-      position:relative;
-      background-color: black;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 7;
-    }
-     .episode_3_Frame_2_back{
-        width: 100%;
-      position: relative;
-      z-index: 1;
-    }  
-   .episode_3_Frame_2_finger{
-    position: absolute;
-    top: 18%;
-    left: 52%;
-    width: 30%;
-    z-index: 1;
-    }
-    .episode_3_Frame_1_mouth{
-        position: absolute;
-        top: 59%;
-    left: 31%;
-    width: 18%;
-    z-index: 1;
-    }
+.episode_3_Frame_2 {
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
 
-    .episode_3_Frame_2_message{
-        position: absolute;
-        z-index: 3;
-    }
+.episode_3_Frame_2_BlackWindow {
+  position: relative;
+  background-color: black;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 7;
+}
 
-   .episode_3_Frame_1_eyes{
-    position: absolute;
-    top: 41%;
-    left: 23%;
-    width: 26%;
-    z-index: 2;
-    }
+.episode_3_Frame_2_back {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.episode_3_Frame_2_finger {
+  position: absolute;
+  top: 25%;
+  left: 52%;
+  width: 30%;
+  z-index: 1;
+  transform-origin: bottom right;
+  transform-style: preserve-3D;
+}
+
+.episode_3_Frame_1_mouth {
+  position: absolute;
+  top: 59%;
+  left: 31%;
+  width: 18%;
+  z-index: 1;
+}
+
+.episode_3_Frame_2_message {
+  position: absolute;
+  z-index: 3;
+}
+
+.episode_3_Frame_1_eyes {
+  position: absolute;
+  top: 41%;
+  left: 23%;
+  width: 26%;
+  z-index: 2;
+}
 
 
-   /* .episode_3_Frame_1_hand1{
+/* .episode_3_Frame_1_hand1{
         position: absolute;
     top: 43%;
     left: 37%;
@@ -65,5 +71,3 @@
 
     
      */
-    
-    

@@ -48,3 +48,17 @@ export const messageContainer = {
 
     },
 }
+
+export const handContainer = {
+
+
+    show: {
+        rotate: ["-15deg", "0deg", "-15deg"],
+        transition: {
+
+
+            repeat: 2, duration: 1
+        }
+
+    }
+}

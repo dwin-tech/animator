@@ -27,7 +27,8 @@ export function Frame_4() {
                 <motion.div className="frameFourBlackWindow"
                     variants={blackContainer}
                     initial="hidden"
-                    whileInView={visible ? "show" : "hidden"}>
+                    whileInView={visible && "show" }
+                    viewport={{ once: true }}>
 
                     <img className="room"
                         src={bigRoom} alt={"bigRoom"} />
@@ -35,7 +36,8 @@ export function Frame_4() {
                         className="runningGuy"
                         variants={container}
                         initial="hidden"
-                        whileInView={visible ? "show" : "hidden"}
+                        whileInView={visible && "show" }
+                        viewport={{ once: true }}
                         src={runing} alt={"runing"}
 
                     />
@@ -43,13 +45,15 @@ export function Frame_4() {
 
                         variants={listsContainer}
                         initial="hidden"
-                        whileInView={visible ? "show" : "hidden"}
+                        whileInView={visible && "show" }
+                        viewport={{ once: true }}
                         className="lists" src={lists} alt={"lists"} />
                     <motion.img
 
                         variants={messContainer}
                         initial="hidden"
-                        whileInView={visible ? "show" : "hidden"}
+                        whileInView={visible && "show" }
+                        viewport={{ once: true }}
 
 
                         className="mess" src={mess} alt={"mess"} />

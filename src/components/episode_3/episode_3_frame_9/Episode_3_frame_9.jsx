@@ -11,7 +11,7 @@ import { blackContainer } from "../../episode_1/blackWindow"
 import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
 import { useRef } from "react"
-import { dogsMessages1, dogsMessages2 } from "."
+import { brownDogTongueContainer, dogsMessages1, dogsMessages2 } from "."
 
 import './style.css';
 
@@ -33,10 +33,10 @@ export function Episode_3_Frame_9(){
                     whileInView={visible ? "show" : "hidden"} 
                     src={whiteDogJay} alt={"whiteDogJay"} />
                 <motion.img className="brownDogTongue"
-                    // variants={}
+                    variants={brownDogTongueContainer}
                     initial="hidden"
                     whileInView={visible ? "show" : "hidden"} 
-                    src={brownDogTongue} alt={"brownDogTonguebrownDogTongue"} />
+                    src={brownDogTongue} alt={"brownDogTongue"} />
                 <motion.img className="whiteDogEyes"
 
                     initial="hidden"

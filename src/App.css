@@ -5,4 +5,10 @@ body{
 }
 .episode::-webkit-scrollbar {
     display: none;
+
 }
+.scrollsnap-section {
+    height: 100vh;
+    scroll-snap-align: start;
+    position: relative;
+  }

@@ -55,10 +55,10 @@ export function Episode_3_Frame_8(){
                     initial="hidden"
                     whileInView={visible ? "show" : "hidden"} 
                     src={blondeHand} alt={"blondeHand"}/>
-                <motion.img className="curlHand"
-                    variants={curlHandContainer}
-                    initial="hidden"
-                    whileInView={visible ? "show" : "hidden"} 
+                <img className="curlHand"
+                    // variants={curlHandContainer}
+                    // initial="hidden"
+                    // whileInView={visible ? "show" : "hidden"} 
                     src={curlHand} alt={"curlHand"} /> 
                 <motion.img className="nerdFinger"
                     variants={fingerContainer}
