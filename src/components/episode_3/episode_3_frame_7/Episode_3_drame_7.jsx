@@ -37,14 +37,11 @@ export function Episode_3_Frame_7() {
                     <motion.img className="episode_3_Frame_7_girl"
                         variants={girlContainer}
                         initial="hidden"
-                        animate={visible ? "show" : "hidden"}
+                        whileInView={visible && "show" }
+                        viewport={{ once: true }}
                         src={girl} alt={"girl"} />
 
-                    {/* <motion.img className="episode_3_Frame_3_message"
-                        src={message} alt={"message"}
-                        variants={messageContainer}
-                        initial="hidden"
-                        animate={visible ? "show" : "hidden"} /> */}
+                
 
 
 

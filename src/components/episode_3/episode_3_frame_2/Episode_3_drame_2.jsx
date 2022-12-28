@@ -42,22 +42,17 @@ export function Episode_3_Frame_2() {
                         src={finger} alt={"finger"}
                         variants={handContainer}
                         initial="hidden"
-                        animate={visible ? "show" : "hidden"} />
+                        whileInView={visible && "show" }
+                        viewport={{ once: true }} />
                     <img className="episode_3_Frame_1_mouth"
                         src={mouth} alt={"mouth"} />
                     <motion.img className="episode_3_Frame_2_message"
                         src={message} alt={"message"}
                         variants={messageContainer}
                         initial="hidden"
-                        animate={visible ? "show" : "hidden"} />
-                     {/* <img className="episode_3_Frame_1_eyes"
-                        src={eyes} alt={"eyes"} /> */}
-                   {/* <img className="episode_3_Frame_1_hand1"
-                        src={hand1} alt={"hand1"} />
-                    <img className="episode_3_Frame_1_hand2"
-                        src={hand2} alt={"hand2"} />
-                
-                     */}
+                        whileInView={visible && "show" }
+                        viewport={{ once: true }}/>
+               
 
 
 

@@ -38,25 +38,28 @@ export function Frame_17() {
 
                         variants={starShow}
                         initial="hidden"
-                        whileInView={visible ? "show" : "hidden"}
+                        whileInView={visible && "show"}
+                        viewport={{ once: true }}
 
                         src={stars} alt={"stars"} />
                     <motion.img className="backTwo"
                         variants={nightContainer}
                         initial="hidden"
-                        whileInView={visible ? "show" : "hidden"}
+                        whileInView={visible && "show"}
+                        viewport={{ once: true }}
                         src={back} alt={"back"} />
                     <motion.img className="streetWindows"
                         variants={onLight}
                         initial="hidden"
-                        whileInView={visible ? "show" : "hidden"}
+                        whileInView={visible && "show"}
+                        viewport={{ once: true }}
                         src={streetWindows} alt={"streetWindows"} />
                     <motion.div
                         className="carLightDiv"
                         variants={carContainer}
                         initial="hidden"
-                        exit="exit"
-                        animate={visible ? "show" : "hidden"}
+                        whileInView={visible && "show"}
+                        viewport={{ once: true }}
                     >
                         <motion.img
                             className="carLight"

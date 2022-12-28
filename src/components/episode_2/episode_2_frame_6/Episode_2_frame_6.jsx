@@ -28,16 +28,19 @@ export function Episode_2_Frame_6(){
 
                 <motion.img className="partOfDoor"
                     initial="hidden"
-                    whileInView={visible ? "show" : "hidden"} 
+                    whileInView={visible && "show" }
+                    viewport={{ once: true }}
                     src={doorPart} alt={"doorPart"} />
                 <motion.img className="guysWalking"
                     variants={walking}
                     initial="hidden"
-                    whileInView={visible ? "show" : "hidden"} 
+                    whileInView={visible && "show" }
+                    viewport={{ once: true }}
                     src={guys} alt={"guys"} />
                 <motion.img className="min45"
                     initial="hidden"
-                    whileInView={visible ? "show" : "hidden"} 
+                    whileInView={visible && "show" }
+                    viewport={{ once: true }}
                     src={message} alt={"message"} />
             </motion.div>
         </section>

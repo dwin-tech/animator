@@ -29,29 +29,34 @@ export function Episode_2_Frame_9(){
 
                 <motion.img className="guysAndDogs"
                     initial="hidden"
-                    whileInView={visible ? "show" : "hidden"} 
+                    whileInView={visible && "show" }
+                    viewport={{ once: true }}
                     src={dogs} alt={"dogs"} />
                 <motion.img className="leftJaw"
                     variants={leftDogJaw}
                     initial="hidden"
-                    whileInView={visible ? "show" : "hidden"} 
+                    whileInView={visible && "show" }
+                    viewport={{ once: true }}
                     src={leftJaw} alt={"leftJaw"} />
                 <motion.img className="rightJaw"
 
                     variants={rightDogJaw}
                     initial="hidden"
-                    whileInView={visible ? "show" : "hidden"} 
+                    whileInView={visible && "show" }
+                    viewport={{ once: true }}
                     src={rightJaw} alt={"rightJaw"} />
 
                 <motion.img className="dogsMessages1"
                     variants={dogsMessages1}
                     initial="hidden"
-                    whileInView={visible ? "show" : "hidden"} 
+                    whileInView={visible && "show" }
+                    viewport={{ once: true }}
                     src={message1} alt={"vertical"}/>
                 <motion.img className="dogsMessages2"
                     variants={dogsMessages2}
                     initial="hidden"
-                    whileInView={visible ? "show" : "hidden"} 
+                    whileInView={visible && "show" }
+                    viewport={{ once: true }}
                     src={message2} alt={"vertical"} />
             </motion.div>
         </section>

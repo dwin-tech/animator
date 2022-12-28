@@ -36,22 +36,26 @@ export function Episode_3_Frame_1() {
                     <motion.img className="episode_3_Frame_1_boy" src={boy} alt={"boy"}
                         variants={boyContainer}
                         initial="hidden"
-                        animate={visible ? "show" : "hidden"} />
+                        whileInView={visible && "show" }
+                    viewport={{ once: true }} />
                     <motion.img className="episode_3_Frame_1_girl" src={girl} alt={"girl"}
                         variants={girlContainer}
                         initial="hidden"
-                        animate={visible ? "show" : "hidden"} />
+                        whileInView={visible && "show" }
+                    viewport={{ once: true }} />
                     <motion.img className="episode_3_Frame_1_hand1" src={hand1} alt={"hand1"} 
                     variants={handContainer}
                     initial="hidden"
-                    animate={visible ? "show" : "hidden"}
+                    whileInView={visible && "show" }
+                    viewport={{ once: true }}
                     
                     />
                     <motion.img className="episode_3_Frame_1_hand2" src={hand2} alt={"hand2"}
                     
                     variants={handContainer}
                     initial="hidden"
-                    animate={visible ? "show" : "hidden"}u/>
+                    whileInView={visible && "show" }
+                    viewport={{ once: true }}/>
 
                     <motion.img
                         className="episode_3_Frame_1_message"
@@ -59,7 +63,8 @@ export function Episode_3_Frame_1() {
                         alt={"message1"}
                         variants={messageOneContainer}
                         initial="hidden"
-                        animate={visible ? "show" : "hidden"}
+                        whileInView={visible && "show" }
+                    viewport={{ once: true }}
                     />
                     <motion.img
                         className="episode_3_Frame_1_message"
@@ -67,7 +72,8 @@ export function Episode_3_Frame_1() {
                         alt={"message2"}
                         variants={messageTwoContainer}
                         initial="hidden"
-                        animate={visible ? "show" : "hidden"}
+                        whileInView={visible && "show" }
+                        viewport={{ once: true }}
                     />
                 </motion.div>
             </div>

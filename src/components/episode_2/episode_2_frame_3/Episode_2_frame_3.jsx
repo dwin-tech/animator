@@ -43,7 +43,8 @@ export function Episode_2_Frame_3() {
                     <motion.img className="episode_2_Frame_3_board"
                         variants={boardContainer}
                         initial="hidden"
-                        animate={visible ? "show" : "hidden"}
+                        whileInView={visible && "show" }
+                    viewport={{ once: true }}
                         src={board} alt={"board"}
                     />
                     <img className="episode_2_Frame_3_guy"
@@ -58,14 +59,16 @@ export function Episode_2_Frame_3() {
                     <motion.img className="episode_2_Frame_3_hand"
                         variants={handContainer}
                         initial="hidden"
-                        animate={visible ? "show" : "hidden"}
+                        whileInView={visible && "show" }
+                    viewport={{ once: true }}
                         src={hand} alt={"hand"}
                     />
 
                     <motion.img className="episode_2_Frame_3_message"
                         variants={messageContainer}
                         initial="hidden"
-                        animate={visible ? "show" : "hidden"}
+                        whileInView={visible && "show" }
+                    viewport={{ once: true }}
                         src={message} alt={"message"}
                     />
                 </motion.div>

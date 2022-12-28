@@ -29,17 +29,20 @@ export function Episode_2_Frame_5(){
                 <motion.img className="nerd"
                     variants={welcomeNerg}
                     initial="hidden"
-                    whileInView={visible ? "show" : "hidden"} 
+                    whileInView={visible && "show" }
+                    viewport={{ once: true }}
                     src={nerd} alt={"nerd"} />
                 <motion.img className="curl"
                     variants={welcomeCurl}
                     initial="hidden"
-                    whileInView={visible ? "show" : "hidden"} 
+                    whileInView={visible && "show" }
+                    viewport={{ once: true }}
                     src={curl} alt={"curl"} />
                 <motion.img className="blondeGuy"
                     variants={welcomeBlonde}
                     initial="hidden"
-                    whileInView={visible ? "show" : "hidden"} 
+                    whileInView={visible && "show" }
+                    viewport={{ once: true }}
                     src={blonde} alt={"blonde"} />
             </motion.div>
         </section>

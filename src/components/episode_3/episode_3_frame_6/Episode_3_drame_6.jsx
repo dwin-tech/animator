@@ -45,20 +45,16 @@ export function Episode_3_Frame_6() {
                     <motion.img className="episode_3_Frame_6_eyes"
                         variants={eyesContainer}
                         initial="hidden"
-                        whileInView={visible ? "show" : "hidden"}
-                        src={eyes} alt={"eyes"} />
+                        whileInView={visible && "show" }
+                        viewport={{ once: true }}                        src={eyes} alt={"eyes"} />
 
                     <motion.img className="episode_3_Frame_6_mouth"
                         variants={mouthContainer}
                         initial="hidden"
-                        whileInView={visible ? "show" : "hidden"}
-                        src={mouth} alt={"mouth"} />
+                        whileInView={visible && "show" }
+                        viewport={{ once: true }}                        src={mouth} alt={"mouth"} />
 
-                    {/* <motion.img className="episode_3_Frame_3_message"
-                        src={message} alt={"message"}
-                        variants={messageContainer}
-                        initial="hidden"
-                        animate={visible ? "show" : "hidden"} /> */}
+                 
 
 
 

@@ -38,7 +38,8 @@ export function Episode_3_Frame_4() {
                     <motion.img className="episode_3_Frame_4_hand"
                         variants={handContainer}
                         initial="hidden"
-                        animate={visible ? "show" : "hidden"}
+                        whileInView={visible && "show"}
+                        viewport={{ once: true }}
                         src={hand} alt={"hand"} />
                     <img className="episode_3_Frame_4_message"
                         src={message} alt={"message"} />

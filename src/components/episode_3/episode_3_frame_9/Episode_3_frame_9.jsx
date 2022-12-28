@@ -30,31 +30,37 @@ export function Episode_3_Frame_9(){
 
                 <motion.img className="whiteDogJay"
                     initial="hidden"
-                    whileInView={visible ? "show" : "hidden"} 
+                    whileInView={visible && "show" }
+                    viewport={{ once: true }}
                     src={whiteDogJay} alt={"whiteDogJay"} />
                 <motion.img className="brownDogTongue"
                     variants={brownDogTongueContainer}
                     initial="hidden"
-                    whileInView={visible ? "show" : "hidden"} 
+                    whileInView={visible && "show" }
+                    viewport={{ once: true }}
                     src={brownDogTongue} alt={"brownDogTongue"} />
                 <motion.img className="whiteDogEyes"
 
                     initial="hidden"
-                    whileInView={visible ? "show" : "hidden"} 
+                    whileInView={visible && "show" }
+                    viewport={{ once: true }}
                     src={whiteDogEyes} alt={"whiteDogEyes"} />
                 <motion.img className="brownDogEyes"
                     initial="hidden"
-                    whileInView={visible ? "show" : "hidden"} 
+                    whileInView={visible && "show" }
+                    viewport={{ once: true }}
                     src={brownDogEyes} alt={"vertical"}/>
                 <motion.img className="brownDogMessage"
                     variants={dogsMessages1}
                     initial="hidden"
-                    whileInView={visible ? "show" : "hidden"} 
+                    whileInView={visible && "show" }
+                    viewport={{ once: true }} 
                     src={message1} alt={"vertical"}/>
                 <motion.img className="whiteDogsMessages2"
                     variants={dogsMessages2}
                     initial="hidden"
-                    whileInView={visible ? "show" : "hidden"} 
+                    whileInView={visible && "show" }
+                    viewport={{ once: true }}
                     src={message2} alt={"vertical"} />
             </motion.div>
         </section>

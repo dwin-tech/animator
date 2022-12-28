@@ -27,8 +27,7 @@ export function Frame_4() {
                 <motion.div className="frameFourBlackWindow"
                     variants={blackContainer}
                     initial="hidden"
-                    whileInView={visible && "show" }
-                    viewport={{ once: true }}>
+                    whileInView={visible ? "show" : "hidden"}>
 
                     <img className="room"
                         src={bigRoom} alt={"bigRoom"} />
