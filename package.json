@@ -11,6 +11,8 @@
     "format": "^0.2.2",
     "framer-motion": "^7.6.15",
     "framer-motion-3d": "^7.6.15",
+    "jsoneditor": "^9.9.2",
+    "jsoneditor-react": "^3.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.5.0",
