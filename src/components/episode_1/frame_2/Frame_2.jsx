@@ -14,13 +14,11 @@ import { usePageCenter } from "../../usePageCenter";
 
 
 
-export function Frame_2() {
+export function Frame_2({visible}) {
     const animItem = useRef();
-    const visible = usePageCenter(animItem)
+    // const visible = usePageCenter(animItem)
     return (
-        <section ref={animItem} style={{
-            marginTop: "15%", scrollSnapAlign: "center", overflow: "hidden"
-        }}>
+        <section ref={animItem} >
             <motion.div className="frameTwo"
                 variants={blackContainer}
                 initial="hidden"
@@ -32,7 +30,7 @@ export function Frame_2() {
                     initial="hidden"
                     exit="exit"
                     animate={visible ? "show" : "hidden"}
-                    src={green} alt={"green"} />i
+                    src={green} alt={"green"} />
     
 
                 <motion.div

@@ -14,12 +14,12 @@ import { usePageCenter } from "../../usePageCenter";
 
 
 
-export function Frame_3() {
+export function Frame_3({visible}) {
     const animItem = useRef();
-    const visible = usePageCenter(animItem)
+    // const visible = usePageCenter(animItem)
 
     return (
-        <section ref={animItem} style={{ marginTop: "15%", scrollSnapAlign: "center" }}>
+        <section ref={animItem}>
             <div className="frameThree">
 
                 <motion.div className="frameThreeBlackWindow"

@@ -25,11 +25,11 @@ import { usePageCenter } from "../../usePageCenter"
 
 
 
-export function Frame_7() {
+export function Frame_7({visible}) {
     const animItem = useRef();
-    const visible = usePageCenter(animItem)
+    // const visible = usePageCenter(animItem)
     return (
-        <section ref={animItem} style={{ marginTop: "15%", scrollSnapAlign: "center",position: "relative" }}>
+        <section ref={animItem} style={{scrollSnapAlign: "center",position: "relative" }}>
 
             <motion.div className="frameSeven"
                 variants={blackContainer}

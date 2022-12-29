@@ -21,12 +21,12 @@ import { usePageCenter } from "../../usePageCenter";
 
 
 
-export function Frame_8() {
+export function Frame_8({visible}) {
 
     const animItem = useRef();
-    const visible = usePageCenter(animItem)
+    // const visible = usePageCenter(animItem)
     return (
-        <section ref={animItem}  style={{ marginTop: "15%",scrollSnapAlign: "center" }}>
+        <section ref={animItem}  style={{ scrollSnapAlign: "center" }}>
             <motion.div className="frameEight"
             
             variants={blackContainer}

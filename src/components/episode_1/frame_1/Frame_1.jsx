@@ -16,12 +16,12 @@ import { usePageCenter } from "../../usePageCenter";
 
 
 
-export function Frame_1() {
+export function Frame_1({visible}) {
     const width = useWindowWidth();
     const animItem = useRef();
-    const visible = usePageCenter(animItem)
+    // const visible = usePageCenter(animItem)
     return (
-        <section ref={animItem} style={{ marginTop: "15%" ,scrollSnapAlign: "center"}}>
+        <section ref={animItem}>
             <div >
                 <motion.div className="frameOne"
                     variants={blackContainer}
