@@ -5,10 +5,6 @@ const transition = {
     ease: "linear",
 }
 
-
-
-
-
 export const boxOne = {
     hidden: {
         

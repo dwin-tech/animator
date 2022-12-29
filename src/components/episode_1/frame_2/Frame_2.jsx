@@ -1,7 +1,4 @@
 import { motion } from "framer-motion"
-import { useWindowHeight } from "@react-hook/window-size";
-import { useEffect, useRef, useState } from "react";
-
 import street from '../../../assets/episode_1/frame_2/street.png'
 import blue from '../../../assets/episode_1/frame_2/blue.png'
 import yellow from '../../../assets/episode_1/frame_2/yellow.png'
@@ -9,18 +6,11 @@ import green from '../../../assets/episode_1/frame_2/green.png'
 import './index.css';
 import { carBlueCont, carGreenContainer, carYellowContainer } from '.';
 import { blackContainer } from "../blackWindow";
-import { usePageCenter } from "../../usePageCenter";
 
+export function Frame_2({visible}) {
 
-
-
-export function Frame_2() {
-    const animItem = useRef();
-    const visible = usePageCenter(animItem)
     return (
-        <section ref={animItem} style={{
-            marginTop: "15%", scrollSnapAlign: "center", overflow: "hidden"
-        }}>
+        <section >
             <motion.div className="frameTwo"
                 variants={blackContainer}
                 initial="hidden"
@@ -32,9 +22,7 @@ export function Frame_2() {
                     initial="hidden"
                     exit="exit"
                     animate={visible ? "show" : "hidden"}
-                    src={green} alt={"green"} />i
-    
-
+                    src={green} alt={"green"} />
                 <motion.div
                     className="yellowCarDiv"
                     variants={carYellowContainer}

@@ -1,5 +1,4 @@
 import { motion } from "framer-motion"
-
 import { useRef } from "react";
 import './index.css';
 import boy from '../../../assets/episode_1/frame_3/boy.png'
@@ -8,20 +7,12 @@ import shine from '../../../assets/episode_1/frame_3/shine.png'
 import message from '../../../assets/episode_1/frame_3/message.png'
 import { container, messageContainer } from '.';
 import { blackContainer } from "../blackWindow";
-import { usePageCenter } from "../../usePageCenter";
 
-
-
-
-
-export function Frame_3() {
-    const animItem = useRef();
-    const visible = usePageCenter(animItem)
+export function Frame_3({visible}) {
 
     return (
-        <section ref={animItem} style={{ marginTop: "15%", scrollSnapAlign: "center" }}>
+        <section>
             <div className="frameThree">
-
                 <motion.div className="frameThreeBlackWindow"
                     variants={blackContainer}
                     initial="hidden"

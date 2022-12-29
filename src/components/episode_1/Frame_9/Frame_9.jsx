@@ -1,33 +1,19 @@
 import { motion } from "framer-motion"
 import './index.css';
-
-
 import man from '../../../assets/episode_1/frame_9/man.png'
 import manEyes from '../../../assets/episode_1/frame_9/manEyes.png'
 import smallShine from '../../../assets/episode_1/frame_9/smallShine.png'
-
-import { useWindowHeight } from "@react-hook/window-size";
-import { useEffect, useRef, useState } from "react";
 import { blackContainer } from "../blackWindow";
-import { usePageCenter } from "../../usePageCenter";
 
 
+export function Frame_9({ visible }) {
 
-
-
-
-
-export function Frame_9() {
-    const animItem = useRef();
-    const visible = usePageCenter(animItem)
     return (
-        <section ref={animItem} style={{ marginTop: "15%", scrollSnapAlign: "center" }}>
+        <section r style={{ scrollSnapAlign: "center" }}>
             <motion.div className="frameNine"
-
                 variants={blackContainer}
                 initial="hidden"
                 whileInView={visible ? "show" : "hidden"}
-
             >
                 <img className="man"
                     src={man} alt={"man"} />
