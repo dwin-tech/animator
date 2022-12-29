@@ -44,7 +44,8 @@ export function Episode_3_Frame_3() {
                         src={message} alt={"message"}
                         variants={messageContainer}
                         initial="hidden"
-                        animate={visible ? "show" : "hidden"} />
+                        whileInView={visible && "show" }
+                    viewport={{ once: true }} />
 
 
 

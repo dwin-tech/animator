@@ -36,24 +36,28 @@ export function Frame_18() {
                 <motion.img className="whiteDog"
                     variants={whiteDogContainer}
                     initial="hidden"
-                    whileInView={visible ? "show" : "hidden"} 
+                    whileInView={visible && "show" }
+                    viewport={{ once: true }}
                     src={whiteDog} alt={"whiteDog"} />
                 <motion.img className="yellowDog"
                     variants={yellowDogContainer}
                     initial="hidden"
-                    whileInView={visible ? "show" : "hidden"} 
+                    whileInView={visible && "show" }
+                    viewport={{ once: true }}
                     src={yellowDog} alt={"yellowDog"} />
                 <motion.img className="horizontal"
 
                     variants={messageContent}
                     initial="hidden"
-                    whileInView={visible ? "show" : "hidden"} 
+                    whileInView={visible && "show" }
+                    viewport={{ once: true }}
                     src={horizontal} alt={"horizontal"} />
 
                 <motion.img className="vertical"
                     variants={secondMessageContent}
                     initial="hidden"
-                    whileInView={visible ? "show" : "hidden"} 
+                    whileInView={visible && "show" }
+                    viewport={{ once: true }}
                     src={vertical} alt={"vertical"} />
             </motion.div>
         </section>

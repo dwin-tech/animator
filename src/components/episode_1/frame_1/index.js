@@ -12,7 +12,7 @@ const transition = {
 export const boxOne = {
     hidden: {
         
-        y: 0,
+        y: 10,
         
     },
     show: {
@@ -36,7 +36,7 @@ export const twoBox = {
         
     },
     show: {
-        y: -33,
+        y: -80,
         transition: {
             duration: 0.8,
             delay: 1.2,
@@ -52,16 +52,11 @@ export const twoBox = {
 export const threeBox = {
     hidden: {
         y: 20,
-        transition: {
-            duration: 1,
-            delay: 1.3,
-            forwards: 1,
-            ease: "linear",
-        }
+     
 
     },
     show: {
-        y: -23,
+        y: -47,
        
         transition: {
             duration: 1,
@@ -95,3 +90,40 @@ export const birdsContainer ={
 
 
 
+export const sentence = {
+    hidden: {
+        opacity: 0,
+
+    },
+    visible: {
+        opacity: 1,
+
+        transition:
+        {
+
+            delay: 0.5,
+            staggerChildren: 0.08,
+        }
+
+    }
+}
+
+export const letter = {
+    hidden: { opacity: 0, },
+    visible: {
+        opacity: 1,
+        Y: 0
+    }
+}
+
+
+export const scrollIConContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition:
+        {
+            delay: 1.8, duration: 1, ease: "linear",
+        }
+    }
+}

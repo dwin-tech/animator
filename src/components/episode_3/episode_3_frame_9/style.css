@@ -25,6 +25,8 @@
     width: 16%;
     position: absolute;
     z-index: 2;
+    transform-origin: top right;
+    transform-style: preserve-3D;
 }
 
 .whiteDogEyes {

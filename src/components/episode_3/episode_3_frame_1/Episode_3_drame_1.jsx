@@ -12,7 +12,7 @@ import "./style.css";
 
 import { useRef } from "react";
 import { usePageCenter } from "../../usePageCenter";
-import { blackContainer, messageOneContainer, messageTwoContainer } from ".";
+import { blackContainer, boyContainer, girlContainer, handContainer, messageOneContainer, messageTwoContainer } from ".";
 
 export function Episode_3_Frame_1() {
     const animItem = useRef();
@@ -33,10 +33,29 @@ export function Episode_3_Frame_1() {
                         src={threePersons}
                         alt={"threePersons"}
                     />
-                    <img className="episode_3_Frame_1_boy" src={boy} alt={"boys"} />
-                    <img className="episode_3_Frame_1_girl" src={girl} alt={"girl"} />
-                    <img className="episode_3_Frame_1_hand1" src={hand1} alt={"hand1"} />
-                    <img className="episode_3_Frame_1_hand2" src={hand2} alt={"hand2"} />
+                    <motion.img className="episode_3_Frame_1_boy" src={boy} alt={"boy"}
+                        variants={boyContainer}
+                        initial="hidden"
+                        whileInView={visible && "show" }
+                    viewport={{ once: true }} />
+                    <motion.img className="episode_3_Frame_1_girl" src={girl} alt={"girl"}
+                        variants={girlContainer}
+                        initial="hidden"
+                        whileInView={visible && "show" }
+                    viewport={{ once: true }} />
+                    <motion.img className="episode_3_Frame_1_hand1" src={hand1} alt={"hand1"} 
+                    variants={handContainer}
+                    initial="hidden"
+                    whileInView={visible && "show" }
+                    viewport={{ once: true }}
+                    
+                    />
+                    <motion.img className="episode_3_Frame_1_hand2" src={hand2} alt={"hand2"}
+                    
+                    variants={handContainer}
+                    initial="hidden"
+                    whileInView={visible && "show" }
+                    viewport={{ once: true }}/>
 
                     <motion.img
                         className="episode_3_Frame_1_message"
@@ -44,7 +63,8 @@ export function Episode_3_Frame_1() {
                         alt={"message1"}
                         variants={messageOneContainer}
                         initial="hidden"
-                        animate={visible ? "show" : "hidden"}
+                        whileInView={visible && "show" }
+                    viewport={{ once: true }}
                     />
                     <motion.img
                         className="episode_3_Frame_1_message"
@@ -52,7 +72,8 @@ export function Episode_3_Frame_1() {
                         alt={"message2"}
                         variants={messageTwoContainer}
                         initial="hidden"
-                        animate={visible ? "show" : "hidden"}
+                        whileInView={visible && "show" }
+                        viewport={{ once: true }}
                     />
                 </motion.div>
             </div>

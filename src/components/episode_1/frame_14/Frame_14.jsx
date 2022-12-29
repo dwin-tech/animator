@@ -47,13 +47,14 @@ export function Frame_14() {
 
                         variants={messageContent}
                         initial="hidden"
-                        whileInView={visible ? "show" : "hidden"}
+                        whileInView={visible && "show" }
+                    viewport={{ once: true }}
                         src={message} alt={"message"} />
                     <motion.img className="brows"
                         variants={browsContainer}
                         initial="hidden"
-                        // animate="show"
-                        whileInView="show"
+                        whileInView={visible && "show" }
+                        viewport={{ once: true }}
                         src={brows} alt={"brows"} />
 
                 </motion.div>

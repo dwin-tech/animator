@@ -69,3 +69,55 @@ export const messageTwoContainer = {
 
     },
 }
+export const boyContainer={
+    hidden: {
+        top: "4%",
+        left: "0%",
+        width: "28%",
+    }, 
+    show: {
+        top: "5%",
+        left: "29%",
+        width: "28%",
+        transition:
+        {
+            duration: 1.5,
+            delay: 0.5,
+            forwards: 1,
+            ease: "linear",
+        }
+    }
+}
+export const girlContainer={
+    hidden: {
+        top: "9%",
+        left: "97%",
+        width: "20%",
+    }, 
+    show: {
+        top: "9%",
+        left: "77%",
+        width: "20%",
+        transition:
+        {
+            duration: 1.5,
+            delay: 0.5,
+            forwards: 1,
+            ease: "linear",
+        }
+    }
+}
+
+export const handContainer = {
+
+
+    show: {
+        rotate: ["10deg", "0deg", "10deg"],
+        transition: {
+
+
+            repeat: 2, duration: 1
+        }
+
+    }
+}

@@ -46,7 +46,8 @@ export function Episode_2_Frame_2() {
                         src={windowShine} alt={"windowShine"}
                         variants={windowShineContainer}
                         initial="hidden"
-                        animate={visible ? "show" : "hidden"}
+                        whileInView={visible && "show" }
+                    viewport={{ once: true }}
                         />
 
                     <img className="episode_2_Frame_2_threePersons"
@@ -55,20 +56,22 @@ export function Episode_2_Frame_2() {
                         src={hand} alt={"hand"} 
                         variants={handContainer}
                         initial="hidden"
-                        animate={visible ? "show" : "hidden"
-                        }
+                        whileInView={visible && "show" }
+                        viewport={{ once: true }}
                         />
 
                     <motion.img className="episode_2_Frame_2_message_1"
                      variants={messageOneContainer}
                      initial="hidden"
-                     animate={visible ? "show" : "hidden"}
+                     whileInView={visible && "show" }
+                     viewport={{ once: true }}
                         src={message1} alt={"message1"} />
 
                     <motion.img className="episode_2_Frame_2_message_2"
                     variants={messageTwoContainer}
                     initial="hidden"
-                    animate={visible ? "show" : "hidden"}
+                    whileInView={visible && "show" }
+                    viewport={{ once: true }}
                         src={message2} alt={"message2"} />
                  <motion.img className="episode_2_Frame_2_shine"
                     animate={ {

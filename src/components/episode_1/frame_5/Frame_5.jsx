@@ -33,7 +33,8 @@ export function Frame_5() {
                     <motion.img
                         variants={handContainer}
                         initial="hidden"
-                        whileInView={visible ? "show" : "hidden"}
+                        whileInView={visible && "show" }
+                        viewport={{ once: true }}
 
                         className="hand" src={hand} alt={"hand"} />
 

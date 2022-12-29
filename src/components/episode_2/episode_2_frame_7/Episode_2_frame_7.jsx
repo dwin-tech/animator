@@ -29,22 +29,26 @@ export function Episode_2_Frame_7(){
 
                 <motion.img className="guysSittingInOffice"
                     initial="hidden"
-                    whileInView={visible ? "show" : "hidden"} 
+                    whileInView={visible && "show" }
+                    viewport={{ once: true }}
                     src={guys} alt={"guys"} />
                 <motion.img className="mouth"
                     variants={speaking}
                     initial="hidden"
-                    whileInView={visible ? "show" : "hidden"} 
+                    whileInView={visible && "show" }
+                    viewport={{ once: true }}
                     src={mouth} alt={"mouth"} />
                 <motion.img className="handOfCurl"
                     variants={handWave}
                     initial="hidden"
-                    whileInView={visible ? "show" : "hidden"} 
+                    whileInView={visible && "show" }
+                    viewport={{ once: true }}
                     src={hand} alt={"hand"} />
                 <motion.img className="messageOfCurl"
                     variants={curlsMessages}
                     initial="hidden"
-                    whileInView={visible ? "show" : "hidden"} 
+                    whileInView={visible && "show" }
+                    viewport={{ once: true }}
                     src={message} alt={"message"} />
             </motion.div>
         </section>
