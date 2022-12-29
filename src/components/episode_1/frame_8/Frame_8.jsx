@@ -26,33 +26,32 @@ export function Frame_8() {
     const animItem = useRef();
     const visible = usePageCenter(animItem)
     return (
-        <section ref={animItem} style={{ marginTop: "15%", scrollSnapAlign: "center" }}>
+        <section ref={animItem}  style={{ marginTop: "15%",scrollSnapAlign: "center" }}>
             <motion.div className="frameEight"
-
-                variants={blackContainer}
-                initial="hidden"
-                whileInView={visible ? "show" : "hidden"}
+            
+            variants={blackContainer}
+            initial="hidden"
+            whileInView={visible ? "show" : "hidden"}          
             >
                 <img className="employee"
                     src={employee} alt={"employee"} />
                 <img className="window"
                     src={window} alt={"window"} />
                 <motion.img className="computerShine"
-                    animate={visible ? {
+                    animate={visible?{
                         opacity: [0.5, 0.7, 0.5],
                         transition:
                         {
                             repeat: "Infinity", duration: 0.8, ease: "linear",
                         }
-                    } : { opacity: 1 }}
+                    }:{opacity:1}}
                     viewport={{ amount: 0.2 }}
                     src={computerShine} alt={"computerShine"} />
                 <motion.img className="twoPerson"
 
                     variants={twoPersonContainer}
                     initial="hidden"
-                    whileInView={visible && "show" }
-                    viewport={{ once: true }}
+                    whileInView={visible ? "show" : "hidden"}
 
 
                     src={twoPerson} alt={"twoPerson"} />

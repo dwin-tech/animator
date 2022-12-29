@@ -1,45 +1,35 @@
-.frameOne {
-   max-width: 600px;
-   margin: auto;
-   position: relative;
-   overflow: hidden;
-   padding-bottom: 5%;
-}
 
-.img {
+
+  .frameOne {
+   max-width: 600px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 5%;
+  }
+.img{
    width: 100%;
    z-index: 1;
 }
-
-.birds {
+.birds{
    position: absolute;
-   max-width: 30%;
-   z-index: 5;
-   top: 70%;
-   left: 78%;
+    max-width: 30%;
+    z-index: 5;
+    top: 70%;
+    left: 78%;
 }
 
-.img2 {
-   position: absolute;
-   width: 100%;
-   bottom: -5%;
-   z-index: 2;
-}
+ .img2{
+    position: absolute;
+    width: 100%;
+    bottom: -5%;
+    z-index: 2;
+     }
 
-.img3 {
-   position: absolute;
-   width: 100%;
-   bottom: -5%;
-   z-index: 3;
-   /* top: 37%; */
-}
-
-.ourDays {
-   position: absolute;
-   color: rgb(0, 0, 0);
-   top: 30%;
-   left: 30%;
-   font-size: 35px;
-   text-align: center;
-   z-index: 6;
-}
+ .img3{
+    position: absolute;
+    width: 100%;
+    bottom: -5%;
+    z-index: 3;
+    /* top: 37%; */
+ } 

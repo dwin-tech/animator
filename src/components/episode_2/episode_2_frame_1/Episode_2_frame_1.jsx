@@ -54,33 +54,29 @@ export function Episode_2_Frame_1() {
                         src={message1} alt={"message1"}
                         variants={messageOneContainer}
                         initial="hidden"
-                        whileInView={visible && "show" }
-                    viewport={{ once: true }} />
+                        animate={visible ? "show" : "hidden"} />
                     <motion.img className="episode_2_Frame_1_message"
                         src={message2} alt={"message2"}
                         variants={messageTwoContainer}
                         initial="hidden"
-                        whileInView={visible && "show" }
-                    viewport={{ once: true }}
+                        animate={visible ? "show" : "hidden"}
                     />
                     <motion.img className="episode_2_Frame_1_message"
                         src={message3} alt={"message3"}
                         variants={messageThreeContainer}
                         initial="hidden"
-                        whileInView={visible && "show" }
-                    viewport={{ once: true }}
+                        animate={visible ? "show" : "hidden"}
                     />
                     <motion.img className="episode_2_Frame_1_onePerson"
                         variants={boyWithComputerContainer}
-                        whileInView={visible && "show" }
-                    viewport={{ once: true }}
+                        initial="hidden"
+                        animate={visible ? "show" : "hidden"}
                         src={onePerson} alt={"onePerson"} />
 
                         <motion.img className="episode_2_Frame_1_eyes" src={what} alt={"what"} 
                         variants={personEyesContainer}
                         initial="hidden"
-                        whileInView={visible && "show" }
-                        viewport={{ once: true }}
+                        animate={visible ? "show" : "hidden"}
                         />
                 </motion.div>
             </div>

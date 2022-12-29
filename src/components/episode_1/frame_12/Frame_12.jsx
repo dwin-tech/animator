@@ -31,8 +31,7 @@ export function Frame_12() {
 
                     variants={evilGirlContainer}
                     initial="hidden"
-                    whileInView={visible && "show" }
-                    viewport={{ once: true }}
+                    whileInView={visible ? "show" : "hidden"} 
                     src={girl} alt={"girl"} />
 
                <motion.img className="backCompShine"
@@ -49,8 +48,8 @@ export function Frame_12() {
                 <motion.img className="checkMessage"
                   variants={evilGirlMessageCont}
                   initial="hidden"
-                  whileInView={visible && "show" }
-                    viewport={{ once: true }}
+                  exit="exit"
+                  whileInView={visible ? "show" : "hidden"} 
                     src={message} alt={"message"} />
 
             </motion.div>

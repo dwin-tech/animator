@@ -33,49 +33,42 @@ export function Episode_3_Frame_8(){
 
                 <motion.img className="nerdEyes"
                     initial="hidden"
-                    whileInView={visible && "show" }
-                    viewport={{ once: true }} 
+                    whileInView={visible ? "show" : "hidden"} 
                     src={nerdEyes} alt={"nerdEyes"} />
                 <motion.img className="nerdMouth"
                     // variants={}
                     initial="hidden"
-                    whileInView={visible && "show" }
-                    viewport={{ once: true }}
+                    whileInView={visible ? "show" : "hidden"} 
                     src={nerdMouth} alt={"nerdMouth"} />
                 <motion.img className="curlEyes"
                     variants={eyesOneContainer}
                     initial="hidden"
-                    whileInView={visible && "show" }
-                    viewport={{ once: true }}
+                    whileInView={visible ? "show" : "hidden"} 
                     src={curlEyes} alt={"curlEyes"} />
                 <motion.img className="greenEyes"
                     variants={eyesTwoContainer}
                     initial="hidden"
-                    whileInView={visible && "show" }
-                    viewport={{ once: true }}
+                    whileInView={visible ? "show" : "hidden"} 
                     src={blondeEyes} alt={"blondeEyes"}/>
                 <motion.img className="blondeHand"
                     // variants={}
                     initial="hidden"
-                    whileInView={visible && "show" }
-                    viewport={{ once: true }}
+                    whileInView={visible ? "show" : "hidden"} 
                     src={blondeHand} alt={"blondeHand"}/>
-                <img className="curlHand"
-                    // variants={curlHandContainer}
-                    // initial="hidden"
-                    // whileInView={visible ? "show" : "hidden"} 
+                <motion.img className="curlHand"
+                    variants={curlHandContainer}
+                    initial="hidden"
+                    whileInView={visible ? "show" : "hidden"} 
                     src={curlHand} alt={"curlHand"} /> 
                 <motion.img className="nerdFinger"
                     variants={fingerContainer}
                     initial="hidden"
-                    whileInView={visible && "show" }
-                    viewport={{ once: true }}
+                    whileInView={visible ? "show" : "hidden"} 
                     src={nerdFinger} alt={"nerdFinger"} />
                 <motion.img className="nerdMessage"
                     variants={message}
                     initial="hidden"
-                    whileInView={visible && "show" }
-                    viewport={{ once: true }}
+                    whileInView={visible ? "show" : "hidden"} 
                     src={nerdMessage} alt={"nerdMessage"} />
             </motion.div>
         </section>

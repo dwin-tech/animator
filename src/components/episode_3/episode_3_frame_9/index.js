@@ -39,16 +39,3 @@ export const dogsMessages2 = {
     },
   },
 };
-export const brownDogTongueContainer = {
-
-  show: {
-      rotate: ["0deg", "5deg", "0deg"],
-      // rotate:"-15deg",
-
-      transition: {
-          repeat: 5,
-          duration: 0.7,
-          // ease: "linear",
-      }
-  }
-}

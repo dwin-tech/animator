@@ -35,8 +35,8 @@ export function Frame_10() {
                 <motion.img className="personTwo"
                     variants={personTwoContainer}
                     initial="hidden"
-                    whileInView={visible && "show" }
-                    viewport={{ once: true }}
+                    whileInView={visible ? "show" : "hidden"}
+                    viewport={{ amount: 0.2 }}
 
                     src={personTwo} alt={"personTwo"} />
 
@@ -54,8 +54,7 @@ export function Frame_10() {
                 <motion.img className="twoPersonsMessage"
                     variants={messageCont}
                     initial="hidden"
-                    whileInView={visible && "show" }
-                    viewport={{ once: true }}
+                    whileInView={visible ? "show" : "hidden"}
                     src={twoPersonsMessage} alt={"twoPersonsMessage"} />
 
             </motion.div>

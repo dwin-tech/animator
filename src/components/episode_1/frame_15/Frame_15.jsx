@@ -42,8 +42,7 @@ export function Frame_15() {
 
                     variants={messageContent}
                     initial="hidden"
-                    whileInView={visible && "show" }
-                    viewport={{ once: true }}
+                    whileInView={visible ? "show" : "hidden"}
                     src={message} alt={"message"} />
 
 

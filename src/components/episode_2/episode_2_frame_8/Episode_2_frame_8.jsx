@@ -28,14 +28,12 @@ export function Episode_2_Frame_8(){
                 <motion.img className="handWithRing"
                     variants={handWave}
                     initial="hidden"
-                    whileInView={visible && "show" }
-                    viewport={{ once: true }} 
+                    whileInView={visible ? "show" : "hidden"} 
                     src={hand} alt={"hand"} />
                  <motion.img className="handMessage"
                     variants={handMessages}
                     initial="hidden"
-                    whileInView={visible && "show" }
-                    viewport={{ once: true }}
+                    whileInView={visible ? "show" : "hidden"} 
                     src={message} alt={"message"} />
             </motion.div>
         </section>

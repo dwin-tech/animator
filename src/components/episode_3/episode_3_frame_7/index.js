@@ -48,25 +48,3 @@ export const messageContainer = {
 
     },
 }
-export const girlContainer={
-    hidden: {
-        top: "0%",
-        left: "100%",
-        width: "34%",
-    }, 
-        /* top: 0%;
-    right: 0%;
-    width: 34%; */
-    show: {
-        top: "0%",
-        left: "67%",
-        width: "34%",
-        transition:
-        {
-            duration: 1.5,
-            delay: 0.5,
-            forwards: 1,
-            ease: "linear",
-        }
-    }
-}
