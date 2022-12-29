@@ -31,11 +31,17 @@
 
 .episode_3_Frame_1_boy {
     position: absolute;
+    top: 5%;
+    left: 22%;
+    width: 30%;
     z-index: 2;
 }
 
 .episode_3_Frame_1_girl {
     position: absolute;
+    top: 9%;
+    left: 77%;
+    width: 20%;
     z-index: 2;
 }
 
@@ -45,8 +51,6 @@
     left: 37%;
     width: 15%;
     z-index: 3;
-    transform-origin: bottom right;
-  transform-style: preserve-3D;
 }
 
 .episode_3_Frame_1_hand2 {
@@ -55,8 +59,6 @@
     top: 58%;
     left: 60%;
     width: 16%;
-    transform-origin: bottom right;
-  transform-style: preserve-3D;
 }
 
 .episode_3_Frame_1_message {

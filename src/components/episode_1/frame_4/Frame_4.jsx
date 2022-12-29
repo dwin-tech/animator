@@ -35,8 +35,7 @@ export function Frame_4() {
                         className="runningGuy"
                         variants={container}
                         initial="hidden"
-                        whileInView={visible && "show" }
-                        viewport={{ once: true }}
+                        whileInView={visible ? "show" : "hidden"}
                         src={runing} alt={"runing"}
 
                     />
@@ -44,15 +43,13 @@ export function Frame_4() {
 
                         variants={listsContainer}
                         initial="hidden"
-                        whileInView={visible && "show" }
-                        viewport={{ once: true }}
+                        whileInView={visible ? "show" : "hidden"}
                         className="lists" src={lists} alt={"lists"} />
                     <motion.img
 
                         variants={messContainer}
                         initial="hidden"
-                        whileInView={visible && "show" }
-                        viewport={{ once: true }}
+                        whileInView={visible ? "show" : "hidden"}
 
 
                         className="mess" src={mess} alt={"mess"} />

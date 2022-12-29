@@ -30,27 +30,23 @@ export function Frame_1() {
                 >
                     <motion.img variants={twoBox}
                         initial="hidden"
-                        whileInView={visible && "show" }
-                    viewport={{ once: true }}
+                        animate={visible ? "show" : "hidden"}
                         className="img2" src={two} alt={"two"}
                     />
                     <motion.img className="img3" variants={threeBox}
                         initial="hidden"
-                        whileInView={visible && "show" }
-                    viewport={{ once: true }}
+                        animate={visible ? "show" : "hidden"}
                         src={three} alt={"three"}
                     />
                     <motion.img variants={boxOne}
                         initial="hidden"
-                        whileInView={visible && "show" }
-                        viewport={{ once: true }}
+                        animate={visible ? "show" : "hidden"}
                         className="img"
 
                         src={one} alt={"one"} />
                     <motion.img variants={birdsContainer}
                         initial="hidden"
-                        whileInView={visible && "show" }
-                    viewport={{ once: true }}
+                        animate={visible ? "show" : "hidden"}
                         className="birds" src={birds} alt={"birds"}
                     />
                 </motion.div>

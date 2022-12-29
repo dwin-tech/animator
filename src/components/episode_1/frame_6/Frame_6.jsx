@@ -28,15 +28,13 @@ export function Frame_6() {
                 <motion.div className="xxxx"
                     variants={blackContainer}
                     initial="hidden"
-                    whileInView={visible ? "show" : "hidden"}
-                    >
+                    whileInView={visible ? "show" : "hidden"}>
                     <img className="one"
                         src={one} alt={"one"} />
                     <motion.img
                         variants={handContainer}
                         initial="hidden"
-                        whileInView={visible && "show" }
-                        viewport={{ once: true }}
+                        whileInView={visible ? "show" : "hidden"}
 
                         className="two" src={two} alt={"two"} />
 
@@ -47,8 +45,7 @@ export function Frame_6() {
                     <motion.img
                         variants={fiveContainer}
                         initial="hidden"
-                        whileInView={visible && "show" }
-                        viewport={{ once: true }}
+                        whileInView={visible ? "show" : "hidden"}
 
                         className="five" src={five} alt={"five"} />
                 </motion.div>

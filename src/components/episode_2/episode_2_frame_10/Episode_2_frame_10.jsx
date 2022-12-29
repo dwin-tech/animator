@@ -36,8 +36,7 @@ export function Episode_2_Frame_10() {
                     <motion.img className="episode_2_Frame_1_message"
                         variants={messageContainer}
                         initial="hidden"
-                        whileInView={visible && "show" }
-                    viewport={{ once: true }}
+                        animate={visible ? "show" : "hidden"}
                         src={message} alt={"message"}
                       />
                 </motion.div>

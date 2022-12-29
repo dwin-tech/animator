@@ -30,8 +30,8 @@ export function Frame_2() {
                 <motion.img className="green"
                     variants={carGreenContainer}
                     initial="hidden"
-                    whileInView={visible && "show" }
-                    viewport={{ once: true }}
+                    exit="exit"
+                    animate={visible ? "show" : "hidden"}
                     src={green} alt={"green"} />i
     
 
@@ -39,8 +39,8 @@ export function Frame_2() {
                     className="yellowCarDiv"
                     variants={carYellowContainer}
                     initial="hidden"
-                    whileInView={visible && "show" }
-                    viewport={{ once: true }}
+                    exit="exit"
+                    animate={visible ? "show" : "hidden"}
                 >
                     <motion.img
                         className="yellow"
@@ -59,8 +59,8 @@ export function Frame_2() {
                     className="blueCarDiv"
                     variants={carBlueCont}
                     initial="hidden"
-                    whileInView={visible && "show" }
-                    viewport={{ once: true }}
+                    exit="exit"
+                    animate={visible ? "show" : "hidden"}
                 >
                     <motion.img
                         className="blue"

@@ -46,8 +46,7 @@ export function Episode_2_Frame_4() {
                     src={windowShine} alt={"windowShine"}
                     variants={windowShineContainer}
                     initial="hidden"
-                    whileInView={visible && "show" }
-                    viewport={{ once: true }}
+                    animate={visible ? "show" : "hidden"}
                 />
 
                 <motion.img className="episode_2_Frame_4_compShine"
@@ -66,8 +65,7 @@ export function Episode_2_Frame_4() {
 
                     variants={messageContainer}
                     initial="hidden"
-                    whileInView={visible && "show" }
-                    viewport={{ once: true }}
+                    animate={visible ? "show" : "hidden"}
 
                 />
                 </motion.div>

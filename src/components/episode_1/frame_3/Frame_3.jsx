@@ -33,14 +33,12 @@ export function Frame_3() {
                             className="boy"
                             variants={container}
                             initial="hidden"
-                            whileInView={visible && "show"}
-                            viewport={{ once: true }}
+                            animate={visible ? "show" : "hidden"}
                             src={boy} alt={"boy"} />
                         <motion.div className="shine"
                             variants={container}
                             initial="hidden"
-                            whileInView={visible && "show"}
-                            viewport={{ once: true }}
+                            animate={visible ? "show" : "hidden"}
                         >
                             <motion.img
                                 className="shineImg"
@@ -58,12 +56,11 @@ export function Frame_3() {
                         <motion.img
                             variants={messageContainer}
                             initial="hidden"
-                            whileInView={visible && "show"}
-                            viewport={{ once: true }}
+                            whileInView={visible ? "show" : "hidden"}
                             className="message" src={message} alt={"message"} />
                     </div>
                 </motion.div>
-            </div>
+                </div>
         </section >
 
     )

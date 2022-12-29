@@ -4,12 +4,22 @@ import { motion } from "framer-motion"
 import back from '../../../assets/episode_3/frame_7/back.png'
 import boy from '../../../assets/episode_3/frame_7/boy.png'
 import girl from '../../../assets/episode_3/frame_7/girl.png'
+
 import message from '../../../assets/episode_3/frame_7/message.png'
+
+
+
+
+
+
+
+
+
 import './style.css';
 
 import { useRef } from "react";
 import { usePageCenter } from "../../usePageCenter";
-import { blackContainer, girlContainer, messageContainer } from "."
+import { blackContainer, messageContainer } from "."
 
 
 export function Episode_3_Frame_7() {
@@ -34,14 +44,14 @@ export function Episode_3_Frame_7() {
 
                     <img className="episode_3_Frame_7_boy"
                         src={boy} alt={"boy"} />
-                    <motion.img className="episode_3_Frame_7_girl"
-                        variants={girlContainer}
-                        initial="hidden"
-                        whileInView={visible && "show" }
-                        viewport={{ once: true }}
+                    <img className="episode_3_Frame_7_girl"
                         src={girl} alt={"girl"} />
 
-                
+                    {/* <motion.img className="episode_3_Frame_3_message"
+                        src={message} alt={"message"}
+                        variants={messageContainer}
+                        initial="hidden"
+                        animate={visible ? "show" : "hidden"} /> */}
 
 
 

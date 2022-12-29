@@ -20,6 +20,7 @@ const sentence = {
 
     }
 }
+const line = "Episode 1. Our Days..."
 
 const letter = {
     hidden: { opacity: 0, },
@@ -40,7 +41,6 @@ const scrollIConContainer = {
         }
     }
 }
-const line = "Episode 1. Our Days..."
 
 
 

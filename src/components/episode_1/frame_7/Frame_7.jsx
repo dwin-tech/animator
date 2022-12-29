@@ -48,8 +48,7 @@ export function Frame_7() {
                 <motion.img
                     variants={fingerContainer}
                     initial="hidden"
-                    whileInView={visible && "show" }
-                    viewport={{ once: true }}
+                    whileInView={visible ? "show" : "hidden"}
 
                     className="finger"
                     src={finger} alt={"finger"} />
@@ -72,15 +71,13 @@ export function Frame_7() {
 
                     variants={eyesContainer}
                     initial="hidden"
-                    whileInView={visible && "show" }
-                    viewport={{ once: true }}
+                    whileInView={visible ? "show" : "hidden"}
 
                     src={brunetEyes} alt={"brunetEyes"} />
                 <motion.img
                     variants={messageContainer}
                     initial="hidden"
-                    whileInView={visible && "show" }
-                        viewport={{ once: true }}
+                    whileInView={visible ? "show" : "hidden"}
 
 
                     className="girlsMessage"
