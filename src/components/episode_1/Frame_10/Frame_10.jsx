@@ -6,28 +6,18 @@ import wall from '../../../assets/episode_1/frame_10/wall.png'
 import personOne from '../../../assets/episode_1/frame_10/personOne.png'
 import twoPersonsMessage from '../../../assets/episode_1/frame_10/twoPersonsMessage.png'
 import twoPersonsShine from '../../../assets/episode_1/frame_10/twoPersonsShine.png'
-
 import './index.css';
 import { messageCont, personTwoContainer } from "."
-import { useWindowHeight } from "@react-hook/window-size";
-import { useEffect, useRef, useState } from "react";
 import { blackContainer } from "../blackWindow"
-import { usePageCenter } from "../../usePageCenter"
-
 
 export function Frame_10({visible}) {
-    const animItem = useRef();
-    // const visible = usePageCenter(animItem)
     return (
-        <section ref={animItem} style={{  scrollSnapAlign: "center" }}>
+        <section style={{  scrollSnapAlign: "center" }}>
             <motion.div className="framerTen"
              variants={blackContainer}
              initial="hidden"
              whileInView={visible ? "show" : "hidden"}
-
             >
-
-
                 <img className="wall"
                     src={wall} alt={"wall"} />
                 <img className="personOne"

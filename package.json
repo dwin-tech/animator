@@ -11,6 +11,7 @@
     "format": "^0.2.2",
     "framer-motion": "^7.6.15",
     "framer-motion-3d": "^7.6.15",
+    "lodash.debounce": "^4.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-elastic-carousel": "^0.11.5",

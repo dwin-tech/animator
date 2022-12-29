@@ -2,8 +2,9 @@
   max-width: 800px;
     margin: auto;
     position: relative;
-    overflow-x: hidden;
-    /* padding-bottom: 13%; */
+    /* overflow-y: hidden; */
+    overflow-x: hidden; 
+    padding-bottom: 13%;
     
 } 
 
