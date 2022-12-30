@@ -5,7 +5,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+
+  height: 100vh;
+  overflow: hidden;
+  color: #fff;
+  font-family: 'Helvetica Neue', sans-serif;
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -14,3 +21,62 @@ code {
 .rec-slider-container {
   margin: 0 !important;
 }
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+.container {
+    height:100vh;
+    max-width: 600px;
+    /* width: 325px; */
+   
+    overflow-y: scroll;
+
+    scroll-snap-type: mandatory;
+    scroll-snap-points-y: repeat(3rem);
+    scroll-snap-type: y mandatory;
+    position: relative;
+    left: 510px;
+    top: 50px;
+    z-index: 1;
+    border-radius: 15px;
+    border: none;
+}
+
+.tiktok {
+  scroll-snap-align: start;
+  height: 100vh;
+    /* width:300px; */
+    background-color: black;
+    scroll-snap-align: start;
+}
+
+
+
+
+
+
+.phonefront-container {
+    position: absolute;
+    top: -80px;
+    left: 200px;
+    }
+    
+    
+  
+    
+    .phone-screen {
+        position: absolute;
+        height: 630px;
+        width: 330px;
+        border-radius: 15px;
+        background-color: black;
+        top: 10px;
+        left: 10px;
+        
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
