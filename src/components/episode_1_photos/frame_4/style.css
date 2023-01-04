@@ -1,0 +1,13 @@
+.runningGuy_photo{
+    position: absolute;
+    left: 31%;
+    width: 39%;
+    top: 26%;
+    z-index: 2;
+}
+
+.mess_photo{
+    left: 46%;
+    top: 14%;
+    width: 39%;
+}
