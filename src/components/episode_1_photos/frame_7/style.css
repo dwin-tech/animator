@@ -1,0 +1,16 @@
+.girlsMessage_photo{
+    width: 44%;
+    position: absolute;
+    z-index: 4;
+    left: 31%;
+    top: 87%;
+}
+
+.brunetEyes_photo{
+    position: absolute;
+    top: 20%;
+    right: 11%;
+    width: 32%;
+    z-index: 3;
+
+}
