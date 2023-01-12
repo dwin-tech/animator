@@ -30,7 +30,9 @@ export function Frames({ data }) {
                 key={index}
                 variants={el.variants}
                 initial={el.initial}
-                whileInView={visible ? "show" : "hidden"}
+                whileInView={
+                  el?.animate ? el?.animate : visible ? "show" : "hidden"
+                }
                 src={el.src}
                 alt={el.alt}
                 style={el.style}
