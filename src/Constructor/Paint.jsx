@@ -1,8 +1,6 @@
 import { getJsonFrame } from "./fetch";
 import { usePageCenter } from "../components/usePageCenter";
-import { useRef } from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Frames } from "./Frames";
 import ImageUploading from "react-images-uploading";
 
@@ -32,15 +30,15 @@ export function Paint() {
   const [duration, setDuration] = useState();
   const [delay, setDelay] = useState();
 
-  const rotate = [];
-  const animItem = useRef();
-  const visible = usePageCenter(animItem);
-
   useEffect(() => {
     getJsonFrame().then((data) => {
       setData(data);
     });
   }, []);
+
+  useEffect(() => {
+    setFrames(data?.frames);
+  }, [data]);
 
   useEffect(() => {
     setFrames(data?.frames);
@@ -139,7 +137,7 @@ export function Paint() {
                       )}
                     </ImageUploading>
                     <button
-                      onClick={(x) => {
+                      onClick={() => {
                         frames[i].imgs.push({
                           src: images[0]?.data_url,
                           alt: "",
@@ -189,7 +187,7 @@ export function Paint() {
                       setImgSrc(e.target.value);
                     }}
                   >
-                    {frames[i]?.imgs?.map((img, index) => {
+                    {frames[i]?.imgs?.map((img) => {
                       return <option value={img.src}>{img.alt}</option>;
                     })}
                   </select>
