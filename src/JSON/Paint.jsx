@@ -1,12 +1,9 @@
-import { motion } from "framer-motion";
 import { getJsonFrame } from "./fetch";
 import { usePageCenter } from "../components/usePageCenter";
 import { useRef } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { blackContainer } from "./index.js";
 import { Frames } from "./Frames";
-import { JsonEditor as Editor } from "jsoneditor-react";
 import ImageUploading from "react-images-uploading";
 
 import "./style.css";
