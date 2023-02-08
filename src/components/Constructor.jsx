@@ -9,7 +9,7 @@ import "./style.css";
 
 export function Constructor() {
   const [data, setData] = useState({ frames: [] });
-  const [activeFrame, setActiveFrame] = useState();
+  const [activeFrame, setActiveFrame] = useState(0);
   const [activeImg, setActiveImg] = useState();
   const [showStyles, setShowStyles] = useState(false);
   const [frame, setFrame] = useState();

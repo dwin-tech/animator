@@ -92,13 +92,12 @@
 }
 
 .sideBars{
-    /* margin-top: 3%; */
-    /* height: 980px; */
+
     display: flex;
     justify-content: space-around;
-    background-color: rgb(236, 242, 242);
+    background-color:rgb(214, 229, 229); 
 }
-/* background-color: rgb(230, 238, 237); */
+
 .addPhotoIcon{
     width: 58px;
     height: 58px;

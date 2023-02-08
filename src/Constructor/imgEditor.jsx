@@ -46,7 +46,6 @@ export function ImgEditor({
     <div className="imgEditor">
       <div className="imgs">
         {frames?.frames[activeFrame]?.imgs?.map((img, index) => {
-          // console.log(border, "+++++++", index);
           return (
             <div
               key={img.src}
@@ -78,12 +77,22 @@ export function ImgEditor({
           }) => (
             // write your building UI
             <>
-              <div className="imgBox">
+              <div
+                className="imgBox"
+                style={
+                  !frames?.frames.length
+                    ? { display: "none" }
+                    : { display: "block" }
+                }
+              >
                 <AddPhotoAlternateIcon
                   fontSize="large"
                   disabled={activeFrame === undefined ? true : false}
                   variant="contained"
-                  style={isDragging ? { color: "red" } : undefined}
+                  style={
+                    (isDragging ? { color: "red" } : undefined,
+                    { marginTop: "35px" })
+                  }
                   onClick={onImageUpload}
                   {...dragProps}
                 />

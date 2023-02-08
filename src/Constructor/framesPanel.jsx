@@ -1,6 +1,5 @@
 import "./style.css";
 import Button from "@mui/material/Button";
-import Stack from "@mui/material/Stack";
 import { Frame } from "./Frame";
 import { useState } from "react";
 import { newFrame } from "./constants";
@@ -12,14 +11,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import * as React from "react";
-import makeStyles from "@material-ui/core/styles/makeStyles";
-import {
-  DragDropContext,
-  Droppable,
-  Draggable,
-  OnDragEndResponder,
-} from "react-beautiful-dnd";
-import { useEffect } from "react";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 const style = {
   position: "absolute",
@@ -41,12 +33,6 @@ export const reorder = (list, startIndex, endIndex) => {
   return result;
 };
 
-const useStyles = makeStyles({
-  draggingListItem: {
-    background: "rgb(235,235,235)",
-  },
-});
-
 export function FramesPanel({
   frames,
   setActiveFrame,
@@ -55,7 +41,6 @@ export function FramesPanel({
   setFrames,
   setActiveImg,
 }) {
-  // rgb(173, 210, 205)
   const [color, setColor] = useState("  ");
   const [changeColorIndex, setChangeColorIndex] = useState();
   const [visible, setVisible] = useState("none");
@@ -64,28 +49,13 @@ export function FramesPanel({
   const handleOpenDeleteFrame = () => setOpenDeleteFrame(true);
   const handleCloseDeleteFrame = () => setOpenDeleteFrame(false);
 
-  // const [framesList, setFramesList] = useState(frames?.frames);
-
-  // useEffect(() => {
-  //   setFramesList(frames?.frames);
-  // }, []);
-
   function handleOnDragEnd({ destination, source }) {
-    // debugger;
-    // const items = Array.from(frames?.frames);
-    // const [removed] = items.splice(result?.source.index, 1);
-    // items.splice(result.destination.index, 0, removed);
-    // frames.frames = items;
-    // setFrames({ ...frames });
-
-    console.log("++++++++++++++++++++");
     if (!destination) return;
 
     const newItems = reorder(frames?.frames, source.index, destination.index);
-
     setFrames({ frames: newItems });
   }
-  const classes = useStyles();
+
   return (
     <div style={{ overflow: "hidden" }}>
       <Modal
@@ -109,12 +79,12 @@ export function FramesPanel({
               <Button
                 variant="contained"
                 onClick={() => {
-                  delete frames.frames[activeFrame];
+                  frames.frames.splice(activeFrame, 1);
                   setFrames({ ...frames });
                   localStorage.clear();
                   localStorage.setItem("frames", JSON.stringify(frames));
                   handleCloseDeleteFrame();
-                  setActiveFrame(undefined);
+                  setActiveFrame(0);
                 }}
               >
                 Delete
@@ -123,9 +93,7 @@ export function FramesPanel({
           </Box>
         </Fade>
       </Modal>
-      {/* 
-      
-      */}
+
       <DragDropContext onDragEnd={handleOnDragEnd}>
         <Droppable droppableId="droppable-list">
           {(provided) => (
@@ -136,19 +104,18 @@ export function FramesPanel({
             >
               {frames?.frames?.map((frame, index) => {
                 return (
-                  <Draggable draggableId={`${frame.timestamp}`} index={index}>
+                  <Draggable
+                    draggableId={`${frame?.timestamp}`}
+                    key={frame?.timestamp}
+                    index={index}
+                  >
                     {(provided) => (
                       <div
                         ref={provided.innerRef}
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
                         className="frameBox"
-                        key={index}
-                        style={
-                          index == changeColorIndex
-                            ? { backgroundColor: color }
-                            : null
-                        }
+                        style={{ ...provided.draggableProps.style }}
                         onClick={() => {
                           setChangeColorIndex(index);
                           setColor("white");
@@ -158,6 +125,11 @@ export function FramesPanel({
                         }}
                       >
                         <div
+                          style={
+                            index == activeFrame
+                              ? { backgroundColor: color }
+                              : null
+                          }
                           className="forFlex"
                           onMouseEnter={() => {
                             setVisible("block");
