@@ -1,0 +1,54 @@
+.everTry {
+    max-width:800px;
+    margin: auto;
+    position: relative;
+}
+
+.mainPhoto{
+    width:100%;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.whiteDogJay {
+    top: 67%;
+    left: 30%;
+    width: 12%;
+    position: absolute;
+    z-index: 2;
+} 
+
+.brownDogTongue {
+    top: 25%;
+    left: 44%;
+    width: 16%;
+    position: absolute;
+    z-index: 2;
+}
+
+.whiteDogEyes {
+    top: 57%;
+    left: 26%;
+    width: 14%;
+    position: absolute;
+    z-index: 0;
+}
+
+.brownDogEyes {
+    top: 15%;
+    left: 42%;
+    width: 14%;
+    position: absolute;
+    z-index: 0;
+}
+
+.brownDogMessage {
+    position: absolute;
+    z-index: 2;
+}
+
+.whiteDogsMessages2 {
+    position: absolute;
+    z-index: 2;
+}

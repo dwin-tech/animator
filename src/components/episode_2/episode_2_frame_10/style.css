@@ -1,0 +1,41 @@
+.episode_2_Frame_10{
+    max-width:800px;
+    margin: auto;
+    position: relative;
+}
+
+.episode_2_Frame_1_img{
+    width: 100%;
+  position: relative;
+  z-index: 1;
+}  
+
+
+.episode_2_Frame_1_back{
+    width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+}
+
+
+
+.episode_2_Frame_10_BlackWindow{
+    position:relative;
+    background-color: black;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 7;
+    overflow: hidden;
+  }
+
+  .episode_2_Frame_1_message{
+    position: absolute;
+    z-index: 5;
+  }
+
+
+

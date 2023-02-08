@@ -1,12 +1,113 @@
- .forFlex{
+ .constructor{
     display: flex;
-    /* align-items: flex-end; */
-    justify-content: center;
-    margin: 20%;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 
 .mainContainer{
     background-color: rgb(128, 108, 108);
+    height: auto;
+    width: 600px;
+}
+
+.paint {
+    width: 500px;
+    height: 900px;
+}
+
+.frame {
+    width: 800px;
+}
+
+.leftPanel{
+    flex: 1;
+    overflow-x: hidden;    
+    max-height: 900px;
+    overflow-y:scroll;
+
+}
+
+.addFrame{
+    margin: 35px;
+}
+
+.frameBox{
+    left: 0;
+    margin: 35px 0;
+    width: 180px;
+    height: 120px;
+    height: auto; 
+    padding: 3px 3px 0px 12px;
+    border-radius: 10%;
+}
+
+.framePreview{
+    margin-left: 10px;
+    width: 100px;
+    height: 100px;
+    border: thin solid rgba(0, 0, 0, 0.12);
+    display: flex;
+    height: 100px;
     overflow: hidden;
+    justify-content: center;
+}
+
+.forFlex{
+    display: flex;
+}
+
+.imgs{
+    margin:30px 10px;
+    width: 500px;
+    height: 150px;
+    overflow:scroll;
+    overflow-y:hidden;
+    display: flex;
+    flex-wrap: nowrap;
+    border: thin solid rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+}
+
+ .imgBox{
+    border: thin solid rgba(0, 0, 0, 0.12);
+    background-color: #f1f1f1;
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+
+}
+
+.editor{
+    margin:30px;
+    width: 500px;
+    height: 500px;
+    overflow:scroll;
+}
+
+.bottomButtons{
+    display: flex;
+    align-items: center;
+}
+
+.sideBars{
+    /* margin-top: 3%; */
+    /* height: 980px; */
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(236, 242, 242);
+}
+/* background-color: rgb(230, 238, 237); */
+.addPhotoIcon{
+    width: 58px;
+    height: 58px;
+    border: 2px solid;
+    border-radius: 48%;
+    padding: 20px;
+}
+
+.deleteContainer{
+    display: flex;
+    align-items: center;
 }

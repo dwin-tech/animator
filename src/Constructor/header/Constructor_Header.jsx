@@ -15,7 +15,7 @@ const sentence = {
     },
   },
 };
-const line = "Welcome To CONSTRUCTO";
+const line = "Welcome To CONSTRUCTOR";
 
 const letter = {
   hidden: { opacity: 0 },

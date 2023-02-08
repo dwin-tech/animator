@@ -8,29 +8,14 @@ import shine from '../../../assets/episode_1/frame_7/shine.png'
 import blondeEyes from '../../../assets/episode_1/frame_7/blondeEyes.png'
 import brunetEyes from '../../../assets/episode_1/frame_7/brunetEyes.png'
 import message from '../../../assets/episode_1/frame_7/message.png'
-
-
-
-
 import './index.css';
 import { eyesContainer, fingerContainer, messageContainer } from "."
-import { BlackWindow } from "../blackWindow/BlackWindows"
-import { useWindowHeight } from "@react-hook/window-size";
-import { useEffect, useRef, useState } from "react";
 import { blackContainer } from "../blackWindow"
-import { usePageCenter } from "../../usePageCenter"
 
+export function Frame_7({ visible }) {
 
-
-
-
-
-export function Frame_7() {
-    const animItem = useRef();
-    const visible = usePageCenter(animItem)
     return (
-        <section ref={animItem} style={{ marginTop: "15%", scrollSnapAlign: "center",position: "relative" }}>
-
+        <section style={{ scrollSnapAlign: "center", position: "relative" }}>
             <motion.div className="frameSeven"
                 variants={blackContainer}
                 initial="hidden"
@@ -38,7 +23,6 @@ export function Frame_7() {
 
                 <img className="back"
                     src={back} alt={"back"} />
-
                 <img className="blonde"
                     src={blonde} alt={"blonde"} />
                 <img className="brunet"
@@ -49,11 +33,8 @@ export function Frame_7() {
                     variants={fingerContainer}
                     initial="hidden"
                     whileInView={visible ? "show" : "hidden"}
-
                     className="finger"
                     src={finger} alt={"finger"} />
-
-
                 <motion.img
                     className="girlsShine"
                     animate={visible ? {
@@ -78,8 +59,6 @@ export function Frame_7() {
                     variants={messageContainer}
                     initial="hidden"
                     whileInView={visible ? "show" : "hidden"}
-
-
                     className="girlsMessage"
                     src={message} alt={"message"} />
             </motion.div>

@@ -46,7 +46,7 @@ const scrollIConContainer = {
 
 export function Episode_1_Header() {
     return (
-        <section className='header' style={{ marginTop: "5%", scrollSnapAlign: "center" }}>
+        <section className='header'>
             <div className="headerDiv">
                 <motion.h1 className="titleOne" style={{ color: "white" }}
                     variants={sentence}
@@ -68,7 +68,7 @@ export function Episode_1_Header() {
 
                     src={scrollIcon} alt={"scrollIcon"}
                 /> */}
-                <motion.div class="wrapper"
+                <motion.div className="wrapper"
 
                     variants={scrollIConContainer}
                     initial="hidden"
@@ -76,10 +76,10 @@ export function Episode_1_Header() {
 
 
                 >
-                    <div class="scroll">
+                    <div className="scroll">
                         <span>Scroll</span>
-                        <div class="mouse-icon">
-                            <div class="mouse-icon_wheel"></div>
+                        <div className="mouse-icon">
+                            <div className="mouse-icon_wheel"></div>
                         </div>
                     </div>
                 </motion.div>

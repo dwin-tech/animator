@@ -5,26 +5,13 @@ import boy from '../../../assets/episode_1/frame_14/boy.png'
 import shine from '../../../assets/episode_1/frame_14/shine.png'
 import message from '../../../assets/episode_1/frame_14/message.png'
 import brows from '../../../assets/episode_1/frame_14/brows.png'
-
-
-
 import './index.css';
 import { browsContainer, messageContent } from "."
-import { useRef } from "react"
 import { blackContainer } from "../blackWindow"
-import { usePageCenter } from "../../usePageCenter"
 
-
-
-
-export function Frame_14() {
-
-    const animItem = useRef();
-    const visible = usePageCenter(animItem)
+export function Frame_14({ visible }) {
     return (
-        <section ref={animItem} style={{ marginTop: "15%", scrollSnapAlign: "center" }}>
-
-
+        <section style={{ scrollSnapAlign: "center" }}>
             <div className="fourteen">
                 <motion.div className="xxxx"
                     variants={blackContainer}

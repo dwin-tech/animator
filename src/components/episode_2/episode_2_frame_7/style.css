@@ -31,9 +31,9 @@
 }
 
 .handOfCurl {
-    left: 57%;
+    /* left: 57%;
     width:12%;
-    top: 55%;
+    top: 55%; */
     /* margin: auto; */
     position: absolute;
     z-index: 3;

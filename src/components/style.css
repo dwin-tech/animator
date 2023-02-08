@@ -1,0 +1,19 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.topPart{
+    background-color: rgb(216, 232, 232);
+    height: 70px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.constructor{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+}
