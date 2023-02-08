@@ -15,7 +15,11 @@ export const speaking = {
 };
 
 export const handWave = {
+  hidden: { left: "57%", width: "12%", top: "55%" },
   show: {
+    left: "57%",
+    width: "12%",
+    top: "55%",
     rotate: ["-10deg", "0deg", "-10deg"],
     transition: {
       repeat: 2,
