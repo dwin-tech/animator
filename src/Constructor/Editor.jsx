@@ -65,7 +65,7 @@ export function Editor({
         autoComplete="off"
       >
         <Root>
-          <Divider textAlign="left">styles</Divider>
+          <Divider textAlign="left">Styles</Divider>
         </Root>
         <div>
           <FormControl style={{ margin: "7px", width: "200px" }}>
@@ -220,12 +220,11 @@ export function Editor({
           />
         </div>
         <Root>
-          <Divider textAlign="left">variants</Divider>
+          <Divider textAlign="left">Variants</Divider>
         </Root>
         <Root>
           <Divider textAlign="center">Hidden</Divider>
         </Root>
-        {/* <h5 style={{ margin: "10px", color: "black" }}>Hidden</h5> */}
         <div>
           <TextField
             placeholder="10% or 30px"

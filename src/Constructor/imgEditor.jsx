@@ -5,7 +5,6 @@ import "./style.css";
 import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
 
 export function ImgEditor({
-  // frame,
   frames,
   setFrame,
   setFrames,
@@ -75,7 +74,6 @@ export function ImgEditor({
             isDragging,
             dragProps,
           }) => (
-            // write your building UI
             <>
               <div
                 className="imgBox"

@@ -59,8 +59,6 @@ export default function ImportFile({ setJsonFile, handleClose }) {
         >
           <Tab label="Upload file" {...a11yProps(0)} />
           <Tab label="Raw text" {...a11yProps(1)} />
-
-          {/* <Tab label="Item Three" {...a11yProps(2)} /> */}
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
@@ -78,12 +76,10 @@ export default function ImportFile({ setJsonFile, handleClose }) {
         />
         <Button
           style={{
-            // marginLeft: "10px",
             marginTop: "30px",
             marginBottom: "-10px",
           }}
           onClick={() => {
-            console.log("LOOOL");
             setJsonFile(json);
             handleClose();
           }}

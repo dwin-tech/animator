@@ -20,7 +20,6 @@ const style = {
 export function ExportImport({ setJsonFile }) {
   const exportData = () => {
     const data = localStorage.getItem("frames");
-    console.log("JSON.stringify(data)", data);
     const jsonString = `data:text/json;chatset=utf-8,${data}`;
     const link = document.createElement("a");
     link.href = jsonString;
