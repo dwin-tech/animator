@@ -16,7 +16,7 @@ export function RightSideBar({
 }) {
   const [openLeff, setOpenLeft] = useState(true);
 
-  const style = {
+  const SIDE_BAR_STYLE = {
     height: "800px",
     width: "auto",
     right: "0",
@@ -28,7 +28,7 @@ export function RightSideBar({
         <MultipleStopIcon />
       </Button>
       <div
-        style={openLeff ? style : { ...style, width: "0" }}
+        style={openLeff ? SIDE_BAR_STYLE : { ...SIDE_BAR_STYLE, width: "0" }}
         className="leftSideBar"
       >
         <ImgEditor

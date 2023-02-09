@@ -14,7 +14,7 @@ import Divider from "@mui/material/Divider";
 
 import "./style.css";
 
-const style = {
+const MODAL_STYLE = {
   position: "absolute",
   top: "50%",
   left: "50%",
@@ -314,7 +314,7 @@ export function Editor({
           />
           <ChipInput
             placeholder="10deg or 50px"
-            value={img?.variants?.show?.rotate || []}
+            // value={img?.variants?.show?.rotate || []}
             style={{ margin: "7px" }}
             label="rotate"
             allowDuplicates={true}
@@ -384,7 +384,7 @@ export function Editor({
           closeAfterTransition
         >
           <Fade in={openDeleteImg}>
-            <Box sx={style}>
+            <Box sx={MODAL_STYLE}>
               <h2>Delete photo</h2>
               <h3>Are you sure?</h3>
               <div style={{ marginLeft: "200px" }}>
