@@ -5,7 +5,7 @@ import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import Box from "@mui/material/Box";
 
-const style = {
+const MODAL_STYLE = {
   position: "absolute",
   top: "50%",
   left: "50%",
@@ -41,7 +41,7 @@ export function FrameWrapper({
         closeAfterTransition
       >
         <Fade in={openDeleteFrame}>
-          <Box sx={style}>
+          <Box sx={MODAL_STYLE}>
             <h2>Delete Frame</h2>
             <h3>Are you sure?</h3>
             <div style={{ marginLeft: "200px" }}>

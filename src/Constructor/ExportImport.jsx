@@ -5,7 +5,7 @@ import { useState } from "react";
 import Button from "@mui/material/Button";
 import ImportFile from "./Inport";
 
-const style = {
+const MODAL_STYLE = {
   position: "absolute",
   top: "50%",
   left: "50%",
@@ -60,7 +60,7 @@ export function ExportImport({ setJsonFile }) {
         closeAfterTransition
       >
         <Fade in={open}>
-          <Box sx={style}>
+          <Box sx={MODAL_STYLE}>
             <ImportFile handleClose={handleClose} setJsonFile={setJsonFile} />
           </Box>
         </Fade>
