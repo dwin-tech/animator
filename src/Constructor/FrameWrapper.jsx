@@ -31,6 +31,15 @@ export function FrameWrapper({
   const handleCloseDeleteFrame = () => setOpenDeleteFrame(false);
   const handleOpenDeleteFrame = () => setOpenDeleteFrame(true);
 
+  function handleOnClick() {
+    frames.frames.splice(activeFrame, 1);
+    setFrames({ ...frames });
+    localStorage.clear();
+    localStorage.setItem("frames", JSON.stringify(frames));
+    handleCloseDeleteFrame();
+    setActiveFrame(0);
+  }
+
   return (
     <div>
       <Modal
@@ -51,17 +60,7 @@ export function FrameWrapper({
               >
                 Cancel
               </Button>
-              <Button
-                variant="contained"
-                onClick={() => {
-                  frames.frames.splice(activeFrame, 1);
-                  setFrames({ ...frames });
-                  localStorage.clear();
-                  localStorage.setItem("frames", JSON.stringify(frames));
-                  handleCloseDeleteFrame();
-                  setActiveFrame(0);
-                }}
-              >
+              <Button variant="contained" onClick={handleOnClick}>
                 Delete
               </Button>
             </div>
