@@ -41,7 +41,7 @@ export function FramesPanel({
   setFrames,
   setActiveImg,
 }) {
-  const [color, setColor] = useState("  ");
+  const [color, setColor] = useState("white");
   const [changeColorIndex, setChangeColorIndex] = useState();
   const [visible, setVisible] = useState("none");
 
@@ -142,11 +142,7 @@ export function FramesPanel({
                             {index + 1}
 
                             <div className="framePreview">
-                              <Frame
-                                // maxWidth={150}
-                                data={frame}
-                                // initial={"show"}
-                              />
+                              <Frame data={frame} />
                             </div>
                           </div>
                           <div

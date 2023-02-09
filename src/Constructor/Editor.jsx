@@ -9,9 +9,6 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import ChipInput from "material-ui-chip-input";
-import DeleteIcon from "@mui/icons-material/Delete";
-import IconButton from "@mui/material/IconButton";
-import Tooltip from "@mui/material/Tooltip";
 import { styled } from "@mui/material/styles";
 import Divider from "@mui/material/Divider";
 
@@ -49,6 +46,28 @@ export function Editor({
   const handleOpenDeleteImg = () => setOpenDeleteImg(true);
   const handleCloseDeleteImg = () => setOpenDeleteImg(false);
 
+  function updateFrames(frames) {
+    setFrames({ ...frames });
+    localStorage.clear();
+    localStorage.setItem("frames", JSON.stringify(frames));
+  }
+  function handleOnChangeStyles(key, value) {
+    frames.frames[activeFrame].imgs[activeImg].style[key] = value;
+    updateFrames(frames);
+  }
+
+  function handleOnChangeVariants(hiddenShow, key, value) {
+    frames.frames[activeFrame].imgs[activeImg].variants[hiddenShow][key] =
+      value;
+    updateFrames(frames);
+  }
+
+  function handleOnChangeVariantsTransition(key, value) {
+    frames.frames[activeFrame].imgs[activeImg].variants.show.transition[key] =
+      value;
+    updateFrames(frames);
+  }
+
   return (
     <div
       className="editor"
@@ -65,41 +84,41 @@ export function Editor({
         autoComplete="off"
       >
         <Root>
-          <Divider textAlign="left">Styles</Divider>
+          <Divider textAlign="left">
+            <h3>Styles</h3>
+          </Divider>
         </Root>
         <div>
-          <FormControl style={{ margin: "7px", width: "200px" }}>
-            <InputLabel id="Overflow">Overflow</InputLabel>
+          <FormControl style={{ margin: "7px", width: "226px" }}>
+            <InputLabel style={{ marginTop: "-7px" }} id="Overflow">
+              Overflow
+            </InputLabel>
             <Select
+              style={{ height: "40px" }}
               labelId="Overflow"
               id="Overflow"
-              value={img?.style?.overflow ? img?.style?.overflow : ""}
+              value={img?.style?.overflow || ""}
               label="Overflow"
               onChange={(e) => {
-                frames.frames[activeFrame].imgs[activeImg].style.overflow =
-                  e.target.value;
-                setFrames({ ...frames });
-                localStorage.clear();
-                localStorage.setItem("frames", JSON.stringify(frames));
+                handleOnChangeStyles("overflow", e.target.value);
               }}
             >
               <MenuItem value="">none</MenuItem>
               <MenuItem value="hidden">hidden</MenuItem>
             </Select>
           </FormControl>
-          <FormControl style={{ margin: "7px", width: "200px" }}>
-            <InputLabel id="Position">Position</InputLabel>
+          <FormControl style={{ margin: "7px", width: "226px" }}>
+            <InputLabel style={{ marginTop: "-7px" }} id="Position">
+              Position
+            </InputLabel>
             <Select
+              style={{ height: "40px" }}
               labelId="Position"
               id="Position"
-              value={img?.style?.position ? img?.style?.position : ""}
+              value={img?.style?.position || ""}
               label="Position"
               onChange={(e) => {
-                frames.frames[activeFrame].imgs[activeImg].style.position =
-                  e.target.value;
-                setFrames({ ...frames });
-                localStorage.clear();
-                localStorage.setItem("frames", JSON.stringify(frames));
+                handleOnChangeStyles("position", e.target.value);
               }}
             >
               <MenuItem value="">none</MenuItem>
@@ -107,12 +126,15 @@ export function Editor({
               <MenuItem value="absolute">absolute</MenuItem>
             </Select>
           </FormControl>
-          <FormControl style={{ margin: "7px", width: "200px" }}>
-            <InputLabel id="Initial">Initial</InputLabel>
+          <FormControl style={{ margin: "7px", width: "226px" }}>
+            <InputLabel style={{ marginTop: "-7px" }} id="Initial">
+              Initial
+            </InputLabel>
             <Select
+              style={{ height: "40px" }}
               labelId="Initial"
               id="Initial"
-              value={img?.initial ? img?.initial : ""}
+              value={img?.initial || ""}
               label="Initial"
               onChange={(e) => {
                 frames.frames[activeFrame].imgs[activeImg].initial =
@@ -127,22 +149,18 @@ export function Editor({
               <MenuItem value="hidden">hidden</MenuItem>
             </Select>
           </FormControl>
-          <FormControl style={{ margin: "7px", width: "200px" }}>
-            <InputLabel id="TransformOrigin">TransformOrigin</InputLabel>
+          <FormControl style={{ margin: "7px", width: "226px" }}>
+            <InputLabel style={{ marginTop: "-7px" }} id="TransformOrigin">
+              TransformOrigin
+            </InputLabel>
             <Select
+              style={{ height: "40px" }}
               labelId="TransformOrigin"
               id="TransformOrigin"
-              value={
-                img?.style?.transformOrigin ? img?.style?.transformOrigin : ""
-              }
+              value={img?.style?.transformOrigin || ""}
               label="TransformOrigin"
               onChange={(e) => {
-                frames.frames[activeFrame].imgs[
-                  activeImg
-                ].style.transformOrigin = e.target.value;
-                setFrames({ ...frames });
-                localStorage.clear();
-                localStorage.setItem("frames", JSON.stringify(frames));
+                handleOnChangeStyles("transformOrigin", e.target.value);
               }}
             >
               <MenuItem value="">none</MenuItem>
@@ -154,73 +172,55 @@ export function Editor({
           </FormControl>
           <TextField
             placeholder="1"
-            type={Number}
+            type="number"
             label="zIndex"
-            value={img?.style?.zIndex ? img?.style?.zIndex : ""}
+            value={img?.style?.zIndex || ""}
             onChange={(e) => {
-              frames.frames[activeFrame].imgs[activeImg].style.zIndex =
-                e.target.value;
-              setFrames({ ...frames });
-              localStorage.clear();
-              localStorage.setItem("frames", JSON.stringify(frames));
+              handleOnChangeStyles("zIndex", e.target.value);
             }}
             size="small"
           />
           <TextField
             placeholder="10% or 30px"
             label="Width"
-            value={img?.style?.width ? img?.style?.width : ""}
+            value={img?.style?.width || ""}
             onChange={(e) => {
-              frames.frames[activeFrame].imgs[activeImg].style.width =
-                e.target.value;
-              setFrames({ ...frames });
-              localStorage.clear();
-              localStorage.setItem("frames", JSON.stringify(frames));
+              handleOnChangeStyles("width", e.target.value);
             }}
             size="small"
           />
           <TextField
             placeholder="10% or 30px"
             label="Top"
-            value={img?.style?.top ? img?.style?.top : ""}
+            value={img?.style?.top || ""}
             onChange={(e) => {
-              frames.frames[activeFrame].imgs[activeImg].style.top =
-                e.target.value;
-              setFrames({ ...frames });
-              localStorage.clear();
-              localStorage.setItem("frames", JSON.stringify(frames));
+              handleOnChangeStyles("top", e.target.value);
             }}
             size="small"
           />
           <TextField
             placeholder="10% or 30px"
             label="Left"
-            value={img?.style?.left ? img?.style?.left : ""}
+            value={img?.style?.left || ""}
             onChange={(e) => {
-              frames.frames[activeFrame].imgs[activeImg].style.left =
-                e.target.value;
-              setFrames({ ...frames });
-              localStorage.clear();
-              localStorage.setItem("frames", JSON.stringify(frames));
+              handleOnChangeStyles("left", e.target.value);
             }}
             size="small"
           />
           <TextField
             placeholder="10% or 30px"
             label="Height"
-            value={img?.style?.height ? img?.style?.height : ""}
+            value={img?.style?.height || ""}
             onChange={(e) => {
-              frames.frames[activeFrame].imgs[activeImg].style.height =
-                e.target.value;
-              setFrames({ ...frames });
-              localStorage.clear();
-              localStorage.setItem("frames", JSON.stringify(frames));
+              handleOnChangeStyles("height", e.target.value);
             }}
             size="small"
           />
         </div>
         <Root>
-          <Divider textAlign="left">Variants</Divider>
+          <Divider textAlign="left">
+            <h3>Variants</h3>
+          </Divider>
         </Root>
         <Root>
           <Divider textAlign="center">Hidden</Divider>
@@ -229,78 +229,49 @@ export function Editor({
           <TextField
             placeholder="10% or 30px"
             label="Hidden Width"
-            value={
-              img?.variants?.hidden?.width ? img?.variants?.hidden?.width : ""
-            }
+            value={img?.variants?.hidden?.width || ""}
             onChange={(e) => {
-              frames.frames[activeFrame].imgs[activeImg].variants.hidden.width =
-                e.target.value;
-              setFrames({ ...frames });
-              localStorage.clear();
-              localStorage.setItem("frames", JSON.stringify(frames));
+              handleOnChangeVariants("hidden", "width", e.target.value);
             }}
             size="small"
           />
           <TextField
             placeholder="10% or 30px"
             label="Hidden Top"
-            value={img?.variants?.hidden?.top ? img?.variants?.hidden?.top : ""}
+            value={img?.variants?.hidden?.top || ""}
             onChange={(e) => {
-              frames.frames[activeFrame].imgs[activeImg].variants.hidden.top =
-                e.target.value;
-              setFrames({ ...frames });
-              localStorage.clear();
-              localStorage.setItem("frames", JSON.stringify(frames));
+              handleOnChangeVariants("hidden", "top", e.target.value);
             }}
             size="small"
           />
           <TextField
             placeholder="10% or 30px"
             label="Hidden Left"
-            value={
-              img?.variants?.hidden?.left ? img?.variants?.hidden?.left : ""
-            }
+            value={img?.variants?.hidden?.left || ""}
             onChange={(e) => {
-              frames.frames[activeFrame].imgs[activeImg].variants.hidden.left =
-                e.target.value;
-              setFrames({ ...frames });
-              localStorage.clear();
-              localStorage.setItem("frames", JSON.stringify(frames));
+              handleOnChangeVariants("hidden", "left", e.target.value);
             }}
             size="small"
           />
           <TextField
             placeholder="from 0 to 1"
             label="Hidden Opacity"
-            value={
-              img?.variants?.hidden?.opacity
-                ? img?.variants?.hidden?.opacity
-                : ""
-            }
+            value={img?.variants?.hidden?.opacity || ""}
             onChange={(e) => {
-              frames.frames[activeFrame].imgs[
-                activeImg
-              ].variants.hidden.opacity = e.target.value;
-              setFrames({ ...frames });
-              localStorage.clear();
-              localStorage.setItem("frames", JSON.stringify(frames));
+              handleOnChangeVariants("hidden", "opacity", e.target.value);
+            }}
+            size="small"
+          />
+          <TextField
+            placeholder="10% or 30px"
+            label="Hidden rotate"
+            value={img?.variants?.rotate || ""}
+            onChange={(e) => {
+              handleOnChangeVariants("hidden", "rotate", e.target.value);
             }}
             size="small"
           />
         </div>
-        <TextField
-          placeholder="10% or 30px"
-          label="Hidden rotate"
-          value={img?.variants?.rotate ? img?.variants?.rotate : ""}
-          onChange={(e) => {
-            frames.frames[activeFrame].imgs[activeImg].variants.rotate =
-              e.target.value;
-            setFrames({ ...frames });
-            localStorage.clear();
-            localStorage.setItem("frames", JSON.stringify(frames));
-          }}
-          size="small"
-        />
         <Root>
           <Divider textAlign="center">Show</Divider>
         </Root>
@@ -308,127 +279,79 @@ export function Editor({
           <TextField
             placeholder="10% or 30px"
             label="Show Width"
-            value={img?.variants?.show?.width ? img?.variants?.show?.width : ""}
+            value={img?.variants?.show?.width || ""}
             onChange={(e) => {
-              frames.frames[activeFrame].imgs[activeImg].variants.show.width =
-                e.target.value;
-              setFrames({ ...frames });
-              localStorage.clear();
-              localStorage.setItem("frames", JSON.stringify(frames));
+              handleOnChangeVariants("show", "width", e.target.value);
             }}
             size="small"
           />
           <TextField
             placeholder="10% or 30px"
             label="Show Top"
-            value={img?.variants?.show?.top ? img?.variants?.show?.top : ""}
+            value={img?.variants?.show?.top || ""}
             onChange={(e) => {
-              frames.frames[activeFrame].imgs[activeImg].variants.show.top =
-                e.target.value;
-              setFrames({ ...frames });
-              localStorage.clear();
-              localStorage.setItem("frames", JSON.stringify(frames));
+              handleOnChangeVariants("show", "top", e.target.value);
             }}
             size="small"
           />
           <TextField
             placeholder="10% or 30px"
             label="Show Left"
-            value={img?.variants?.show?.left ? img?.variants?.show?.left : ""}
+            value={img?.variants?.show?.left || ""}
             onChange={(e) => {
-              frames.frames[activeFrame].imgs[activeImg].variants.show.left =
-                e.target.value;
-              setFrames({ ...frames });
-              localStorage.clear();
-              localStorage.setItem("frames", JSON.stringify(frames));
+              handleOnChangeVariants("show", "left", e.target.value);
             }}
             size="small"
           />
           <TextField
             placeholder="from 0 to 1"
             label="Show opacity"
-            value={
-              img?.variants?.show?.opacity ? img?.variants?.show?.opacity : ""
-            }
+            value={img?.variants?.show?.opacity || ""}
             onChange={(e) => {
-              frames.frames[activeFrame].imgs[activeImg].variants.show.opacity =
-                e.target.value;
-              setFrames({ ...frames });
-              localStorage.clear();
-              localStorage.setItem("frames", JSON.stringify(frames));
+              handleOnChangeVariants("show", "opacity", e.target.value);
             }}
             size="small"
           />
           <ChipInput
             placeholder="10deg or 50px"
-            value={
-              img?.variants?.show?.rotate ? img?.variants?.show?.rotate : []
-            }
+            value={img?.variants?.show?.rotate || []}
             style={{ margin: "7px" }}
             label="rotate"
             allowDuplicates={true}
             onChange={(chips) => {
-              frames.frames[activeFrame].imgs[activeImg].variants.show.rotate =
-                chips;
-              setFrames({ ...frames });
-              localStorage.clear();
-              localStorage.setItem("frames", JSON.stringify(frames));
+              handleOnChangeVariants("show", "rotate", chips);
             }}
           />
           <Root>
             <Divider textAlign="center">Transition</Divider>
           </Root>
           <TextField
+            type="number"
             placeholder="2 times"
             label="repeat"
-            value={
-              img?.variants?.show?.transition?.repeat
-                ? img?.variants?.show?.transition?.repeat
-                : ""
-            }
+            value={img?.variants?.show?.transition?.repeat || ""}
             onChange={(e) => {
-              frames.frames[activeFrame].imgs[
-                activeImg
-              ].variants.show.transition.repeat = e.target.value;
-              setFrames({ ...frames });
-              localStorage.clear();
-              localStorage.setItem("frames", JSON.stringify(frames));
+              handleOnChangeVariantsTransition("repeat", e.target.value);
             }}
             size="small"
           />
           <TextField
+            type="number"
             placeholder="0.7 speed"
             label="duration"
-            value={
-              img?.variants?.show?.transition?.duration
-                ? img?.variants?.show?.transition?.duration
-                : ""
-            }
+            value={img?.variants?.show?.transition?.duration || ""}
             onChange={(e) => {
-              frames.frames[activeFrame].imgs[
-                activeImg
-              ].variants.show.transition.duration = e.target.value;
-              setFrames({ ...frames });
-              localStorage.clear();
-              localStorage.setItem("frames", JSON.stringify(frames));
+              handleOnChangeVariantsTransition("duration", e.target.value);
             }}
             size="small"
           />
           <TextField
+            type="number"
             placeholder="0.7 sec"
             label="delay"
-            value={
-              img?.variants?.show?.transition?.delay
-                ? img?.variants?.show?.transition?.delay
-                : ""
-            }
+            value={img?.variants?.show?.transition?.delay || ""}
             onChange={(e) => {
-              frames.frames[activeFrame].imgs[
-                activeImg
-              ].variants.show.transition.delay = e.target.value;
-              setFrames({ ...frames });
-              localStorage.clear();
-              localStorage.setItem("frames", JSON.stringify(frames));
+              handleOnChangeVariantsTransition("delay", e.target.value);
             }}
             size="small"
           />
@@ -453,14 +376,6 @@ export function Editor({
         >
           Delete Img
         </Button>
-        {/* <Tooltip title="Delete">
-          <IconButton
-            style={{ height: "30px", width: "30px" }}
-            onClick={handleOpenDeleteImg}
-          >
-            <DeleteIcon />
-          </IconButton>
-        </Tooltip> */}
         <Modal
           aria-labelledby="transition-modal-title"
           aria-describedby="transition-modal-description"
