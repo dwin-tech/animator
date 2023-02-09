@@ -56,7 +56,11 @@ export function ImgEditor({
                 setImg(img);
               }}
             >
-              <img style={{ width: "100px" }} src={img.src} alt="" />
+              <img
+                style={{ width: "100px", objectFit: "contain" }}
+                src={img.src}
+                alt=""
+              />
             </div>
           );
         })}
@@ -82,6 +86,7 @@ export function ImgEditor({
                     ? { display: "none" }
                     : { display: "block" }
                 }
+                onClick={onImageUpload}
               >
                 <AddPhotoAlternateIcon
                   fontSize="large"
@@ -89,9 +94,8 @@ export function ImgEditor({
                   variant="contained"
                   style={
                     (isDragging ? { color: "red" } : undefined,
-                    { marginTop: "35px" })
+                    { margin: "35px" })
                   }
-                  onClick={onImageUpload}
                   {...dragProps}
                 />
               </div>

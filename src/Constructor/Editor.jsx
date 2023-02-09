@@ -9,9 +9,6 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import ChipInput from "material-ui-chip-input";
-import DeleteIcon from "@mui/icons-material/Delete";
-import IconButton from "@mui/material/IconButton";
-import Tooltip from "@mui/material/Tooltip";
 import { styled } from "@mui/material/styles";
 import Divider from "@mui/material/Divider";
 
@@ -65,12 +62,17 @@ export function Editor({
         autoComplete="off"
       >
         <Root>
-          <Divider textAlign="left">Styles</Divider>
+          <Divider textAlign="left">
+            <h3>Styles</h3>
+          </Divider>
         </Root>
         <div>
-          <FormControl style={{ margin: "7px", width: "200px" }}>
-            <InputLabel id="Overflow">Overflow</InputLabel>
+          <FormControl style={{ margin: "7px", width: "226px" }}>
+            <InputLabel style={{ marginTop: "-7px" }} id="Overflow">
+              Overflow
+            </InputLabel>
             <Select
+              style={{ height: "40px" }}
               labelId="Overflow"
               id="Overflow"
               value={img?.style?.overflow ? img?.style?.overflow : ""}
@@ -87,9 +89,12 @@ export function Editor({
               <MenuItem value="hidden">hidden</MenuItem>
             </Select>
           </FormControl>
-          <FormControl style={{ margin: "7px", width: "200px" }}>
-            <InputLabel id="Position">Position</InputLabel>
+          <FormControl style={{ margin: "7px", width: "226px" }}>
+            <InputLabel style={{ marginTop: "-7px" }} id="Position">
+              Position
+            </InputLabel>
             <Select
+              style={{ height: "40px" }}
               labelId="Position"
               id="Position"
               value={img?.style?.position ? img?.style?.position : ""}
@@ -107,9 +112,12 @@ export function Editor({
               <MenuItem value="absolute">absolute</MenuItem>
             </Select>
           </FormControl>
-          <FormControl style={{ margin: "7px", width: "200px" }}>
-            <InputLabel id="Initial">Initial</InputLabel>
+          <FormControl style={{ margin: "7px", width: "226px" }}>
+            <InputLabel style={{ marginTop: "-7px" }} id="Initial">
+              Initial
+            </InputLabel>
             <Select
+              style={{ height: "40px" }}
               labelId="Initial"
               id="Initial"
               value={img?.initial ? img?.initial : ""}
@@ -127,9 +135,12 @@ export function Editor({
               <MenuItem value="hidden">hidden</MenuItem>
             </Select>
           </FormControl>
-          <FormControl style={{ margin: "7px", width: "200px" }}>
-            <InputLabel id="TransformOrigin">TransformOrigin</InputLabel>
+          <FormControl style={{ margin: "7px", width: "226px" }}>
+            <InputLabel style={{ marginTop: "-7px" }} id="TransformOrigin">
+              TransformOrigin
+            </InputLabel>
             <Select
+              style={{ height: "40px" }}
               labelId="TransformOrigin"
               id="TransformOrigin"
               value={
@@ -154,7 +165,7 @@ export function Editor({
           </FormControl>
           <TextField
             placeholder="1"
-            type={Number}
+            type="number"
             label="zIndex"
             value={img?.style?.zIndex ? img?.style?.zIndex : ""}
             onChange={(e) => {
@@ -220,7 +231,9 @@ export function Editor({
           />
         </div>
         <Root>
-          <Divider textAlign="left">Variants</Divider>
+          <Divider textAlign="left">
+            <h3 style={{ color: "rgba(0, 0, 0, 0.12);" }}>Variants</h3>
+          </Divider>
         </Root>
         <Root>
           <Divider textAlign="center">Hidden</Divider>
@@ -287,20 +300,20 @@ export function Editor({
             }}
             size="small"
           />
+          <TextField
+            placeholder="10% or 30px"
+            label="Hidden rotate"
+            value={img?.variants?.rotate ? img?.variants?.rotate : ""}
+            onChange={(e) => {
+              frames.frames[activeFrame].imgs[activeImg].variants.rotate =
+                e.target.value;
+              setFrames({ ...frames });
+              localStorage.clear();
+              localStorage.setItem("frames", JSON.stringify(frames));
+            }}
+            size="small"
+          />
         </div>
-        <TextField
-          placeholder="10% or 30px"
-          label="Hidden rotate"
-          value={img?.variants?.rotate ? img?.variants?.rotate : ""}
-          onChange={(e) => {
-            frames.frames[activeFrame].imgs[activeImg].variants.rotate =
-              e.target.value;
-            setFrames({ ...frames });
-            localStorage.clear();
-            localStorage.setItem("frames", JSON.stringify(frames));
-          }}
-          size="small"
-        />
         <Root>
           <Divider textAlign="center">Show</Divider>
         </Root>
@@ -379,6 +392,7 @@ export function Editor({
             <Divider textAlign="center">Transition</Divider>
           </Root>
           <TextField
+            type="number"
             placeholder="2 times"
             label="repeat"
             value={
@@ -397,6 +411,7 @@ export function Editor({
             size="small"
           />
           <TextField
+            type="number"
             placeholder="0.7 speed"
             label="duration"
             value={
@@ -415,6 +430,7 @@ export function Editor({
             size="small"
           />
           <TextField
+            type="number"
             placeholder="0.7 sec"
             label="delay"
             value={
@@ -453,14 +469,6 @@ export function Editor({
         >
           Delete Img
         </Button>
-        {/* <Tooltip title="Delete">
-          <IconButton
-            style={{ height: "30px", width: "30px" }}
-            onClick={handleOpenDeleteImg}
-          >
-            <DeleteIcon />
-          </IconButton>
-        </Tooltip> */}
         <Modal
           aria-labelledby="transition-modal-title"
           aria-describedby="transition-modal-description"
