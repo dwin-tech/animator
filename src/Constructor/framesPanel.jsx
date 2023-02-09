@@ -1,29 +1,12 @@
 import "./style.css";
-import Button from "@mui/material/Button";
 import { Frame } from "./Frame";
 import { useState } from "react";
 import { newFrame } from "./constants";
-import Modal from "@mui/material/Modal";
-import Fade from "@mui/material/Fade";
-import Box from "@mui/material/Box";
 import AddIcon from "@mui/icons-material/Add";
-import DeleteIcon from "@mui/icons-material/Delete";
-import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import * as React from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
+import { FrameWrapper } from "./FrameWrapper";
 
 export const reorder = (list, startIndex, endIndex) => {
   const result = Array.from(list);
@@ -42,12 +25,6 @@ export function FramesPanel({
   setActiveImg,
 }) {
   const [color, setColor] = useState("white");
-  const [changeColorIndex, setChangeColorIndex] = useState();
-  const [visible, setVisible] = useState("none");
-
-  const [openDeleteFrame, setOpenDeleteFrame] = useState(false);
-  const handleOpenDeleteFrame = () => setOpenDeleteFrame(true);
-  const handleCloseDeleteFrame = () => setOpenDeleteFrame(false);
 
   function handleOnDragEnd({ destination, source }) {
     if (!destination) return;
@@ -58,42 +35,6 @@ export function FramesPanel({
 
   return (
     <div style={{ overflow: "hidden" }}>
-      <Modal
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
-        open={openDeleteFrame}
-        onClose={handleCloseDeleteFrame}
-        closeAfterTransition
-      >
-        <Fade in={openDeleteFrame}>
-          <Box sx={style}>
-            <h2>Delete Frame</h2>
-            <h3>Are you sure?</h3>
-            <div style={{ marginLeft: "200px" }}>
-              <Button
-                style={{ marginRight: "10px" }}
-                onClick={handleCloseDeleteFrame}
-              >
-                Cancel
-              </Button>
-              <Button
-                variant="contained"
-                onClick={() => {
-                  frames.frames.splice(activeFrame, 1);
-                  setFrames({ ...frames });
-                  localStorage.clear();
-                  localStorage.setItem("frames", JSON.stringify(frames));
-                  handleCloseDeleteFrame();
-                  setActiveFrame(0);
-                }}
-              >
-                Delete
-              </Button>
-            </div>
-          </Box>
-        </Fade>
-      </Modal>
-
       <DragDropContext onDragEnd={handleOnDragEnd}>
         <Droppable droppableId="droppable-list">
           {(provided) => (
@@ -117,48 +58,22 @@ export function FramesPanel({
                         className="frameBox"
                         style={{ ...provided.draggableProps.style }}
                         onClick={() => {
-                          setChangeColorIndex(index);
                           setColor("white");
                           setActiveFrame(index);
                           setFrame(frames?.frames?.[index]);
                           setActiveImg(undefined);
                         }}
                       >
-                        <div
-                          style={
-                            index == activeFrame
-                              ? { backgroundColor: color }
-                              : null
-                          }
-                          className="forFlex"
-                          onMouseEnter={() => {
-                            setVisible("block");
-                          }}
-                          onMouseLeave={() => {
-                            setVisible("none");
-                          }}
+                        <FrameWrapper
+                          color={color}
+                          activeFrame={activeFrame}
+                          index={index}
+                          setActiveFrame={setActiveFrame}
+                          setFrames={setFrames}
+                          frames={frames}
                         >
-                          <div className="forFlex">
-                            {index + 1}
-
-                            <div className="framePreview">
-                              <Frame data={frame} />
-                            </div>
-                          </div>
-                          <div
-                            style={{ display: visible }}
-                            className="deleteContainer"
-                          >
-                            <Tooltip title="Delete">
-                              <IconButton
-                                style={{ height: "30px", width: "30px" }}
-                                onClick={handleOpenDeleteFrame}
-                              >
-                                <DeleteIcon />
-                              </IconButton>
-                            </Tooltip>
-                          </div>
-                        </div>
+                          <Frame data={frame} />
+                        </FrameWrapper>
                       </div>
                     )}
                   </Draggable>
