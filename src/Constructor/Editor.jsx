@@ -46,28 +46,26 @@ export function Editor({
   const handleOpenDeleteImg = () => setOpenDeleteImg(true);
   const handleCloseDeleteImg = () => setOpenDeleteImg(false);
 
-  function handleOnChangeStyles(key, value) {
-    frames.frames[activeFrame].imgs[activeImg].style[key] = value;
+  function updateFrames(frames) {
     setFrames({ ...frames });
     localStorage.clear();
     localStorage.setItem("frames", JSON.stringify(frames));
   }
+  function handleOnChangeStyles(key, value) {
+    frames.frames[activeFrame].imgs[activeImg].style[key] = value;
+    updateFrames(frames);
+  }
 
   function handleOnChangeVariants(hiddenShow, key, value) {
-    console.log("chipss", value);
     frames.frames[activeFrame].imgs[activeImg].variants[hiddenShow][key] =
       value;
-    setFrames({ ...frames });
-    localStorage.clear();
-    localStorage.setItem("frames", JSON.stringify(frames));
+    updateFrames(frames);
   }
 
   function handleOnChangeVariantsTransition(key, value) {
     frames.frames[activeFrame].imgs[activeImg].variants.show.transition[key] =
       value;
-    setFrames({ ...frames });
-    localStorage.clear();
-    localStorage.setItem("frames", JSON.stringify(frames));
+    updateFrames(frames);
   }
 
   return (
