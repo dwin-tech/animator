@@ -11,6 +11,9 @@ import Select from "@mui/material/Select";
 import ChipInput from "material-ui-chip-input";
 import { styled } from "@mui/material/styles";
 import Divider from "@mui/material/Divider";
+import AceEditor from "react-ace";
+import "ace-builds/src-noconflict/theme-tomorrow";
+import "ace-builds/webpack-resolver";
 
 import "./style.css";
 
@@ -43,6 +46,8 @@ export function Editor({
   activeImg,
 }) {
   const [openDeleteImg, setOpenDeleteImg] = useState(false);
+  const [customStyles, setCustomStyles] = useState("");
+
   const handleOpenDeleteImg = () => setOpenDeleteImg(true);
   const handleCloseDeleteImg = () => setOpenDeleteImg(false);
 
@@ -66,6 +71,10 @@ export function Editor({
     frames.frames[activeFrame].imgs[activeImg].variants.show.transition[key] =
       value;
     updateFrames(frames);
+  }
+
+  function onClick() {
+    handleOnChangeStyles("customStyles", customStyles);
   }
 
   return (
@@ -216,6 +225,40 @@ export function Editor({
             }}
             size="small"
           />
+          <TextField
+            placeholder="10% or 30px"
+            label="Bottom"
+            value={img?.style?.bottom || ""}
+            onChange={(e) => {
+              handleOnChangeStyles("bottom", e.target.value);
+            }}
+            size="small"
+          />
+
+          <AceEditor
+            style={{ height: "200px", width: "450px", marginLeft: "7px" }}
+            placeholder={".class{\n  width: 100%;\n  marginLeft: 20px\n}"}
+            mode="css"
+            theme="tomorrow"
+            name="Custom Styles"
+            // onLoad={onLoad}
+            onChange={(e) => setCustomStyles(e)}
+            fontSize={18}
+            showPrintMargin={true}
+            showGutter={true}
+            highlightActiveLine={true}
+            // value={``}
+            setOptions={{
+              enableBasicAutocompletion: true,
+              enableLiveAutocompletion: true,
+              enableSnippets: false,
+              showLineNumbers: true,
+              tabSize: 2,
+            }}
+          />
+          <Button variant="contained" onClick={onClick}>
+            Save Custom Styles
+          </Button>
         </div>
         <Root>
           <Divider textAlign="left">
@@ -265,9 +308,33 @@ export function Editor({
           <TextField
             placeholder="10% or 30px"
             label="Hidden rotate"
-            value={img?.variants?.rotate || ""}
+            onBlur={(e) => {
+              if (!e.target.value) {
+                delete frames.frames[activeFrame].imgs[activeImg].variants
+                  ?.hidden?.rotate;
+              }
+            }}
+            value={img?.variants?.hidden?.rotate || ""}
             onChange={(e) => {
               handleOnChangeVariants("hidden", "rotate", e.target.value);
+            }}
+            size="small"
+          />
+          <TextField
+            placeholder="10% or 30px"
+            label="Hidden X"
+            value={img?.variants?.hidden?.x || ""}
+            onChange={(e) => {
+              handleOnChangeVariants("hidden", "x", +e.target.value);
+            }}
+            size="small"
+          />
+          <TextField
+            placeholder="10% or 30px"
+            label="Hidden Y"
+            value={img?.variants?.hidden?.y || ""}
+            onChange={(e) => {
+              handleOnChangeVariants("hidden", "y", +e.target.value);
             }}
             size="small"
           />
@@ -309,6 +376,24 @@ export function Editor({
             value={img?.variants?.show?.opacity || ""}
             onChange={(e) => {
               handleOnChangeVariants("show", "opacity", e.target.value);
+            }}
+            size="small"
+          />
+          <TextField
+            placeholder="10% or 30px"
+            label="Show X"
+            value={img?.variants?.show?.x || ""}
+            onChange={(e) => {
+              handleOnChangeVariants("show", "x", +e.target.value);
+            }}
+            size="small"
+          />
+          <TextField
+            placeholder="10% or 30px"
+            label="Show Y"
+            value={img?.variants?.show?.y || ""}
+            onChange={(e) => {
+              handleOnChangeVariants("show", "y", +e.target.value);
             }}
             size="small"
           />

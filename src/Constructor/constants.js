@@ -43,6 +43,7 @@ export const emptyJson = {
 
 export const newFrame = {
   title: "",
+  timestamp: new Date().getTime(),
   imgs: [
     {
       src: greySquare,

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { blackContainer } from "./index.js";
 
-export function Frame({ data }) {
+export function Frame({ data, activeFrame }) {
   const visible = true;
 
   return (
@@ -13,8 +13,13 @@ export function Frame({ data }) {
         style={data?.main?.style}
       >
         {data?.imgs?.map((el, index) => {
+          const style = document.createElement("style");
+          style.innerHTML = el.style.customStyles;
+          document.head.appendChild(style);
+          let className = `frame_${activeFrame}_img_${index}`;
           return (
             <motion.img
+              className={className}
               key={el.src}
               variants={el.variants}
               initial={el.initial}
