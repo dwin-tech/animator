@@ -11,11 +11,8 @@ import Select from "@mui/material/Select";
 import ChipInput from "material-ui-chip-input";
 import { styled } from "@mui/material/styles";
 import Divider from "@mui/material/Divider";
-import AceEditor from "react-ace";
-import "ace-builds/src-noconflict/theme-tomorrow";
-import "ace-builds/webpack-resolver";
-
 import "./style.css";
+import { CustomStylesEditor } from "./CustomStylesEditor";
 
 const MODAL_STYLE = {
   position: "absolute",
@@ -46,7 +43,6 @@ export function Editor({
   activeImg,
 }) {
   const [openDeleteImg, setOpenDeleteImg] = useState(false);
-  const [customStyles, setCustomStyles] = useState("");
 
   const handleOpenDeleteImg = () => setOpenDeleteImg(true);
   const handleCloseDeleteImg = () => setOpenDeleteImg(false);
@@ -71,10 +67,6 @@ export function Editor({
     frames.frames[activeFrame].imgs[activeImg].variants.show.transition[key] =
       value;
     updateFrames(frames);
-  }
-
-  function onClick() {
-    handleOnChangeStyles("customStyles", customStyles);
   }
 
   return (
@@ -234,31 +226,7 @@ export function Editor({
             }}
             size="small"
           />
-
-          <AceEditor
-            style={{ height: "200px", width: "450px", marginLeft: "7px" }}
-            placeholder={".class{\n  width: 100%;\n  marginLeft: 20px\n}"}
-            mode="css"
-            theme="tomorrow"
-            name="Custom Styles"
-            // onLoad={onLoad}
-            onChange={(e) => setCustomStyles(e)}
-            fontSize={18}
-            showPrintMargin={true}
-            showGutter={true}
-            highlightActiveLine={true}
-            // value={``}
-            setOptions={{
-              enableBasicAutocompletion: true,
-              enableLiveAutocompletion: true,
-              enableSnippets: false,
-              showLineNumbers: true,
-              tabSize: 2,
-            }}
-          />
-          <Button variant="contained" onClick={onClick}>
-            Save Custom Styles
-          </Button>
+          <CustomStylesEditor handleOnChangeStyles={handleOnChangeStyles} />
         </div>
         <Root>
           <Divider textAlign="left">
