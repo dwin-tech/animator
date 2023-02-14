@@ -11,8 +11,8 @@ import Select from "@mui/material/Select";
 import ChipInput from "material-ui-chip-input";
 import { styled } from "@mui/material/styles";
 import Divider from "@mui/material/Divider";
-
 import "./style.css";
+import { CustomStylesEditor } from "./CustomStylesEditor";
 
 const MODAL_STYLE = {
   position: "absolute",
@@ -43,6 +43,7 @@ export function Editor({
   activeImg,
 }) {
   const [openDeleteImg, setOpenDeleteImg] = useState(false);
+
   const handleOpenDeleteImg = () => setOpenDeleteImg(true);
   const handleCloseDeleteImg = () => setOpenDeleteImg(false);
 
@@ -216,6 +217,16 @@ export function Editor({
             }}
             size="small"
           />
+          <TextField
+            placeholder="10% or 30px"
+            label="Bottom"
+            value={img?.style?.bottom || ""}
+            onChange={(e) => {
+              handleOnChangeStyles("bottom", e.target.value);
+            }}
+            size="small"
+          />
+          <CustomStylesEditor handleOnChangeStyles={handleOnChangeStyles} />
         </div>
         <Root>
           <Divider textAlign="left">
@@ -265,9 +276,33 @@ export function Editor({
           <TextField
             placeholder="10% or 30px"
             label="Hidden rotate"
-            value={img?.variants?.rotate || ""}
+            onBlur={(e) => {
+              if (!e.target.value) {
+                delete frames.frames[activeFrame].imgs[activeImg].variants
+                  ?.hidden?.rotate;
+              }
+            }}
+            value={img?.variants?.hidden?.rotate || ""}
             onChange={(e) => {
               handleOnChangeVariants("hidden", "rotate", e.target.value);
+            }}
+            size="small"
+          />
+          <TextField
+            placeholder="10% or 30px"
+            label="Hidden X"
+            value={img?.variants?.hidden?.x || ""}
+            onChange={(e) => {
+              handleOnChangeVariants("hidden", "x", +e.target.value);
+            }}
+            size="small"
+          />
+          <TextField
+            placeholder="10% or 30px"
+            label="Hidden Y"
+            value={img?.variants?.hidden?.y || ""}
+            onChange={(e) => {
+              handleOnChangeVariants("hidden", "y", +e.target.value);
             }}
             size="small"
           />
@@ -309,6 +344,24 @@ export function Editor({
             value={img?.variants?.show?.opacity || ""}
             onChange={(e) => {
               handleOnChangeVariants("show", "opacity", e.target.value);
+            }}
+            size="small"
+          />
+          <TextField
+            placeholder="10% or 30px"
+            label="Show X"
+            value={img?.variants?.show?.x || ""}
+            onChange={(e) => {
+              handleOnChangeVariants("show", "x", +e.target.value);
+            }}
+            size="small"
+          />
+          <TextField
+            placeholder="10% or 30px"
+            label="Show Y"
+            value={img?.variants?.show?.y || ""}
+            onChange={(e) => {
+              handleOnChangeVariants("show", "y", +e.target.value);
             }}
             size="small"
           />

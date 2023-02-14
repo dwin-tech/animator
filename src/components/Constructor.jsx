@@ -55,14 +55,14 @@ export function Constructor() {
         />
 
         <div
-          className="yamakasi"
+          className="mainFrame"
           style={{
             boxShadow:
               "0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%) !important",
             marginTop: "5%",
           }}
         >
-          <Frame data={data?.frames?.[activeFrame]} />
+          <Frame data={data?.frames?.[activeFrame]} activeFrame={activeFrame} />
         </div>
         <RightSideBar
           frame={frame}
