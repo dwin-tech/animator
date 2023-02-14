@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import { useState } from "react";
 import Button from "@mui/material/Button";
 import ImportFile from "./Inport";
+import { useNavigate } from "react-router-dom";
 
 const MODAL_STYLE = {
   position: "absolute",
@@ -18,6 +19,8 @@ const MODAL_STYLE = {
 };
 
 export function ExportImport({ setJsonFile }) {
+  const navigate = useNavigate();
+
   const exportData = () => {
     const data = localStorage.getItem("frames");
     const jsonString = `data:text/json;chatset=utf-8,${data}`;
@@ -33,38 +36,53 @@ export function ExportImport({ setJsonFile }) {
   const handleClose = () => setOpen(false);
 
   return (
-    <div className="bottomButtons">
-      <Button
-        style={{
-          marginRight: "20px",
-        }}
-        variant="contained"
-        onClick={exportData}
-      >
-        Export
-      </Button>
-      <Button
-        style={{
-          marginRight: "20px",
-        }}
-        onClick={handleOpen}
-        variant="contained"
-      >
-        Import
-      </Button>
-      <Modal
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
-        open={open}
-        onClose={handleClose}
-        closeAfterTransition
-      >
-        <Fade in={open}>
-          <Box sx={MODAL_STYLE}>
-            <ImportFile handleClose={handleClose} setJsonFile={setJsonFile} />
-          </Box>
-        </Fade>
-      </Modal>
+    <div className="topButtons">
+      <div>
+        <Button
+          style={{
+            marginLeft: "20px",
+          }}
+          variant="contained"
+          onClick={() => {
+            navigate("/constructor/preview");
+          }}
+        >
+          PreView
+        </Button>
+      </div>
+      <div>
+        <Button
+          style={{
+            marginRight: "20px",
+          }}
+          variant="contained"
+          onClick={exportData}
+        >
+          Export
+        </Button>
+        <Button
+          style={{
+            marginRight: "20px",
+          }}
+          onClick={handleOpen}
+          variant="contained"
+        >
+          Import
+        </Button>
+        <Modal
+          aria-labelledby="transition-modal-title"
+          aria-describedby="transition-modal-description"
+          open={open}
+          onClose={handleClose}
+          closeAfterTransition
+        >
+          <Fade in={open}>
+            <Box sx={MODAL_STYLE}>
+              <ImportFile handleClose={handleClose} setJsonFile={setJsonFile} />
+            </Box>
+          </Fade>
+        </Modal>
+      </div>
     </div>
   );
 }

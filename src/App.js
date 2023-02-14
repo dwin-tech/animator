@@ -4,6 +4,7 @@ import { Constructor } from "./components/Constructor";
 import { Episode_1 } from "./components/Episode_1";
 import { Episode_2 } from "./components/Episode_2";
 import { Episode_3 } from "./components/Episode_3";
+import { Preview } from "./Constructor/Preview";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Route path="/episode_2" element={<Episode_2 />} />
       <Route path="/episode_3" element={<Episode_3 />} />
       <Route path="/constructor" element={<Constructor />} />
+      <Route path="/constructor/preview" element={<Preview />} />
     </Routes>
   );
 }

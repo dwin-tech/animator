@@ -1,12 +1,11 @@
 import { motion } from "framer-motion";
 import { blackContainer } from "./index.js";
 
-export function Frame({ data, activeFrame }) {
-  const visible = true;
-
+export function Frame({ visible = true, data, activeFrame }) {
   return (
     <div>
       <motion.div
+        animate={visible ? "show" : "hidden"}
         variants={blackContainer}
         initial={"show"}
         whileInView={true}
@@ -19,6 +18,7 @@ export function Frame({ data, activeFrame }) {
           let className = `frame_${activeFrame}_img_${index}`;
           return (
             <motion.img
+              animate={visible ? "show" : "hidden"}
               className={className}
               key={el.src}
               variants={el.variants}

@@ -91,9 +91,12 @@
     overflow:scroll;
 }
 
-.bottomButtons{
+.topButtons{
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    background-color: rgb(216, 232, 232);
+    height: 70px;
 }
 
 .sideBars{
