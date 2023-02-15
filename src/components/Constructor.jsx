@@ -29,8 +29,6 @@ export function Constructor() {
     } else {
       if (localStorage.getItem("frames")) {
         setData(JSON.parse(localStorage.getItem("frames")));
-      } else {
-        // setData(emptyJson);
       }
     }
   }, [jsonFile]);
