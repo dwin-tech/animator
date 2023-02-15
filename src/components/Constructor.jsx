@@ -23,7 +23,6 @@ export function Constructor() {
     return true;
   }
 
-  console.log("jsonFile --> ", jsonFile);
   useEffect(() => {
     getJsonFrame().then((data) => {
       if (isEmpty(data)) {

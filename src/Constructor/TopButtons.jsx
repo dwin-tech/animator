@@ -37,7 +37,6 @@ export function TopButtons({ setJsonFile }) {
   const handleClose = () => setOpen(false);
 
   function handleOnClick() {
-    console.log("example", example);
     setJsonFile(JSON.stringify(example));
   }
 
