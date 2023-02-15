@@ -3,9 +3,10 @@ import { getJsonFrame } from "../Constructor/fetch";
 import { Frame } from "../Constructor/Frame";
 import { LeftSideBar } from "../Constructor/LeftSideBar.jsx";
 import { RightSideBar } from "../Constructor/RightSideBar";
-import { ExportImport } from "../Constructor/ExportImport";
+import { TopButtons } from "../Constructor/TopButtons";
 
 import "./style.css";
+import { emptyJson } from "../Constructor/constants";
 
 export function Constructor() {
   const [data, setData] = useState({ frames: [] });
@@ -22,13 +23,18 @@ export function Constructor() {
     return true;
   }
 
+  console.log("jsonFile --> ", jsonFile);
   useEffect(() => {
     getJsonFrame().then((data) => {
       if (isEmpty(data)) {
         if (jsonFile) {
           setData(JSON.parse(jsonFile));
         } else {
-          setData(JSON.parse(localStorage.getItem("frames")));
+          if (localStorage.getItem("frames")) {
+            setData(JSON.parse(localStorage.getItem("frames")));
+          } else {
+            // setData(emptyJson);
+          }
         }
       } else {
         setData(data);
@@ -39,7 +45,7 @@ export function Constructor() {
   return (
     <div className="constructor">
       <div className="topPart">
-        <ExportImport setJsonFile={setJsonFile} />
+        <TopButtons setJsonFile={setJsonFile} />
       </div>
       <div className="main">
         <LeftSideBar

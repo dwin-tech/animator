@@ -1,0 +1,346 @@
+{
+  "title": "episode_1",
+  "frames": [
+    {
+      "timestamp": 11111111,
+      "title": "episode_1_frame_1",
+      "main": {
+        "className": "frameOne",
+        "variants": {
+          "hidden": {
+            "opacity": "0.2",
+            "transition": {
+              "duration": 1,
+              "delay": 0,
+              "forwards": 1,
+              "ease": "linear"
+            }
+          },
+          "show": {
+            "opacity": 1,
+            "transition": {
+              "duration": 3,
+              "delay": 0,
+              "forwards": 1,
+              "ease": "linear"
+            }
+          }
+        },
+        "initial": "hidden",
+        "style": {
+          "maxWidth": "600px",
+          "margin": "auto",
+          "position": "relative",
+          "overflow": "hidden",
+          "paddingBottom": "5%"
+        }
+      },
+      "imgs": [
+        {
+          "src": "/static/media/two.e842d2a310f370e469eb.png",
+          "alt": "two",
+          "className": "img2",
+          "initial": "hidden",
+          "variants": {
+            "hidden": { "y": 20 },
+            "show": {
+              "y": -33,
+              "transition": {
+                "duration": 0.8,
+                "delay": 1.2,
+                "forwards": 1,
+                "ease": "linear"
+              }
+            },
+            "exit": { "y": -33 }
+          },
+          "style": {
+            "position": "absolute",
+            "width": "100%",
+            "bottom": "-5%",
+            "zIndex": "2"
+          }
+        },
+        {
+          "src": "/static/media/three.a4a414ff6c5b105c3cfc.png",
+          "alt": "three",
+          "className": "img3",
+          "initial": "hidden",
+          "variants": {
+            "hidden": {
+              "y": 20,
+              "transition": {
+                "duration": 1,
+                "delay": 1.3,
+                "forwards": 1,
+                "ease": "linear"
+              }
+            },
+            "show": {
+              "y": -23,
+              "transition": {
+                "duration": 1,
+                "delay": 1.3,
+                "forwards": 1,
+                "ease": "linear"
+              }
+            },
+            "exit": { "y": -23 }
+          },
+          "style": {
+            "position": "absolute",
+            "width": "100%",
+            "bottom": "-5%",
+            "zIndex": "3"
+          }
+        },
+        {
+          "src": "/static/media/one.29bd3bca2d0e209fc8f2.png",
+          "alt": "one",
+          "className": "img",
+          "initial": "hidden",
+          "variants": {
+            "hidden": { "y": 0 },
+            "show": {
+              "y": -3,
+              "transition": {
+                "duration": 1,
+                "delay": 1.1,
+                "forwards": 1,
+                "ease": "linear"
+              }
+            },
+            "exit": { "y": -3 }
+          },
+          "style": { "width": "100%", "zIndex": "1" }
+        },
+        {
+          "src": "/static/media/birds.bfef74e608fc2ae14ca4.png",
+          "alt": "birds",
+          "className": "birds",
+          "initial": "hidden",
+          "variants": {
+            "hidden": { "x": 0, "y": 0 },
+            "show": {
+              "y": -722,
+              "x": -722,
+              "transition": {
+                "duration": 2,
+                "delay": 1.1,
+                "forwards": 1,
+                "ease": "linear"
+              }
+            }
+          },
+          "style": {
+            "position": "absolute",
+            "maxWidth": "30%",
+            "top": "70%",
+            "left": "78%",
+            "zIndex": "5"
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": 11111112,
+      "title": "episode_1_frame_2",
+      "main": {
+        "className": "frameTwo",
+        "initial": "hidden",
+        "style": {
+          "maxWidth": "600px",
+          "margin": "auto",
+          "position": "relative",
+          "overflow": "hidden"
+        }
+      },
+      "imgs": [
+        {
+          "src": "/static/media/street.fe5b6e60cc8049c943d1.png",
+          "alt": "street",
+          "className": "street",
+          "initial": "hidden",
+          "style": { "width": "100%" }
+        },
+        {
+          "src": "/static/media/green.31768d51837ced3faa81.png",
+          "alt": "green",
+          "className": "green",
+          "initial": "hidden",
+          "variants": {
+            "hidden": { "y": 2, "x": 5 },
+            "show": {
+              "y": 25,
+              "x": 8,
+              "scale": 1.4,
+              "transition": {
+                "duration": 1.5,
+                "delay": 0.1,
+                "forwards": 1,
+                "ease": "linear"
+              }
+            }
+          },
+          "style": {
+            "position": "absolute",
+            "width": "8%",
+            "bottom": "13%",
+            "left": "30%",
+            "Zindex": "1"
+          }
+        },
+        {
+          "src": "/static/media/yellow.90a49662295b46dbfc02.png",
+          "alt": "yellow",
+          "className": "yellow",
+          "initial": "hidden",
+          "variants": {
+            "hidden": { "y": 0, "x": 0 },
+            "show": {
+              "opacity": 0,
+              "y": 83,
+              "x": 25,
+              "scale": 1.1,
+              "transition": {
+                "duration": 1.5,
+                "delay": 0.1,
+                "forwards": 1,
+                "ease": "linear"
+              }
+            }
+          },
+          "style": {
+            "width": "14%",
+            "bottom": "10%",
+            "left": "38%",
+            "position": "absolute",
+            " Zindex": 1
+          }
+        },
+        {
+          "src": "/static/media/blue.9c956ee627244753c8fe.png",
+          "alt": "blue",
+          "className": "blue",
+          "initial": "hidden",
+          "variants": {
+            "hidden": { "y": 0, "x": 0 },
+            "show": {
+              "opacity": 0,
+              "y": 120,
+              "x": 80,
+              "transition": {
+                "duration": 1.5,
+                "delay": 0.1,
+                "forwards": 1,
+                "ease": "linear"
+              }
+            }
+          },
+          "style": {
+            "position": "absolute",
+            "width": "27%",
+            "bottom": "8%",
+            "right": "18%",
+            "Zindex": "4"
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": 11111113,
+      "title": "episode_2_frame_8",
+      "main": {
+        "className": "guysAndHandShake",
+        "initial": "hidden",
+        "style": {
+          "maxWidth": "800px",
+          "margin": "auto",
+          "position": "relative",
+          "overflow": "hidden"
+        }
+      },
+      "imgs": [
+        {
+          "src": "/static/media/guys.5d30ad59ff48f3b5abc0.png",
+          "alt": "guys",
+          "className": "guysInOffice",
+          "style": {
+            "width": "100%",
+            "margin": "auto",
+            "position": "relative",
+            "zIndex": 1
+          }
+        },
+        {
+          "src": "/static/media/hand.f1edf39ab89a294a5bc5.png",
+          "alt": "hand",
+          "className": "handWithRing",
+          "initial": "hidden",
+          "variants": {
+            "hidden": {
+              "opacity": 1,
+              "rotate": "-57deg",
+              "top": "90%",
+              "left": "51%",
+              "width": "38%"
+            },
+            "show": {
+              "top": "24%",
+              "left": "62%",
+              "width": "38%",
+              "rotate": "0deg",
+              "opacity": 1,
+              "transition": {
+                "duration": 1,
+                "delay": 0.5,
+                "forwards": 1,
+                "ease": "linear"
+              }
+            }
+          },
+          "style": {
+            "top": "24%",
+            "left": "62%",
+            "width": "38%",
+            "position": "absolute",
+            "zIndex": 2
+          }
+        },
+        {
+          "src": "/static/media/message.92d320920494d9e7926f.png",
+          "alt": "message",
+          "className": "handMessage",
+          "initial": "hidden",
+          "variants": {
+            "hidden": {
+              "top": "15%",
+              "left": "100%",
+              "width": "0%",
+              "opacity": 0.5
+            },
+            "show": {
+              "width": "50%",
+              "top": "2%",
+              "left": "40%",
+              "opacity": 1,
+              "transition": {
+                "delay": 1,
+                "duration": 0.2,
+                "forwards": 1,
+                "ease": "linear"
+              }
+            }
+          },
+          "style": {
+            "position": "absolute",
+            "left": "0%",
+            "top": "10%",
+            "width": "50%",
+            "zIndex": "2"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -5,6 +5,7 @@ import { useState } from "react";
 import Button from "@mui/material/Button";
 import ImportFile from "./Inport";
 import { useNavigate } from "react-router-dom";
+import example from "./example.json";
 
 const MODAL_STYLE = {
   position: "absolute",
@@ -18,7 +19,7 @@ const MODAL_STYLE = {
   p: 4,
 };
 
-export function ExportImport({ setJsonFile }) {
+export function TopButtons({ setJsonFile }) {
   const navigate = useNavigate();
 
   const exportData = () => {
@@ -35,6 +36,11 @@ export function ExportImport({ setJsonFile }) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  function handleOnClick() {
+    console.log("example", example);
+    setJsonFile(JSON.stringify(example));
+  }
+
   return (
     <div className="topButtons">
       <div>
@@ -48,6 +54,15 @@ export function ExportImport({ setJsonFile }) {
           }}
         >
           PreView
+        </Button>
+        <Button
+          style={{
+            marginLeft: "20px",
+          }}
+          variant="contained"
+          onClick={handleOnClick}
+        >
+          Example
         </Button>
       </div>
       <div>

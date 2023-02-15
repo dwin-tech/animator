@@ -84,9 +84,9 @@ export function FramesPanel({
                 className="framePreview"
                 style={{ marginLeft: "30px", cursor: "pointer" }}
                 onClick={() => {
-                  frames.frames.push(JSON.parse(JSON.stringify(newFrame)));
+                  frames?.frames?.push(JSON.parse(JSON.stringify(newFrame)));
                   setFrames({ ...frames });
-                  setActiveFrame(frames.frames.length - 1);
+                  setActiveFrame(frames?.frames?.length - 1);
                 }}
               >
                 <Tooltip title="Add Frame">
