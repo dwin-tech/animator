@@ -38,6 +38,8 @@ export function TopButtons({ setJsonFile }) {
 
   function handleOnClick() {
     setJsonFile(JSON.stringify(example));
+    localStorage.clear();
+    localStorage.setItem("frames", JSON.stringify(example));
   }
 
   return (

@@ -6,13 +6,11 @@ import { RightSideBar } from "../Constructor/RightSideBar";
 import { TopButtons } from "../Constructor/TopButtons";
 
 import "./style.css";
-import { emptyJson } from "../Constructor/constants";
 
 export function Constructor() {
   const [data, setData] = useState({ frames: [] });
   const [activeFrame, setActiveFrame] = useState(0);
   const [activeImg, setActiveImg] = useState();
-  const [showStyles, setShowStyles] = useState(false);
   const [frame, setFrame] = useState();
   const [jsonFile, setJsonFile] = useState();
 
@@ -24,21 +22,17 @@ export function Constructor() {
   }
 
   useEffect(() => {
-    getJsonFrame().then((data) => {
-      if (isEmpty(data)) {
-        if (jsonFile) {
-          setData(JSON.parse(jsonFile));
-        } else {
-          if (localStorage.getItem("frames")) {
-            setData(JSON.parse(localStorage.getItem("frames")));
-          } else {
-            // setData(emptyJson);
-          }
-        }
+    if (jsonFile) {
+      setData(JSON.parse(jsonFile));
+      localStorage.clear();
+      localStorage.setItem("frames", jsonFile);
+    } else {
+      if (localStorage.getItem("frames")) {
+        setData(JSON.parse(localStorage.getItem("frames")));
       } else {
-        setData(data);
+        // setData(emptyJson);
       }
-    });
+    }
   }, [jsonFile]);
 
   return (

@@ -44,12 +44,16 @@ export function ImgEditor({
   return (
     <div className="imgEditor">
       <div className="imgs">
-        {frames?.frames[activeFrame]?.imgs?.map((img, index) => {
+        {frames?.frames?.[activeFrame]?.imgs?.map((img, index) => {
           return (
             <div
               key={img.src}
               className="imgBox"
-              style={index == border ? { border: "2px solid grey" } : null}
+              style={
+                index == activeImg
+                  ? { border: "2px solid grey", cursor: "pointer" }
+                  : { cursor: "pointer" }
+              }
               onClick={() => {
                 setBorder(index);
                 setActiveImg(index);
@@ -82,9 +86,9 @@ export function ImgEditor({
               <div
                 className="imgBox"
                 style={
-                  !frames?.frames.length
-                    ? { display: "none" }
-                    : { display: "block" }
+                  !frames?.frames?.length
+                    ? { display: "none", cursor: "pointer" }
+                    : { display: "block", cursor: "pointer" }
                 }
                 onClick={onImageUpload}
               >

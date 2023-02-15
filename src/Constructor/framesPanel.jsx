@@ -86,6 +86,8 @@ export function FramesPanel({
                 onClick={() => {
                   frames?.frames?.push(JSON.parse(JSON.stringify(newFrame)));
                   setFrames({ ...frames });
+                  localStorage.clear();
+                  localStorage.setItem("frames", JSON.stringify(frames));
                   setActiveFrame(frames?.frames?.length - 1);
                 }}
               >

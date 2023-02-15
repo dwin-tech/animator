@@ -68,7 +68,11 @@ export function FrameWrapper({
         </Fade>
       </Modal>
       <div
-        style={index == activeFrame ? { backgroundColor: color } : null}
+        style={
+          index == activeFrame
+            ? { backgroundColor: color, border: "1px solid #1976d2" }
+            : null
+        }
         className="forFlex"
         onMouseEnter={() => {
           setVisible("block");

@@ -37,6 +37,7 @@ const Root = styled("div")(({ theme }) => ({
 export function Editor({
   setActiveImg,
   img,
+  setImg,
   setFrames,
   frames,
   activeFrame,
@@ -421,7 +422,7 @@ export function Editor({
         <Button
           style={{
             marginLeft: "10px",
-            marginTop: "30px",
+            marginTop: "15px",
             marginBottom: "20px",
           }}
           onClick={handleOpenDeleteImg}
@@ -455,7 +456,8 @@ export function Editor({
                     localStorage.clear();
                     localStorage.setItem("frames", JSON.stringify(frames));
                     handleCloseDeleteImg();
-                    setActiveImg(undefined);
+                    setActiveImg(0);
+                    setImg(frames.frames[activeFrame].imgs[0]);
                   }}
                 >
                   Delete
