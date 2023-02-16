@@ -15,7 +15,12 @@ export function CustomStylesEditor({ handleOnChangeStyles }) {
   return (
     <div>
       <AceEditor
-        style={{ height: "200px", width: "450px", margin: "7px" }}
+        style={{
+          height: "200px",
+          width: "450px",
+          margin: "7px",
+          backgroundColor: "rgb(216, 232, 232)",
+        }}
         placeholder={".class{\n  width: 100%;\n  marginLeft: 20px\n}"}
         mode="css"
         theme="tomorrow"

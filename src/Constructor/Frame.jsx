@@ -3,7 +3,7 @@ import { blackContainer } from "./index.js";
 
 export function Frame({ visible = true, data, activeFrame }) {
   return (
-    <div>
+    <div className="mainFrame">
       <motion.div
         animate={visible ? "show" : "hidden"}
         variants={blackContainer}

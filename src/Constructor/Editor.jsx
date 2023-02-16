@@ -43,11 +43,6 @@ export function Editor({
   activeFrame,
   activeImg,
 }) {
-  const [openDeleteImg, setOpenDeleteImg] = useState(false);
-
-  const handleOpenDeleteImg = () => setOpenDeleteImg(true);
-  const handleCloseDeleteImg = () => setOpenDeleteImg(false);
-
   function updateFrames(frames) {
     setFrames({ ...frames });
     localStorage.clear();
@@ -173,6 +168,7 @@ export function Editor({
             </Select>
           </FormControl>
           <TextField
+            inputProps={{ min: 0 }}
             placeholder="1"
             type="number"
             label="zIndex"
@@ -266,6 +262,8 @@ export function Editor({
             size="small"
           />
           <TextField
+            type="number"
+            inputProps={{ min: 0, max: 1 }}
             placeholder="from 0 to 1"
             label="Hidden Opacity"
             value={img?.variants?.hidden?.opacity || ""}
@@ -276,7 +274,7 @@ export function Editor({
           />
           <TextField
             placeholder="10% or 30px"
-            label="Hidden rotate"
+            label="Hidden Rotate"
             onBlur={(e) => {
               if (!e.target.value) {
                 delete frames.frames[activeFrame].imgs[activeImg].variants
@@ -340,8 +338,10 @@ export function Editor({
             size="small"
           />
           <TextField
+            type="number"
+            inputProps={{ min: 0, max: 1 }}
             placeholder="from 0 to 1"
-            label="Show opacity"
+            label="Show Opacity"
             value={img?.variants?.show?.opacity || ""}
             onChange={(e) => {
               handleOnChangeVariants("show", "opacity", e.target.value);
@@ -370,7 +370,7 @@ export function Editor({
             placeholder="10deg or 50px"
             // value={img?.variants?.show?.rotate || []}
             style={{ margin: "7px" }}
-            label="rotate"
+            label="Rotate"
             allowDuplicates={true}
             onChange={(chips) => {
               handleOnChangeVariants("show", "rotate", chips);
@@ -380,9 +380,10 @@ export function Editor({
             <Divider textAlign="center">Transition</Divider>
           </Root>
           <TextField
+            inputProps={{ min: 0 }}
             type="number"
             placeholder="2 times"
-            label="repeat"
+            label="Repeat"
             value={img?.variants?.show?.transition?.repeat || ""}
             onChange={(e) => {
               handleOnChangeVariantsTransition("repeat", e.target.value);
@@ -390,9 +391,10 @@ export function Editor({
             size="small"
           />
           <TextField
+            inputProps={{ min: 0 }}
             type="number"
             placeholder="0.7 speed"
-            label="duration"
+            label="Duration"
             value={img?.variants?.show?.transition?.duration || ""}
             onChange={(e) => {
               handleOnChangeVariantsTransition("duration", e.target.value);
@@ -400,72 +402,17 @@ export function Editor({
             size="small"
           />
           <TextField
+            inputProps={{ min: 0 }}
             type="number"
             placeholder="0.7 sec"
-            label="delay"
+            label="Delay"
             value={img?.variants?.show?.transition?.delay || ""}
             onChange={(e) => {
               handleOnChangeVariantsTransition("delay", e.target.value);
             }}
             size="small"
           />
-          <Root>
-            <Divider textAlign="left">Add Other properties</Divider>
-          </Root>
-          <TextField
-            label="Any properties"
-            value={""}
-            onChange={() => {}}
-            size="small"
-          />
         </div>
-        <Button
-          style={{
-            marginLeft: "10px",
-            marginTop: "15px",
-            marginBottom: "20px",
-          }}
-          onClick={handleOpenDeleteImg}
-          variant="contained"
-        >
-          Delete Img
-        </Button>
-        <Modal
-          aria-labelledby="transition-modal-title"
-          aria-describedby="transition-modal-description"
-          open={openDeleteImg}
-          onClose={handleCloseDeleteImg}
-          closeAfterTransition
-        >
-          <Fade in={openDeleteImg}>
-            <Box sx={MODAL_STYLE}>
-              <h2>Delete photo</h2>
-              <h3>Are you sure?</h3>
-              <div style={{ marginLeft: "200px" }}>
-                <Button
-                  style={{ marginRight: "10px" }}
-                  onClick={handleCloseDeleteImg}
-                >
-                  Cancel
-                </Button>
-                <Button
-                  variant="contained"
-                  onClick={() => {
-                    frames.frames[activeFrame].imgs.splice(activeImg, 1);
-                    setFrames({ ...frames });
-                    localStorage.clear();
-                    localStorage.setItem("frames", JSON.stringify(frames));
-                    handleCloseDeleteImg();
-                    setActiveImg(0);
-                    setImg(frames.frames[activeFrame].imgs[0]);
-                  }}
-                >
-                  Delete
-                </Button>
-              </div>
-            </Box>
-          </Fade>
-        </Modal>
       </Box>
     </div>
   );

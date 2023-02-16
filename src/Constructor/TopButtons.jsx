@@ -19,7 +19,7 @@ const MODAL_STYLE = {
   p: 4,
 };
 
-export function TopButtons({ setJsonFile }) {
+export function TopButtons({ setJsonFile, data }) {
   const navigate = useNavigate();
 
   const exportData = () => {
@@ -50,6 +50,7 @@ export function TopButtons({ setJsonFile }) {
             marginLeft: "20px",
           }}
           variant="contained"
+          disabled={!data.frames.length}
           onClick={() => {
             navigate("/constructor/preview");
           }}

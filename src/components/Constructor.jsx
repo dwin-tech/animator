@@ -36,7 +36,7 @@ export function Constructor() {
   return (
     <div className="constructor">
       <div className="topPart">
-        <TopButtons setJsonFile={setJsonFile} />
+        <TopButtons setJsonFile={setJsonFile} data={data} />
       </div>
       <div className="main">
         <LeftSideBar
@@ -52,10 +52,7 @@ export function Constructor() {
         />
 
         <div
-          className="mainFrame"
           style={{
-            boxShadow:
-              "0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%) !important",
             marginTop: "5%",
           }}
         >

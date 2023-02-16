@@ -2,7 +2,10 @@ import { useState } from "react";
 import { Editor } from "./Editor";
 import ImageUploading from "react-images-uploading";
 import "./style.css";
+import { Tooltip } from "@mui/material";
+
 import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
+import { ImgWrapper } from "./ImgWrapper";
 
 export function ImgEditor({
   frames,
@@ -16,7 +19,11 @@ export function ImgEditor({
 }) {
   const [images, setImages] = useState([]);
   const [img, setImg] = useState();
-  const [border, setBorder] = useState();
+  const [openDeleteFrame, setOpenDeleteFrame] = useState(false);
+
+  const handleOpenDeleteFrame = () => setOpenDeleteFrame(true);
+
+  const handleCloseDeleteFrame = () => setOpenDeleteFrame(false);
 
   const onChange = (imageList, addUpdateIndex) => {
     console.log(imageList, addUpdateIndex);
@@ -46,26 +53,23 @@ export function ImgEditor({
       <div className="imgs">
         {frames?.frames?.[activeFrame]?.imgs?.map((img, index) => {
           return (
-            <div
-              key={img.src}
-              className="imgBox"
-              style={
-                index == activeImg
-                  ? { border: "2px solid grey", cursor: "pointer" }
-                  : { cursor: "pointer" }
-              }
-              onClick={() => {
-                setBorder(index);
-                setActiveImg(index);
-                setImg(img);
-              }}
+            <ImgWrapper
+              key={img.src + index}
+              img={img}
+              setImg={setImg}
+              index={index}
+              activeImg={activeImg}
+              setActiveImg={setActiveImg}
+              activeFrame={activeFrame}
+              frames={frames}
+              setFrames={setFrames}
             >
               <img
                 style={{ width: "100px", objectFit: "contain" }}
                 src={img.src}
                 alt=""
               />
-            </div>
+            </ImgWrapper>
           );
         })}
         <ImageUploading
@@ -92,16 +96,18 @@ export function ImgEditor({
                 }
                 onClick={onImageUpload}
               >
-                <AddPhotoAlternateIcon
-                  fontSize="large"
-                  disabled={activeFrame === undefined ? true : false}
-                  variant="contained"
-                  style={
-                    (isDragging ? { color: "red" } : undefined,
-                    { margin: "35px" })
-                  }
-                  {...dragProps}
-                />
+                <Tooltip title="Add Photo">
+                  <AddPhotoAlternateIcon
+                    fontSize="large"
+                    disabled={activeFrame === undefined ? true : false}
+                    variant="contained"
+                    style={
+                      (isDragging ? { color: "red" } : undefined,
+                      { margin: "35px" })
+                    }
+                    {...dragProps}
+                  />
+                </Tooltip>
               </div>
               &nbsp;
               {imageList.map((image, index) => (

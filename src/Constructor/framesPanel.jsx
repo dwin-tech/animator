@@ -24,7 +24,7 @@ export function FramesPanel({
   setFrames,
   setActiveImg,
 }) {
-  const [color, setColor] = useState("white");
+  const [color, setColor] = useState("#e8eeee");
 
   function handleOnDragEnd({ destination, source }) {
     if (!destination) return;
@@ -58,7 +58,7 @@ export function FramesPanel({
                         className="frameBox"
                         style={{ ...provided.draggableProps.style }}
                         onClick={() => {
-                          setColor("white");
+                          setColor("#e8eeee");
                           setActiveFrame(index);
                           setFrame(frames?.frames?.[index]);
                           setActiveImg(undefined);
@@ -82,7 +82,11 @@ export function FramesPanel({
 
               <div
                 className="framePreview"
-                style={{ marginLeft: "30px", cursor: "pointer" }}
+                style={{
+                  marginLeft: "30px",
+                  cursor: "pointer",
+                  border: "thin solid rgba(0, 0, 0, 0.12)",
+                }}
                 onClick={() => {
                   frames?.frames?.push(JSON.parse(JSON.stringify(newFrame)));
                   setFrames({ ...frames });
@@ -96,8 +100,6 @@ export function FramesPanel({
                     style={{
                       width: "50px",
                       height: "50px",
-                      marginLeft: "0",
-                      marginTop: "25px",
                     }}
                   />
                 </Tooltip>

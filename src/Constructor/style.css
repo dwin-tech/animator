@@ -39,28 +39,30 @@
 
 .frameBox{
     left: 0;
-    margin: 35px 0;
+    margin-bottom: 35px;
     width: 180px;
     height: 120px;
     height: auto; 
-    padding: 3px 3px 0px 12px;
     border-radius: 10%;
 }
 
 .framePreview{
-    margin-top: 25px;
+    margin: 10px 0 10px 10px;
     margin-left: 10px;
     width: 100px;
     height: 100px;
-    border: thin solid rgba(0, 0, 0, 0.12);
     display: flex;
     height: 100px;
-    overflow: hidden;
+    align-items: center;
     justify-content: center;
 }
 
 .forFlex{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0% 20% 20% 0% ;
+    margin: 10px 10px 10px 0;
 }
 
 .imgs{
@@ -80,6 +82,7 @@
     border: thin solid rgba(0, 0, 0, 0.12);
     background-color: #f1f1f1;
     width: 100px;
+    height: 120px;
     margin: 10px;
     text-align: center;
     line-height: 75px;
@@ -89,7 +92,7 @@
     margin:30px;
     width: 500px;
     max-height: 600px;
-    overflow:scroll;
+    overflow-y:scroll;
 }
 
 .topButtons{
@@ -115,7 +118,16 @@
     padding: 20px;
 }
 
-.deleteContainer{
-    display: flex;
-    align-items: center;
+.deleteContainerFrame{
+    margin-left: 130px;
+    margin-top: -88px;
+    position: absolute;
 }
+
+.deleteContainerImg{
+    margin-left: 90px;
+    margin-top: -88px;
+    position: absolute;
+}
+
+
