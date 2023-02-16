@@ -44,13 +44,7 @@ export const emptyJson = {
 export const newFrame = {
   title: "",
   timestamp: new Date().getTime(),
-  imgs: [
-    {
-      src: greySquare,
-      alt: "greySquare",
-      style: { width: "100%", hidden: {}, show: {} },
-    },
-  ],
+  imgs: [],
   main: {
     className: "frame",
     initial: "hidden",

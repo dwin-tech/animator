@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { getJsonFrame } from "../Constructor/fetch";
 import { Frame } from "../Constructor/Frame";
 import { LeftSideBar } from "../Constructor/LeftSideBar.jsx";
+import { NewFrame } from "../Constructor/NewFrame";
 import { RightSideBar } from "../Constructor/RightSideBar";
 import { TopButtons } from "../Constructor/TopButtons";
 
@@ -54,9 +54,22 @@ export function Constructor() {
         <div
           style={{
             marginTop: "5%",
+            marginBottom: "5%",
           }}
         >
-          <Frame data={data?.frames?.[activeFrame]} activeFrame={activeFrame} />
+          {data?.frames?.[activeFrame] &&
+          !data?.frames?.[activeFrame]?.imgs?.length ? (
+            <NewFrame
+              frames={data}
+              activeFrame={activeFrame}
+              setFrames={setData}
+            />
+          ) : (
+            <Frame
+              data={data?.frames?.[activeFrame]}
+              activeFrame={activeFrame}
+            />
+          )}
         </div>
         <RightSideBar
           frame={frame}

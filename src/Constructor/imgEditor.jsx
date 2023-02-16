@@ -17,7 +17,6 @@ export function ImgEditor({
   setActiveImg,
   setJsonFile,
 }) {
-  const [images, setImages] = useState([]);
   const [img, setImg] = useState();
   const [openDeleteFrame, setOpenDeleteFrame] = useState(false);
 
@@ -30,7 +29,8 @@ export function ImgEditor({
     frames.frames[activeFrame].imgs.push({
       src: imageList[0]?.data_url,
       alt: "",
-      style: { width: "100%", position: "absolute" },
+      initial: "hidden",
+      style: { width: "100%", position: "absolute", left: "0" },
       variants: {
         hidden: {},
         show: {
@@ -72,12 +72,7 @@ export function ImgEditor({
             </ImgWrapper>
           );
         })}
-        <ImageUploading
-          multiple
-          value={images}
-          onChange={onChange}
-          dataURLKey="data_url"
-        >
+        <ImageUploading multiple onChange={onChange} dataURLKey="data_url">
           {({
             imageList,
             onImageUpload,
@@ -90,8 +85,9 @@ export function ImgEditor({
               <div
                 className="imgBox"
                 style={
-                  !frames?.frames?.length
-                    ? { display: "none", cursor: "pointer" }
+                  !frames?.frames?.length ||
+                  !frames?.frames?.[activeFrame]?.imgs?.length
+                    ? { display: "none" }
                     : { display: "block", cursor: "pointer" }
                 }
                 onClick={onImageUpload}
@@ -99,7 +95,6 @@ export function ImgEditor({
                 <Tooltip title="Add Photo">
                   <AddPhotoAlternateIcon
                     fontSize="large"
-                    disabled={activeFrame === undefined ? true : false}
                     variant="contained"
                     style={
                       (isDragging ? { color: "red" } : undefined,
