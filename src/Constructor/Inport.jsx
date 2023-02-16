@@ -43,7 +43,7 @@ function a11yProps(index) {
 
 export default function ImportFile({ setJsonFile, handleClose }) {
   const [value, setValue] = React.useState(0);
-  const [json, setJson] = React.useState(0);
+  const [json, setJson] = React.useState();
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -83,6 +83,7 @@ export default function ImportFile({ setJsonFile, handleClose }) {
             setJsonFile(json);
             handleClose();
           }}
+          disabled={!json}
           variant="contained"
         >
           Import

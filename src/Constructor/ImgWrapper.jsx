@@ -16,28 +16,32 @@ const MODAL_STYLE = {
   boxShadow: 24,
   p: 4,
 };
-export function FrameWrapper({
+
+export function ImgWrapper({
   children,
-  color,
-  activeFrame,
+  img,
+  setImg,
   index,
-  setActiveFrame,
+  activeImg,
+  setActiveImg,
   setFrames,
   frames,
+  activeFrame,
 }) {
   const [visible, setVisible] = useState("none");
-  const [openDeleteFrame, setOpenDeleteFrame] = useState(false);
+  const [openDeleteImg, setOpenDeleteImg] = useState(false);
 
-  const handleCloseDeleteFrame = () => setOpenDeleteFrame(false);
-  const handleOpenDeleteFrame = () => setOpenDeleteFrame(true);
+  const handleOpenDeleteImg = () => setOpenDeleteImg(true);
+  const handleCloseDeleteImg = () => setOpenDeleteImg(false);
 
   function handleOnClick() {
-    frames.frames.splice(activeFrame, 1);
+    frames.frames[activeFrame].imgs.splice(activeImg, 1);
     setFrames({ ...frames });
     localStorage.clear();
     localStorage.setItem("frames", JSON.stringify(frames));
-    handleCloseDeleteFrame();
-    setActiveFrame(0);
+    handleCloseDeleteImg();
+    setActiveImg(0);
+    setImg(frames.frames[activeFrame].imgs[0]);
   }
 
   return (
@@ -45,18 +49,18 @@ export function FrameWrapper({
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
-        open={openDeleteFrame}
-        onClose={handleCloseDeleteFrame}
+        open={openDeleteImg}
+        onClose={handleCloseDeleteImg}
         closeAfterTransition
       >
-        <Fade in={openDeleteFrame}>
+        <Fade in={openDeleteImg}>
           <Box sx={MODAL_STYLE}>
-            <h2>Delete Frame</h2>
+            <h2>Delete photo</h2>
             <h3>Are you sure?</h3>
             <div style={{ marginLeft: "200px" }}>
               <Button
                 style={{ marginRight: "10px" }}
-                onClick={handleCloseDeleteFrame}
+                onClick={handleCloseDeleteImg}
               >
                 Cancel
               </Button>
@@ -68,29 +72,30 @@ export function FrameWrapper({
         </Fade>
       </Modal>
       <div
-        style={
-          index == activeFrame
-            ? { backgroundColor: color, border: "1px solid #1976d2" }
-            : null
-        }
-        className="forFlex"
         onMouseEnter={() => {
-          setVisible("block");
+          setVisible("inLine-flex");
         }}
         onMouseLeave={() => {
           setVisible("none");
         }}
+        // key={img.src}
+        className="imgBox"
+        style={
+          index == activeImg
+            ? { border: "2px solid grey", cursor: "pointer" }
+            : { cursor: "pointer" }
+        }
+        onClick={() => {
+          setActiveImg(index);
+          setImg(img);
+        }}
       >
-        <div className="forFlex">
-          {index + 1}
-
-          <div className="framePreview">{children}</div>
-        </div>
-        <div style={{ display: visible }} className="deleteContainerFrame">
+        {children}
+        <div style={{ display: visible }} className="deleteContainerImg">
           <Tooltip title="Delete">
             <IconButton
               style={{ height: "30px", width: "30px" }}
-              onClick={handleOpenDeleteFrame}
+              onClick={handleOpenDeleteImg}
             >
               <DeleteIcon />
             </IconButton>

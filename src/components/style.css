@@ -5,15 +5,16 @@
     flex: 1;
 }
 
-.topPart{
-    background-color: rgb(216, 232, 232);
-    height: 70px;
-    display: flex;
-    justify-content: flex-end;
-}
-
 .constructor{
     display: flex;
     height: 100vh;
     flex-direction: column;
+}
+
+.mainFrame{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow:
+    0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%) !important;
 }

@@ -3,7 +3,7 @@ import { getJsonFrame } from "../Constructor/fetch";
 import { Frame } from "../Constructor/Frame";
 import { LeftSideBar } from "../Constructor/LeftSideBar.jsx";
 import { RightSideBar } from "../Constructor/RightSideBar";
-import { ExportImport } from "../Constructor/ExportImport";
+import { TopButtons } from "../Constructor/TopButtons";
 
 import "./style.css";
 
@@ -11,7 +11,6 @@ export function Constructor() {
   const [data, setData] = useState({ frames: [] });
   const [activeFrame, setActiveFrame] = useState(0);
   const [activeImg, setActiveImg] = useState();
-  const [showStyles, setShowStyles] = useState(false);
   const [frame, setFrame] = useState();
   const [jsonFile, setJsonFile] = useState();
 
@@ -23,23 +22,21 @@ export function Constructor() {
   }
 
   useEffect(() => {
-    getJsonFrame().then((data) => {
-      if (isEmpty(data)) {
-        if (jsonFile) {
-          setData(JSON.parse(jsonFile));
-        } else {
-          setData(JSON.parse(localStorage.getItem("frames")));
-        }
-      } else {
-        setData(data);
+    if (jsonFile) {
+      setData(JSON.parse(jsonFile));
+      localStorage.clear();
+      localStorage.setItem("frames", jsonFile);
+    } else {
+      if (localStorage.getItem("frames")) {
+        setData(JSON.parse(localStorage.getItem("frames")));
       }
-    });
+    }
   }, [jsonFile]);
 
   return (
     <div className="constructor">
       <div className="topPart">
-        <ExportImport setJsonFile={setJsonFile} />
+        <TopButtons setJsonFile={setJsonFile} data={data} />
       </div>
       <div className="main">
         <LeftSideBar
@@ -55,10 +52,7 @@ export function Constructor() {
         />
 
         <div
-          className="mainFrame"
           style={{
-            boxShadow:
-              "0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%) !important",
             marginTop: "5%",
           }}
         >
