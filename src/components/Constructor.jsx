@@ -53,8 +53,8 @@ export function Constructor() {
 
         <div
           style={{
-            marginTop: "5%",
-            marginBottom: "5%",
+            display: "flex",
+            alignItems: "center",
           }}
         >
           {data?.frames?.[activeFrame] &&

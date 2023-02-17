@@ -5,7 +5,6 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import ChipInput from "material-ui-chip-input";
 import { styled } from "@mui/material/styles";
 import Divider from "@mui/material/Divider";
 import "./style.css";
@@ -16,6 +15,8 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { MuiChipsInput } from "mui-chips-input";
+
 const MODAL_STYLE = {
   position: "absolute",
   top: "50%",
@@ -38,8 +39,6 @@ const Root = styled("div")(({ theme }) => ({
 
 export function Editor({
   setActiveImg,
-  img,
-  setImg,
   setFrames,
   frames,
   activeFrame,
@@ -130,118 +129,153 @@ export function Editor({
             <Typography>Styles</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <FormControl style={{ margin: "7px", width: "226px" }}>
-              <InputLabel style={{ marginTop: "-7px" }} id="Overflow">
-                Overflow
-              </InputLabel>
-              <Select
-                style={{ height: "40px" }}
-                labelId="Overflow"
-                id="Overflow"
-                value={img?.style?.overflow || ""}
-                label="Overflow"
-                onChange={(e) => {
-                  handleOnChangeStyles("overflow", e.target.value);
-                }}
-              >
-                <MenuItem value="">none</MenuItem>
-                <MenuItem value="hidden">hidden</MenuItem>
-              </Select>
-            </FormControl>
-            <FormControl style={{ margin: "7px", width: "226px" }}>
-              <InputLabel style={{ marginTop: "-7px" }} id="Position">
-                Position
-              </InputLabel>
-              <Select
-                style={{ height: "40px" }}
-                labelId="Position"
-                id="Position"
-                value={img?.style?.position || ""}
-                label="Position"
-                onChange={(e) => {
-                  handleOnChangeStyles("position", e.target.value);
-                }}
-              >
-                <MenuItem value="">none</MenuItem>
-                <MenuItem value="relative">relative</MenuItem>
-                <MenuItem value="absolute">absolute</MenuItem>
-              </Select>
-            </FormControl>
+            <div className="editorInputs">
+              <FormControl style={{ margin: "7px", width: "226px" }}>
+                <InputLabel style={{ marginTop: "-7px" }} id="Overflow">
+                  Overflow
+                </InputLabel>
+                <Select
+                  style={{ height: "40px" }}
+                  labelId="Overflow"
+                  id="Overflow"
+                  value={
+                    frames?.frames?.[activeFrame]?.imgs?.[activeImg]?.style
+                      ?.overflow || ""
+                  }
+                  label="Overflow"
+                  onChange={(e) => {
+                    handleOnChangeStyles("overflow", e.target.value);
+                  }}
+                >
+                  <MenuItem value="">none</MenuItem>
+                  <MenuItem value="hidden">hidden</MenuItem>
+                </Select>
+              </FormControl>
+              <FormControl style={{ margin: "7px", width: "226px" }}>
+                <InputLabel style={{ marginTop: "-7px" }} id="Position">
+                  Position
+                </InputLabel>
+                <Select
+                  style={{ height: "40px" }}
+                  labelId="Position"
+                  id="Position"
+                  value={
+                    frames?.frames?.[activeFrame]?.imgs?.[activeImg]?.style
+                      ?.position || ""
+                  }
+                  label="Position"
+                  onChange={(e) => {
+                    handleOnChangeStyles("position", e.target.value);
+                  }}
+                >
+                  <MenuItem value="">none</MenuItem>
+                  <MenuItem value="relative">relative</MenuItem>
+                  <MenuItem value="absolute">absolute</MenuItem>
+                </Select>
+              </FormControl>
+            </div>
 
-            <TextField
-              inputProps={{ min: 0 }}
-              placeholder="1"
-              type="number"
-              label="zIndex"
-              value={img?.style?.zIndex || ""}
-              onChange={(e) => {
-                handleOnChangeStyles("zIndex", e.target.value);
-              }}
-              size="small"
-            />
-            <TextField
-              placeholder="10% or 30px"
-              label="Width"
-              value={img?.style?.width || ""}
-              onChange={(e) => {
-                handleOnChangeStyles("width", e.target.value);
-              }}
-              size="small"
-            />
-            <TextField
-              placeholder="10% or 30px"
-              label="Top"
-              value={img?.style?.top || ""}
-              onChange={(e) => {
-                handleOnChangeStyles("top", e.target.value);
-              }}
-              size="small"
-            />
-            <TextField
-              placeholder="10% or 30px"
-              label="Left"
-              value={img?.style?.left || ""}
-              onChange={(e) => {
-                handleOnChangeStyles("left", e.target.value);
-              }}
-              size="small"
-            />
-            <TextField
-              placeholder="10% or 30px"
-              label="Right"
-              value={img?.style?.right || ""}
-              onChange={(e) => {
-                handleOnChangeStyles("right", e.target.value);
-              }}
-              size="small"
-            />
-            <TextField
-              placeholder="10% or 30px"
-              label="Height"
-              value={img?.style?.height || ""}
-              onChange={(e) => {
-                handleOnChangeStyles("height", e.target.value);
-              }}
-              size="small"
-            />
-            <TextField
-              placeholder="10% or 30px"
-              label="Bottom"
-              value={img?.style?.bottom || ""}
-              onChange={(e) => {
-                handleOnChangeStyles("bottom", e.target.value);
-              }}
-              size="small"
-            />
+            <div className="editorInputs">
+              <TextField
+                placeholder="10% or 30px"
+                label="Width"
+                value={
+                  frames?.frames?.[activeFrame]?.imgs?.[activeImg]?.style
+                    ?.width || ""
+                }
+                onChange={(e) => {
+                  handleOnChangeStyles("width", e.target.value);
+                }}
+                size="small"
+              />
+              <TextField
+                placeholder="10% or 30px"
+                label="Height"
+                value={
+                  frames?.frames?.[activeFrame]?.imgs?.[activeImg]?.style
+                    ?.height || ""
+                }
+                onChange={(e) => {
+                  handleOnChangeStyles("height", e.target.value);
+                }}
+                size="small"
+              />
+            </div>
+            <div className="editorInputs">
+              <TextField
+                placeholder="10% or 30px"
+                label="Top"
+                value={
+                  frames?.frames?.[activeFrame]?.imgs?.[activeImg]?.style
+                    ?.top || ""
+                }
+                onChange={(e) => {
+                  handleOnChangeStyles("top", e.target.value);
+                }}
+                size="small"
+              />
+              <TextField
+                placeholder="10% or 30px"
+                label="Bottom"
+                value={
+                  frames?.frames?.[activeFrame]?.imgs?.[activeImg]?.style
+                    ?.bottom || ""
+                }
+                onChange={(e) => {
+                  handleOnChangeStyles("bottom", e.target.value);
+                }}
+                size="small"
+              />
+            </div>
+            <div className="editorInputs">
+              <TextField
+                placeholder="10% or 30px"
+                label="Left"
+                value={
+                  frames?.frames?.[activeFrame]?.imgs?.[activeImg]?.style
+                    ?.left || ""
+                }
+                onChange={(e) => {
+                  handleOnChangeStyles("left", e.target.value);
+                }}
+                size="small"
+              />
+              <TextField
+                placeholder="10% or 30px"
+                label="Right"
+                value={
+                  frames?.frames?.[activeFrame]?.imgs?.[activeImg]?.style
+                    ?.right || ""
+                }
+                onChange={(e) => {
+                  handleOnChangeStyles("right", e.target.value);
+                }}
+                size="small"
+              />
+            </div>
+            <div className="editorInputs">
+              <TextField
+                inputProps={{ min: 0 }}
+                placeholder="1"
+                type="number"
+                label="zIndex"
+                value={
+                  frames?.frames?.[activeFrame]?.imgs?.[activeImg]?.style
+                    ?.zIndex || ""
+                }
+                onChange={(e) => {
+                  handleOnChangeStyles("zIndex", e.target.value);
+                }}
+                size="small"
+              />
+            </div>
           </AccordionDetails>
         </Accordion>
         <div>
           {/* <CustomStylesEditor handleOnChangeStyles={handleOnChangeStyles} /> */}
         </div>
         <Root>
-          <Divider textAlign="left">
-            <h3>Animation</h3>
-          </Divider>
+          <Divider>Animation</Divider>
           <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
             <Tabs
               value={value}
@@ -255,204 +289,355 @@ export function Editor({
           </Box>
           <TabPanel value={value} index={0}>
             <div>
-              <TextField
-                placeholder="10% or 30px"
-                label="Hidden Width"
-                value={img?.variants?.hidden?.width || ""}
-                onChange={(e) => {
-                  handleOnChangeVariants("hidden", "width", e.target.value);
-                }}
-                size="small"
-              />
-              <TextField
-                placeholder="10% or 30px"
-                label="Hidden Top"
-                value={img?.variants?.hidden?.top || ""}
-                onChange={(e) => {
-                  handleOnChangeVariants("hidden", "top", e.target.value);
-                }}
-                size="small"
-              />
-              <TextField
-                placeholder="10% or 30px"
-                label="Hidden Left"
-                value={img?.variants?.hidden?.left || ""}
-                onChange={(e) => {
-                  handleOnChangeVariants("hidden", "left", e.target.value);
-                }}
-                size="small"
-              />
-              <TextField
-                type="number"
-                inputProps={{ min: 0, max: 1 }}
-                placeholder="from 0 to 1"
-                label="Hidden Opacity"
-                value={img?.variants?.hidden?.opacity || ""}
-                onChange={(e) => {
-                  handleOnChangeVariants("hidden", "opacity", e.target.value);
-                }}
-                size="small"
-              />
-              <FormControl style={{ margin: "7px", width: "226px" }}>
-                <InputLabel style={{ marginTop: "-7px" }} id="TransformOrigin">
-                  TransformOrigin
-                </InputLabel>
-                <Select
-                  style={{ height: "40px" }}
-                  labelId="TransformOrigin"
-                  id="TransformOrigin"
-                  value={img?.style?.transformOrigin || ""}
-                  label="TransformOrigin"
-                  onChange={(e) => {
-                    handleOnChangeStyles("transformOrigin", e.target.value);
-                  }}
-                >
-                  <MenuItem value="">none</MenuItem>
-                  <MenuItem value="bottom right">bottom right</MenuItem>
-                  <MenuItem value="bottom left">bottom left</MenuItem>
-                  <MenuItem value="top right">top right</MenuItem>
-                  <MenuItem value="top left">top left</MenuItem>
-                </Select>
-              </FormControl>
-              <TextField
-                placeholder="10% or 30px"
-                label="Hidden Rotate"
-                onBlur={(e) => {
-                  if (!e.target.value) {
-                    delete frames.frames[activeFrame].imgs[activeImg].variants
-                      ?.hidden?.rotate;
+              <div className="editorInputs">
+                <TextField
+                  placeholder="10% or 30px"
+                  label="Width"
+                  value={
+                    frames?.frames?.[activeFrame]?.imgs?.[activeImg]?.variants
+                      ?.hidden?.width || ""
                   }
-                }}
-                value={img?.variants?.hidden?.rotate || ""}
-                onChange={(e) => {
-                  handleOnChangeVariants("hidden", "rotate", e.target.value);
-                }}
-                size="small"
-              />
-              <TextField
-                placeholder="10% or 30px"
-                label="Hidden X"
-                value={img?.variants?.hidden?.x || ""}
-                onChange={(e) => {
-                  handleOnChangeVariants("hidden", "x", +e.target.value);
-                }}
-                size="small"
-              />
-              <TextField
-                placeholder="10% or 30px"
-                label="Hidden Y"
-                value={img?.variants?.hidden?.y || ""}
-                onChange={(e) => {
-                  handleOnChangeVariants("hidden", "y", +e.target.value);
-                }}
-                size="small"
-              />
+                  onChange={(e) => {
+                    handleOnChangeVariants("hidden", "width", e.target.value);
+                  }}
+                  size="small"
+                />
+                <TextField
+                  placeholder="10% or 30px"
+                  label="Height"
+                  value={
+                    frames?.frames?.[activeFrame]?.imgs?.[activeImg]?.variants
+                      ?.hidden?.height || ""
+                  }
+                  onChange={(e) => {
+                    handleOnChangeVariants("hidden", "height", e.target.value);
+                  }}
+                  size="small"
+                />
+              </div>
+              <div className="editorInputs">
+                <TextField
+                  placeholder="10% or 30px"
+                  label="Top"
+                  value={
+                    frames?.frames?.[activeFrame]?.imgs?.[activeImg]?.variants
+                      ?.hidden?.top || ""
+                  }
+                  onChange={(e) => {
+                    handleOnChangeVariants("hidden", "top", e.target.value);
+                  }}
+                  size="small"
+                />
+                <TextField
+                  placeholder="10% or 30px"
+                  label="Bottom"
+                  value={
+                    frames?.frames?.[activeFrame]?.imgs?.[activeImg]?.variants
+                      ?.hidden?.bottom || ""
+                  }
+                  onChange={(e) => {
+                    handleOnChangeVariants("hidden", "bottom", e.target.value);
+                  }}
+                  size="small"
+                />
+              </div>
+              <div className="editorInputs">
+                <TextField
+                  placeholder="10% or 30px"
+                  label="Left"
+                  value={
+                    frames?.frames?.[activeFrame]?.imgs?.[activeImg]?.variants
+                      ?.hidden?.left || ""
+                  }
+                  onChange={(e) => {
+                    handleOnChangeVariants("hidden", "left", e.target.value);
+                  }}
+                  size="small"
+                />
+                <TextField
+                  placeholder="10% or 30px"
+                  label="Right"
+                  value={
+                    frames?.frames?.[activeFrame]?.imgs?.[activeImg]?.variants
+                      ?.hidden?.right || ""
+                  }
+                  onChange={(e) => {
+                    handleOnChangeVariants("hidden", "right", e.target.value);
+                  }}
+                  size="small"
+                />
+              </div>
+
+              <div className="editorInputs">
+                <FormControl style={{ margin: "7px", width: "226px" }}>
+                  <InputLabel
+                    style={{ marginTop: "-7px" }}
+                    id="TransformOrigin"
+                  >
+                    TransformOrigin
+                  </InputLabel>
+                  <Select
+                    style={{ height: "40px" }}
+                    labelId="TransformOrigin"
+                    id="TransformOrigin"
+                    value={
+                      frames?.frames?.[activeFrame]?.imgs?.[activeImg]?.style
+                        ?.transformOrigin || ""
+                    }
+                    label="TransformOrigin"
+                    onChange={(e) => {
+                      handleOnChangeStyles("transformOrigin", e.target.value);
+                    }}
+                  >
+                    <MenuItem value="">none</MenuItem>
+                    <MenuItem value="bottom right">bottom right</MenuItem>
+                    <MenuItem value="bottom left">bottom left</MenuItem>
+                    <MenuItem value="top right">top right</MenuItem>
+                    <MenuItem value="top left">top left</MenuItem>
+                  </Select>
+                </FormControl>
+                <TextField
+                  placeholder="10% or 30px"
+                  label="Rotate"
+                  onBlur={(e) => {
+                    if (!e.target.value) {
+                      delete frames.frames[activeFrame].imgs[activeImg].variants
+                        ?.hidden?.rotate;
+                    }
+                  }}
+                  value={
+                    frames?.frames?.[activeFrame]?.imgs?.[activeImg]?.variants
+                      ?.hidden?.rotate || ""
+                  }
+                  onChange={(e) => {
+                    handleOnChangeVariants("hidden", "rotate", e.target.value);
+                  }}
+                  size="small"
+                />
+              </div>
+              <div className="editorInputs">
+                <TextField
+                  placeholder="10% or 30px"
+                  label="X"
+                  value={
+                    frames?.frames?.[activeFrame]?.imgs?.[activeImg]?.variants
+                      ?.hidden?.x || ""
+                  }
+                  onChange={(e) => {
+                    handleOnChangeVariants("hidden", "x", +e.target.value);
+                  }}
+                  size="small"
+                />
+                <TextField
+                  placeholder="10% or 30px"
+                  label="Y"
+                  value={
+                    frames?.frames?.[activeFrame]?.imgs?.[activeImg]?.variants
+                      ?.hidden?.y || ""
+                  }
+                  onChange={(e) => {
+                    handleOnChangeVariants("hidden", "y", +e.target.value);
+                  }}
+                  size="small"
+                />
+              </div>
+              <div className="editorInputs">
+                <TextField
+                  type="number"
+                  inputProps={{ min: 0, max: 1, step: "0.1" }}
+                  placeholder="from 0 to 1"
+                  label="Opacity"
+                  value={
+                    frames?.frames?.[activeFrame]?.imgs?.[activeImg]?.variants
+                      ?.hidden?.opacity || ""
+                  }
+                  onChange={(e) => {
+                    handleOnChangeVariants("hidden", "opacity", e.target.value);
+                  }}
+                  size="small"
+                />
+              </div>
             </div>
           </TabPanel>
           <TabPanel value={value} index={1}>
             <div>
-              <TextField
-                placeholder="10% or 30px"
-                label="Show Width"
-                value={img?.variants?.show?.width || ""}
-                onChange={(e) => {
-                  handleOnChangeVariants("show", "width", e.target.value);
-                }}
-                size="small"
-              />
-              <TextField
-                placeholder="10% or 30px"
-                label="Show Top"
-                value={img?.variants?.show?.top || ""}
-                onChange={(e) => {
-                  handleOnChangeVariants("show", "top", e.target.value);
-                }}
-                size="small"
-              />
-              <TextField
-                placeholder="10% or 30px"
-                label="Show Left"
-                value={img?.variants?.show?.left || ""}
-                onChange={(e) => {
-                  handleOnChangeVariants("show", "left", e.target.value);
-                }}
-                size="small"
-              />
-              <TextField
-                type="number"
-                inputProps={{ min: 0, max: 1 }}
-                placeholder="from 0 to 1"
-                label="Show Opacity"
-                value={img?.variants?.show?.opacity || ""}
-                onChange={(e) => {
-                  handleOnChangeVariants("show", "opacity", e.target.value);
-                }}
-                size="small"
-              />
-              <TextField
-                placeholder="10% or 30px"
-                label="Show X"
-                value={img?.variants?.show?.x || ""}
-                onChange={(e) => {
-                  handleOnChangeVariants("show", "x", +e.target.value);
-                }}
-                size="small"
-              />
-              <TextField
-                placeholder="10% or 30px"
-                label="Show Y"
-                value={img?.variants?.show?.y || ""}
-                onChange={(e) => {
-                  handleOnChangeVariants("show", "y", +e.target.value);
-                }}
-                size="small"
-              />
-              <ChipInput
-                placeholder="10deg or 50px"
-                // value={img?.variants?.show?.rotate || []}
-                style={{ margin: "7px" }}
-                label="Rotate"
-                allowDuplicates={true}
-                onChange={(chips) => {
-                  handleOnChangeVariants("show", "rotate", chips);
-                }}
-              />
+              <div className="editorInputs">
+                <TextField
+                  placeholder="10% or 30px"
+                  label="Width"
+                  value={
+                    frames?.frames?.[activeFrame]?.imgs?.[activeImg]?.variants
+                      ?.show?.width || ""
+                  }
+                  onChange={(e) => {
+                    handleOnChangeVariants("show", "width", e.target.value);
+                  }}
+                  size="small"
+                />
+                <TextField
+                  placeholder="10% or 30px"
+                  label="Height"
+                  value={
+                    frames?.frames?.[activeFrame]?.imgs?.[activeImg]?.variants
+                      ?.show?.height || ""
+                  }
+                  onChange={(e) => {
+                    handleOnChangeVariants("show", "height", e.target.value);
+                  }}
+                  size="small"
+                />
+              </div>
+              <div className="editorInputs">
+                <TextField
+                  placeholder="10% or 30px"
+                  label="Top"
+                  value={
+                    frames?.frames?.[activeFrame]?.imgs?.[activeImg]?.variants
+                      ?.show?.top || ""
+                  }
+                  onChange={(e) => {
+                    handleOnChangeVariants("show", "top", e.target.value);
+                  }}
+                  size="small"
+                />
+                <TextField
+                  placeholder="10% or 30px"
+                  label="Bottom"
+                  value={
+                    frames?.frames?.[activeFrame]?.imgs?.[activeImg]?.variants
+                      ?.show?.bottom || ""
+                  }
+                  onChange={(e) => {
+                    handleOnChangeVariants("show", "bottom", e.target.value);
+                  }}
+                  size="small"
+                />
+              </div>
+              <div className="editorInputs">
+                <TextField
+                  placeholder="10% or 30px"
+                  label="Left"
+                  value={
+                    frames?.frames?.[activeFrame]?.imgs?.[activeImg]?.variants
+                      ?.show?.left || ""
+                  }
+                  onChange={(e) => {
+                    handleOnChangeVariants("show", "left", e.target.value);
+                  }}
+                  size="small"
+                />{" "}
+                <TextField
+                  placeholder="10% or 30px"
+                  label="Right"
+                  value={
+                    frames?.frames?.[activeFrame]?.imgs?.[activeImg]?.variants
+                      ?.show?.right || ""
+                  }
+                  onChange={(e) => {
+                    handleOnChangeVariants("show", "right", e.target.value);
+                  }}
+                  size="small"
+                />
+              </div>
+              <div className="editorInputs">
+                <TextField
+                  placeholder="10% or 30px"
+                  label="X"
+                  value={
+                    frames?.frames?.[activeFrame]?.imgs?.[activeImg]?.variants
+                      ?.show?.x || ""
+                  }
+                  onChange={(e) => {
+                    handleOnChangeVariants("show", "x", +e.target.value);
+                  }}
+                  size="small"
+                />
+                <TextField
+                  placeholder="10% or 30px"
+                  label="Y"
+                  value={
+                    frames?.frames?.[activeFrame]?.imgs?.[activeImg]?.variants
+                      ?.show?.y || ""
+                  }
+                  onChange={(e) => {
+                    handleOnChangeVariants("show", "y", +e.target.value);
+                  }}
+                  size="small"
+                />
+              </div>
+              <div className="editorInputs chipInput">
+                <MuiChipsInput
+                  value={
+                    frames?.frames?.[activeFrame]?.imgs?.[activeImg]?.variants
+                      ?.show?.rotate || []
+                  }
+                  label="Rotate"
+                  onChange={(chips) => {
+                    handleOnChangeVariants("show", "rotate", chips);
+                  }}
+                />
+                <TextField
+                  type="number"
+                  inputProps={{ min: 0, max: 1, step: "0.1" }}
+                  placeholder="from 0 to 1"
+                  label="Opacity"
+                  value={
+                    frames?.frames?.[activeFrame]?.imgs?.[activeImg]?.variants
+                      ?.show?.opacity || ""
+                  }
+                  onChange={(e) => {
+                    handleOnChangeVariants("show", "opacity", e.target.value);
+                  }}
+                  size="small"
+                />
+              </div>
             </div>
           </TabPanel>
           <TabPanel value={value} index={2}>
-            <TextField
-              inputProps={{ min: 0 }}
-              type="number"
-              placeholder="2 times"
-              label="Repeat"
-              value={img?.variants?.show?.transition?.repeat || ""}
-              onChange={(e) => {
-                handleOnChangeVariantsTransition("repeat", e.target.value);
-              }}
-              size="small"
-            />
-            <TextField
-              inputProps={{ min: 0 }}
-              type="number"
-              placeholder="0.7 speed"
-              label="Duration"
-              value={img?.variants?.show?.transition?.duration || ""}
-              onChange={(e) => {
-                handleOnChangeVariantsTransition("duration", e.target.value);
-              }}
-              size="small"
-            />
-            <TextField
-              inputProps={{ min: 0 }}
-              type="number"
-              placeholder="0.7 sec"
-              label="Delay"
-              value={img?.variants?.show?.transition?.delay || ""}
-              onChange={(e) => {
-                handleOnChangeVariantsTransition("delay", e.target.value);
-              }}
-              size="small"
-            />
+            <div className="editorInputs">
+              <TextField
+                inputProps={{ min: 0 }}
+                type="number"
+                placeholder="2 times"
+                label="Repeat"
+                value={
+                  frames?.frames?.[activeFrame]?.imgs?.[activeImg]?.variants
+                    ?.show?.transition?.repeat || ""
+                }
+                onChange={(e) => {
+                  handleOnChangeVariantsTransition("repeat", e.target.value);
+                }}
+                size="small"
+              />
+              <TextField
+                inputProps={{ min: 0 }}
+                type="number"
+                placeholder="0.7 speed"
+                label="Duration"
+                value={
+                  frames?.frames?.[activeFrame]?.imgs?.[activeImg]?.variants
+                    ?.show?.transition?.duration || ""
+                }
+                onChange={(e) => {
+                  handleOnChangeVariantsTransition("duration", e.target.value);
+                }}
+                size="small"
+              />
+              <TextField
+                inputProps={{ min: 0 }}
+                type="number"
+                placeholder="0.7 sec"
+                label="Delay"
+                value={
+                  frames?.frames?.[activeFrame]?.imgs?.[activeImg]?.variants
+                    ?.show?.transition?.delay || ""
+                }
+                onChange={(e) => {
+                  handleOnChangeVariantsTransition("delay", e.target.value);
+                }}
+                size="small"
+              />
+            </div>
           </TabPanel>
         </Root>
       </Box>

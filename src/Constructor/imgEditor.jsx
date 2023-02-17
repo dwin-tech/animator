@@ -17,13 +17,6 @@ export function ImgEditor({
   setActiveImg,
   setJsonFile,
 }) {
-  const [img, setImg] = useState();
-  const [openDeleteFrame, setOpenDeleteFrame] = useState(false);
-
-  const handleOpenDeleteFrame = () => setOpenDeleteFrame(true);
-
-  const handleCloseDeleteFrame = () => setOpenDeleteFrame(false);
-
   const onChange = (imageList, addUpdateIndex) => {
     console.log(imageList, addUpdateIndex);
     frames.frames[activeFrame].imgs.push({
@@ -43,6 +36,7 @@ export function ImgEditor({
         },
       },
     });
+    setActiveImg(frames.frames[activeFrame].imgs.length - 1);
     setFrames({ ...frames });
     localStorage.clear();
     localStorage.setItem("frames", JSON.stringify(frames));
@@ -55,8 +49,6 @@ export function ImgEditor({
           return (
             <ImgWrapper
               key={img.src + index}
-              img={img}
-              setImg={setImg}
               index={index}
               activeImg={activeImg}
               setActiveImg={setActiveImg}
@@ -122,8 +114,6 @@ export function ImgEditor({
         <Editor
           frame={frames?.frames?.[activeFrame]}
           setFrame={setFrame}
-          setImg={setImg}
-          img={img}
           setFrames={setFrames}
           frames={frames}
           activeFrame={activeFrame}
