@@ -154,7 +154,7 @@
     height: 40px;
 }
 
-.chipInput div label {
+.chipInput div:first-of-type label {
     margin-top: -7px;
 }
 
