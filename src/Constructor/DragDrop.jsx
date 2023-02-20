@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FileUploader } from "react-drag-drop-files";
 
-const fileTypes = ["JPG", "PNG", "GIF", "json"];
+const fileTypes = ["json"];
 
 function DragDrop({ setJsonFile, handleClose }) {
   const fr = new FileReader();

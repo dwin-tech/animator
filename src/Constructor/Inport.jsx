@@ -21,7 +21,7 @@ function TabPanel(props) {
     >
       {value === index && (
         <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
+          <Typography component={"span"}>{children}</Typography>
         </Box>
       )}
     </div>
@@ -66,7 +66,11 @@ export default function ImportFile({ setJsonFile, handleClose }) {
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Textarea
-          style={{ overflowY: "scroll", height: "100px", resize: "none" }}
+          style={{
+            border: "thin solid rgba(0, 0, 0, 0.12)",
+            height: "100px",
+            resize: "none",
+          }}
           onChange={(e) => {
             setJson(e.target.value);
           }}

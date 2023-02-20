@@ -19,8 +19,6 @@ const MODAL_STYLE = {
 
 export function ImgWrapper({
   children,
-  img,
-  setImg,
   index,
   activeImg,
   setActiveImg,
@@ -41,7 +39,6 @@ export function ImgWrapper({
     localStorage.setItem("frames", JSON.stringify(frames));
     handleCloseDeleteImg();
     setActiveImg(0);
-    setImg(frames.frames[activeFrame].imgs[0]);
   }
 
   return (
@@ -87,7 +84,6 @@ export function ImgWrapper({
         }
         onClick={() => {
           setActiveImg(index);
-          setImg(img);
         }}
       >
         {children}

@@ -24,13 +24,15 @@
     flex: 1;
     overflow-x: hidden;    
     max-height: 800px;
-
+    margin-bottom: 50px;
 }
 
 .mainFrame{
     flex: 1;
     overflow-x: hidden;    
     max-height: 750px;
+    min-height: 70px;
+    overflow: hidden
 }
 
 .addFrame{
@@ -58,6 +60,7 @@
 }
 
 .forFlex{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,6 +80,7 @@
 }
 
  .imgBox{
+    position: relative;
     display: flex;
     align-items: center;
     border: thin solid rgba(0, 0, 0, 0.12);
@@ -92,7 +96,7 @@
     margin:30px;
     width: 500px;
     max-height: 600px;
-    overflow-y:scroll;
+    overflow-x:hidden;
 }
 
 .topButtons{
@@ -130,4 +134,34 @@
     position: absolute;
 }
 
+.newFrame{
+    border: thin solid rgba(0, 0, 0, 0.12);
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
 
+.editorInputs{
+    display: flex;
+    justify-content: space-around;
+}
+
+.MuiInputBase-root{
+    height: 40px;
+}
+
+.chipInput div:first-of-type label {
+    margin-top: -7px;
+}
+
+.backButton{
+    z-index: 2;
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    cursor: pointer;
+}

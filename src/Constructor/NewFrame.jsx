@@ -1,29 +1,15 @@
-import { useState } from "react";
-import { Editor } from "./Editor";
 import ImageUploading from "react-images-uploading";
 import "./style.css";
 import { Tooltip } from "@mui/material";
-
 import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
-import { ImgWrapper } from "./ImgWrapper";
 
-export function ImgEditor({
-  frames,
-  setFrame,
-  setFrames,
-  activeFrame,
-  setActiveFrame,
-  activeImg,
-  setActiveImg,
-  setJsonFile,
-}) {
+export function NewFrame({ frames, activeFrame, setFrames }) {
   const onChange = (imageList, addUpdateIndex) => {
-    console.log(imageList, addUpdateIndex);
     frames.frames[activeFrame].imgs.push({
       src: imageList[0]?.data_url,
       alt: "",
       initial: "hidden",
-      style: { width: "100%", position: "absolute", left: "0" },
+      style: { width: "100%", position: "relative", left: "0" },
       variants: {
         hidden: {},
         show: {
@@ -36,35 +22,22 @@ export function ImgEditor({
         },
       },
     });
-    setActiveImg(frames.frames[activeFrame].imgs.length - 1);
     setFrames({ ...frames });
     localStorage.clear();
     localStorage.setItem("frames", JSON.stringify(frames));
   };
-
   return (
-    <div className="imgEditor">
-      <div className="imgs">
-        {frames?.frames?.[activeFrame]?.imgs?.map((img, index) => {
-          return (
-            <ImgWrapper
-              key={img.src + index}
-              index={index}
-              activeImg={activeImg}
-              setActiveImg={setActiveImg}
-              activeFrame={activeFrame}
-              frames={frames}
-              setFrames={setFrames}
-            >
-              <img
-                style={{ width: "100px", objectFit: "contain" }}
-                src={img.src}
-                alt=""
-              />
-            </ImgWrapper>
-          );
-        })}
-        <ImageUploading multiple onChange={onChange} dataURLKey="data_url">
+    <div className="newFrame">
+      <div>
+        <span style={{ color: "grey", fontSize: "30px" }}>Choose a photo</span>
+      </div>
+      <div>
+        <ImageUploading
+          multiple
+          //   value={images}
+          onChange={onChange}
+          dataURLKey="data_url"
+        >
           {({
             imageList,
             onImageUpload,
@@ -76,17 +49,13 @@ export function ImgEditor({
             <>
               <div
                 className="imgBox"
-                style={
-                  !frames?.frames?.length ||
-                  !frames?.frames?.[activeFrame]?.imgs?.length
-                    ? { display: "none" }
-                    : { display: "block", cursor: "pointer" }
-                }
+                style={{ cursor: "pointer" }}
                 onClick={onImageUpload}
               >
                 <Tooltip title="Add Photo">
                   <AddPhotoAlternateIcon
                     fontSize="large"
+                    // disabled={activeFrame === undefined ? true : false}
                     variant="contained"
                     style={
                       (isDragging ? { color: "red" } : undefined,
@@ -109,19 +78,6 @@ export function ImgEditor({
             </>
           )}
         </ImageUploading>
-      </div>
-      <div>
-        <Editor
-          frame={frames?.frames?.[activeFrame]}
-          setFrame={setFrame}
-          setFrames={setFrames}
-          frames={frames}
-          activeFrame={activeFrame}
-          setActiveFrame={setActiveFrame}
-          activeImg={activeImg}
-          setJsonFile={setJsonFile}
-          setActiveImg={setActiveImg}
-        />
       </div>
     </div>
   );
