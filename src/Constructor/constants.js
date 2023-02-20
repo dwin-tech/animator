@@ -13,7 +13,6 @@ export const emptyJson = {
           margin: "auto",
           maxWidth: "800px",
           overflow: "hidden",
-          paddingBottom: "5%",
           position: "relative",
         },
         variants: {
@@ -52,7 +51,6 @@ export const newFrame = {
       margin: "auto",
       maxWidth: "800px",
       overflow: "hidden",
-      paddingBottom: "5%",
       position: "relative",
     },
     variants: {
