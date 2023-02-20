@@ -4,6 +4,7 @@ import { LeftSideBar } from "../Constructor/LeftSideBar.jsx";
 import { NewFrame } from "../Constructor/NewFrame";
 import { RightSideBar } from "../Constructor/RightSideBar";
 import { TopButtons } from "../Constructor/TopButtons";
+import birthday from "../Constructor/birthday.json";
 
 import "./style.css";
 
@@ -21,11 +22,22 @@ export function Constructor() {
     return true;
   }
 
+  // useEffect(() => {
+  //   if (jsonFile) {
+  //     setData(JSON.parse(jsonFile));
+  //     localStorage.clear();
+  //     localStorage.setItem("frames", jsonFile);
+  //   } else {
+  //     if (localStorage.getItem("frames")) {
+  //       setData(JSON.parse(localStorage.getItem("frames")));
+  //     }
+  //   }
+  // }, [jsonFile]);
   useEffect(() => {
-    if (jsonFile) {
-      setData(JSON.parse(jsonFile));
+    if (birthday) {
+      setData(birthday);
       localStorage.clear();
-      localStorage.setItem("frames", jsonFile);
+      localStorage.setItem("frames", JSON.stringify(birthday));
     } else {
       if (localStorage.getItem("frames")) {
         setData(JSON.parse(localStorage.getItem("frames")));
