@@ -50,7 +50,7 @@ export function TopButtons({ setJsonFile, data }) {
             marginLeft: "20px",
           }}
           variant="contained"
-          disabled={!data.frames.length}
+          //disabled={!data.frames.length}
           onClick={() => {
             navigate("/constructor/preview");
           }}
