@@ -4,6 +4,8 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import Box from "@mui/material/Box";
+import InsertPhotoIcon from "@mui/icons-material/InsertPhoto";
+import ImageUploading from "react-images-uploading";
 
 const MODAL_STYLE = {
   position: "absolute",
@@ -31,6 +33,14 @@ export function ImgWrapper({
 
   const handleOpenDeleteImg = () => setOpenDeleteImg(true);
   const handleCloseDeleteImg = () => setOpenDeleteImg(false);
+
+  const onChange = (imageList, addUpdateIndex) => {
+    console.log(imageList, addUpdateIndex);
+    frames.frames[activeFrame].imgs[activeImg].src = imageList[0]?.data_url;
+    setFrames({ ...frames });
+    localStorage.clear();
+    localStorage.setItem("frames", JSON.stringify(frames));
+  };
 
   function handleOnClick() {
     frames.frames[activeFrame].imgs.splice(activeImg, 1);
@@ -75,7 +85,6 @@ export function ImgWrapper({
         onMouseLeave={() => {
           setVisible("none");
         }}
-        // key={img.src}
         className="imgBox"
         style={
           index == activeImg
@@ -88,6 +97,56 @@ export function ImgWrapper({
       >
         {children}
         <div style={{ display: visible }} className="deleteContainerImg">
+          <IconButton style={{ height: "30px", width: "30px" }}>
+            <ImageUploading multiple onChange={onChange} dataURLKey="data_url">
+              {({
+                imageList,
+                onImageUpload,
+                onImageUpdate,
+                onImageRemove,
+                isDragging,
+                dragProps,
+              }) => (
+                <>
+                  <div
+                    style={
+                      !frames?.frames?.length ||
+                      !frames?.frames?.[activeFrame]?.imgs?.length
+                        ? { display: "none" }
+                        : { display: "block", cursor: "pointer" }
+                    }
+                  >
+                    <Tooltip title="Update">
+                      <InsertPhotoIcon
+                        onClick={onImageUpload}
+                        fontSize="small"
+                        variant="contained"
+                        style={
+                          (isDragging ? { color: "red" } : undefined,
+                          { margin: "35px" })
+                        }
+                        {...dragProps}
+                      />
+                    </Tooltip>
+                  </div>
+                  &nbsp;
+                  {imageList.map((image, index) => (
+                    <div key={index} className="image-item">
+                      <img src={image["data_url"]} alt="" width="100" />
+                      <div className="image-item__btn-wrapper">
+                        <button onClick={() => onImageUpdate(index)}>
+                          Update
+                        </button>
+                        <button onClick={() => onImageRemove(index)}>
+                          Remove
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </>
+              )}
+            </ImageUploading>
+          </IconButton>
           <Tooltip title="Delete">
             <IconButton
               style={{ height: "30px", width: "30px" }}
