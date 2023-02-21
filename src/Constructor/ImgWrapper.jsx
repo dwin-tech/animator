@@ -113,7 +113,11 @@ export function ImgWrapper({
                       !frames?.frames?.length ||
                       !frames?.frames?.[activeFrame]?.imgs?.length
                         ? { display: "none" }
-                        : { display: "block", cursor: "pointer" }
+                        : {
+                            display: "block",
+                            cursor: "pointer",
+                            marginTop: "4px",
+                          }
                     }
                   >
                     <Tooltip title="Update">
